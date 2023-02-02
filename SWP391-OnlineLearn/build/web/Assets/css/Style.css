@@ -1,0 +1,82 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jan 29, 2023, 10:30:44 PM
+    Author     : Khangnekk
+*/
+.main {
+    display: flex;
+    box-sizing: border-box;
+}
+
+.nav {
+    position: fixed;
+    width: 5%;
+    background-color: #00de7a;
+    height: 100vh;
+}
+
+.nav-bar{
+    margin: 1em auto;
+}
+
+ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.items {
+    margin: 0;
+    padding: 0;
+}
+
+.item {
+    border-radius: 15px;
+    border: 2px solid #ccc;
+    margin: 2em auto;
+    background-color: white;
+    cursor: pointer;
+}
+
+.nav-bar img {
+    width: 3em;
+}
+
+.avt-btn {
+    position: fixed;
+    border-radius: 50%;
+    bottom: 0;
+}
+
+.content {
+    width: 100%;
+    margin-left: 5%;
+    background-image: url(../images/bg.png);
+    background-size: 100vw;
+    width: 100vw;
+    height: 100vh;
+}
+
+.account {
+    width: 20%;
+    height: 10%;
+    margin: 2% 0 0 5%;
+    border-radius: 10px;
+    background-color: black;
+    opacity: 0.5;
+    border: 10px;
+    border-color: white;
+    display: flex;
+    flex-direction: row;
+}
+.account img{
+    height: 10%px;
+    width: 50%;
+    margin: 5px 5px 0 20px;
+}
+.account li{
+    margin-top: 3px;
+}
