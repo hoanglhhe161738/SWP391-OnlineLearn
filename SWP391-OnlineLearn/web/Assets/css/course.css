@@ -1,0 +1,102 @@
+.main {
+    display: flex;
+}
+
+.nav {
+    position: fixed;
+    width: 5%;
+    background-color: #00de7a;
+    height: 100vh;
+}
+
+.nav-bar {
+    margin: auto;
+}
+
+ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.items {
+    margin: 0;
+    padding: 0;
+}
+
+.item {
+    border-radius: 15px;
+    border: 2px solid #ccc;
+    margin: 2em auto;
+    background-color: white;
+    cursor: pointer;
+}
+
+.nav-bar img {
+    width: 3em;
+}
+
+.avt-btn {
+    position: fixed;
+    border-radius: 50%;
+    bottom: 0;
+}
+
+.content {
+    width: 100%;
+    margin-left: 5%;
+    background-image: url(../images/bg.png);
+    background-size: 100vw;
+    width: 100vw;
+    height: 100vh;
+}
+
+.class {
+    margin-top: 200px;
+}
+
+.items-class {
+    padding-top: 10em;
+    text-align: center;
+}
+
+.item-class {
+    font-weight: bold;
+    color: white;
+    margin: 2em 2em;
+    padding: 2em 3em;
+    background-image: linear-gradient(to right, #286175, #00de7a);
+    border-radius: 15px;
+    border: 5px solid white;
+    cursor: pointer;
+}
+
+.item-class a{   
+    padding: 1em 4.2rem;
+    font-size: 3em;
+    color: white;
+    text-decoration: none;
+}
+
+.item-course{
+    width: 70%;
+    /* background-color: #00de7a; */
+    background-image: linear-gradient(to right,#39b57d,#00de7a );
+    color: white;
+    padding: 1em 2em;
+    margin: 1em auto;
+    border-radius: 15px;
+    border: 8px solid white;
+}
+
+.go-to-course-btn{
+    background-color: rgb(94, 135, 232);
+    border: 3px solid white;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.go-to-course-btn:hover{
+    background-color: rgb(73, 89, 255);
+}
