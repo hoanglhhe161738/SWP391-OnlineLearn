@@ -1,0 +1,40 @@
+body{
+    box-sizing: border-box;
+    background-color: aliceblue;
+}
+
+.ranking-item{
+    margin: 2% 2% 0 2%;
+    height: 3em;
+    background-color: black;
+    margin-bottom: 1em;
+    display: flex;
+    text-align: center;
+}
+li{
+    list-style: none;
+    margin: 0 0 0 -2em;
+    font-size: 1rem;
+    font-weight: bold;
+}
+/* p{
+    padding: 0.5em 0 0 0;
+} */
+.item-single{
+    display: inline;
+    color: white;  
+    flex: 1;
+}
+
+.ranking{
+    margin: auto;
+}
+
+.content-ranking {
+    width: 100%;
+    margin-left: 5%;
+    background-color: aliceblue;
+    background-size: 100vw;
+    width: 100vw;
+    height: 100vh;
+}
