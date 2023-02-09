@@ -43,7 +43,7 @@
                 <div class="container-fluid">
                     <ul class="row items-class">
                         <li class="col-md-3 item-class">
-                            <a href="course.html">Lớp 1</a>
+                            <a href="course.jsp">Lớp 1</a>
                         </li>
                         <li class="col-md-3 item-class">
                             <a href="#">Lớp 2</a>

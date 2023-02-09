@@ -215,7 +215,7 @@
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
-    padding: 1em 5em;
+    padding: 1em 17em 1em 0em;
 }
 
 .lesion-items a:hover{
@@ -225,10 +225,10 @@
 .lession-item{
     margin-top: 1em;
     line-height: 3em;
-    width: 60%;
+    width: 70%;
     padding:0.5em 2em;
     background-image: linear-gradient(to left bottom,#33b97c,#00de7a);
-    border-radius: 10px;
+    border-radius: 35px;
 }
 
 .lession-item img{

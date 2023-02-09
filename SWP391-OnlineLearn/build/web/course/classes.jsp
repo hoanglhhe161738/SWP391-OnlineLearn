@@ -1,6 +1,4 @@
-
  <!--<%@page contentType="text/html" pageEncoding="UTF-8"%>--> 
-
 <!DOCTYPE html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -45,7 +43,7 @@
                 <div class="container-fluid">
                     <ul class="row items-class">
                         <li class="col-md-3 item-class">
-                            <a href="course.html">Lớp 1</a>
+                            <a href="course.jsp">Lớp 1</a>
                         </li>
                         <li class="col-md-3 item-class">
                             <a href="#">Lớp 2</a>

@@ -62,7 +62,7 @@
                         <div class="col-md-12 module">
                             <ul class="module-items">                            
                                 <li class="module-item-type1">
-                                    <a href="https://www.facebook.com">
+                                    <a href="module.jsp">
                                         Module 1
                                     </a>
                                 </li>
