@@ -1,7 +1,7 @@
 
 
 .main-content{
-    margin-top: 5em;
+    margin-top: 3em;
 }
 
 .class {
@@ -18,17 +18,48 @@
     color: white;
     margin: 2em 2em;
     padding: 2em 3em;
-    background-image: linear-gradient(to right, #286175, #00de7a);
-    border-radius: 15px;
-    /*border: 5px solid white;*/
+    position: relative;
+    background-image: linear-gradient(to right, #33b97c, #00de7a);
+    border-radius: 10px;
     cursor: pointer;
 }
 
-.item-class a{   
+.item-class::before {
+    content: "";
+    position: absolute;
+    height: 8px;
+    width: 0;
+    bottom: 0em;
+    border-radius: 15px;
+    background-color: whitesmoke;
+
+    /* animation center */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s ease;
+
+    /* animation left to right 
+          transition: all 0.5s ease;    
+    */
+}
+
+.item-class:hover:before {
+    width: 99%;
+}
+
+.item-class:hover{
+    background-image: linear-gradient(to right,#00de7a, #33b97c);
+}
+
+.item-class a{
     padding: 1em 4.2rem;
     font-size: 3em;
     color: white;
     text-decoration: none;
+}
+
+.item-class a:hover{
+    color: white;
 }
 
 .item-course{
@@ -43,19 +74,28 @@
 }
 
 .process-module{
-    width:85%; margin: 2rem auto;
+    width:85%;
+    margin: 2rem auto;
 }
 
 .progress-bar-custom{
-    border-radius: 10px;  height:1.5em;background: #33b97c; text-align: left;
+    border-radius: 10px;
+    height:1.5em;
+    background: #33b97c;
+    text-align: left;
 }
 
 .progress-bar-bg{
-    border-radius: 10px; border: 3px solid white;background: #b4c7e7; font-family: tahoma; 
+    border-radius: 10px;
+    border: 3px solid white;
+    background: #b4c7e7;
+    font-family: tahoma;
 }
 
 .progress-bar-custom p{
-    margin:0 0 0 1em; color: white; font-weight: bold;
+    margin:0 0 0 1em;
+    color: white;
+    font-weight: bold;
 }
 
 .module{
@@ -68,28 +108,73 @@
 }
 
 .module-item-type1{
-    width: 10em;
-    height: 4em;
+    width: 12em;
+    height: 3em;
+    color: white;
     border-radius: 10px;
-    background: #b020f6;
+    position: relative;
+    background-image: linear-gradient(to right,#b020f6  ,#5831ed);
     margin: auto 1em;
-    padding: 0.6em 1em;
-    border: 5px solid white;
+    padding:auto 1em;
 }
+.module-item-type1::before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 0;
+    bottom: 0em;
+    background-color: #f3e2ff;
+    border-radius: 8px;
+    /* animation center */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s ease;
+
+    /* animation left to right 
+          transition: all 0.5s ease;    
+    */
+}
+
+.module-item-type1:hover:before {
+    width: 98%;
+}
+
 .module-item-type2{
-    width: 10em;
-    height: 4em;
+    width: 12em;
+    height: 3em;
     color: #b020f6;
-    border-radius: 10px;
-    background:white ;
+    position: relative;
+    background:#f3e2ff ;
     margin: auto 1em;
-    padding: 0.6em 1em;
-    border: 5px solid #b020f6;
+    border-radius: 8px;
+    padding: auto 1em;
+}
+
+.module-item-type2::before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 0;
+    bottom: 0em;
+    background-color: #ae20f6;
+    border-radius: 10px;
+    /* animation center */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s ease;
+
+    /* animation left to right 
+          transition: all 0.5s ease;    
+    */
+}
+
+.module-item-type2:hover:before {
+    width: 98%;
 }
 
 .module-item-type1 a{
     text-decoration: none;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     color: white;
     padding: 0.5em 0.5em;
@@ -97,11 +182,11 @@
 
 .module-item-type1 a:hover{
     color: white;
-    
+
 }
 .module-item-type2 a{
     text-decoration: none;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     color: #b020f6;
     padding: 0.5em 0.5em;
@@ -109,20 +194,63 @@
 
 .module-item-type2 a:hover{
     color: #b020f6;
-    
+
 }
 
 .module-title{
-    width: 90%;
+    width: auto;
 }
+
+.lesion-items{
+    margin-left: 1.5em;
+    align-items: center;
+
+}
+
+
+
+.lesion-items a{
+    margin-left: 1em;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 1em 5em;
+}
+
+.lesion-items a:hover{
+    color: white;
+}
+
+.lession-item{
+    margin-top: 1em;
+    line-height: 3em;
+    width: 60%;
+    padding:0.5em 2em;
+    background-image: linear-gradient(to left bottom,#33b97c,#00de7a);
+    border-radius: 10px;
+}
+
+.lession-item img{
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.lession-item:hover{
+    background-image: linear-gradient(to left bottom,#00de7a,#33b97c);
+}
+
 .go-to-course-btn{
-    background-color: rgb(94, 135, 232);
-    border: 4px solid white;
+    background: #f96969;
+    padding: 0.125em;
+    border: 2px solid #f96969;
     border-radius: 10px;
     color: white;
     font-weight: bold;
+    font-size: 20px;
 }
 
 .go-to-course-btn:hover{
     background-color: rgb(73, 89, 255);
+    border: 2px solid rgb(73, 89, 255);
 }

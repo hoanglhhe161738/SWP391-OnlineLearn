@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module</title>
+    <title>Modules of course</title>
     <link rel="stylesheet" href="../Assets/css/Style.css">
     <link rel="stylesheet" href="../Assets/css/course.css">
     <!-- link bootstrap -->
@@ -53,36 +53,35 @@
                         <div class="col-m-12">
                             <div class="process-module">
                                 <div class="progress-bar-bg">
-                                    <div class="progress-bar-custom" style="width:58%;">
-                                        <p>58%</p>
+                                    <div class="progress-bar-custom" style="width:40%;">
+                                        <p>40%</p>
                                     </div>	
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12 module">
-                            <ul class="module-items">
-                                <!--<li class="module-item-type1">-->
-                                <li class="module-item-type2">
+                            <ul class="module-items">                            
+                                <li class="module-item-type1">
                                     <a href="https://www.facebook.com">
                                         Module 1
                                     </a>
                                 </li>
-                                <li class="module-item-type2">
+                                <li class="module-item-type1">
                                     <a href="https://www.facebook.com">
                                         Module 2
                                     </a>
                                 </li>
-                                <li class="module-item-type1">
+                                <li class="module-item-type2">
                                     <a href="https://www.facebook.com">
                                         Module 3
                                     </a>
                                 </li>
-                                <li class="module-item-type1">
+                                <li class="module-item-type2">
                                     <a href="https://www.facebook.com">
                                         Module 4
                                     </a>
                                 </li>
-                                <li class="module-item-type1">
+                                <li class="module-item-type2">
                                     <a href="https://www.facebook.com">
                                         Module 5
                                     </a>
