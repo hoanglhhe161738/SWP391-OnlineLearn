@@ -8,7 +8,8 @@
             <web-module-libraries/>
             <web-module-additional-libraries/>
             <source-roots>
-                <root id="src.New%20Folder.dir" name="Source Packages"/>
+                <root id="src.dir" name="src\java"/>
+                <root id="src.dir" name="src\java"/>
             </source-roots>
             <test-roots>
                 <root id="test.src.dir"/>
