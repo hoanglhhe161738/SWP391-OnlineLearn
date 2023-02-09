@@ -43,13 +43,43 @@
             <div class="container main-content">
                 <div class="row">
                     <div>
-                        <div class="module-item-type1 module-title">
-                            <a href="#">Module1: </a>
-                            Chỗ này sẽ là cái tiêu đề của module
+                        <div class="col-md-12 module-item-type1 module-title">
+                            <a style="cursor: pointer">Module1: Chỗ này sẽ là cái tiêu đề của module</a>
+                            <div class="process-module" style="float: left">
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-custom" style="width:60%;">
+                                        <p>60%</p>
+                                    </div>	
+                                </div>
+                            </div>
                         </div>
-
+                    </div>
+                    <div>
+                        <div class="lesion-items" >
+                            <div class="lession-item">
+                                    <img src="../Assets/icon/icon (74).png" height="30px" width="30px">
+                                    <a href="#">Lession 1: Chỗ này sẽ là cái tiêu đề của lession</a>
+                            </div>
+                            <div class="lession-item">
+                                <img src="../Assets/icon/icon (74).png" height="30px" width="30px">
+                                <a href="#">Lession 2: Chỗ này sẽ là cái tiêu đề của lession</a>
+                            </div>
+                            <div class="lession-item">
+                                <img src="../Assets/icon/icon (74).png" height="30px" width="30px">
+                                <a href="#">Lession 3: Chỗ này sẽ là cái tiêu đề của lession</a>
+                            </div>
+                            <div class="lession-item">
+                                <img src="../Assets/icon/icon (75).png" height="30px" width="30px">
+                                <a href="#">Lession 4: Chỗ này sẽ là cái tiêu đề của lession</a>
+                            </div>
+                            <div class="lession-item">
+                                <img src="../Assets/icon/icon (75).png" height="30px" width="30px">
+                                <a href="#">Lession 5: Chỗ này sẽ là cái tiêu đề của lession</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
 
         </div>
