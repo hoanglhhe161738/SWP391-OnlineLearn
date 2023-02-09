@@ -4,7 +4,7 @@
     Author     : Khangnekk
 --%> -->
 
-<!-- <%@page contentType="text/html" pageEncoding="UTF-8"%> -->
+ <%@page contentType="text/html" pageEncoding="UTF-8"%> 
 <!DOCTYPE html>
 <html>
     <head>
@@ -53,7 +53,7 @@
                         <p>Chỗ này là mô tả về những gì sẽ học được từ course này Chỗ này là
                             mô tả về những gì sẽ học được từ course này Chỗ này là mô tả về những gì sẽ học được từ
                             course này</p>
-                        <a href="module.jsp">
+                        <a href="modules.jsp">
                             <button class="go-to-course-btn">
                                 Go to course
                             </button>
