@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ti?n trình</title>
+    <title>Module</title>
+    <link rel="stylesheet" href="../Assets/css/Style.css">
     <link rel="stylesheet" href="../Assets/css/course.css">
     <!-- link bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>
@@ -39,7 +40,17 @@
             </div>
         </div>
         <div class="content">
-            đang viết thử tiếng việt
+            <div class="container main-content">
+                <div class="row">
+                    <div>
+                        <div class="module-item-type1 module-title">
+                            <a href="#">Module1: </a>
+                            Chỗ này sẽ là cái tiêu đề của module
+                        </div>
+
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>

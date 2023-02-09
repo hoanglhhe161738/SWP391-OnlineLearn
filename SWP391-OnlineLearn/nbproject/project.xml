@@ -8,8 +8,12 @@
             <web-module-libraries/>
             <web-module-additional-libraries/>
             <source-roots>
+<<<<<<< Updated upstream
                 <root id="src.dir" name="src\java"/>
                 <root id="src.dir" name="src\java"/>
+=======
+                <root id="src.java.dir" name="Source Packages"/>
+>>>>>>> Stashed changes
             </source-roots>
             <test-roots>
                 <root id="test.src.dir"/>

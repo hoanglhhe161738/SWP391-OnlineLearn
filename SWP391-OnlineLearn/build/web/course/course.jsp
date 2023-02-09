@@ -12,6 +12,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Các khóa học</title>
+        <link rel="stylesheet" href="../Assets/css/Style.css">
         <link rel="stylesheet" href="../Assets/css/course.css">
         <!-- link bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -52,7 +53,7 @@
                         <p>Chỗ này là mô tả về những gì sẽ học được từ course này Chỗ này là
                             mô tả về những gì sẽ học được từ course này Chỗ này là mô tả về những gì sẽ học được từ
                             course này</p>
-                        <a href="module.html">
+                        <a href="module.jsp">
                             <button class="go-to-course-btn">
                                 Go to course
                             </button>
