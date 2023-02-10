@@ -4,17 +4,22 @@
  */
 package controller.course;
 
+import dal.CourseDBContext;
+import dal.ModuleDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import model.Course;
+import model.Module;
 
 /**
  *
  * @author Khangnekk
  */
-public class moduleController extends HttpServlet{
+public class modulesController extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -23,7 +28,14 @@ public class moduleController extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        int course_id = Integer.parseInt(req.getParameter("course_id"));
+        ModuleDBContext mDB = new ModuleDBContext();
+        CourseDBContext coDB = new CourseDBContext();
+        ArrayList<Module> modules = mDB.listModuleByCourseID(course_id);
+        Course course = coDB.get(course_id);
+        req.setAttribute("course", course);
+        req.setAttribute("modules", modules);
+        req.getRequestDispatcher("./modules.jsp").forward(req, resp);
     }
     
 }
