@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <head>
@@ -24,7 +25,7 @@
                         <a href="#"><img src="../Assets/icon/icon (44).png"></a>
                     </li>
                     <li class="item">
-                        <a href="#"><img src="../Assets/icon/icon (71).png"></a>
+                        <a href="./classes"><img src="../Assets/icon/icon (71).png"></a>
                     </li>
                     <li class="item">
                         <a href="#"><img src="../Assets/icon/icon (51).png"></a>
@@ -44,11 +45,9 @@
                 <div class="row">
                     <div>
                         <div class="col-m-12 item-course">                       
-                            <h1>Chỗ này là chỗ để tên của cái course đấy</h1>
-                            <p>Chỗ này là mô tả chi tiet về những gì sẽ học được từ course này
-                                Chỗ này là mô tả chi tiet về những gì sẽ học được từ course này
-                                Chỗ này là mô tả chi tiet về những gì sẽ học được từ course này
-                                Chỗ này là mô tả chi tiet về những gì sẽ học được từ course này</p>                      
+                            <h1>${requestScope.course.course_name}</h1>
+                            <p style="font-size: 18px; font-weight: bold">Khổ luyện thành tài, miệt mài mới giỏi. 
+                                Hãy kiên trì và nỗ lực các bạn nhé, thành quả sẽ đến ngay thôi</p>                      
                         </div>
                         <div class="col-m-12">
                             <div class="process-module">
@@ -60,32 +59,16 @@
                             </div>
                         </div>
                         <div class="col-md-12 module">
-                            <ul class="module-items">                            
-                                <li class="module-item-type1">
-                                    <a href="module.jsp">
-                                        Module 1
-                                    </a>
-                                </li>
-                                <li class="module-item-type1">
-                                    <a href="https://www.facebook.com">
-                                        Module 2
-                                    </a>
-                                </li>
-                                <li class="module-item-type2">
-                                    <a href="https://www.facebook.com">
-                                        Module 3
-                                    </a>
-                                </li>
-                                <li class="module-item-type2">
-                                    <a href="https://www.facebook.com">
-                                        Module 4
-                                    </a>
-                                </li>
-                                <li class="module-item-type2">
-                                    <a href="https://www.facebook.com">
-                                        Module 5
-                                    </a>
-                                </li>
+                            <% int i = 1;%>
+                            <ul class="module-items">   
+                                <c:forEach items="${requestScope.modules}" var="m">
+                                    <li class="module-item-type1">
+                                        <a href="module.jsp">
+                                            Module <%=i%>
+                                        </a>
+                                    </li>
+                                    <%i++;%>
+                                </c:forEach>
                             </ul>
                         </div>
                     </div>

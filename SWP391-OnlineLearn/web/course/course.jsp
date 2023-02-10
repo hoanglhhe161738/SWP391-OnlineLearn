@@ -1,10 +1,11 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- <%-- 
     Document   : course
     Created on : Feb 1, 2023, 12:06:56 AM
     Author     : Khangnekk
 --%> -->
 
- <%@page contentType="text/html" pageEncoding="UTF-8"%> 
+<%@page contentType="text/html" pageEncoding="UTF-8"%> 
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,82 +21,50 @@
     </head>
     <body>
         <div class="main">
-        <div class="nav">
-            <div class="nav-bar">
-                <ul class="items">
-                    <li class="item">
-                        <a href="#"><img src="../Assets/icon/icon (69).png"></a>
-                    </li>
-                    <li class="item">
-                        <a href="#"><img src="../Assets/icon/icon (44).png"></a>
-                    </li>
-                    <li class="item">
-                        <a href="classes.html"><img src="../Assets/icon/icon (71).png"></a>
-                    </li>
-                    <li class="item">
-                        <a href="#"><img src="../Assets/icon/icon (51).png"></a>
-                    </li>
-                    <li class="item">
-                        <a href="#"><img src="../Assets/icon/icon (45).png"></a>
-                    </li>
-                    <li class="item avt-btn">
-                        <a href="#"><img src="../Assets/icon/icon (4).png">
-                        </a>
-                    </li>
-                </ul>
+            <div class="nav">
+                <div class="nav-bar">
+                    <ul class="items">
+                        <li class="item">
+                            <a href="#"><img src="../Assets/icon/icon (69).png"></a>
+                        </li>
+                        <li class="item">
+                            <a href="#"><img src="../Assets/icon/icon (44).png"></a>
+                        </li>
+                        <li class="item">
+                            <a href="./classes"><img src="../Assets/icon/icon (71).png"></a>
+                        </li>
+                        <li class="item">
+                            <a href="#"><img src="../Assets/icon/icon (51).png"></a>
+                        </li>
+                        <li class="item">
+                            <a href="#"><img src="../Assets/icon/icon (45).png"></a>
+                        </li>
+                        <li class="item avt-btn">
+                            <a href="#"><img src="../Assets/icon/icon (4).png">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="content">
-            <div class="container-fluid">
-                <ul class="">
-                    <li class="item-course">
-                        <h1>Chỗ này là chỗ để tên của cái course đấy</h1>
-                        <p>Chỗ này là mô tả về những gì sẽ học được từ course này Chỗ này là
-                            mô tả về những gì sẽ học được từ course này Chỗ này là mô tả về những gì sẽ học được từ
-                            course này</p>
-                        <a href="modules.jsp">
-                            <button class="go-to-course-btn">
-                                Go to course
-                            </button>
-                        </a>
-                    </li>
-                    <li class="item-course">
-                        <h1>Chỗ này là chỗ để tên của cái course đấy (Vip)</h1>
-                        <p>Chỗ này là mô tả về những gì sẽ học được từ course này Chỗ này là
-                            mô tả về những gì sẽ học được từ course này Chỗ này là mô tả về những gì sẽ học được từ
-                            course này</p>
-                        <a href="module.html">
-                            <button class="go-to-course-btn">
-                                Go to course
-                            </button>
-                        </a>
-                    </li>
-                    <li class="item-course">
-                        <h1>Chỗ này là chỗ để tên của cái course đấy</h1>
-                        <p>Chỗ này là mô tả về những gì sẽ học được từ course này Chỗ này là
-                            mô tả về những gì sẽ học được từ course này Chỗ này là mô tả về những gì sẽ học được từ
-                            course này</p>
-                        <a href="module.html">
-                            <button class="go-to-course-btn">
-                                Go to course
-                            </button>
-                        </a>
-                    </li>
-                    <li class="item-course">
-                        <h1>Chỗ này là chỗ để tên của cái course đấy</h1>
-                        <p>Chỗ này là mô tả về những gì sẽ học được từ course này Chỗ này là
-                            mô tả về những gì sẽ học được từ course này Chỗ này là mô tả về những gì sẽ học được từ
-                            course này</p>
-                        <a href="module.html">
-                            <button class="go-to-course-btn">
-                                Go to course
-                            </button>
-                        </a>
-                    </li>
-                </ul>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <c:forEach items="${requestScope.courses}" var="co">
+                            <div class="item-course col-md-5" style="margin: 1em 3.5em">
+                                <h1>${co.course_name}</h1>
+                                <p>Chương trình của môn ${co.course_name} lớp ${requestScope.class_id} trong course này được biên soạn dựa theo sách giáo khoa
+                                    của nhà xuất bản Cánh Diều, chúc các bạn có 1 trải nghiệm học tập thật là bổ ích!</p>
+                                <a href="./modules?course_id=${co.course_id}">
+                                    <button class="go-to-course-btn">
+                                        Học ngay
+                                    </button>
+                                </a>
+                            </div>
+                        </c:forEach>                   
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
-    </body>
+</body>
 </html>

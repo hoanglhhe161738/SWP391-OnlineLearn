@@ -68,14 +68,13 @@
     background-image: linear-gradient(to right,#39b57d,#00de7a );
     color: white;
     padding: 1em 2em;
-    margin: 2em auto;
     border-radius: 15px;
     /*border: 8px solid white;*/
 }
 
 .process-module{
     width:85%;
-    margin: 2rem auto;
+    margin: 2rem;
 }
 
 .progress-bar-custom{
@@ -99,10 +98,10 @@
 }
 
 .module{
-    margin-left: 3em;
+    margin: 3em;
 }
 
-.module-items{
+.module-items{    
     display: flex;
     text-align: center;
 }
