@@ -24,7 +24,7 @@
                         <a href="#"><img src="../Assets/icon/icon (44).png"></a>
                     </li>
                     <li class="item">
-                        <a href="#"><img src="../Assets/icon/icon (71).png"></a>
+                        <a href="./classes"><img src="../Assets/icon/icon (71).png"></a>
                     </li>
                     <li class="item">
                         <a href="#"><img src="../Assets/icon/icon (51).png"></a>
@@ -44,7 +44,7 @@
                 <div class="row">
                     <div>
                         <div class="col-md-12 module-item-type1 module-title">
-                            <a style="cursor: pointer">Module1: Chỗ này sẽ là cái tiêu đề của module</a>
+                            <a style="cursor: pointer">${requestScope.module.module_name}</a>
                             <div class="process-module" style="float: left">
                                 <div class="progress-bar-bg">
                                     <div class="progress-bar-custom" style="width:60%;">

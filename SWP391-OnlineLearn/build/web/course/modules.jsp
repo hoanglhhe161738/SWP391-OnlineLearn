@@ -63,8 +63,8 @@
                             <ul class="module-items">   
                                 <c:forEach items="${requestScope.modules}" var="m">
                                     <li class="module-item-type1">
-                                        <a href="module.jsp">
-                                            Module <%=i%>
+                                        <a href="./module?module_id=${m.module_id}">
+                                            Chương <%=i%>
                                         </a>
                                     </li>
                                     <%i++;%>
