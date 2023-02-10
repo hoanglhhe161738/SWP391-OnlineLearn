@@ -1,10 +1,11 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+ <!--<%@page contentType="text/html" pageEncoding="UTF-8"%>--> 
 <!DOCTYPE html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Các lớp học</title>
+        <link rel="stylesheet" href="../Assets/css/Style.css">
         <link rel="stylesheet" href="../Assets/css/course.css">
         <!-- link bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -42,7 +43,7 @@
                 <div class="container-fluid">
                     <ul class="row items-class">
                         <li class="col-md-3 item-class">
-                            <a href="course.html">Lớp 1</a>
+                            <a href="course.jsp">Lớp 1</a>
                         </li>
                         <li class="col-md-3 item-class">
                             <a href="#">Lớp 2</a>
