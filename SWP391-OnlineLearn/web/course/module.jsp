@@ -48,37 +48,26 @@
                             <a style="cursor: pointer">${requestScope.module.module_name}</a>
                             <div class="process-module" style="float: left">
                                 <div class="progress-bar-bg">
-                                    <div class="progress-bar-custom" style="width:60%;">
-                                        <p>60%</p>
+                                    <div class="progress-bar-custom" style="width:${requestScope.percent}%;">
+                                        <p>${requestScope.percent}%</p>
                                     </div>	
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <div class="lesion-items" >
-                            <c:forEach items="${requestScope.lessions}" var="l">
-                                <div class="lession-item">
-                                    <img src="../Assets/icon/icon (74).png" height="30px" width="30px">
-                                    <a href="#" style="padding: 1em;">${l.lession_name}</a>
+                        <div class="lesson-items">
+                            <c:forEach items="${requestScope.lessons}" var="l">
+                                <div class="lesson-item" style="line-height: 1.6em;">
+                                    <c:if test="${l.status eq true}">
+                                        <img src="../Assets/icon/icon (74).png" height="30px" width="30px">
+                                    </c:if>
+                                    <c:if test="${l.status ne true}">
+                                        <img src="../Assets/icon/icon (75).png" height="30px" width="30px">
+                                    </c:if>
+                                    <a href="#" style="padding: 1em;">${l.lesson_name}</a>
                                 </div>
                             </c:forEach>
-                            <!--                            <div class="lession-item">
-                                                            <img src="../Assets/icon/icon (74).png" height="30px" width="30px">
-                                                            <a href="#">Lession 2: Chỗ này sẽ là cái tiêu đề của lession</a>
-                                                        </div>
-                                                        <div class="lession-item">
-                                                            <img src="../Assets/icon/icon (74).png" height="30px" width="30px">
-                                                            <a href="#">Lession 3: Chỗ này sẽ là cái tiêu đề của lession</a>
-                                                        </div>
-                                                        <div class="lession-item">
-                                                            <img src="../Assets/icon/icon (75).png" height="30px" width="30px">
-                                                            <a href="#">Lession 4: Chỗ này sẽ là cái tiêu đề của lession</a>
-                                                        </div>
-                                                        <div class="lession-item">
-                                                            <img src="../Assets/icon/icon (75).png" height="30px" width="30px">
-                                                            <a href="#">Lession 5: Chỗ này sẽ là cái tiêu đề của lession</a>
-                                                        </div>-->
                         </div>
                     </div>
                 </div>
