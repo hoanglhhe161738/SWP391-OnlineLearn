@@ -10,42 +10,42 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.Lession;
+import model.Lesson;
 import model.Module;
 
 /**
  *
  * @author Khangnekk
  */
-public class LessionDBContext extends DBContext<Lession> {
+public class LessonDBContext extends DBContext<Lesson> {
 
     @Override
-    public void insert(Lession model) {
+    public void insert(Lesson model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void update(Lession model) {
+    public void update(Lesson model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void delete(Lession model) {
+    public void delete(Lesson model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Lession get(int id) {
+    public Lesson get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public ArrayList<Lession> list() {
+    public ArrayList<Lesson> list() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    public ArrayList<Lession> listLessionByModuleID(int module_id) {
-        ArrayList<Lession> lessions = new ArrayList<>();
+    public ArrayList<Lesson> listLessonByModuleID(int module_id) {
+        ArrayList<Lesson> lessons = new ArrayList<>();
         ModuleDBContext mDB = new ModuleDBContext();
         ArrayList<Module> modules = mDB.list();
         String sql = "SELECT * FROM Lession WHERE module_id = ?";
@@ -54,17 +54,18 @@ public class LessionDBContext extends DBContext<Lession> {
             stm.setInt(1, module_id);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
-                Lession lession = new Lession();
-                lession.setLession_id(rs.getInt("lession_id"));
-                lession.setLession_name(rs.getString("lession_name"));
-                lession.setModule(modules.stream().filter(m -> m.getModule_id() == module_id).findAny().get());
-                lessions.add(lession);
+                Lesson lesson = new Lesson();
+                lesson.setLesson_id(rs.getInt("lession_id"));
+                lesson.setLesson_name(rs.getString("lession_name"));
+                lesson.setStatus(rs.getBoolean("status"));
+                lesson.setModule(modules.stream().filter(m -> m.getModule_id() == module_id).findAny().get());
+                lessons.add(lesson);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(LessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LessonDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return lessions;
+        return lessons;
     }
 
 }
