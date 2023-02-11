@@ -12,11 +12,21 @@ public class Module {
     private int module_id;
     private String module_name;
     private Course course;
+    private boolean status;
 
-    public Module(int module_id, String module_name, Course course) {
+    public Module(int module_id, String module_name, Course course, boolean status) {
         this.module_id = module_id;
         this.module_name = module_name;
         this.course = course;
+        this.status = status;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     public Module() {
