@@ -45,15 +45,15 @@
                 <div class="row">
                     <div>
                         <div class="col-m-12 item-course">                       
-                            <h1>${requestScope.course.course_name}</h1>
+                            <h1>${requestScope.course.course_name} lớp ${requestScope.class_id}</h1>
                             <p style="font-size: 18px; font-weight: bold">Khổ luyện thành tài, miệt mài mới giỏi. 
                                 Hãy kiên trì và nỗ lực các bạn nhé, thành quả sẽ đến ngay thôi</p>                      
                         </div>
                         <div class="col-m-12">
                             <div class="process-module">
                                 <div class="progress-bar-bg">
-                                    <div class="progress-bar-custom" style="width:40%;">
-                                        <p>40%</p>
+                                    <div class="progress-bar-custom" style="width:${requestScope.percent}%;">
+                                        <p>${requestScope.percent}%</p>
                                     </div>	
                                 </div>
                             </div>
@@ -62,7 +62,12 @@
                             <% int i = 1;%>
                             <ul class="module-items">   
                                 <c:forEach items="${requestScope.modules}" var="m">
-                                    <li class="module-item-type1">
+                                    <c:if test="${m.status}">
+                                        <li class="module-item-type1">
+                                        </c:if>
+                                        <c:if test="${!m.status}">
+                                        <li class="module-item-type2">
+                                        </c:if>
                                         <a href="./module?module_id=${m.module_id}">
                                             Chương <%=i%>
                                         </a>

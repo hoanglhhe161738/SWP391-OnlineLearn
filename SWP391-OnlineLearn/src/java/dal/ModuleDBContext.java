@@ -95,6 +95,7 @@ public class ModuleDBContext extends DBContext<Module> {
                 Module m = new Module();
                 m.setModule_id(rs.getInt("module_id"));
                 m.setModule_name(rs.getString("module_name"));
+                m.setStatus(rs.getBoolean("status"));
                 m.setCourse(courses.stream().filter(co -> co.getCourse_id() == course_id).findAny().get());
                 modules.add(m);
             }

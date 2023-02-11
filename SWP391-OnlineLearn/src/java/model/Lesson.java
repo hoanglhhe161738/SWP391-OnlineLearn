@@ -4,28 +4,32 @@
  */
 package model;
 
-import com.oracle.wls.shaded.org.apache.xpath.operations.Mod;
 
 /**
  *
  * @author Khangnekk
  */
-public class Lession {
-    private int lession_id;
-    private String lession_name;
+public class Lesson {
+    private int lesson_id;
+    private String lesson_name;
     private Module module;
     private boolean status;
 
-    public Lession() {
+    public Lesson() {
     }
 
-    public Lession(int lession_id, String lession_name, Module module, boolean status) {
-        this.lession_id = lession_id;
-        this.lession_name = lession_name;
+    public Lesson(int lesson_id, String lesson_name, Module module, boolean status) {
+        this.lesson_id = lesson_id;
+        this.lesson_name = lesson_name;
         this.module = module;
         this.status = status;
     }
 
+    public Lesson(String lesson_name,boolean status) {
+        this.lesson_name = lesson_name;
+        this.status = status;
+    }
+    
     public boolean isStatus() {
         return status;
     }
@@ -34,20 +38,20 @@ public class Lession {
         this.status = status;
     }
 
-    public int getLession_id() {
-        return lession_id;
+    public int getLesson_id() {
+        return lesson_id;
     }
 
-    public void setLession_id(int lession_id) {
-        this.lession_id = lession_id;
+    public void setLesson_id(int lesson_id) {
+        this.lesson_id = lesson_id;
     }
 
-    public String getLession_name() {
-        return lession_name;
+    public String getLesson_name() {
+        return lesson_name;
     }
 
-    public void setLession_name(String lession_name) {
-        this.lession_name = lession_name;
+    public void setLesson_name(String lesson_name) {
+        this.lesson_name = lesson_name;
     }
 
     public Module getModule() {

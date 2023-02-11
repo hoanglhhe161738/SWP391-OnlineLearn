@@ -51,10 +51,10 @@
                     <div class="row">
                         <c:forEach items="${requestScope.courses}" var="co">
                             <div class="item-course col-md-5" style="margin: 1em 3.5em">
-                                <h1>${co.course_name}</h1>
+                                <h1>${co.course_name} lớp ${requestScope.class_id}</h1>
                                 <p>Chương trình của môn ${co.course_name} lớp ${requestScope.class_id} trong course này được biên soạn dựa theo sách giáo khoa
                                     của nhà xuất bản Cánh Diều, chúc các bạn có 1 trải nghiệm học tập thật là bổ ích!</p>
-                                <a href="./modules?course_id=${co.course_id}">
+                                <a href="./modules?course_id=${co.course_id}&class_id=${requestScope.class_id}">
                                     <button class="go-to-course-btn">
                                         Học ngay
                                     </button>
