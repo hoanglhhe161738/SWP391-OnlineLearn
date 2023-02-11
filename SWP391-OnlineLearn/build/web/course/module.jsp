@@ -60,7 +60,7 @@
                             <c:forEach items="${requestScope.lessions}" var="l">
                                 <div class="lession-item">
                                     <img src="../Assets/icon/icon (74).png" height="30px" width="30px">
-                                    <a href="#">${l.lession_name}</a>
+                                    <a href="#" style="padding: 1em;">${l.lession_name}</a>
                                 </div>
                             </c:forEach>
                             <!--                            <div class="lession-item">
