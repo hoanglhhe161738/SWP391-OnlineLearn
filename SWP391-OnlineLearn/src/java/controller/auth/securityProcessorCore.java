@@ -14,7 +14,7 @@ import java.security.NoSuchAlgorithmException;
  */
 public class securityProcessorCore {
 
-    public static String SHA1EncodePassword(String inputPassword) throws NoSuchAlgorithmException {
+    protected static String SHA1EncodePassword(String inputPassword) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("SHA1");
         byte[] result = md.digest(inputPassword.getBytes());
         StringBuilder sb = new StringBuilder();
@@ -25,7 +25,7 @@ public class securityProcessorCore {
         return sb.toString();
     }
 
-    public static String md5EncodePassword(String inputPassword) throws NoSuchAlgorithmException {
+    protected static String md5EncodePassword(String inputPassword) throws NoSuchAlgorithmException {
         String password = inputPassword.trim();
         MessageDigest md = MessageDigest.getInstance("MD5");
         byte[] messageDigest = md.digest(password.getBytes());

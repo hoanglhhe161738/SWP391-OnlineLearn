@@ -14,14 +14,24 @@ public class Lession {
     private int lession_id;
     private String lession_name;
     private Module module;
+    private boolean status;
 
     public Lession() {
     }
 
-    public Lession(int lession_id, String lession_name, Module module) {
+    public Lession(int lession_id, String lession_name, Module module, boolean status) {
         this.lession_id = lession_id;
         this.lession_name = lession_name;
         this.module = module;
+        this.status = status;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     public int getLession_id() {
