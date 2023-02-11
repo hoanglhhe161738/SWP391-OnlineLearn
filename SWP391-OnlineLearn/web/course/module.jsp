@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <head>
@@ -56,26 +57,28 @@
                     </div>
                     <div>
                         <div class="lesion-items" >
-                            <div class="lession-item">
+                            <c:forEach items="${requestScope.lessions}" var="l">
+                                <div class="lession-item">
                                     <img src="../Assets/icon/icon (74).png" height="30px" width="30px">
-                                    <a href="#">Lession 1: Chỗ này sẽ là cái tiêu đề của lession</a>
-                            </div>
-                            <div class="lession-item">
-                                <img src="../Assets/icon/icon (74).png" height="30px" width="30px">
-                                <a href="#">Lession 2: Chỗ này sẽ là cái tiêu đề của lession</a>
-                            </div>
-                            <div class="lession-item">
-                                <img src="../Assets/icon/icon (74).png" height="30px" width="30px">
-                                <a href="#">Lession 3: Chỗ này sẽ là cái tiêu đề của lession</a>
-                            </div>
-                            <div class="lession-item">
-                                <img src="../Assets/icon/icon (75).png" height="30px" width="30px">
-                                <a href="#">Lession 4: Chỗ này sẽ là cái tiêu đề của lession</a>
-                            </div>
-                            <div class="lession-item">
-                                <img src="../Assets/icon/icon (75).png" height="30px" width="30px">
-                                <a href="#">Lession 5: Chỗ này sẽ là cái tiêu đề của lession</a>
-                            </div>
+                                    <a href="#">${l.lession_name}</a>
+                                </div>
+                            </c:forEach>
+                            <!--                            <div class="lession-item">
+                                                            <img src="../Assets/icon/icon (74).png" height="30px" width="30px">
+                                                            <a href="#">Lession 2: Chỗ này sẽ là cái tiêu đề của lession</a>
+                                                        </div>
+                                                        <div class="lession-item">
+                                                            <img src="../Assets/icon/icon (74).png" height="30px" width="30px">
+                                                            <a href="#">Lession 3: Chỗ này sẽ là cái tiêu đề của lession</a>
+                                                        </div>
+                                                        <div class="lession-item">
+                                                            <img src="../Assets/icon/icon (75).png" height="30px" width="30px">
+                                                            <a href="#">Lession 4: Chỗ này sẽ là cái tiêu đề của lession</a>
+                                                        </div>
+                                                        <div class="lession-item">
+                                                            <img src="../Assets/icon/icon (75).png" height="30px" width="30px">
+                                                            <a href="#">Lession 5: Chỗ này sẽ là cái tiêu đề của lession</a>
+                                                        </div>-->
                         </div>
                     </div>
                 </div>
