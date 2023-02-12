@@ -1,4 +1,7 @@
-
+/* 
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/javascript.js to edit this template
+ */
 const cards = document.querySelectorAll('.match-card-container');
             
 let hasChosenCard = false;
@@ -169,4 +172,6 @@ function ready() {
 
     
 }
+
+
 
