@@ -1,0 +1,96 @@
+body {
+    background: #ddd;
+    margin: 0;
+    font-family: arial;
+    font-size: 1.2em;
+    color: #111;
+}
+.wrapper {
+    max-width: 960px;
+    margin: 10% auto;
+    text-align: center;
+    line-height: 2em;
+}
+
+.button {
+    border: 3px solid #111;
+    padding: 10px;
+    color: #111;
+    text-decoration: none;
+}
+
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.popup-hidden {
+    display: none;
+}
+
+#xmas-popup .popup-content {
+    width: 500px;
+    height: 330px;
+    background: #bbb;
+    margin: 100px auto;
+    position: relative;
+    border: 1px solid #00de7a;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.close {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    text-align: center;
+    text-decoration: none;
+    background-color: #00de7a;
+    color: white;
+    width: 80px;
+    height: 30px;
+    font-size: 15px;
+    text-align:  center;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+
+/* .popup:target {
+     display: none;
+   } */
+#xmas-popup:target {
+    display: none;
+}
+
+img {
+    width: 100%;
+}
+
+.content3 img {
+    width: 110px;
+    margin:auto
+}
+.popup-content{
+    background-color: #111;
+}
+.content3{
+    margin-top: 30px;
+    display: flex;
+    
+}
+.content1{
+    text-align: center;
+    margin-top: -20px;
+    color: white;
+    
+}
+.content2{
+    margin:10px 10px 0 10px;
+    font-weight: bolder;
+}
