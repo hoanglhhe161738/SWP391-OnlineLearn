@@ -40,6 +40,14 @@
         <servlet-name>lessionController</servlet-name>
         <url-pattern>/course/lession</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>matchGameController</servlet-name>
+        <servlet-class>controller.matchgame.matchGameController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>matchGameController</servlet-name>
+        <url-pattern>/game/matchgame</url-pattern>
+    </servlet-mapping>   
     <session-config>
         <session-timeout>
             30
