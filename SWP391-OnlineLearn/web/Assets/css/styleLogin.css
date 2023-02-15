@@ -9,7 +9,7 @@ html {
 body {
   position: fixed;
   width: 100%;
-  background-image: url(/web/Assets/images/bg.png);
+  background-image: url(../images/bg.png);
   height: 100vh;
   background-size: cover;
   align-items: center;
