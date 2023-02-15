@@ -10,7 +10,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>matchGameController</servlet-name>
-        <url-pattern>/matchgame</url-pattern>
+        <url-pattern>/game/matchgame</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

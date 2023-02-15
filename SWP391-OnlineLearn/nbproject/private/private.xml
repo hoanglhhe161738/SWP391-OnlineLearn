@@ -7,20 +7,7 @@
             <file>file:/D:/HE161738/Season5_he161738/SWP391_he161738/HoangLHHE161738/swp391-online-learn/SWP391-OnlineLearn/web/home/home.html</file>
         </group>
         <group name="KHANH">
-            <file>file:/C:/Users/Acer/Documents/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/AnsImgDBContext.java</file>
-            <file>file:/C:/Users/Acer/Documents/SWP391-OnlineLearn/SWP391-OnlineLearn/web/META-INF/context.xml</file>
-            <file>file:/C:/Users/Acer/Documents/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/model/AnsImg.java</file>
-            <file>file:/C:/Users/Acer/Documents/SWP391-OnlineLearn/SWP391-OnlineLearn/web/game/matchgame.jsp</file>
-            <file>file:/C:/Users/Acer/Documents/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/model/Lession.java</file>
-            <file>file:/C:/Users/Acer/Documents/SWP391-OnlineLearn/SWP391-OnlineLearn/build/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/Acer/Documents/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/matchgame/matchGameController.java</file>
-            <file>file:/C:/Users/Acer/Documents/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/ImgDBContext.java</file>
-            <file>file:/C:/Users/Acer/Documents/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/DBContext.java</file>
-            <file>file:/C:/Users/Acer/Documents/SWP391-OnlineLearn/SWP391-OnlineLearn/web/Assets/css/matchgame.css</file>
-            <file>file:/C:/Users/Acer/Documents/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/MatchGameDBContext.java</file>
-            <file>file:/C:/Users/Acer/Documents/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/model/MatchGame.java</file>
-            <file>file:/C:/Users/Acer/Documents/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/model/Img.java</file>
-            <file>file:/C:/Users/Acer/Documents/SWP391-OnlineLearn/SWP391-OnlineLearn/web/Assets/css/script.js</file>
         </group>
     </open-files>
 </project-private>
