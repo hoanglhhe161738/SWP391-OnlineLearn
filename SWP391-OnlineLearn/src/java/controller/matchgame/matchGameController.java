@@ -31,7 +31,7 @@ public class matchGameController extends HttpServlet {
         
         ArrayList<MatchGame> mg = mgDB.getMatchGamePairsByLessionID(lession_id);
         req.setAttribute("mg", mg);
-        req.getRequestDispatcher("./matchgame.jsp").forward(req, resp);
+        req.getRequestDispatcher("./game/matchgame.jsp").forward(req, resp);
         
     }
     
