@@ -24,6 +24,14 @@
         <servlet-name>lessionController</servlet-name>
         <servlet-class>controller.course.lessonController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>videoLessonController</servlet-name>
+        <servlet-class>controller.course.videoLessonController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>homeController</servlet-name>
+        <servlet-class>controller.home.homeController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
         <url-pattern>/course/classes</url-pattern>
@@ -51,7 +59,15 @@
     <servlet-mapping>
         <servlet-name>matchGameController</servlet-name>
         <url-pattern>/game/matchgame</url-pattern>
-    </servlet-mapping>   
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>videoLessonController</servlet-name>
+        <url-pattern>/course/videoLesson</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>homeController</servlet-name>
+        <url-pattern>/homePage</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
