@@ -31,6 +31,8 @@
     <servlet>
         <servlet-name>homeController</servlet-name>
         <servlet-class>controller.home.homeController</servlet-class>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>controller.auth.LoginController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
@@ -67,6 +69,8 @@
     <servlet-mapping>
         <servlet-name>homeController</servlet-name>
         <url-pattern>/homePage</url-pattern>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/login/loginUser</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
