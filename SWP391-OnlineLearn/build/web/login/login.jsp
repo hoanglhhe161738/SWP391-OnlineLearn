@@ -23,7 +23,11 @@
               <span class="signup-social-text">Sign up with Google</span>
             </button>
             -->
+<<<<<<< Updated upstream
             <form action="#" class="login-form" autocomplete="off">
+=======
+            <form action="loginPage" method="POST" class="login-form" autocomplete="off">
+>>>>>>> Stashed changes
                 <label for="username" class="login-label">Nickname</label>
                 <input type="text" name="username" class="login-input" placeholder="VD: HoangPongPayVoCungLuon">
                 <label for="password" class="login-label">Mật khẩu</label>
