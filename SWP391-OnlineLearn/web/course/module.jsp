@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../Assets/css/Style.css">
     <link rel="stylesheet" href="../Assets/css/course.css">
     <!-- link bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
@@ -47,7 +49,7 @@
                         <div class="col-md-12 module-item-type1 module-title">
                             <a style="cursor: pointer">${requestScope.module.module_name}</a>
                             <div class="process-module" style="float: left">
-                                <div class="progress-bar-bg">
+                                <div class="progress-bar-bg" style="margin-left: -2em;">
                                     <div class="progress-bar-custom" style="width:${requestScope.percent}%;">
                                         <p>${requestScope.percent}%</p>
                                     </div>	
@@ -56,7 +58,7 @@
                         </div>
                     </div>
                     <div>
-                        <div class="lesson-items">
+                        <div class="lesson-items ">
                             <c:forEach items="${requestScope.lessons}" var="l">
                                 <div class="lesson-item" style="line-height: 1.6em;">
                                     <c:if test="${l.status eq true}">
@@ -65,7 +67,7 @@
                                     <c:if test="${l.status ne true}">
                                         <img src="../Assets/icon/icon (75).png" height="30px" width="30px">
                                     </c:if>
-                                    <a href="#" style="padding: 1em;">${l.lesson_name}</a>
+                                    <a href="./videoLesson?lesson_id=${l.lesson_id}" style="padding: 1em;">${l.lesson_name}</a>
                                 </div>
                             </c:forEach>
                         </div>
