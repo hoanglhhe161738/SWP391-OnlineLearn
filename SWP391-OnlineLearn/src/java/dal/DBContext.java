@@ -20,8 +20,9 @@ public abstract class DBContext<T> {
 
     public DBContext() {
         try {
-            String username = "phankien";
-            String password = "sa123456";
+            String username = "KhangPRJ301";
+            String password = "123";
+
             String url = "jdbc:sqlserver://localhost\\MSSQL:1433;databaseName=SWP391_Group2";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             connection =  DriverManager.getConnection(url,username,password);
@@ -29,8 +30,7 @@ public abstract class DBContext<T> {
             Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        }       
     }
     
     public abstract void insert(T model);
