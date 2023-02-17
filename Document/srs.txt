@@ -1,0 +1,51 @@
+1.Introduction
+This project is aimed at Online Learning system which supports for students and parents finding the most suitable course which are maths, literature,
+english,... All of this course is very easy to use and learn, it has learning-game so the students find it interesting to learn. This system support
+for the belows type of user:
+-Admin:the organization leader/manager, acts as the system administrator
+-Customer:+Parents:They are registered users who find the system,choose and register for their childrens 
+          +Students:They are users who experience and use the system.This is potential customers
+-Guest: Unregistered users
+
+2.Functional Requirements	
+b.Public feature
+This feature includes the screen used for guest, as listed below:
+-Sign in/ Sign up Page:Register account
+-Home Page: The starting page of the system
+-Class List: List of the class
+-Course list: list of the subject
+-Pop-up:Notification of web
+-Feedback:feedback generally or for a specific course
+-Support center: Help user and guest to solve the problem
+- 
+
+
+c.Common Feature:
+The common functions/screens used for all types of users, as listed below:
+-	User Login: authenticate the user to give him/her to access authorized features later on
+-	User Register: register new user into the system, verified by the registered email
+-	Change Password: change user’s login password by using last email user have signed
+-	User Profile: view & edit/update user profile
+d.Customer Feature:
+This includes the screens used for system customers, as listed below:
+-Account:For customer to view his/her type of account
+-Payment:For customer to pay his/her premium account's cost by what ways and view history payment
+-Course:For customer to view lession of course but not all,video,image,audio and for premium account you can view any lession of course,video,image,audio and learning-game
+-Ranking: For premium account to view ranking,point
+-Process: For customer to view process of the current course
+-Feedback:For customer to feedback about the quality of course or feedback generally this web
+e.Marketing Fearture:
+This includes the screens used for marketing , as listed below:
+-Pop-up:Notify to users to know discount of premium account 
+f.Admin feature:
+The Admin feature includes the screens used for the organization manager and system administrator, as listed below:
+-	Users List: list, filter, search, show, hide, view, add new or edit existing user(s)
+-	User Details: view & edit the details of a specific user
+-	Settings List: list, filter, search, show, hide, view, add new or edit existing system setting(s)
+-	Setting Details: view & edit the details of a specific system setting
+
+ 
+
+
+
+
