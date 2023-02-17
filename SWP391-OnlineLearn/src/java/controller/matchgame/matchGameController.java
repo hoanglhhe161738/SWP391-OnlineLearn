@@ -27,10 +27,12 @@ public class matchGameController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int lession_id = Integer.parseInt(req.getParameter("lession_id"));
+        String lession_name = req.getParameter("lession_name");
         MatchGameDBContext mgDB = new MatchGameDBContext();
         
         ArrayList<MatchGame> mg = mgDB.getMatchGamePairsByLessionID(lession_id);
         req.setAttribute("mg", mg);
+        req.setAttribute("lession_name", lession_name);
         req.getRequestDispatcher("./matchgame.jsp").forward(req, resp);
         
     }
