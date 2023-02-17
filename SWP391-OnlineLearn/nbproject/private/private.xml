@@ -26,7 +26,21 @@
             <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/CourseDBContext.java</file>
         </group>
         <group name="KHANH">
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/matchgame/matchGameController.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/game/js/matchgame.js</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/MatchGameDBContext.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/game/matchgame.jsp</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/CourseDBContext.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/course/classesController.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/ImgDBContext.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/course/classes.jsp</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/course/course.jsp</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/quiz/quiz.jsp</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/quiz/css/quiz.css</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/quiz/quizController.java</file>
             <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/build/web/WEB-INF/web.xml</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/game/css/matchgame.css</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/DBContext.java</file>
         </group>
     </open-files>
 </project-private>
