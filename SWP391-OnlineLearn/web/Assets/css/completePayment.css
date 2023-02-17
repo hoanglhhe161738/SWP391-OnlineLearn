@@ -1,0 +1,88 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Feb 17, 2023, 2:02:57 PM
+    Author     : Khangnekk
+*/
+
+.complete-payment-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 85%;
+    transform: translateX(-50%) translateY(-50%);
+    border: 5px solid #00de7a;
+    border-radius: 15px;
+    background: #111;
+    opacity: 0.9;
+    color: white;
+    padding: 1em;
+}
+
+.main-payment{
+    position: relative;
+    border-radius: 15px;
+    background: white;
+    color: black;
+    opacity: 1 !important;
+    
+}
+
+.input-data{
+    width: 100%;
+    line-height: 2em;
+    
+}
+
+.main-payment label{
+    margin-top: 1em;
+    color: black;
+    font-weight: bold;
+}
+
+.detail-payment h2{
+    text-align: center;
+    color: #00de7a;
+}
+.detail-payment h4{
+    text-align: left;
+    color: #00de7a;
+    font-weight: bold;
+    font-size: 25px;    
+}
+
+.detail-payment li{
+    list-style: disc;
+    font-size: 18px;
+}
+
+.btn-pay{
+    width: 100%;
+    border-radius: 9px;
+    background: #00de7a;
+    line-height: 2em;
+    border: 1px solid background;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 2em;
+}
+
+.price{
+    margin: 3em;
+}
+
+.note{
+    color: white;
+    font-weight: bold;
+    margin-top: 5em;
+}
+
+.radio-btn{
+    background: #f5f5f5;
+    margin-top: 1em;
+    padding: 0.8em;
+}
