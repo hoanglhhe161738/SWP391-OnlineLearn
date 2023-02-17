@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Course;
 import model.Lesson;
 import model.Module;
 
@@ -35,8 +36,26 @@ public class LessonDBContext extends DBContext<Lesson> {
     }
 
     @Override
-    public Lesson get(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Lesson get(int lesson_id) {
+        Lesson lesson = new Lesson();
+        ModuleDBContext mDB = new ModuleDBContext();
+        ArrayList<Module> modules = mDB.list();
+        String sql = "SELECT * FROM Lession WHERE lession_id = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, lesson_id);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                lesson.setLesson_id(rs.getInt("lession_id"));
+                lesson.setLesson_name(rs.getString("lession_name"));
+                lesson.setStatus(rs.getBoolean("status"));
+                int module_id = rs.getInt("module_id");
+                lesson.setModule(modules.stream().filter(m -> m.getModule_id() == module_id).findAny().get());
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ModuleDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lesson;
     }
 
     @Override
