@@ -70,6 +70,8 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>homeController</servlet-name>
+    </servlet-mapping>
+    <servlet-mapping>
         <url-pattern>/home/homePage</url-pattern>
         </servlet-mapping>
     <servlet-mapping>
