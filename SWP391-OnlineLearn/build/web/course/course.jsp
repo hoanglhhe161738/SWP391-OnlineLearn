@@ -25,20 +25,16 @@
                 <div class="nav-bar">
                     <ul class="items">
                         <li class="item">
-                            <a href="../home/home.html"><img src="../Assets/icon/icon (69).png"></a>
+                            <a href="#"><img src="../Assets/icon/icon (69).png"></a>
                         </li>
                         <li class="item">
-                            <a href="../ranking/ranking.html"><img src="../Assets/icon/icon (44).png"></a>
+                            <a href="#"><img src="../Assets/icon/icon (44).png"></a>
                         </li>
                         <li class="item">
-<<<<<<<< HEAD:SWP391-OnlineLearn/build/web/course/course.jsp
                             <a href="./classes"><img src="../Assets/icon/icon (71).png"></a>
-========
-                            <a href="../course/classes.html"><img src="../Assets/icon/icon (71).png"></a>
->>>>>>>> Thangpm:SWP391-OnlineLearn/web/course/classes.html
                         </li>
                         <li class="item">
-                            <a href="../payment/Payment.html"><img src="../Assets/icon/icon (51).png"></a>
+                            <a href="#"><img src="../Assets/icon/icon (51).png"></a>
                         </li>
                         <li class="item">
                             <a href="#"><img src="../Assets/icon/icon (45).png"></a>
