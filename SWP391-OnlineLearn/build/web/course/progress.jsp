@@ -1,12 +1,11 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="../Assets/css/Style.css">
+    <title>Ti?n trình</title>
+    <link rel="stylesheet" href="../Assets/css/course.css">
     <!-- link bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -18,16 +17,16 @@
             <div class="nav-bar">
                 <ul class="items">
                     <li class="item">
-                        <a href="../home/home.html"><img src="../Assets/icon/icon (69).png"></a>
+                        <a href="#"><img src="../Assets/icon/icon (69).png"></a>
                     </li>
                     <li class="item">
-                        <a href="../ranking/ranking.html"><img src="../Assets/icon/icon (44).png"></a>
+                        <a href="#"><img src="../Assets/icon/icon (44).png"></a>
                     </li>
                     <li class="item">
-                        <a href="../course/classes.html"><img src="../Assets/icon/icon (71).png"></a>
+                        <a href="#"><img src="../Assets/icon/icon (71).png"></a>
                     </li>
                     <li class="item">
-                        <a href="../payment/Payment.html"><img src="../Assets/icon/icon (51).png"></a>
+                        <a href="#"><img src="../Assets/icon/icon (51).png"></a>
                     </li>
                     <li class="item">
                         <a href="#"><img src="../Assets/icon/icon (45).png"></a>
@@ -39,16 +38,9 @@
                 </ul>
             </div>
         </div>
-
         <div class="content">
-            <!--Ae code o day nha-->
-            <div class="account" style="border:5px white solid;">
-                <div ><img src="../Assets/icon/icon (4).png" alt=""></div>
-                <div style="color: #00de7a;">
-                    <li style="color: white; list-style: none;">Ly Hai Hoang</li>
-                    <li style="color: white; list-style: none;">ID: 0000001</li>
-                </div>
-            </div>
+            đang viết thử tiếng việt
+
         </div>
     </div>
 </body>

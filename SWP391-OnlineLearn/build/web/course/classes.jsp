@@ -1,0 +1,66 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Các lớp học</title>
+        <link rel="stylesheet" href="../Assets/css/course.css">
+        <!-- link bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="nav">
+                <div class="nav-bar">
+                    <ul class="items">
+                        <li class="item">
+                            <a href="../home/home.html"><img src="../Assets/icon/icon (69).png"></a>
+                        </li>
+                        <li class="item">
+                            <a href="../ranking/ranking.html"><img src="../Assets/icon/icon (44).png"></a>
+                        </li>
+                        <li class="item">
+                            <a href="../course/classes.html"><img src="../Assets/icon/icon (71).png"></a>
+                        </li>
+                        <li class="item">
+                            <a href="../payment/Payment.html"><img src="../Assets/icon/icon (51).png"></a>
+                        </li>
+                        <li class="item">
+                            <a href="#"><img src="../Assets/icon/icon (45).png"></a>
+                        </li>
+                        <li class="item avt-btn">
+                            <a href="#"><img src="../Assets/icon/icon (4).png">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content">
+                <div class="container-fluid">
+                    <ul class="row items-class">
+                        <li class="col-md-3 item-class">
+                            <a href="course.html">Lớp 1</a>
+                        </li>
+                        <li class="col-md-3 item-class">
+                            <a href="#">Lớp 2</a>
+                        </li>
+                        <li class="col-md-3 item-class">
+                            <a href="#">Lớp 3</a>
+                        </li>
+                        <li class="col-md-3 item-class">
+                            <a href="#">Lớp 4</a>
+                        </li>
+                        <li class="col-md-3 item-class">
+                            <a href="#">Lớp 5</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </body>
+
+</html>
