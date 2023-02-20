@@ -35,6 +35,7 @@ public class LoginController extends HttpServlet {
         AccountDBContext abd = new AccountDBContext();
         Account a = abd.login(username, password);
         if(a==null){
+            request.setAttribute("mess", "Tên tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại!");
             request.getRequestDispatcher("./login.jsp").forward(request, response);
         }else{
             request.getRequestDispatcher("./welcome.html").forward(request, response);
