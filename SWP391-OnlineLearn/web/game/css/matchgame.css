@@ -15,51 +15,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 body{
     width: 100%;
     margin-left: 5%;
-    background-image: url(images/bg.png);
     background-size: 100vw;
     width: 100vw;
     height: 100vh;
 }
 
-.nav {
-    position: fixed;
-    width: 5%;
-    background-color: #00de7a;
-    height: 100vh;
-}
 
-.nav-bar {
-    margin: auto;
-}
-
-ul li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.items {
-    margin: 0;
-    padding: 0;
-}
-
-.item {
-    border-radius: 15px;
-    border: 2px solid #ccc;
-    margin: 2em auto;
-    background-color: white;
-    cursor: pointer;
-}
-
-.nav-bar img {
-    width: 3em;
-}
-
-.avt-btn {
-    position: fixed;
-    border-radius: 50%;
-    bottom: 0;
-}
 
 .flex-container {
     display: flex;
@@ -70,12 +31,15 @@ ul li {
 }
 
 .game-info-container {
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 1em;
     margin: auto;
-    border: #f1ece9 solid 1px;
+    border: #f1ece9 solid 5px;
     background-color: #10e88a;
     opacity: 95%;
     width: 240px;
-    height: 240px;
     display: flex;
     opacity: 95%;
     color:#fff; 
@@ -137,7 +101,6 @@ ul li {
 .match-card{
     width: 100%;
     height: 100%;
-    padding: 20px;
     border-radius:  5px;
     position: absolute;
     background:  #00de7e;
@@ -213,5 +176,4 @@ img{
     width: 100%;
   }
  
-  
   
