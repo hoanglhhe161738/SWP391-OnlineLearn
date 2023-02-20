@@ -18,13 +18,16 @@
     <body>
         <div class="login">
             <h1 class="login-heading">Đăng nhập</h1>
+            <div class="alert alert-danger" role="alert" style="color: red; margin-bottom: 1em; text-align: center"">
+                ${mess}
+            </div>
             <!-- <button class="signup-social">
               <i class="fa fa-google signup-social-icon"></i>
               <span class="signup-social-text">Sign up with Google</span>
             </button>
             -->
             <form action="loginUser" method="POST" class="login-form" autocomplete="off">
-                <label for="username" class="login-label">Nickname</label>
+                <label for="username" class="login-label">Tên tài khoản</label>
                 <input type="text" name="username" class="login-input" placeholder="VD: HoangPongPayVoCungLuon">
                 <label for="password" class="login-label">Mật khẩu</label>
                 <input type="password" name="password" class="login-input" >
