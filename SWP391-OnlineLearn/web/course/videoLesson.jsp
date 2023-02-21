@@ -111,7 +111,7 @@
             <div class="nav-bar">
                 <ul class="items">
                     <li class="item">
-                        <a href="#"><img src="../Assets/icon/icon (69).png"></a>
+                        <a href="../home/homePage"><img src="../Assets/icon/icon (69).png"></a>
                     </li>
                     <li class="item">
                         <a href="#"><img src="../Assets/icon/icon (44).png"></a>
@@ -120,7 +120,7 @@
                         <a href="./classes"><img src="../Assets/icon/icon (71).png"></a>
                     </li>
                     <li class="item">
-                        <a href="#"><img src="../Assets/icon/icon (51).png"></a>
+                        <a href="../payment/CompletePayment.jsp"><img src="../Assets/icon/icon (51).png"></a>
                     </li>
                     <li class="item">
                         <a href="#"><img src="../Assets/icon/icon (45).png"></a>
@@ -142,6 +142,7 @@
                         picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div style="text-align: right; margin: 0.8em  2em">
+                <button class="glow-on-hover"><a href="../game/matchgame?lession_id=49&lession_name=${requestScope.lesson.lesson_name}">Game</a></button>
                 <button class="glow-on-hover"><a href="#">Làm bài tập</a></button>
                 <button class="glow-on-hover""><a href="#">Đánh dấu là đã học xong</a></button>
             </div>

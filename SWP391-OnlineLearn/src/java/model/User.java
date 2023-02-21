@@ -19,6 +19,70 @@ public class User {
     private String parent_phone_number;
     private String username;
 
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
+
+    public String getFull_name() {
+        return full_name;
+    }
+
+    public void setFull_name(String full_name) {
+        this.full_name = full_name;
+    }
+
+    public Date getDob() {
+        return dob;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+
+    public boolean isGender() {
+        return gender;
+    }
+
+    public void setGender(boolean gender) {
+        this.gender = gender;
+    }
+
+    public String getParent_name() {
+        return parent_name;
+    }
+
+    public void setParent_name(String parent_name) {
+        this.parent_name = parent_name;
+    }
+
+    public String getParent_email() {
+        return parent_email;
+    }
+
+    public void setParent_email(String parent_email) {
+        this.parent_email = parent_email;
+    }
+
+    public String getParent_phone_number() {
+        return parent_phone_number;
+    }
+
+    public void setParent_phone_number(String parent_phone_number) {
+        this.parent_phone_number = parent_phone_number;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public User() {
     }
 

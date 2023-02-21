@@ -71,6 +71,7 @@ ul li {
     border-color: white;
     display: flex;
     flex-direction: row;
+    
 }
 .account img{
     width: 50%;

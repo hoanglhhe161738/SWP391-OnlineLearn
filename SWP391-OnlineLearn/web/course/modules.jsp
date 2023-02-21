@@ -19,7 +19,7 @@
             <div class="nav-bar">
                 <ul class="items">
                     <li class="item">
-                        <a href="#"><img src="../Assets/icon/icon (69).png"></a>
+                        <a href="../home/homePage"><img src="../Assets/icon/icon (69).png"></a>
                     </li>
                     <li class="item">
                         <a href="#"><img src="../Assets/icon/icon (44).png"></a>
@@ -28,7 +28,7 @@
                         <a href="./classes"><img src="../Assets/icon/icon (71).png"></a>
                     </li>
                     <li class="item">
-                        <a href="#"><img src="../Assets/icon/icon (51).png"></a>
+                        <a href="../payment/CompletePayment.jsp"><img src="../Assets/icon/icon (51).png"></a>
                     </li>
                     <li class="item">
                         <a href="#"><img src="../Assets/icon/icon (45).png"></a>

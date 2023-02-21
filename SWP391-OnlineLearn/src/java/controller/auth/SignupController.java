@@ -11,14 +11,12 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import dal.*;
-import model.*;
 
 /**
  *
  * @author T490
  */
-public class LoginController extends HttpServlet {
+public class SignupController extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -29,17 +27,16 @@ public class LoginController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-//        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        AccountDBContext abd = new AccountDBContext();
-        Account a = abd.login(username, password);
-        if(a==null){
-            request.setAttribute("mess", "Tên tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại!");
-            request.getRequestDispatcher("./login.jsp").forward(request, response);
-        }else{
-            request.getRequestDispatcher("./welcome.html").forward(request, response);
+        String cfpassword = request.getParameter("cfpassword");
+        if(!password.equals(cfpassword)){
+            request.setAttribute("mess", "Mật khẩu không khớp, vui lòng nhập lai!");
+            request.getRequestDispatcher("./signup.jsp").forward(request, response);
         }
+        
+        
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -53,8 +50,7 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-//        response.setContentType("text/html;charset=UTF-8");
-        request.getRequestDispatcher("./login.jsp").forward(request, response);
+        processRequest(request, response);
     } 
 
     /** 

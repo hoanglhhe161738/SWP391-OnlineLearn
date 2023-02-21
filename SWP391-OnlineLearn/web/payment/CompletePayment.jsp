@@ -26,7 +26,7 @@
                 <div class="nav-bar">
                     <ul class="items">
                         <li class="item">
-                            <a href="../home/home.html"><img src="../Assets/icon/icon (69).png"></a>
+                            <a href="../home/homePage"><img src="../Assets/icon/icon (69).png"></a>
                         </li>
                         <li class="item">
                             <a href="../ranking/ranking.html"><img src="../Assets/icon/icon (44).png"></a>
@@ -54,7 +54,7 @@
                     <div class="main-payment col-md-6">
                         <form action="" method="POST">
                             <div class="radio-btn">
-                                <input type="radio" name="type-card"> Thẻ tín dụng hoặc thẻ ghi nợ<br>
+                                <input type="radio" name="type-card" checked> Thẻ tín dụng hoặc thẻ ghi nợ<br>
                                 <img src="../Assets/images/card2.png" height="30">
                             </div>
                             <div class="radio-btn">
