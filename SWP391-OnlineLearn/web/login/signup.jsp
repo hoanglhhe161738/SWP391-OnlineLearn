@@ -21,15 +21,18 @@
         </div>
         <div class="signup">
             <h1 class="signup-heading">Đăng ký</h1>
+            <div class="alert alert-danger" role="alert" style="color: red; margin-bottom: 1em; text-align: center"">
+                ${mess}
+            </div>
             <!-- <button class="signup-social">
                   <img class="fa fa-google signup-social-icon" src="/img/logoGG.png">
                   <span class="signup-social-text">Đăng kí bằng tài khoản Google</span>
                 </button> -->
-            <form action="#" class="signup-form" autocomplete="off">
+            <form action="signupUser" method="POST" class="signup-form" autocomplete="off">
 
                 <!-- username -->
-                <label for="userName" class="signup-label">Nickname</label>
-                <input type="text" name="userName" class="signup-input" placeholder="VD: KhangNoiLon">
+                <label for="username" class="signup-label">Nickname</label>
+                <input type="text" name="username" class="signup-input" placeholder="VD: KhangNoiLon">
 
                 <label for="password" class="signup-label">Mật khẩu</label>
                 <input type="password" name="password" class="signup-input">
