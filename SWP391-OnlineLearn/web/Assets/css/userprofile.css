@@ -1,4 +1,10 @@
-.item-info{
-    width: 100px;
-    height: 100px;
+.profile-item-unit{
+    background-color: whitesmoke;
+    height: 300px;
+    border-radius: 10px;
+}
+.profile-item-unit-two{
+    background-color: whitesmoke;
+    min-height: 100px;
+    border-radius: 10px;
 }
