@@ -5,7 +5,40 @@
         <data xmlns="http://www.netbeans.org/ns/web-project/3">
             <name>SWP391-OnlineLearn</name>
             <minimum-ant-version>1.6.5</minimum-ant-version>
+<<<<<<< Updated upstream
             <web-module-libraries/>
+=======
+            <web-module-libraries>
+                <library dirs="200">
+                    <file>${file.reference.jakarta.servlet.jsp.jstl-2.0.0.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.jakarta.servlet.jsp.jstl-api-2.0.0.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.javax.mail.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.smtp-1.6.2.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.sqljdbc42.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${libs.jakartaee-web-api-9.0.classpath}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${libs.jakartaee-web-api-8.0.classpath}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+            </web-module-libraries>
+>>>>>>> Stashed changes
             <web-module-additional-libraries/>
             <source-roots>
                 <root id="src.dir" name="src\java"/>
