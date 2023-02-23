@@ -33,8 +33,7 @@ public class AccountDBContext extends DBContext<Account> {
             while(rs.next()){
                 return new Account(rs.getString(1),
                                    rs.getString(2),
-                                   rs.getString(3),
-                                   rs.getString(4));
+                                   rs.getString(3));
             }
         } catch (Exception e) {
             System.out.println(e);
