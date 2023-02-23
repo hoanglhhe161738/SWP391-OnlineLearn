@@ -22,7 +22,11 @@ public abstract class DBContext<T> {
         try {
             String username = "phankien";
             String password = "sa123456";
+<<<<<<< Updated upstream
             String url = "jdbc:sqlserver://localhost\\MSSQL:1433;databaseName=SWP391_Group2";
+=======
+            String url = "jdbc:sqlserver://localhost\\MSSQLSERVER:1433;databaseName=SWP391_Group2";
+>>>>>>> Stashed changes
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             connection =  DriverManager.getConnection(url,username,password);
         } catch (ClassNotFoundException ex) {
