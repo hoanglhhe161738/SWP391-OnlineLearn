@@ -51,6 +51,22 @@
                     </div>
                 </div>-->
             <div class="container text-center" style="margin-top: 5%;">
+                <div class="container overflow-hidden text-center choose-change row gx-2">
+                    <div style="margin-right: 2em;" class="choose-change-one col-md-2">
+                        <a style="text-decoration: none;" href=""><p class="p-0">Xem thông tin</p></a>
+                    </div>
+                    <div class="choose-change-two col-md-2">
+                        <a style="text-decoration: none;" href=""><p>Sửa thông tin</p></a>
+                    </div>
+                    <!-- <div class="row gx-5">
+                        <div class="choose-change-one col-2">
+                            <div class="p-3">Xem thông tin</div>
+                        </div>
+                        <div class="choose-change-two col">
+                            <div class="p-3">Sửa thông tin</div>
+                        </div>
+                    </div> -->
+                </div>
                 <div class="profile row g-2">
                     <div class="profile-item col-5">
                         <div class="profile-item-unit p-3">
