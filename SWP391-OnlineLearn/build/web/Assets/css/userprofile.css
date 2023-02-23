@@ -136,3 +136,26 @@ ul li {
     color: #ffffff;
     text-align: start;
 }
+
+.choose-change-one{
+    font-weight: bolder;
+    color: #dfdfdf;
+    background-color: #0069b7;
+    border-radius: 15px;
+}
+.choose-change-two{
+    font-weight: bolder;
+    color: #dfdfdf;
+    background-color: #d70000;
+    border-radius: 15px;
+}
+.choose-change{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.choose-change p{
+    margin: auto;
+    color: #dfdfdf;
+    text-decoration: none;
+}
+
