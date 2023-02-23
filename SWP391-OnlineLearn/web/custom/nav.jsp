@@ -1,9 +1,9 @@
-+<%-- 
+<%-- 
     Document   : nav
     Created on : Feb 23, 2023, 2:49:43 PM
     Author     : Khangnekk
 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div class="nav">
     <div class="nav-bar">
