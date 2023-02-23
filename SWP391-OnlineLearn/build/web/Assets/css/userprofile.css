@@ -120,7 +120,10 @@ ul li {
 .information-content-item{
     margin-top: 1rem;
     text-align: start;
+<<<<<<< HEAD
     font-size: 1.2rem;
+=======
+>>>>>>> main
 }
 .profile-item{
     padding: 0 16px 0 16px;

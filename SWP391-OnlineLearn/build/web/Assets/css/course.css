@@ -1,0 +1,253 @@
+
+
+.main-content{
+    margin-top: 3em;
+}
+
+.class {
+    margin-top: 200px;
+}
+
+.items-class {
+    padding-top: 10em;
+    text-align: center;
+}
+
+.item-class {
+    font-weight: bold;
+    color: white;
+    margin: 2em 2em;
+    padding: 2em 3em;
+    position: relative;
+    background-image: linear-gradient(to right, #33b97c, #00de7a);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.item-class::before {
+    content: "";
+    position: absolute;
+    height: 8px;
+    width: 0;
+    bottom: 0em;
+    border-radius: 15px;
+    background-color: whitesmoke;
+
+    /* animation center */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s ease;
+
+    /* animation left to right 
+          transition: all 0.5s ease;    
+    */
+}
+
+.item-class:hover:before {
+    width: 99%;
+}
+
+.item-class:hover{
+    background-image: linear-gradient(to right,#00de7a, #33b97c);
+}
+
+.item-class a{
+    padding: 1em 4.2rem;
+    font-size: 3em;
+    color: white;
+    text-decoration: none;
+}
+
+.item-class a:hover{
+    color: white;
+}
+
+.item-course{
+    width: 90%;
+    /* background-color: #00de7a; */
+    background-image: linear-gradient(to right,#39b57d,#00de7a );
+    color: white;
+    padding: 1em 2em;
+    border-radius: 15px;
+    /*border: 8px solid white;*/
+}
+
+.process-module{
+    width:85%;
+    margin: 2rem;
+}
+
+.progress-bar-custom{
+    border-radius: 10px;
+    height:1.5em;
+    background: #33b97c;
+    text-align: left;
+}
+
+.progress-bar-bg{
+    border-radius: 10px;
+    border: 3px solid white;
+    background: #b4c7e7;
+    font-family: tahoma;
+}
+
+.progress-bar-custom p{
+    margin:0 0 0 1em;
+    color: white;
+    font-weight: bold;
+}
+
+.module{
+    margin: 3em;
+}
+
+.module-items{    
+    display: flex;
+    text-align: center;
+}
+
+.module-item-type1{
+    width: 12em;
+    height: 3em;
+    color: white;
+    border-radius: 10px;
+    position: relative;
+    background-image: linear-gradient(to right,#b020f6  ,#5831ed);
+    margin: auto 1em;
+    padding:auto 1em;
+}
+.module-item-type1::before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 0;
+    bottom: 0em;
+    background-color: #f3e2ff;
+    border-radius: 8px;
+    /* animation center */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s ease;
+
+    /* animation left to right 
+          transition: all 0.5s ease;    
+    */
+}
+
+.module-item-type1:hover:before {
+    width: 98%;
+}
+
+.module-item-type2{
+    width: 12em;
+    height: 3em;
+    color: #b020f6;
+    position: relative;
+    background:#f3e2ff ;
+    margin: auto 1em;
+    border-radius: 8px;
+    padding: auto 1em;
+}
+
+.module-item-type2::before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 0;
+    bottom: 0em;
+    background-color: #ae20f6;
+    border-radius: 10px;
+    /* animation center */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s ease;
+
+    /* animation left to right 
+          transition: all 0.5s ease;    
+    */
+}
+
+.module-item-type2:hover:before {
+    width: 98%;
+}
+
+.module-item-type1 a{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    padding: 0.5em 0.5em;
+}
+
+.module-item-type1 a:hover{
+    color: white;
+
+}
+.module-item-type2 a{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    color: #b020f6;
+    padding: 0.5em 0.5em;
+}
+
+.module-item-type2 a:hover{
+    color: #b020f6;
+
+}
+
+.module-title{
+    width: auto;
+}
+
+.lesson-items{
+    margin-left: 1.5em;
+    align-items: center;
+
+}
+
+
+
+.lesson-items a{
+    margin-left: 1em;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.lesson-items a:hover{
+    color: white;
+}
+
+.lesson-item{
+    margin-top: 1em;
+    width: 70%;
+    padding:0.8em 2em;
+    background-image: linear-gradient(to left bottom,#33b97c,#00de7a);
+    border-radius: 35px;
+}
+
+.lesson-item img{
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.lesson-item:hover{
+    background-image: linear-gradient(to left bottom,#00de7a,#33b97c);
+}
+
+.go-to-course-btn{
+    background: #f96969;
+    padding: 0.125em;
+    border: 2px solid #f96969;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.go-to-course-btn:hover{
+    background-color: rgb(73, 89, 255);
+    border: 2px solid rgb(73, 89, 255);
+}

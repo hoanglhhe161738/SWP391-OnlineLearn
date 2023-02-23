@@ -1,0 +1,179 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Feb 13, 2023, 3:44:40 AM
+    Author     : Acer
+*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    margin-left: 5%;
+    background-size: 100vw;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+.flex-container {
+    display: flex;
+}
+
+.flex-items{
+    flex-direction: row ;
+}
+
+.game-info-container {
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 1em;
+    margin: auto;
+    border: #f1ece9 solid 5px;
+    background-color: #10e88a;
+    opacity: 95%;
+    width: 240px;
+    display: flex;
+    opacity: 95%;
+    color:#fff; 
+  }
+
+  .game-info-container.visible{
+    margin: auto;
+    border: #f1ece9 solid 1px;
+    background-color: #10e88a;
+    opacity: 95%;
+    width: 240px;
+    height: 200px;
+    display: flex;
+    opacity: 95%;
+    color:#fff; 
+  }
+  
+  .game-info {
+    color: #fff;
+    font-size: 2em;
+    font-family: 'Roboto', sans-serif;
+    flex-direction: row;
+    justify-items: center;
+  }
+
+
+.match-game{
+    width: 640px;
+    height: 480px;
+    margin-top: 50px;
+    margin-bottom : auto;
+    margin-left: 150px;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.match-card-container{
+    width: 25%;
+    height: 25%;
+    position: relative;
+    border: 5px solid #FAEBD7;
+    transform: scale(1);
+}
+
+.match-card-container:active{
+   transform: scale(.97);
+   transition: transform .2s;
+}
+
+.match-card-container.chosen{
+    transform: scale(0.90);
+}
+
+.match-card-container.hide{
+  display: none;
+}
+
+.match-card{
+    width: 100%;
+    height: 100%;
+    border-radius:  5px;
+    position: absolute;
+    background:  #00de7e;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+.overlay-text {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: yellow;
+    transition: background-color 500ms, font-size 500ms;
+  }
+  
+  .overlay-text-small {
+    font-size: .3em;
+  }
+  
+  .overlay-text.visible {
+    display: flex;
+    animation: overlay-grow 500ms forwards;
+  }
+  
+  
+  @keyframes overlay-grow {
+    from {
+      background-color: rgba(0, 0, 0, 0);
+      font-size: 0;
+    }
+    to {
+      background-color: rgba(0, 0, 0, .8);
+      font-size: 10em;
+    }
+  }
+
+  .button {
+    background-image: linear-gradient(135deg, #008aff, #86d472);
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: block;
+    height: 30px;
+    font-size: 1.4em;
+    font-weight: 600;
+    padding: 4px;
+    position: relative;
+    text-decoration: none;
+    width: 2em;
+    z-index: 2;
+  }
+ .button:hover {
+    color: #fff;
+  }
+ .button  {
+    align-items: center;
+    background: #0e0e10;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    transition:  0.5s ease;
+    width: 100%;
+  }
+ 
+  
