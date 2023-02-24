@@ -6,7 +6,13 @@
             <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/build/web/WEB-INF/web.xml</file>
         </group>
         <group>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/course/classesController.java</file>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/CourseDBContext.java</file>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/AccountDBContext.java</file>
             <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/web/META-INF/context.xml</file>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/model/Account.java</file>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/home/homeController.java</file>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/web/WEB-INF/web.xml</file>
             <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/DBContext.java</file>
         </group>
     </open-files>
