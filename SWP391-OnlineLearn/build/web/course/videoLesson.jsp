@@ -107,6 +107,7 @@
 
 <body>
     <div class="main">
+<<<<<<< HEAD
         <div class="nav">
             <div class="nav-bar">
                 <ul class="items">
@@ -135,6 +136,14 @@
         <div class="content">     
             <div class="title-lesson">  
                 <h1>${requestScope.video.video_title}</h1>
+=======
+        <!--nav bar-->
+        <jsp:include page="../custom/nav.jsp"></jsp:include>
+            <!--content-->
+            <div class="content">     
+                <div class="title-lesson">  
+                    <h1>${requestScope.video.video_title}</h1>
+>>>>>>> main
             </div>
             <div class="embed-style">
                 <iframe style="border-radius: 15px" width="1000" height="568" src="${requestScope.result}"                        

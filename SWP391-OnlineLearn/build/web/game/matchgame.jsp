@@ -32,6 +32,7 @@
         <span class="overlay-text-small">Click to continue</span>
     </div>
 
+<<<<<<< HEAD
     <div class="nav">
         <div class="nav-bar">
             <ul class="items">
@@ -60,6 +61,14 @@
     <div class="flex-container">
         <div id="game-container flex-items">
             <h1 style="margin: 1em 2em; padding: 0 4em; color: white; background-image: linear-gradient(to right, #00de7a, #195de2)">${requestScope.lession_name}</h1>
+=======
+    <!--nav bar-->
+    <jsp:include page="../custom/nav.jsp"></jsp:include>
+        <!--content-->
+        <div class="flex-container">
+            <div id="game-container flex-items">
+                <h1 style="margin: 1em 2em; padding: 0 4em; color: white; background-image: linear-gradient(to right, #00de7a, #195de2)">${requestScope.lession_name}</h1>
+>>>>>>> main
             <section class ="match-game">
 
                 <c:forEach items="${requestScope.mg}" var="m">

@@ -11,10 +11,52 @@
     <!-- link bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .class-items{
+            /*margin: 0.5em 8em;*/
+            justify-content: center;
+        }
+        .class-item{
+            position: relative;
+            border-radius: 8px;
+            width: 16em;
+            height: 20em;
+            margin: 1em 4em;
+            background-size: cover;
+            padding: 0;
+        }
+        .class-title{
+            position: absolute;
+            background: #f1f1f1;
+            text-align: center;
+            width: 16em;
+            height: 6em;
+            bottom: 0;
+            padding: 0.5em;
+            border-radius: 0 25px 8px 8px;
+        }
+        .title-item{
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+        }
+        .class-item button{
+            border: none;
+            width: 8em;
+            height: 2em;
+            border-radius: 6px;
+            background: #3f47cc;
+            font-weight: bold;
+            font-size: 18px;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
     <div class="main">
+<<<<<<< HEAD
         <div class="nav">
             <div class="nav-bar">
                 <ul class="items">
@@ -43,14 +85,38 @@
         <div class="content">
             <div class="container-fluid">
                 <ul class="row items-class">
+=======
+        <!--nav bar-->
+        <jsp:include page="../custom/nav.jsp"></jsp:include>
+            <!--content-->
+            <div class="content">
+                <div class="container-fluid">
+                <div class="class-items row">
+>>>>>>> main
                     <c:forEach items="${requestScope.classes}" var="cl">
-                        <li class="col-md-3 item-class">
-                            <a href="./class_course?class_id=${cl.class_id}">${cl.class_name}</a>
-                        </li>
+                        <c:if test="${cl.class_id eq 1}">
+                            <div class="class-item col-md-4" style=" background-image: url(../Assets/images/lop1.jpg);">
+                        </c:if>
+                        <c:if test="${cl.class_id eq 2}">
+                            <div class="class-item col-md-4" style=" background-image: url(../Assets/images/lop2.jpg);">
+                        </c:if>
+                        <c:if test="${cl.class_id eq 3}">
+                            <div class="class-item col-md-4" style=" background-image: url(../Assets/images/lop3.png);">
+                        </c:if>
+                        <c:if test="${cl.class_id eq 4}">
+                            <div class="class-item col-md-4" style=" background-image: url(../Assets/images/lop4.png);">
+                        </c:if>
+                        <c:if test="${cl.class_id eq 5}">
+                            <div class="class-item col-md-4" style=" background-image: url(../Assets/images/lop5.png);">
+                        </c:if>
+                            <div class="class-title">
+                                <a class="title-item">${cl.class_name}</a><br>
+                                <a href="./class_course?class_id=${cl.class_id}"><button>Học ngay</button></a>
+                            </div>
+                        </div>
                     </c:forEach>
-                </ul>
+                </div>
             </div>
-
         </div>
     </div>
 </body>

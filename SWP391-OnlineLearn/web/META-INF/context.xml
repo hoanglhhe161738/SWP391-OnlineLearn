@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <Context antiJARLocking="true" path="/SWP391-OnlineLearn"/>
+=======
+<Context path="/SWP391-OnlineLearn"/>
+>>>>>>> main

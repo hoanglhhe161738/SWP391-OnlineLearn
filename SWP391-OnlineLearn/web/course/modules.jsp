@@ -15,6 +15,7 @@
 
 <body>
     <div class="main">
+<<<<<<< HEAD
         <div class="nav">
             <div class="nav-bar">
                 <ul class="items">
@@ -46,6 +47,17 @@
                     <div>
                         <div class="col-m-12 item-course">                       
                             <h1>${requestScope.course.course_name} lớp ${requestScope.class_id}</h1>
+=======
+        <!--nav bar-->
+        <jsp:include page="../custom/nav.jsp"></jsp:include>
+            <!--content-->
+            <div class="content">
+                <div class="container main-content">
+                    <div class="row">
+                        <div>
+                            <div class="col-m-12 item-course">                       
+                                <h1>${requestScope.course.course_name} lớp ${requestScope.class_id}</h1>
+>>>>>>> main
                             <p style="font-size: 18px; font-weight: bold">Khổ luyện thành tài, miệt mài mới giỏi. 
                                 Hãy kiên trì và nỗ lực các bạn nhé, thành quả sẽ đến ngay thôi</p>                      
                         </div>

@@ -17,6 +17,7 @@
 
 <body>
     <div class="main">
+<<<<<<< HEAD
         <div class="nav">
             <div class="nav-bar">
                 <ul class="items">
@@ -48,6 +49,17 @@
                     <div>
                         <div class="col-md-12 module-item-type1 module-title">
                             <a style="cursor: pointer">${requestScope.module.module_name}</a>
+=======
+        <!--nav bar-->
+        <jsp:include page="../custom/nav.jsp"></jsp:include>
+            <!--content-->
+            <div class="content">
+                <div class="container main-content">
+                    <div class="row">
+                        <div>
+                            <div class="col-md-12 module-item-type1 module-title">
+                                <a style="cursor: pointer">${requestScope.module.module_name}</a>
+>>>>>>> main
                             <div class="process-module" style="float: left">
                                 <div class="progress-bar-bg" style="margin-left: -2em;">
                                     <div class="progress-bar-custom" style="width:${requestScope.percent}%;">
