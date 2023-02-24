@@ -20,13 +20,24 @@ public abstract class DBContext<T> {
 
     public DBContext() {
         try {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> parent of 0d23fd5 (remove membership in account.java and fix related things)
             String username = "phankien";
             String password = "sa123456";
 <<<<<<< Updated upstream
             String url = "jdbc:sqlserver://localhost\\MSSQL:1433;databaseName=SWP391_Group2";
 =======
+<<<<<<< HEAD
             String url = "jdbc:sqlserver://localhost\\MSSQLSERVER:1433;databaseName=SWP391_Group2";
 >>>>>>> Stashed changes
+=======
+            String username = "khanhnq";
+            String password = "12345";
+            String url = "jdbc:sqlserver://localhost\\MSSQLSERVER:1433;databaseName=SWP391_Group2_LHH_2";
+>>>>>>> main
+>>>>>>> parent of 0d23fd5 (remove membership in account.java and fix related things)
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             connection =  DriverManager.getConnection(url,username,password);
         } catch (ClassNotFoundException ex) {
