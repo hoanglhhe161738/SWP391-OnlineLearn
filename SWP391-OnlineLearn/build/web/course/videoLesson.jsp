@@ -107,12 +107,43 @@
 
 <body>
     <div class="main">
+<<<<<<< HEAD
+        <div class="nav">
+            <div class="nav-bar">
+                <ul class="items">
+                    <li class="item">
+                        <a href="../home/homePage"><img src="../Assets/icon/icon (69).png"></a>
+                    </li>
+                    <li class="item">
+                        <a href="#"><img src="../Assets/icon/icon (44).png"></a>
+                    </li>
+                    <li class="item">
+                        <a href="./classes"><img src="../Assets/icon/icon (71).png"></a>
+                    </li>
+                    <li class="item">
+                        <a href="../payment/CompletePayment.jsp"><img src="../Assets/icon/icon (51).png"></a>
+                    </li>
+                    <li class="item">
+                        <a href="#"><img src="../Assets/icon/icon (45).png"></a>
+                    </li>
+                    <li class="item avt-btn">
+                        <a href="#"><img src="../Assets/icon/icon (4).png">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">     
+            <div class="title-lesson">  
+                <h1>${requestScope.video.video_title}</h1>
+=======
         <!--nav bar-->
         <jsp:include page="../custom/nav.jsp"></jsp:include>
             <!--content-->
             <div class="content">     
                 <div class="title-lesson">  
                     <h1>${requestScope.video.video_title}</h1>
+>>>>>>> main
             </div>
             <div class="embed-style">
                 <iframe style="border-radius: 15px" width="1000" height="568" src="${requestScope.result}"                        

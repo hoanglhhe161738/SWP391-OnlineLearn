@@ -13,7 +13,8 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         .class-items{
-            margin: 0.5em 8em;
+            /*margin: 0.5em 8em;*/
+            justify-content: center;
         }
         .class-item{
             position: relative;
