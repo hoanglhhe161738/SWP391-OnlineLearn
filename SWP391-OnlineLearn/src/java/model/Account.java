@@ -14,17 +14,15 @@ public class Account {
     private String username;
     private String password;
     private String classify_account;
-    private String membership;
     private ArrayList<Role> roles = new ArrayList<>();
 
     public Account() {
     }
 
-    public Account(String username, String password, String classify_account, String membership) {
+    public Account(String username, String password, String classify_account) {
         this.username = username;
         this.password = password;
         this.classify_account = classify_account;
-        this.membership = membership;
     }
 
     public String getUsername() {
@@ -51,12 +49,4 @@ public class Account {
         this.classify_account = classify_account;
     }
 
-    public String getMembership() {
-        return membership;
-    }
-
-    public void setMembership(String membership) {
-        this.membership = membership;
-    }
-    
 }
