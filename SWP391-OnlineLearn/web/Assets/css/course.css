@@ -1,10 +1,46 @@
-
+/*.class-items{
+    margin: 0.5em 8em;
+}
+.class-item{
+    position: relative;
+    border-radius: 8px;
+    width: 16em;
+    height: 20em;
+    margin: 1em 4em;
+    background-size: cover;
+    padding: 0;
+}
+.class-title{
+    position: absolute;
+    background: #f1f1f1;
+    text-align: center;
+    width: 16em;
+    height: 6em;
+    bottom: 0;
+    padding: 0.5em;
+    border-radius: 0 25px 8px 8px;
+}
+.title-item{
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.class-item button{
+    border: none;
+    width: 8em;
+    height: 2em;
+    border-radius: 6px;
+    background: #3f47cc;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}*/
 
 .main-content{
     margin-top: 3em;
 }
 
-.class {
+/*.class {
     margin-top: 200px;
 }
 
@@ -33,14 +69,14 @@
     border-radius: 15px;
     background-color: whitesmoke;
 
-    /* animation center */
+    / animation center /
     left: 50%;
     transform: translateX(-50%);
     transition: all 0.5s ease;
 
-    /* animation left to right 
-          transition: all 0.5s ease;    
-    */
+    / animation left to right 
+          transition: all 0.5s ease;    /
+    
 }
 
 .item-class:hover:before {
@@ -60,7 +96,7 @@
 
 .item-class a:hover{
     color: white;
-}
+}*/
 
 .item-course{
     width: 90%;
@@ -101,7 +137,7 @@
     margin: 3em;
 }
 
-.module-items{    
+.module-items{
     display: flex;
     text-align: center;
 }
