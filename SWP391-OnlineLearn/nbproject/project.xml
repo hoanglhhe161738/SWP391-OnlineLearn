@@ -25,17 +25,6 @@
                 <library dirs="200">
                     <file>${&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD}</file>
                 </library>
-<<<<<<< Updated upstream
-=======
-                <library dirs="200">
-                    <file>${libs.jakartaee-web-api-9.0.classpath}</file>
-                    <path-in-war>WEB-INF/lib</path-in-war>
-                </library>
-                <library dirs="200">
-                    <file>${libs.jakartaee-web-api-8.0.classpath}</file>
-                    <path-in-war>WEB-INF/lib</path-in-war>
-                </library>
->>>>>>> Stashed changes
             </web-module-libraries>
             <web-module-additional-libraries/>
             <source-roots>
