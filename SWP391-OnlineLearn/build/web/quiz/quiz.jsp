@@ -18,9 +18,31 @@
     <body style="background-image: url(../Assets/images/bg.png)">
         <div class="start_btn"><button>Start Quiz</button></div>
         
-        <!--nav bar-->
-        <jsp:include page="../custom/nav.jsp"></jsp:include>
-        <!--content-->
+        <div class="nav">
+            <div class="nav-bar">
+                <ul class="items">
+                    <li class="item">
+                        <a href="../home/homePage"><img src="../Assets/icon/icon (69).png"></a>
+                    </li>
+                    <li class="item">
+                        <a href="#"><img src="../Assets/icon/icon (44).png"></a>
+                    </li>
+                    <li class="item">
+                        <a href="#"><img src="../Assets/icon/icon (71).png"></a>
+                    </li>
+                    <li class="item">
+                        <a href="#"><img src="../Assets/icon/icon (51).png"></a>
+                    </li>
+                    <li class="item">
+                        <a href="#"><img src="../Assets/icon/icon (45).png"></a>
+                    </li>
+                    <li class="item avt-btn">
+                        <a href="#"><img src="../Assets/icon/icon (4).png">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
         <div class="info_box">
             <div class="info-title"><span>Some Rules of this Quiz</span></div>
