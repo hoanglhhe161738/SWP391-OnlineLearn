@@ -26,6 +26,7 @@
 <<<<<<< HEAD
                     <file>${&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD}</file>
                 </library>
+<<<<<<< HEAD
                 <library dirs="200">
                     <file>${file.reference.sqljdbc42.jar-1}</file>
 =======
@@ -44,6 +45,8 @@
 >>>>>>> main
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
+=======
+>>>>>>> parent of 22911e5 (remove membership in class Account.java and fix somethings p2)
             </web-module-libraries>
             <web-module-additional-libraries/>
             <source-roots>
