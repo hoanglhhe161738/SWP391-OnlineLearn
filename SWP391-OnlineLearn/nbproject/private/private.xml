@@ -5,13 +5,12 @@
         <group name="KHANH">
             <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/build/web/WEB-INF/web.xml</file>
         </group>
-<<<<<<< HEAD
         <group>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/course/classesController.java</file>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/ClassDBContext.java</file>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/CourseDBContext.java</file>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/web/WEB-INF/web.xml</file>
             <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/web/META-INF/context.xml</file>
-            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/DBContext.java</file>
         </group>
-=======
-        <group/>
->>>>>>> main
     </open-files>
 </project-private>

@@ -23,37 +23,19 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-<<<<<<< HEAD
                     <file>${&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD}</file>
                 </library>
-<<<<<<< HEAD
                 <library dirs="200">
                     <file>${file.reference.sqljdbc42.jar-1}</file>
-=======
-                    <file>${&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream}</file>
-                </library>
-                <library dirs="200">
-                    <file>${file.reference.jakarta.jakartaee-web-api-8.0.0.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
-                <library dirs="200">
-                    <file>${file.reference.jakarta.jakartaee-web-api-9.0.0.jar}</file>
-                    <path-in-war>WEB-INF/lib</path-in-war>
-                </library>
-                <library dirs="200">
-                    <file>${file.reference.sqljdbc42.jar}</file>
->>>>>>> main
-                    <path-in-war>WEB-INF/lib</path-in-war>
-                </library>
-=======
->>>>>>> parent of 22911e5 (remove membership in class Account.java and fix somethings p2)
             </web-module-libraries>
             <web-module-additional-libraries/>
             <source-roots>
-                <root id="src.dir"/>
+                <root id="src.dir" name="Source Packages"/>
             </source-roots>
             <test-roots>
-                <root id="test.src.dir"/>
+                <root id="test.src.dir" name="Test Packages"/>
             </test-roots>
         </data>
     </configuration>

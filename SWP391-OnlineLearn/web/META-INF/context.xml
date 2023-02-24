@@ -1,11 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<Context antiJARLocking="true" path="/SWP391-OnlineLearn"/>
-=======
 <Context path="/SWP391-OnlineLearn"/>
->>>>>>> main
-=======
-<?xml version="1.0" encoding="UTF-8"?> 
-<Context antiJARLocking="true" path="/app-name"/> 
->>>>>>> parent of 22911e5 (remove membership in class Account.java and fix somethings p2)
+
