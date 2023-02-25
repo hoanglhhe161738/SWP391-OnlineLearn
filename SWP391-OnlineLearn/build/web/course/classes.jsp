@@ -11,9 +11,10 @@
     <!-- link bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <style>
         .class-items{
-            /*margin: 0.5em 8em;*/
+            margin: 1em 0 0 0;
             justify-content: center;
         }
         .class-item{
@@ -24,6 +25,10 @@
             margin: 1em 4em;
             background-size: cover;
             padding: 0;
+            transition: all 0.3s;
+        }
+        .class-item:hover{
+            transform: scale(1.1);
         }
         .class-title{
             position: absolute;
@@ -41,6 +46,9 @@
             text-decoration: none;
             color: black;
         }
+        .title-item:hover{
+            color: black;
+        }
         .class-item button{
             border: none;
             width: 8em;
@@ -50,6 +58,10 @@
             font-weight: bold;
             font-size: 18px;
             color: white;
+            transition: all ease 0.3s;
+        }
+        .class-item button:hover{
+            background: red;
         }
     </style>
 </head>
@@ -61,10 +73,10 @@
             <!--content-->
             <div class="content">
                 <div class="container-fluid">
-                <div class="class-items row">
+                <div class="class-items row" data-mdb-toggle="animation" data-mdb-animation-reset="true" data-mdb-animation="slide-out-right">
                     <c:forEach items="${requestScope.classes}" var="cl">
                         <c:if test="${cl.class_id eq 1}">
-                            <div class="class-item col-md-4" style=" background-image: url(../Assets/images/lop1.jpg);">
+                            <div class="class-item col-md-4"  style=" background-image: url(../Assets/images/lop1.jpg);">
                         </c:if>
                         <c:if test="${cl.class_id eq 2}">
                             <div class="class-item col-md-4" style=" background-image: url(../Assets/images/lop2.jpg);">

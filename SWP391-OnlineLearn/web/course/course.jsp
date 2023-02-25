@@ -35,10 +35,13 @@
                 margin: 1em 4em;
                 background-size: cover;
                 padding: 0;
+                transition: all ease-in 0.3s;
+            }
+            .course-item:hover{
+                transform: scale(1.2);
             }
             .course-title{
                 position: absolute;
-                /*background: #f1f1f1;*/
                 text-align: center;
                 width: 16em;
                 height: 6em;
