@@ -18,53 +18,94 @@
         <!-- link bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <style>
+            .course-items{
+                width: 100%;
+                justify-content: center;
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+            .course-item{
+                position: relative;
+                border-radius: 8px;
+                width: 16em;
+                height: 20em;
+                margin: 1em 4em;
+                background-size: cover;
+                padding: 0;
+            }
+            .course-title{
+                position: absolute;
+                /*background: #f1f1f1;*/
+                text-align: center;
+                width: 16em;
+                height: 6em;
+                bottom: 0;
+                padding: 0.5em;
+                border-radius: 0 25px 8px 8px;
+            }
+            .title-item{
+                font-size: 25px;
+                font-weight: bold;
+                text-decoration: none;
+                color: white;
+            }
+            .title-item:hover{
+                color: white;
+            }
+            .course-item button{
+                border: none;
+                width: 8em;
+                height: 2em;
+                border-radius: 6px;
+                background: white;
+                font-weight: bold;
+                font-size: 18px;
+                color: black;
+                margin-top: 5px;
+            }
+        </style>
     </head>
     <body>
         <div class="main">
-            <div class="nav">
-                <div class="nav-bar">
-                    <ul class="items">
-                        <li class="item">
-                            <a href="../home/homePage"><img src="../Assets/icon/icon (69).png"></a>
-                        </li>
-                        <li class="item">
-                            <a href="#"><img src="../Assets/icon/icon (44).png"></a>
-                        </li>
-                        <li class="item">
-                            <a href="./classes"><img src="../Assets/icon/icon (71).png"></a>
-                        </li>
-                        <li class="item">
-                            <a href="../payment/CompletePayment.jsp"><img src="../Assets/icon/icon (51).png"></a>
-                        </li>
-                        <li class="item">
-                            <a href="#"><img src="../Assets/icon/icon (45).png"></a>
-                        </li>
-                        <li class="item avt-btn">
-                            <a href="#"><img src="../Assets/icon/icon (4).png">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
+            <!--nav bar-->
+            <jsp:include page="../custom/nav.jsp"></jsp:include>
+                <!--content-->
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="course-items row">
                         <c:forEach items="${requestScope.courses}" var="co">
-                            <div class="item-course col-md-5" style="margin: 1em 3.5em">
-                                <h1>${co.course_name} lớp ${requestScope.class_id}</h1>
-                                <p>Chương trình của môn ${co.course_name} lớp ${requestScope.class_id} trong course này được biên soạn dựa theo sách giáo khoa
-                                    của nhà xuất bản Cánh Diều, chúc các bạn có 1 trải nghiệm học tập thật là bổ ích!</p>
-                                <a href="./modules?course_id=${co.course_id}&class_id=${requestScope.class_id}">
-                                    <button class="go-to-course-btn">
-                                        Học ngay
-                                    </button>
-                                </a>
-                            </div>
+                            <c:if test="${co.course_name eq requestScope.math}">
+                                <div class="course-item col-md-4" style=" background-image: url(../Assets/images/math.jpg);">
+                            </c:if>
+                            <c:if test="${co.course_name eq requestScope.literature}">
+                                <div class="course-item col-md-4" style=" background-image: url(../Assets/images/lit.png);">
+                            </c:if>
+                            <c:if test="${co.course_name eq requestScope.english}">
+                                <div class="course-item col-md-4" style=" background-image: url(../Assets/images/eng.jpg);">
+                            </c:if>
+                                    <div class="course-title"
+                                    <c:if test="${co.course_name eq requestScope.math}">
+                                        style="background: #00b050"
+                                    </c:if>
+                                    <c:if test="${co.course_name eq requestScope.literature}">
+                                        style="background: #3f47cc"
+                                    </c:if>
+                                    <c:if test="${co.course_name eq requestScope.english}">
+                                        style="background: #ff7f27"
+                                    </c:if>     
+                                    >
+                                        <a class="title-item">Lớp ${requestScope.class_id}</a><br>
+                                        <a href="./modules?course_id=${co.course_id}&class_id=${requestScope.class_id}"><button>${co.course_name}</button></a>
+                                    </div>
+                                </div>
                         </c:forEach>                   
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</body>
+    </body>
 </html>

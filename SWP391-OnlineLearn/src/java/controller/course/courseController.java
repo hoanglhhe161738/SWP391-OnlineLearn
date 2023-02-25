@@ -29,6 +29,13 @@ public class courseController extends HttpServlet{
         int class_id = Integer.parseInt(req.getParameter("class_id"));
         CourseDBContext coDB = new CourseDBContext();
         ArrayList<Course> courses = coDB.listCoursebyClassId(class_id);
+        String math = "Toán";
+        String literature = "Tiếng Việt";
+        String english = "Tiếng Anh";
+        
+        req.setAttribute("math", math);
+        req.setAttribute("literature", literature);
+        req.setAttribute("english", english);
         req.setAttribute("class_id", class_id);
         req.setAttribute("courses", courses);
         req.getRequestDispatcher("./course.jsp").forward(req, resp);
