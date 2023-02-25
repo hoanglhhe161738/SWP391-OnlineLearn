@@ -38,7 +38,7 @@
             height: 6em;
             bottom: 0;
             padding: 0.5em;
-            border-radius: 0 25px 8px 8px;
+            border-radius: 0 40px 8px 8px;
         }
         .title-item{
             font-size: 25px;
