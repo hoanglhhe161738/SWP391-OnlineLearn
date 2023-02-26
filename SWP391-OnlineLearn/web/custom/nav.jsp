@@ -11,11 +11,11 @@
             <li class="item">
                 <a href="../home/homePage"><img src="../Assets/icon/icon (69).png"></a>
             </li>
-            <li class="item">
+<!--            <li class="item">
                 <a href="#"><img src="../Assets/icon/icon (44).png"></a>
-            </li>
+            </li>-->
             <li class="item">
-                <a href="#"><img src="../Assets/icon/icon (71).png"></a>
+                <a href="../course/classes"><img src="../Assets/icon/icon (71).png"></a>
             </li>
             <li class="item">
                 <a href="../payment/CompletePayment.jsp"><img src="../Assets/icon/icon (51).png"></a>

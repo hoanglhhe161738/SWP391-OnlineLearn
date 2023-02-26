@@ -22,31 +22,9 @@
 
     <body>
         <div class="main">
-            <div class="nav">
-                <div class="nav-bar">
-                    <ul class="items">
-                        <li class="item">
-                            <a href="../home/homePage"><img src="../Assets/icon/icon (69).png"></a>
-                        </li>
-                        <li class="item">
-                            <a href="../ranking/ranking.html"><img src="../Assets/icon/icon (44).png"></a>
-                        </li>
-                        <li class="item">
-                            <a href="../course/classes"><img src="../Assets/icon/icon (71).png"></a>
-                        </li>
-                        <li class="item">
-                            <a href="../payment/Payment.html"><img src="../Assets/icon/icon (51).png"></a>
-                        </li>
-                        <li class="item">
-                            <a href="../"><img src="../Assets/icon/icon (45).png"></a>
-                        </li>
-                        <li class="item avt-btn">
-                            <a href="../"><img src="../Assets/icon/icon (4).png">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <!--nav bar-->
+        <jsp:include page="../custom/nav.jsp"></jsp:include>
+            <!--content-->
 
             <div class="content container-fluid">
                 <!--Ae code o day nha-->
