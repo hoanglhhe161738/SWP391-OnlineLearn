@@ -69,11 +69,17 @@
             box-shadow: 0 5px 10px 0 rgba(30, 201, 64, 0.5);
             margin:1em auto;
         }
+
+        img{
+            display: block;
+            margin: 0 auto;
+        }
         
     </style>
 </head>
 <body>
     <div class="container">
+        <img src="/web/Assets/images/email.png" alt="">
         <h1>Xác nhận đăng kí tài khoản</h1>
         <p class="mess">Chúng tôi vừa gửi 1 mã xác nhận bao gồm 6 chữ số vào email của bạn. Vui lòng kiểm tra email rồi nhập mã xác nhận đó vào phần bên dưới để hoàn tất đăng ký!</p>
 
