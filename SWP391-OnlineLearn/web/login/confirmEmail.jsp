@@ -17,7 +17,7 @@
             position: fixed;
             width: 100%;
             height: 100vh;
-            background-image: url(../../Assets/images/bg.png);
+            background-image: url(../Assets/images/bg.png);
             background-size: cover;
             display: flex;
             align-items: center;
@@ -79,7 +79,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="/web/Assets/images/email.png" alt="">
+        <img src="../Assets/images/email.png" alt="">
         <h1>Xác nhận đăng kí tài khoản</h1>
         <p class="mess">Chúng tôi vừa gửi 1 mã xác nhận bao gồm 6 chữ số vào email của bạn. Vui lòng kiểm tra email rồi nhập mã xác nhận đó vào phần bên dưới để hoàn tất đăng ký!</p>
 
