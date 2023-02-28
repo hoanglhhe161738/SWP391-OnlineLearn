@@ -48,5 +48,13 @@ public class Account {
     public void setClassify_account(String classify_account) {
         this.classify_account = classify_account;
     }
+    
+    public ArrayList<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(ArrayList<Role> roles) {
+        this.roles = roles;
+    }
 
 }

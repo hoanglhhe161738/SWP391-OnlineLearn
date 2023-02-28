@@ -34,6 +34,7 @@ public class LoginController extends HttpServlet {
         String password = request.getParameter("password");
         AccountDBContext abd = new AccountDBContext();
         Account a = abd.login(username, password);
+        request.getSession().setAttribute("account", a);
         if(a==null){
             request.setAttribute("mess", "Tên tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại!");
             request.getRequestDispatcher("./login.jsp").forward(request, response);
