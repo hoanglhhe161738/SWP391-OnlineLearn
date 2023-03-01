@@ -68,6 +68,10 @@
         <servlet-name>changeUserProfileController</servlet-name>
         <servlet-class>controller.profile.changeUserProfileController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>quizController</servlet-name>
+        <servlet-class>controller.quiz.quizController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
         <url-pattern>/course/classes</url-pattern>
@@ -139,6 +143,10 @@
     <servlet-mapping>
         <servlet-name>changeUserProfileController</servlet-name>
         <url-pattern>/userprofile/changeUserProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>quizController</servlet-name>
+        <url-pattern>/course/quiz</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
