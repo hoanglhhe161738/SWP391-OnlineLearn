@@ -1,0 +1,22 @@
+.encode{
+    width: 50%;
+    height: 70%;
+    background-color: #f2f2f2;
+    margin: 10% auto;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+.accept-pay{
+    padding: 10px;
+
+}
+
+.encode img{
+    height: 8em;
+}
+
+.encode-ontent-accept p{
+    font-weight: bolder;
+}
