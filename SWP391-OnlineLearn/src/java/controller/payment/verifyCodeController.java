@@ -33,14 +33,14 @@ public class verifyCodeController extends HttpServlet{
         HttpSession verifyPremium = req.getSession();
         String Code = String.valueOf(verifyPremium.getAttribute("verifyCode"));
         
-        req.setAttribute("tk", "Thank you!");
+//        req.setAttribute("tk", "Thank you!");
         
         if(verifyCode.equals(Code)){
-            req.setAttribute("alertTitle", "Thank you!");
-            req.getRequestDispatcher("afterVerifyCode.jsp").forward(req, resp);
+//            req.setAttribute("alertTitle", "Thank you!");
+            req.getRequestDispatcher("./PaymentSuccesful").forward(req, resp);
         }else{
-            req.setAttribute("alertTitle", "Sorry!");
-            req.getRequestDispatcher("afterVerifyCode.jsp").forward(req, resp);
+//            req.setAttribute("alertTitle", "Sorry!");
+            req.getRequestDispatcher("./paymentfail.html").forward(req, resp);
         }
     }
     

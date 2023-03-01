@@ -3,7 +3,7 @@
     Created on : Feb 17, 2023, 1:23:19 PM
     Author     : Khangnekk
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,29 +23,46 @@
     <body>
         <div class="main">
             <!--nav bar-->
-        <jsp:include page="../custom/nav.jsp"></jsp:include>
-            <!--content-->
+            <jsp:include page="../custom/nav.jsp"></jsp:include>
+                <!--content-->
 
-            <div class="content container-fluid">
-                <!--Ae code o day nha-->
-                <div class="complete-payment-box row">
-                    <div class="main-payment col-md-6">
-                        <form action="" method="POST">
-                            <div class="radio-btn">
-                                <input type="radio" name="type-card" checked> Thẻ tín dụng hoặc thẻ ghi nợ<br>
-                                <img src="../Assets/images/card2.png" height="30">
-                            </div>
-                            <div class="radio-btn">
-                                <input type="radio" name="type-card"> Paypal<br>
-                                <img src="../Assets/images/paypal.png" height="30">
-                            </div>
+                <div class="content container-fluid">
+                    <!--Ae code o day nha-->
+                    <div class="complete-payment-box row">
+                        <div class="main-payment col-md-6">
+                            <form action="./completePayment" method="POST">
+                                <div class="radio-btn">
+                                    <input type="radio" name="type-card" checked> Thẻ tín dụng hoặc thẻ ghi nợ<br>
+                                    <img src="../Assets/images/card2.png" height="30">
+                                </div>
+                                <div class="radio-btn">
+                                    <input type="radio" name="type-card"> Paypal<br>
+                                    <img src="../Assets/images/paypal.png" height="30">
+                                </div>
+                                <br>
+                                <label>Số thẻ</label>
+                            <c:if test="${requestScope.noti1 ne null}">
+                                <a style="color: red">( ${requestScope.noti1} )</a>
+                            </c:if>
                             <br>
-                            <label>Số thẻ</label><br>
-                            <input class="input-data" type="text" name="cardNumber" placeholder="0000 - 0000 - 0000 - 0000"> <br>
-                            <label>Ngày hết hạn</label><br>
-                            <input class="input-data" type="text" name="cardNumber" placeholder="MM/YY"><br>                            
-                            <label>Mã bảo mật</label><br>
-                            <input class="input-data" type="text" name="cardNumber" placeholder="CCV"><br>                            
+                            <input class="input-data" id="credit-card-input" type="text"
+                                   maxlength="19" name="creditCardNum" placeholder="0000 0000 0000 0000"> <br>
+
+                            <label>Ngày hết hạn</label>
+                            <c:if test="${requestScope.noti2 ne null}">
+                                <a style="color: red">( ${requestScope.noti2} )</a>
+                            </c:if>
+                            <br>
+                            <input id="dateInput" onkeyup="addSlashes(this)" maxlength=5
+                                   class="input-data" type="text" name="mmyyNum" placeholder="MM/YY"><br> 
+
+                            <label>Mã bảo mật</label>
+                            <c:if test="${requestScope.noti3 ne null}">
+                                <a style="color: red">( ${requestScope.noti3} )</a>
+                            </c:if>
+                            <br>
+                            <input class="input-data" maxlength=4 type="text" name="ccvNum" placeholder="CCV"><br>       
+
                             <input class="btn-pay" type="submit" value="Thanh toán">
                         </form>
                     </div>
@@ -73,5 +90,24 @@
             </div>
         </div>
     </body>
+    <script>
+        const input = document.getElementById("credit-card-input");
+        input.addEventListener("input", () => input.value = formatNumber(input.value.replaceAll(" ", "")));
 
+        const formatNumber = (number) => number.split("").reduce((seed, next, index) => {
+                if (index !== 0 && !(index % 4))
+                    seed += " ";
+                return seed + next;
+            }, "");
+        function addSlashes(element) {
+
+            let ele = document.getElementById(element.id);
+            ele = ele.value.split('/').join('');    // Remove slash (/) if mistakenly entered.
+            if (ele.length < 4 && ele.length > 0) {
+                let finalVal = ele.match(/.{1,2}/g).join('/');
+
+                document.getElementById(element.id).value = finalVal;
+            }
+        }
+    </script>
 </html>
