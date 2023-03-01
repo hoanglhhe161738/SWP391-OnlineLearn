@@ -98,23 +98,23 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>completePaymentController</servlet-name>
-        <url-pattern>/completePayment</url-pattern>
+        <url-pattern>/payment/completePayment</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>enterMailController</servlet-name>
-        <url-pattern>/sendEmail</url-pattern>
+        <url-pattern>/payment/sendEmail</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>verifyCodeController</servlet-name>
-        <url-pattern>/verifyCode</url-pattern>
+        <url-pattern>/payment/verifyCode</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>contentLessonController</servlet-name>
-        <url-pattern>/contentLesson</url-pattern>
+        <url-pattern>/course/contentLesson</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>lessonChoiceController</servlet-name>
-        <url-pattern>/lessonChoice</url-pattern>
+        <url-pattern>/course/lessonChoice</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

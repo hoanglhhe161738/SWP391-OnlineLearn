@@ -99,6 +99,7 @@
                     seed += " ";
                 return seed + next;
             }, "");
+            
         function addSlashes(element) {
 
             let ele = document.getElementById(element.id);

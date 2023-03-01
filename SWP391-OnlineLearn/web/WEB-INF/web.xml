@@ -106,7 +106,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>verifyCodeController</servlet-name>
-        <url-pattern>/verifyCode</url-pattern>
+        <url-pattern>/payment/verifyCode</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>contentLessonController</servlet-name>
