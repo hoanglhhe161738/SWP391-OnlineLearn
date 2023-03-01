@@ -8,6 +8,7 @@ package dal;
  *
  * @author T490
  */
+import controller.auth.securityProcessorCore;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -60,6 +61,7 @@ public class AccountDBContext extends DBContext<Account> {
     }
     
     public void signup(String username, String password){
+        securityProcessorCore spc = new securityProcessorCore();
         String sql ="INSERT INTO [dbo].[Account]\n" +
 "           ([username]\n" +
 "           ,[password]\n" +
@@ -72,7 +74,7 @@ public class AccountDBContext extends DBContext<Account> {
         try {
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, username);
-            stm.setString(2, password);
+            stm.setString(2, spc.md5EncodePassword(password));
             stm.executeUpdate();
         } catch (Exception e) {
         }
