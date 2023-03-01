@@ -60,6 +60,18 @@
         <servlet-name>lessonChoiceController</servlet-name>
         <servlet-class>controller.course.lessonChoiceController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LogoutController</servlet-name>
+        <servlet-class>controller.auth.LogoutController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>viewUserProfileController</servlet-name>
+        <servlet-class>controller.profile.viewUserProfileController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>changeUserProfileController</servlet-name>
+        <servlet-class>controller.profile.changeUserProfileController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
         <url-pattern>/course/classes</url-pattern>
@@ -123,6 +135,18 @@
     <servlet-mapping>
         <servlet-name>lessonChoiceController</servlet-name>
         <url-pattern>/lessonChoice</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutController</servlet-name>
+        <url-pattern>/login/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewUserProfileController</servlet-name>
+        <url-pattern>/userprofile/viewUserProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>changeUserProfileController</servlet-name>
+        <url-pattern>/userprofile/changeUserProfile</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

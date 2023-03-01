@@ -33,12 +33,15 @@ public class LoginController extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         AccountDBContext abd = new AccountDBContext();
+        UserDBContext uDB = new UserDBContext();
         Account a = abd.login(username, password);
         request.getSession().setAttribute("account", a);
         if(a==null){
             request.setAttribute("mess", "Tên tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại!");
             request.getRequestDispatcher("./login.jsp").forward(request, response);
         }else{
+            User user = uDB.getUserByUsername(username);
+            request.getSession().setAttribute("user", user);
             request.getRequestDispatcher("./welcome.html").forward(request, response);
         }
     } 

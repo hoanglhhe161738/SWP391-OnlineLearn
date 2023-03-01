@@ -25,33 +25,52 @@ public class completePaymentController extends HttpServlet{
         String creditCardNum = req.getParameter("creditCardNum");
         String mmyyNum = req.getParameter("mmyyNum");
         String ccvNum = req.getParameter("ccvNum");
-        String noti1 = "",noti2 = "",noti3 = "";
-        
-        if(creditCardNum.matches(creditCardNumRegex)
+        String noti1, noti2, noti3;
+        req.setAttribute("normal", "normal");
+        req.setAttribute("premium", "premium");
+        if (creditCardNum.matches(creditCardNumRegex)
                 && mmyyNum.matches(mmyyRegex)
-                && ccvNum.matches(ccvRegex)){
-            req.getRequestDispatcher("./enterEmail.jsp").forward(req, resp);
+                && ccvNum.matches(ccvRegex)) {
+            req.getRequestDispatcher("./emailAcception.html").forward(req, resp);
+        } else if (creditCardNum.isEmpty()
+                || mmyyNum.isEmpty()
+                || ccvNum.isEmpty()) {
+            if (creditCardNum.isEmpty()) {
+                noti1 = "Phần này bị bỏ trống";
+                req.setAttribute("noti1", noti1);
+            }
+            if (mmyyNum.isEmpty()) {
+                noti2 = "Phần này bị bỏ trống";
+                req.setAttribute("noti2", noti2);
+            }
+            if (ccvNum.isEmpty()) {
+                noti3 = "Phần này bị bỏ trống";
+                req.setAttribute("noti3", noti3);
+            }
+        } else {
+            if (!creditCardNum.matches(creditCardNumRegex)) {
+                noti1 = "Sai định dạng số thẻ";
+                req.setAttribute("noti1", noti1);
+            }
+            if (!mmyyNum.matches(mmyyRegex)) {
+                noti2 = "Sai định dạng MM/YY";
+                req.setAttribute("noti2", noti2);
+            }
+            if (!ccvNum.matches(ccvRegex)) {
+                noti3 = "Sai định dạng mã ccv";
+                req.setAttribute("noti3", noti3);
+            }
+
         }
-        else{
-            if(!creditCardNum.matches(creditCardNumRegex)){
-               noti1 = "Sai định dạng số thẻ"; 
-            }
-            if(!mmyyNum.matches(mmyyRegex)){
-               noti2 = "Sai định dạng MM/YY"; 
-            }
-            if(!ccvNum.matches(ccvRegex)){
-               noti3 = "Sai định dạng mã ccv"; 
-            }
-            
-            req.setAttribute("noti1", noti1);
-            req.setAttribute("noti2", noti2);
-            req.setAttribute("noti3", noti3);
-            req.getRequestDispatcher("./enterEmail.jsp").forward(req, resp);
-        }
+
+        req.getRequestDispatcher("./CompletePayment.jsp").forward(req, resp);
+
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("normal", "normal");
+        req.setAttribute("premium", "premium");
         req.getRequestDispatcher("./CompletePayment.jsp").forward(req, resp);
     }
     

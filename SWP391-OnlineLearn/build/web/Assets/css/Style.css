@@ -62,7 +62,7 @@ ul li {
 
 .account {
     width: 15rem;
-    height: 4rem;
+    height: auto;
     margin: 2% 0 0 5%;
     border-radius: 10px;
     background-color: black;
