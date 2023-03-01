@@ -34,21 +34,28 @@ public class SignupController extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String cfpassword = request.getParameter("cfpassword");
+        String passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$";
         if (!password.equals(cfpassword)) {
             request.setAttribute("mess2", "Mật khẩu không khớp. Vui lòng nhập lại!");
             request.getRequestDispatcher("./signup.jsp").forward(request, response);
         } else {
-            AccountDBContext accdb = new AccountDBContext();
-            Account a = accdb.checkAccountExisted(username);
-            if (a == null) {
-                //can signup
-                accdb.signup(username, password);
-                response.sendRedirect("./");
+            if (password.matches(passwordRegex)) {
+                AccountDBContext accdb = new AccountDBContext();
+                Account a = accdb.checkAccountExisted(username);
+                if (a == null) {
+                    //can signup
+                    accdb.signup(username, password);
+                    response.sendRedirect("./signup.jsp");
 
+                } else {
+                    request.setAttribute("mess1", "Tên tài khoản đã tồn tại. Vui lòng nhập lại");
+                    request.getRequestDispatcher("./signup.jsp").forward(request, response);
+                }
             } else {
-                request.setAttribute("mess1", "Tên tài khoản đã tồn tại. Vui lòng nhập lại");
+                request.setAttribute("mess1", "Mật khẩu phải bao gồm 8 ký tự trở lên và phải bao gồm chữ hoa, chữ thường, số từ 0 đến 9 và bao gồm ký tự đặc biệt");
                 request.getRequestDispatcher("./signup.jsp").forward(request, response);
             }
+
         }
     }
 
@@ -64,7 +71,7 @@ public class SignupController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.getRequestDispatcher("./signup.jsp").forward(request, response);
     }
 
     /**
