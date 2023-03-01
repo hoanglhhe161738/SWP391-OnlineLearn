@@ -69,7 +69,7 @@ public class enterMailController extends HttpServlet {
                 msg.setText(message);
 
                 // Send message
-//                Transport.send(msg);
+                Transport.send(msg);
 
                 // Redirect to success page
                 req.getRequestDispatcher("./encodeEmail.html").forward(req, resp);

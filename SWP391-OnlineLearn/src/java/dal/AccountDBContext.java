@@ -20,20 +20,19 @@ import model.Role;
 
 public class AccountDBContext extends DBContext<Account> {
 
-    
-    public Account login(String username, String password){
-        String sql = "SELECT * FROM Account \n" +
-                       "WHERE username = ? \n" +
-                       "and password = ?";
+    public Account login(String username, String password) {
+        String sql = "SELECT * FROM Account \n"
+                + "WHERE username = ? \n"
+                + "and password = ?";
         try {
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, username);
             stm.setString(2, password);
             ResultSet rs = stm.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 return new Account(rs.getString(1),
-                                   rs.getString(2),
-                                   rs.getString(3));
+                        rs.getString(2),
+                        rs.getString(3));
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -64,6 +63,21 @@ public class AccountDBContext extends DBContext<Account> {
     @Override
     public ArrayList<Account> list() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Account updateClassifyAccount(Account model) {
+        String sql = "UPDATE [Account]\n"
+                + "   SET \n"
+                + "      [classify_account] = 'premium'\n"
+                + " WHERE username = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, model.getUsername());
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return model;
     }
 
 }
