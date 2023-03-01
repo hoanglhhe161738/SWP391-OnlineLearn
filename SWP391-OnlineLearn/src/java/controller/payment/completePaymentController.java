@@ -67,6 +67,8 @@ public class completePaymentController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("normal", "normal");
+        req.setAttribute("premium", "premium");
         req.getRequestDispatcher("./CompletePayment.jsp").forward(req, resp);
     }
 
