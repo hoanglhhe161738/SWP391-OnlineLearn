@@ -56,7 +56,7 @@
             </form>
             <p class="signup-already">
 
-                <a  href="./signup.html" class="cancel signup-submit">Hủy bỏ</a>
+                <a  href="./signup.jsp" class="cancel signup-submit">Hủy bỏ</a>
             </p>
         </div>
     </body>
