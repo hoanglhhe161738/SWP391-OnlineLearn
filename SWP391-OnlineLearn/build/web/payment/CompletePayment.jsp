@@ -9,15 +9,49 @@
 <html lang="en">
 
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Complete Payment</title>
         <link rel="stylesheet" href="../Assets/css/Style.css">
         <link rel="stylesheet" href="../Assets/css/completePayment.css">
         <!-- link bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <style>
+            .payment-successful{
+                position: absolute;
+                left: 50%;
+                top:50%;
+                transform: translateX(-50%) translateY(-50%);
+                text-align: center;
+                padding: 1.5em;
+                background: white;
+                border-radius: 10px;
+            }
+            .payment-successful-content{
+
+            }
+            .payment-item img{
+                width: 15%;
+            }
+            .payment-item{
+                font-size: larger;
+                padding: 0 3em;
+                margin-top:2em;
+            }
+            button{
+                height: 2em;
+                width: 10em;
+                font-size: larger;
+                font-weight: bolder;
+                color: #fff;
+                background-color: #32c671;
+                border-radius: 10px;
+                border: white;
+            }
+        </style>
     </head>
 
     <body>
@@ -28,19 +62,20 @@
 
                 <div class="content container-fluid">
                     <!--Ae code o day nha-->
-                    <div class="complete-payment-box row">
-                        <div class="main-payment col-md-6">
-                            <form action="./completePayment" method="POST">
-                                <div class="radio-btn">
-                                    <input type="radio" name="type-card" checked> Thẻ tín dụng hoặc thẻ ghi nợ<br>
-                                    <img src="../Assets/images/card2.png" height="30">
-                                </div>
-                                <div class="radio-btn">
-                                    <input type="radio" name="type-card"> Paypal<br>
-                                    <img src="../Assets/images/paypal.png" height="30">
-                                </div>
-                                <br>
-                                <label>Số thẻ</label>
+                <c:if test="${sessionScope.account.classify_account eq requestScope.normal}">
+                <div class="complete-payment-box row">
+                    <div class="main-payment col-md-6">
+                        <form action="./completePayment" method="POST">
+                            <div class="radio-btn">
+                                <input type="radio" name="type-card" checked> Thẻ tín dụng hoặc thẻ ghi nợ<br>
+                                <img src="../Assets/images/card2.png" height="30">
+                            </div>
+                            <div class="radio-btn">
+                                <input type="radio" name="type-card"> Paypal<br>
+                                <img src="../Assets/images/paypal.png" height="30">
+                            </div>
+                            <br>
+                            <label>Số thẻ</label>
                             <c:if test="${requestScope.noti1 ne null}">
                                 <a style="color: red">( ${requestScope.noti1} )</a>
                             </c:if>
@@ -87,28 +122,46 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </body>
-    <script>
-        const input = document.getElementById("credit-card-input");
-        input.addEventListener("input", () => input.value = formatNumber(input.value.replaceAll(" ", "")));
+                </c:if>
+                <c:if test="${sessionScope.account.classify_account eq requestScope.premium}">
+                <div class="payment-successful">
+                    <div class="payment-successful-content">
+                        <div class="payment-item"><img src="../Assets/icon/icon (53).png" alt=""></div>
+                        <div class="payment-item" style=""><h1>Tài khoản của bản hiện đang là tài khoản premium<h1></div>
+                                    <div class="payment-item" style="">Bạn đã nâng cấp thành công tài khoản premium, chúc bạn có một trải nghiệm học tập hiệu quả
+                                    </div>
+                                    <div class="payment-item" style="">
+                                        <a href="../home/homePage">
+                                            <button style="cursor: pointer" type="button">
+                                                Về trang chủ
+                                            </button>
+                                        </a>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </c:if>
+                                    </div>
+                                    </div>
+                                    </body>
+                                    <script>
+                                        const input = document.getElementById("credit-card-input");
+                                        input.addEventListener("input", () => input.value = formatNumber(input.value.replaceAll(" ", "")));
 
-        const formatNumber = (number) => number.split("").reduce((seed, next, index) => {
-                if (index !== 0 && !(index % 4))
-                    seed += " ";
-                return seed + next;
-            }, "");
-            
-        function addSlashes(element) {
+                                        const formatNumber = (number) => number.split("").reduce((seed, next, index) => {
+                                                if (index !== 0 && !(index % 4))
+                                                    seed += " ";
+                                                return seed + next;
+                                            }, "");
 
-            let ele = document.getElementById(element.id);
-            ele = ele.value.split('/').join('');    // Remove slash (/) if mistakenly entered.
-            if (ele.length < 4 && ele.length > 0) {
-                let finalVal = ele.match(/.{1,2}/g).join('/');
+                                        function addSlashes(element) {
 
-                document.getElementById(element.id).value = finalVal;
-            }
-        }
-    </script>
-</html>
+                                            let ele = document.getElementById(element.id);
+                                            ele = ele.value.split('/').join('');    // Remove slash (/) if mistakenly entered.
+                                            if (ele.length < 4 && ele.length > 0) {
+                                                let finalVal = ele.match(/.{1,2}/g).join('/');
+
+                                                document.getElementById(element.id).value = finalVal;
+                                            }
+                                        }
+                                    </script>
+                                    </html>
