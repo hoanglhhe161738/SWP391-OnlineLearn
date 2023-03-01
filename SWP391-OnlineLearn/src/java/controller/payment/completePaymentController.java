@@ -26,7 +26,8 @@ public class completePaymentController extends HttpServlet {
         String mmyyNum = req.getParameter("mmyyNum");
         String ccvNum = req.getParameter("ccvNum");
         String noti1, noti2, noti3;
-
+        req.setAttribute("normal", "normal");
+        req.setAttribute("premium", "premium");
         if (creditCardNum.matches(creditCardNumRegex)
                 && mmyyNum.matches(mmyyRegex)
                 && ccvNum.matches(ccvRegex)) {
@@ -35,15 +36,15 @@ public class completePaymentController extends HttpServlet {
                 || mmyyNum.isEmpty()
                 || ccvNum.isEmpty()) {
             if (creditCardNum.isEmpty()) {
-                noti1 = "Phần này là bắt buộc";
+                noti1 = "Phần này bị bỏ trống";
                 req.setAttribute("noti1", noti1);
             }
             if (mmyyNum.isEmpty()) {
-                noti2 = "Phần này là bắt buộc";
+                noti2 = "Phần này bị bỏ trống";
                 req.setAttribute("noti2", noti2);
             }
             if (ccvNum.isEmpty()) {
-                noti3 = "Phần này là bắt buộc";
+                noti3 = "Phần này bị bỏ trống";
                 req.setAttribute("noti3", noti3);
             }
         } else {
@@ -61,6 +62,7 @@ public class completePaymentController extends HttpServlet {
             }
 
         }
+
         req.getRequestDispatcher("./CompletePayment.jsp").forward(req, resp);
 
     }
