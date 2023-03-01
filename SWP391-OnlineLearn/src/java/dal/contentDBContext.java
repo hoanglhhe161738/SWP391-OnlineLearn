@@ -4,14 +4,19 @@
  */
 package dal;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Content;
 
 /**
  *
  * @author Khangnekk
  */
-public class contentDBContext extends DBContext<Content>{
+public class ContentDBContext extends DBContext<Content>{
 
     @Override
     public void insert(Content model) {
@@ -35,7 +40,21 @@ public class contentDBContext extends DBContext<Content>{
 
     @Override
     public ArrayList<Content> list() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Content> contents = new ArrayList<>();
+        String sql = "SELECT * FROM Content";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()){
+                Content content = new Content();
+                content.setContent_id(rs.getInt("content_id"));
+                content.setReading_content(rs.getString("reading_content"));
+                contents.add(content);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ContentDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return contents;
     }
     
 }
