@@ -18,19 +18,32 @@ import controller.auth.BaseAuthenticationController;
  *
  * @author Khangnekk
  */
-public class classesController extends HttpServlet{
+public class classesController extends BaseAuthenticationController{
+
+//    @Override
+//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        super.doPost(req, resp); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+//    }
+//
+//    @Override
+//    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        ClassDBContext clDB = new ClassDBContext();
+//        ArrayList<Class> classes = clDB.list();
+//        req.setAttribute("classes", classes);
+//        req.getRequestDispatcher("./classes.jsp").forward(req, resp);
+//    }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doPost(req, resp); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ClassDBContext clDB = new ClassDBContext();
         ArrayList<Class> classes = clDB.list();
         req.setAttribute("classes", classes);
-        req.getRequestDispatcher("./classes.jsp").forward(req, resp);
+        req.getRequestDispatcher("./classes.jsp").forward(req, resp); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }
