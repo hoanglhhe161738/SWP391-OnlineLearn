@@ -4,11 +4,14 @@
  */
 package controller.course;
 
+import dal.ContentDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import model.Content;
 
 /**
  *
@@ -23,7 +26,10 @@ public class contentLessonController extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        
+        ContentDBContext coDB = new ContentDBContext();
+        ArrayList<Content> contents = coDB.list();
+        req.setAttribute("contents", contents);
+        req.getRequestDispatcher("./contentLesson.jsp").forward(req, resp);
     }
     
 }
