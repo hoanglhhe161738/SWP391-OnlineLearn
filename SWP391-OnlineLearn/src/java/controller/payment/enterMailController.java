@@ -33,7 +33,7 @@ public class enterMailController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String regexEmail = "";
+        String regexEmail = "\\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\\b";
         String recipient = req.getParameter("email");
         if (recipient.matches(regexEmail)) {
             // Get recipient email address and message from form data
