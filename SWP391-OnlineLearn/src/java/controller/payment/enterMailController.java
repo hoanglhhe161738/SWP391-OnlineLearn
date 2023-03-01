@@ -17,6 +17,7 @@ import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
+import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
@@ -28,11 +29,6 @@ public class enterMailController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String regexEmail = "\\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\\b";
         String recipient = req.getParameter("email");
         if (recipient.matches(regexEmail)) {
@@ -42,12 +38,12 @@ public class enterMailController extends HttpServlet {
 
             HttpSession verifyPremium = req.getSession();
             verifyPremium.setAttribute("verifyCode", verifyCode);
-            verifyPremium.setMaxInactiveInterval(60);
+            verifyPremium.setMaxInactiveInterval(2*60);
 
             // Set up mail server and authentication
             String host = "smtp.gmail.com";
             String user = "contact.khalgfk@gmail.com";
-            String password = "mixquuqtbcjhrpar";
+            String password = "oiowajaidxxqqubl";
 
             // Create properties object for the mail session
             Properties props = new Properties();
@@ -73,20 +69,24 @@ public class enterMailController extends HttpServlet {
                 msg.setText(message);
 
                 // Send message
-                javax.mail.Transport.send(msg);
+//                Transport.send(msg);
 
                 // Redirect to success page
-                req.getRequestDispatcher("./confirm.jsp").forward(req, resp);
+                req.getRequestDispatcher("./encodeEmail.html").forward(req, resp);
             } catch (MessagingException e) {
                 // Redirect to error page
-                resp.getWriter().print("chúng tôi không thể gửi mã code đến email của bạn");
+                resp.getWriter().print("error");
             }
         } else {
             String noti = "Wrong format email";
             req.setAttribute("noti", noti);
-            req.getRequestDispatcher("./enterEmail.jsp").forward(req, resp);
+            req.getRequestDispatcher("./emailAcception.html").forward(req, resp);
         }
+    }
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("./emailAcception.html").forward(req, resp);
     }
 
     public static String getRandomNumberString() {

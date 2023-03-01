@@ -37,7 +37,7 @@ public class verifyCodeController extends HttpServlet{
         
         if(verifyCode.equals(Code)){
 //            req.setAttribute("alertTitle", "Thank you!");
-            req.getRequestDispatcher("./PaymentSuccesful").forward(req, resp);
+            req.getRequestDispatcher("./PaymentSuccesful.html").forward(req, resp);
         }else{
 //            req.setAttribute("alertTitle", "Sorry!");
             req.getRequestDispatcher("./paymentfail.html").forward(req, resp);
