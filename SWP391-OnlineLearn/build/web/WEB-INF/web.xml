@@ -39,6 +39,8 @@
     <servlet>
         <servlet-name>SignupController</servlet-name>
         <servlet-class>controller.auth.SignupController</servlet-class>
+        </servlet>
+    <servlet>
         <servlet-name>completePaymentController</servlet-name>
         <servlet-class>controller.payment.completePaymentController</servlet-class>
     </servlet>
@@ -101,6 +103,8 @@
     <servlet-mapping>
         <servlet-name>SignupController</servlet-name>
         <url-pattern>/login/signup</url-pattern>
+        </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>completePaymentController</servlet-name>
         <url-pattern>/completePayment</url-pattern>
     </servlet-mapping>

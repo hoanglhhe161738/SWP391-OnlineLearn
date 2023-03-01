@@ -21,12 +21,6 @@
         </div>
         <div class="signup">
             <h1 class="signup-heading">Đăng ký</h1>
-            <div class="alert alert-danger" role="alert" style="color: red; margin-bottom: 1em; text-align: center"">
-                ${mess1}
-            </div>
-            <div class="alert alert-danger" role="alert" style="color: red; margin-bottom: 1em; text-align: center"">
-                ${mess2}
-            </div>
             <!-- <button class="signup-social">
                   <img class="fa fa-google signup-social-icon" src="/img/logoGG.png">
                   <span class="signup-social-text">Đăng kí bằng tài khoản Google</span>
@@ -42,6 +36,12 @@
 
                 <label for="cfpassword" class="signup-label">Nhập lại mật khẩu</label>
                 <input type="password" name="cfpassword" class="signup-input">
+            <div class="alert alert-danger" role="alert" style="color: red; margin-bottom: 1em; text-align: center"">
+                ${mess1}
+            </div>
+            <div class="alert alert-danger" role="alert" style="color: red; margin-bottom: 1em; text-align: center"">
+                ${mess2}
+            </div>
 
                 <input class="signup-submit" type="submit" value="Đăng kí">
             </form>
