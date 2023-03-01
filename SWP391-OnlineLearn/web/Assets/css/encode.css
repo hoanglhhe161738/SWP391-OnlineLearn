@@ -5,15 +5,18 @@
     margin: 10% auto;
     text-align: center;
     border: 2px solid black;
-    border-radius: 10px;
+    border-radius: 15px;
 }
+
 .accept-pay{
     padding: 10px;
 
 }
+
 .encode img{
     height: 8em;
 }
+
 .encode-ontent-accept p{
     font-weight: bolder;
 }
