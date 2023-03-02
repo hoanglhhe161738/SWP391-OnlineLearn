@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,6 +48,12 @@
             }
             .content{
                 background-image: url(../Assets/images/bg.png);
+            }
+            .passInput{
+                 text-decoration: none; color: #00de7a; font-size: 18px; font-weight: bold;
+            }
+            .failInput{
+                text-decoration:line-through; color: red; font-size: 18px; font-weight: bold;
             }
         </style>
     </head>
@@ -105,9 +112,15 @@
                                         <input class="text-box-input" name="fullName" type="text" value="${sessionScope.user.full_name}" placeholder="Họ và tên"><br>
                                         <span class="text-box-input" style="margin-right: 0.5em; border: 1px solid #f2f2f2">
                                             <label class="label-custom">Giới tính: </label>
-                                            <input type="radio" name="gender" value="true">
+                                            <input type="radio" name="gender" value="true"
+                                                   <c:if test="${sessionScope.user.gender}">
+                                                       checked
+                                                   </c:if>>
                                             <label style="margin-right: 1em">Nam</label>
-                                            <input  type="radio" name="gender" value="false">
+                                            <input  type="radio" name="gender" value="false"
+                                                    <c:if test="${!sessionScope.user.gender}">
+                                                       checked
+                                                   </c:if>>
                                             <label>Nữ</label>
                                         </span>
                                         <span class="text-box-input" style=" border: 1px solid #f2f2f2">
@@ -121,12 +134,15 @@
                                         <input class="text-box-input" value="${sessionScope.user.parent_phone_number}" maxlength="10" name="phoneNumber" type="text" placeholder="Số điện thoại phụ huynh"><br>
                                     </div>
                                     <div style="display: flex; justify-content: space-between;">
-                                        <div style="margin: 1em;">
-                                            <c:if test="${requestScope.noti2 ne null}">
-                                                <a style="color: #00de7a; font-size: 18px; font-weight: bold">${requestScope.noti2}</a>
-                                            </c:if>
+                                        <div style="margin: 0 1em; text-align: left">
                                             <c:if test="${requestScope.noti1 ne null}">
-                                                <a style="color: red; font-size: 18px; font-weight: bold">${requestScope.noti1}</a>
+                                                <a class="failInput">${requestScope.noti1}</a>
+                                            </c:if>
+                                            <c:if test="${requestScope.noti2 ne null}">
+                                                <br><a class="failInput">${requestScope.noti2}</a>
+                                            </c:if>
+                                            <c:if test="${requestScope.noti3 ne null}">
+                                                <br><a class="passInput">${requestScope.noti3}</a>
                                             </c:if>
                                         </div>
                                         <div style="margin: 1em;">
