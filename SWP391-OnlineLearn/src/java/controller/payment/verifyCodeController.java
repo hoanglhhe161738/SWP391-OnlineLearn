@@ -4,6 +4,7 @@
  */
 package controller.payment;
 
+import controller.auth.BaseAuthenticationController;
 import dal.AccountDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -17,17 +18,7 @@ import model.Account;
  *
  * @author Khangnekk
  */
-public class verifyCodeController extends HttpServlet{
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processRequest(req, resp);
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processRequest(req, resp);
-    }
+public class verifyCodeController extends BaseAuthenticationController{
     
     void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         AccountDBContext aDB = new AccountDBContext();
@@ -46,6 +37,16 @@ public class verifyCodeController extends HttpServlet{
         }else{
             req.getRequestDispatcher("./paymentfail.html").forward(req, resp);
         }
+    }
+
+    @Override
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        processRequest(req, resp);
+    }
+
+    @Override
+    protected void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        processRequest(req, resp);
     }
     
 }
