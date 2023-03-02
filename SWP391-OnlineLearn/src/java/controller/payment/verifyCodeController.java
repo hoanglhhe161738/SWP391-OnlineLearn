@@ -38,8 +38,10 @@ public class verifyCodeController extends HttpServlet{
         String Code = String.valueOf(verifyPremium.getAttribute("verifyCode"));            
         if(verifyCode.equals(Code)){
             Account acc = (Account)req.getSession().getAttribute("account");
-            Account accUpdate = aDB.updateClassifyAccount(acc);
-            req.getSession().setAttribute("account", accUpdate);
+            aDB.updateClassifyAccount(acc);
+            Account oldInfo = (Account) req.getSession().getAttribute("account");
+            Account newInfo = aDB.get(oldInfo.getUsername());
+            req.getSession().setAttribute("account", newInfo);
             req.getRequestDispatcher("./PaymentSuccesful.html").forward(req, resp);
         }else{
             req.getRequestDispatcher("./paymentfail.html").forward(req, resp);
