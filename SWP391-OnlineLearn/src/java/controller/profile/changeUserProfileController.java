@@ -23,6 +23,7 @@ public class changeUserProfileController extends BaseAuthenticationController {
 
     protected void doPostProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String regexEmail = "\\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\\b";
+        String regexphoneNum = "(\\+84|0)\\d{9,10}";
         Account acc = (Account) req.getSession().getAttribute("account");
         String username = acc.getUsername();
 
@@ -35,17 +36,27 @@ public class changeUserProfileController extends BaseAuthenticationController {
         String newPhoneNumber = req.getParameter("phoneNumber");
         boolean newGender = Boolean.parseBoolean(req.getParameter("gender"));
         Date dob = Date.valueOf(req.getParameter("dob"));
-
-        if (!newParentEmail.matches(regexEmail)) {
-            req.setAttribute("noti1", "Sai định dạng email");
-            req.getRequestDispatcher("./changeuserprofile.jsp").forward(req, resp);
+        String noti1, noti2, noti3;
+        if (!newParentEmail.matches(regexEmail)
+                || !newPhoneNumber.matches(regexphoneNum)
+                || newPhoneNumber.length() != 10) {
+            if (!newParentEmail.matches(regexEmail)) {
+                noti1 = "Sai định dạng email";
+                req.setAttribute("noti1", noti1);
+            }
+            if (!newPhoneNumber.matches(regexphoneNum) || newPhoneNumber.length() != 10) {
+                noti2 = "Sai định dạng số điện thoại";
+                req.setAttribute("noti2", noti2);
+            }
+//            req.getRequestDispatcher("./changeuserprofile.jsp").forward(req, resp);
         } else {
             User user = new User(user_id, newFullName, dob, newGender, newParentName, newParentEmail, newPhoneNumber, username);
             uDB.update(user);
             req.getSession().setAttribute("user", user);
-            req.setAttribute("noti2", "Sửa thông tin thành công");
-            req.getRequestDispatcher("./changeuserprofile.jsp").forward(req, resp);
+            noti3 = "Thay dổi thông tin thành công";
+            req.setAttribute("noti3", noti3);
         }
+        req.getRequestDispatcher("./changeuserprofile.jsp").forward(req, resp);
     }
 
     protected void doGetProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
