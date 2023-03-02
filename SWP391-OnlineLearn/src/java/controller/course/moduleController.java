@@ -4,6 +4,7 @@
  */
 package controller.course;
 
+import controller.auth.BaseAuthenticationController;
 import dal.LessonDBContext;
 import dal.ModuleDBContext;
 import jakarta.servlet.ServletException;
@@ -19,15 +20,15 @@ import model.Module;
  *
  * @author Khangnekk
  */
-public class moduleController extends HttpServlet {
+public class moduleController extends BaseAuthenticationController {
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    protected void doPostProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPost(req, resp); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    protected void doGetProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int module_id = Integer.parseInt(req.getParameter("module_id"));
 
         ModuleDBContext mDB = new ModuleDBContext();
@@ -79,5 +80,15 @@ public class moduleController extends HttpServlet {
         }
         percent = (learnStatusTrue * 100) / numberOfLessons;
         return Math.round(percent * 100.0) / 100.0;
+    }
+
+    @Override
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doPostProcess(req, resp);
+    }
+
+    @Override
+    protected void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGetProcess(req, resp);
     }
 }

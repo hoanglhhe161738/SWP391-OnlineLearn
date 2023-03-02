@@ -29,68 +29,6 @@ import javax.mail.internet.MimeMessage;
  */
 public class enterMailController extends BaseAuthenticationController {
 
-//    @Override
-//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        String regexEmail = "\\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\\b";
-//        String recipient = req.getParameter("email");
-//        if (recipient.matches(regexEmail)) {
-//            // Get recipient email address and message from form data
-//            String verifyCode = getRandomNumberString();
-//            String message = messageProcess(verifyCode);
-//
-//            HttpSession verifyPremium = req.getSession();
-//            verifyPremium.setAttribute("verifyCode", verifyCode);
-//            verifyPremium.setMaxInactiveInterval(2 * 60);
-//
-//            // Set up mail server and authentication
-//            String host = "smtp.gmail.com";
-//            String user = "contact.khalgfk@gmail.com";
-//            String password = "oiowajaidxxqqubl";
-//
-//            // Create properties object for the mail session
-//            Properties props = new Properties();
-//            props.put("mail.smtp.auth", "true");
-//            props.put("mail.smtp.starttls.enable", "true");
-//            props.put("mail.smtp.host", host);
-//            props.put("mail.smtp.port", "587");
-//
-//            // Create mail session and authenticate with credentials
-//            Session session = Session.getInstance(props, new Authenticator() {
-//                @Override
-//                protected PasswordAuthentication getPasswordAuthentication() {
-//                    return new PasswordAuthentication(user, password);
-//                }
-//            });
-//
-//            try {
-//                // Create message and set recipient, subject, and message body
-//                Message msg = new MimeMessage(session);
-//                msg.setFrom(new InternetAddress(user));
-//                msg.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
-//                msg.setSubject("Upgrade to a premium account");
-//                msg.setText(message);
-//
-//                // Send message
-//                Transport.send(msg);
-//
-//                // Redirect to success page
-//                req.getRequestDispatcher("./encodeEmail.html").forward(req, resp);
-//            } catch (MessagingException e) {
-//                // Redirect to error page
-////                resp.getWriter().print("error");
-//                e.printStackTrace();
-//            }
-//        } else {
-//            String noti = "Wrong format email";
-//            req.setAttribute("noti", noti);
-//            req.getRequestDispatcher("./emailAcception.html").forward(req, resp);
-//        }
-//    }
-//
-//    @Override
-//    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        req.getRequestDispatcher("./emailAcception.html").forward(req, resp);
-//    }
 
     public static String getRandomNumberString() {
         // It will generate 6 digit random Number.
