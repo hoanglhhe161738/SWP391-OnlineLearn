@@ -22,7 +22,7 @@
             <!-- FontAweome CDN Link for Icons-->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
             <style>
-                .nav-bar{margin: 1em auto}
+                .nav-bar{margin: 1em auto;}
             </style>
         </head>
 

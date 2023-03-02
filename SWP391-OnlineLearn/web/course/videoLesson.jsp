@@ -121,7 +121,7 @@
             </div>
             <div style="text-align: right; margin: 0.8em  2em">
                 <button class="glow-on-hover"><a href="../game/matchgame?lession_id=49&lession_name=${requestScope.lesson.lesson_name}">Game</a></button>
-                <button class="glow-on-hover"><a href="#">Làm bài tập</a></button>
+                <button class="glow-on-hover"><a href="./quiz?lession_id=${requestScope.lesson.lesson_id}">Làm bài tập</a></button>
                 <button class="glow-on-hover""><a href="#">Đánh dấu là đã học xong</a></button>
             </div>
         </div>
