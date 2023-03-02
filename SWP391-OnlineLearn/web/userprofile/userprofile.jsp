@@ -52,11 +52,11 @@
                             <div class="profile-item-unit p-3">
                                 <div class="image-profile">
                                     <div class="image-in"><img src="" alt=""></div>
-                                    <h5 style="margin: 20px; font-weight: bolder;">${sessionScope.user.username}</h5>
+                                    <h5 style="margin: 20px; font-weight: bolder;">${sessionScope.user.full_name}</h5>
                                 </div>
                                 <div class="account-profile">
                                     <p style="margin-bottom: 0;">ID: ${sessionScope.user.user_id}</p>
-                                    <p>Loại tài khoản: ${sessionScope.account.classify_account}</p>
+                                    <p>Loại tài khoản: <b>${sessionScope.account.classify_account}</b></p>
                                 </div>
                             </div>
                         </div>

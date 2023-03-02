@@ -4,6 +4,7 @@
  */
 package controller.payment;
 
+import controller.auth.BaseAuthenticationController;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -14,10 +15,10 @@ import java.io.IOException;
  *
  * @author Khangnekk
  */
-public class completePaymentController extends HttpServlet{
+public class completePaymentController extends BaseAuthenticationController {
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    protected void doPostprocess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String creditCardNumRegex = "^4[0-9]{12}(?:[0-9]{3})?$";
         String mmyyRegex = "^(0[1-9]|1[0-2])\\/([0-9]{2})$";
         String ccvRegex = "^[0-9]{3,4}$";
@@ -67,11 +68,21 @@ public class completePaymentController extends HttpServlet{
 
     }
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    protected void doGetProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("normal", "normal");
         req.setAttribute("premium", "premium");
         req.getRequestDispatcher("./CompletePayment.jsp").forward(req, resp);
     }
-    
+
+    @Override
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doPostprocess(req, resp);
+    }
+
+    @Override
+    protected void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGetProcess(req, resp);
+    }
+
 }

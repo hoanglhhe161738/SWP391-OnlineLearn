@@ -79,27 +79,44 @@
                     <div encode-content item-pay>
                         <img src="../Assets/images/bag.png" alt="">
                     </div>
-                    <div encode-ontent-accept>
-                        <p style="font-weight: bolder; font-size: 2rem; color: #00de79;">Xác nhận thanh toán</p>
-                    </div>
-                    <div encode-ontent-para style="padding: 0 20px; text-align: start;">
-                        <p style="font-size: large;">Chúng tôi vừa gửi 1 mã xác nhận bao gồm 6 chữ số vào
-                            email bạn vừa nhập, vui lòng kiểm tra email và nhập mã xác nhận đó vào phần bên
-                            dưới rồi bấm hoàn tất để hoàn tất giao dịch.</p>
-                    </div>
-                    <div encode-ontent encode-pay style="padding: 20px;"><input
-                            style="height: 2.5em; width: 40%; border: 2px solid black;" type="text"
-                            placeholder="XXX-XXX"></div>
-                    <div encode-ontent note-pay
-                        style="font-size: 15px; text-align: start; margin-top: 5%; padding-left: 20px;">
-                        <p>(*) Lưu ý: Mã xác nhận chỉ có hiệu lực trong vòng 2 phút</p>
-                        <div style="margin: -7% 0 0 70%;"><button style="font-weight: bolder; font-size: larger; width: 80%; padding: 5px 0 5px 0; color: #fff; background-color: #00de79;
-                            border-radius: 10px; border: #fff;" type="button">Hoàn tất</button></div>
+                </div>
+                <div class="encode">
+                    <div class="encode-content">
+                        <div encode-content item-pay>
+                            <img src="../Assets/images/bag.png" alt="">
+                        </div>
+                        <div encode-ontent-accept>
+                            <p style="font-weight: bolder; font-size: 2rem; color: #00de79;">Xác nhận thanh toán</p>
+                        </div>
+                        <div encode-ontent-para style="padding: 0 20px; text-align: start;">
+                            <p style="font-size: large;">Chúng tôi vừa gửi 1 mã xác nhận bao gồm 6 chữ số vào
+                                email bạn vừa nhập, vui lòng kiểm tra email và nhập mã xác nhận đó vào phần bên
+                                dưới rồi bấm hoàn tất để hoàn tất giao dịch.</p>
+                        </div>
+                        <form action="./verifyCode">
+                            <div encode-ontent encode-pay style="padding: 20px;"><input maxlength="7" id="verify-code-input"
+                                                                                        style="height: 2.5em; width: 40%; border: 2px solid black;" name="verifyCode" type="text"
+                                                                                        placeholder="XXX-XXX"></div>
+                            <div encode-ontent note-pay
+                                 style="font-size: 15px; text-align: start; margin-top: 5%; padding-left: 20px;">
+                                <p>(*) Lưu ý: Mã xác nhận chỉ có hiệu lực trong vòng 2 phút</p>
+                                <div style="margin: -7% 0 0 70%;"><input style="font-weight: bolder; font-size: larger; width: 80%; padding: 5px 0 5px 0; color: #fff; background-color: #00de79;
+                                                                         border-radius: 10px; border: #fff;" type="submit" value="Hoàn tất"></div>
+                            </div>
+                        </form>                   
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
+    <script>
+        const input = document.getElementById("verify-code-input");
+        input.addEventListener("input", () => input.value = formatNumber(input.value.replaceAll("-", "")));
 
+        const formatNumber = (number) => number.split("").reduce((seed, next, index) => {
+                if (index !== 0 && !(index % 3))
+                    seed += "-";
+                return seed + next;
+            }, "");
+    </script>
 </html>

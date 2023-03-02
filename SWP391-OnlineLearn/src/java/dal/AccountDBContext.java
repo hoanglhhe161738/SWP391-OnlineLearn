@@ -120,10 +120,42 @@ public class AccountDBContext extends DBContext<Account> {
     public Account get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
+    public Account get(String username) {
+        Account account = new Account();
+        String sql = "SELECT * FROM [Account] WHERE username = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, username);
+            ResultSet rs = stm.executeQuery();
+            if(rs.next()){
+                account.setClassify_account(rs.getString("classify_account"));
+                account.setUsername(rs.getString("username"));
+                return account;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return account;
+    }
 
     @Override
     public ArrayList<Account> list() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void updateClassifyAccount(Account model) {
+        String sql = "UPDATE [Account]\n"
+                + "   SET \n"
+                + "      [classify_account] = 'premium'\n"
+                + " WHERE username = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, model.getUsername());
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }
