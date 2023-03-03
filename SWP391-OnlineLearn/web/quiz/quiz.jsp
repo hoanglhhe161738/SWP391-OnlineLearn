@@ -306,6 +306,7 @@
         if (time > 549){
         clearInterval(counterLine);
         }
+
         }
         }
         
