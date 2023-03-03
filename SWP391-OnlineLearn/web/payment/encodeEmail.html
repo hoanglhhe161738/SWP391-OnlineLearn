@@ -88,9 +88,9 @@
                                 dưới rồi bấm hoàn tất để hoàn tất giao dịch.</p>
                         </div>
                         <form action="./verifyCode">
-                            <div encode-ontent encode-pay style="padding: 20px;"><input
-                                    style="height: 2.5em; width: 40%; border: 2px solid black;" name="verifyCode" type="text"
-                                    placeholder="XXX-XXX"></div>
+                            <div encode-ontent encode-pay style="padding: 20px;"><input maxlength="7" id="verify-code-input"
+                                                                                        style="height: 2.5em; width: 40%; border: 2px solid black;" name="verifyCode" type="text"
+                                                                                        placeholder="XXX-XXX"></div>
                             <div encode-ontent note-pay
                                  style="font-size: 15px; text-align: start; margin-top: 5%; padding-left: 20px;">
                                 <p>(*) Lưu ý: Mã xác nhận chỉ có hiệu lực trong vòng 2 phút</p>
@@ -103,5 +103,14 @@
             </div>
         </div>
     </body>
+    <script>
+        const input = document.getElementById("verify-code-input");
+        input.addEventListener("input", () => input.value = formatNumber(input.value.replaceAll("-", "")));
 
+        const formatNumber = (number) => number.split("").reduce((seed, next, index) => {
+                if (index !== 0 && !(index % 3))
+                    seed += "-";
+                return seed + next;
+            }, "");
+    </script>
 </html>
