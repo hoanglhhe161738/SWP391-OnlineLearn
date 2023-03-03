@@ -73,7 +73,6 @@
         <servlet-class>controller.profile.changeUserProfileController</servlet-class>
     </servlet>
     <servlet>
-<<<<<<< HEAD
         <servlet-name>Fillin4Controller</servlet-name>
         <servlet-class>controller.auth.Fillin4Controller</servlet-class>
     </servlet>
@@ -84,10 +83,8 @@
     <servlet>
         <servlet-name>verifyCodeSignUpController</servlet-name>
         <servlet-class>controller.auth.verifyCodeController</servlet-class>
-=======
         <servlet-name>quizController</servlet-name>
         <servlet-class>controller.quiz.quizController</servlet-class>
->>>>>>> 1d8cb765451afddc5ef290e8f42ad5d948729e29
     </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
@@ -166,7 +163,6 @@
         <url-pattern>/userprofile/changeUserProfile</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-<<<<<<< HEAD
         <servlet-name>Fillin4Controller</servlet-name>
         <url-pattern>/login/fillin4</url-pattern>
     </servlet-mapping>
@@ -177,10 +173,8 @@
     <servlet-mapping>
         <servlet-name>verifyCodeSignUpController</servlet-name>
         <url-pattern>/login/verifyCode</url-pattern>
-=======
         <servlet-name>quizController</servlet-name>
         <url-pattern>/course/quiz</url-pattern>
->>>>>>> 1d8cb765451afddc5ef290e8f42ad5d948729e29
     </servlet-mapping>
     <session-config>
         <session-timeout>
