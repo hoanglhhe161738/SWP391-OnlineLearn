@@ -2,9 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="KHANH">
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/build/web/WEB-INF/web.xml</file>
-        </group>
         <group>
             <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/payment/completePaymentController.java</file>
             <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/AccountDBContext.java</file>
@@ -19,9 +16,41 @@
             <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/model/User.java</file>
             <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/web/home/home.html</file>
             <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/web/WEB-INF/web.xml</file>
+<<<<<<< HEAD
             <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/payment/verifyCodeController.java</file>
             <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/home/homeController.java</file>
             <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/web/login/fillin4.jsp</file>
+=======
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/web/login/signup.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/userprofile/userprofile.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/WEB-INF/web.xml</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/userprofile/userprofile.html</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/SignupController.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/custom/nav.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/LessonDBContext.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/payment/CompletePayment.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/course/classes.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/payment/completePaymentController.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/LogoutController.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/userprofile/changeuserprofile.html</file>
+        </group>
+        <group name="KHANH">
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/matchgame/matchGameController.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/game/js/matchgame.js</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/MatchGameDBContext.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/game/matchgame.jsp</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/CourseDBContext.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/course/classesController.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/course/courseController.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/course/classes.jsp</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/ImgDBContext.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/course/course.jsp</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/WEB-INF/web.xml</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/quiz/quizController.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/VideoDBContext.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/game/css/matchgame.css</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/DBContext.java</file>
+>>>>>>> 1d8cb765451afddc5ef290e8f42ad5d948729e29
         </group>
     </open-files>
 </project-private>

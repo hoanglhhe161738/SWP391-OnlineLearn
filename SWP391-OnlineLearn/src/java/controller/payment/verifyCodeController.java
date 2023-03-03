@@ -4,6 +4,8 @@
  */
 package controller.payment;
 
+import controller.auth.BaseAuthenticationController;
+import dal.AccountDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,17 +17,7 @@ import java.io.IOException;
  *
  * @author Khangnekk
  */
-public class verifyCodeController extends HttpServlet{
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processRequest(req, resp);
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processRequest(req, resp);
-    }
+public class verifyCodeController extends BaseAuthenticationController{
     
     void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String verifyCode = req.getParameter("verifyCode");
@@ -36,12 +28,26 @@ public class verifyCodeController extends HttpServlet{
         req.setAttribute("tk", "Thank you!");
         
         if(verifyCode.equals(Code)){
-            req.setAttribute("alertTitle", "Thank you!");
-            req.getRequestDispatcher("afterVerifyCode.jsp").forward(req, resp);
+            Account acc = (Account)req.getSession().getAttribute("account");
+            aDB.updateClassifyAccount(acc);
+            Account oldInfo = (Account) req.getSession().getAttribute("account");
+            Account newInfo = aDB.get(oldInfo.getUsername());
+            req.getSession().setAttribute("account", newInfo);
+            req.getRequestDispatcher("./PaymentSuccesful.html").forward(req, resp);
         }else{
             req.setAttribute("alertTitle", "Sorry!");
             req.getRequestDispatcher("afterVerifyCode.jsp").forward(req, resp);
         }
+    }
+
+    @Override
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        processRequest(req, resp);
+    }
+
+    @Override
+    protected void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        processRequest(req, resp);
     }
     
 }
