@@ -110,7 +110,6 @@ public class enterMailController extends BaseAuthenticationController {
             req.getRequestDispatcher("./emailAcception.html").forward(req, resp);
         }
     }
-
     @Override
     protected void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("./emailAcception.html").forward(req, resp);
