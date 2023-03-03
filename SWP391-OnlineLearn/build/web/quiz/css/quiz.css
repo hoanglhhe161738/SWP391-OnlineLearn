@@ -86,6 +86,7 @@ ul li {
     z-index: 5;
     pointer-events: auto;
     transform: translate(-50%, -50%) scale(1);
+    width: 60%;
 }
 
 .start_btn button{
@@ -225,6 +226,7 @@ ul li {
     left: 0px;
     height: 3px;
     background: #007bff;
+    width: 60%;
 }
 
 section{
