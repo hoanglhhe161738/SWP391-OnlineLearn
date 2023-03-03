@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
+import model.Account;
 
 /**
  *
@@ -21,7 +22,7 @@ public class verifyCodeController extends BaseAuthenticationController{
     
     void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String verifyCode = req.getParameter("verifyCode");
-        
+        AccountDBContext aDB = new AccountDBContext();
         HttpSession verifyPremium = req.getSession();
         String Code = String.valueOf(verifyPremium.getAttribute("verifyCode"));
         
