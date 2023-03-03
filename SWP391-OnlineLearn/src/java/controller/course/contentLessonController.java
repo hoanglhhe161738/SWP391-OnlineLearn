@@ -4,6 +4,7 @@
  */
 package controller.course;
 
+import controller.auth.BaseAuthenticationController;
 import dal.ContentDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -17,19 +18,30 @@ import model.Content;
  *
  * @author Khangnekk
  */
-public class contentLessonController extends HttpServlet{
+public class contentLessonController extends BaseAuthenticationController{
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    protected void doPostProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
     }
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    protected void doGetProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ContentDBContext coDB = new ContentDBContext();
-        ArrayList<Content> contents = coDB.list();
-        req.setAttribute("contents", contents);
+        int lesson_id = Integer.parseInt(req.getParameter("lesson_id"));
+        Content content = coDB.getContentByLessonId(lesson_id);
+        req.setAttribute("content", content);
         req.getRequestDispatcher("./contentLesson.jsp").forward(req, resp);
+    }
+
+    @Override
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doPostProcess(req, resp);
+    }
+
+    @Override
+    protected void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGetProcess(req, resp);
     }
     
 }

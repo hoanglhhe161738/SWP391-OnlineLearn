@@ -16,7 +16,7 @@ import model.Content;
  *
  * @author Khangnekk
  */
-public class ContentDBContext extends DBContext<Content>{
+public class ContentDBContext extends DBContext<Content> {
 
     @Override
     public void insert(Content model) {
@@ -45,7 +45,7 @@ public class ContentDBContext extends DBContext<Content>{
         try {
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 Content content = new Content();
                 content.setContent_id(rs.getInt("content_id"));
                 content.setReading_content(rs.getString("reading_content"));
@@ -56,5 +56,25 @@ public class ContentDBContext extends DBContext<Content>{
         }
         return contents;
     }
-    
+
+    public Content getContentByLessonId(int lesson_id) {
+        Content content = new Content();
+        String sql = "SELECT  c.content_id,c.reading_content\n"
+                + "FROM Content c, Lession_Content lc \n"
+                + "WHERE lc.lession_id = ? AND c.content_id = lc.content_id";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, lesson_id);
+            ResultSet rs = stm.executeQuery();
+            if(rs.next()){
+                content.setContent_id(rs.getInt("content_id"));
+                content.setReading_content(rs.getString("reading_content"));
+                return content;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ContentDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return content;
+    }
+
 }

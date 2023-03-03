@@ -80,7 +80,7 @@ ul li {
     border-color: white;
     display: flex;
     flex-direction: row;
-    
+
 }
 .account img{
     width: 50%;
@@ -115,7 +115,7 @@ ul li {
 .information-content-left{
     display: flex;
     flex-direction: column;
-    
+
 }
 .information-content-item{
     margin-top: 1rem;
@@ -126,7 +126,7 @@ ul li {
 .profile-item{
     padding: 0 16px 0 16px;
     margin: 1em 0 1em 0;
-    
+
 }
 /* .profile-item-unit{
     background-color: #f2f2f2;

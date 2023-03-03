@@ -7,22 +7,23 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Xác nhận đăng kí tài khoản</title>
-        <style>
-            body {
-                position: fixed;
-                width: 100%;
-                height: 100vh;
-                background-image: url(../Assets/images/bg.png);
-                background-size: cover;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Assets/icon/favicon.png"/>
+    <title>Xác nhận đăng kí tài khoản</title>
+    <style>
+        body {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background-image: url(../Assets/images/bg.png);
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
             .container {
                 border: 1px solid black;

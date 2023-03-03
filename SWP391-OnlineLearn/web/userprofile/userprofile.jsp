@@ -4,10 +4,11 @@
 <html lang="en">
 
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link rel="icon" href="../Assets/icon/favicon.png"/>
         <link rel="stylesheet" href="../Assets/css/popup.css">
         <link rel="stylesheet" href="../Assets/css/userprofile.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -52,11 +53,11 @@
                             <div class="profile-item-unit p-3">
                                 <div class="image-profile">
                                     <div class="image-in"><img src="" alt=""></div>
-                                    <h5 style="margin: 20px; font-weight: bolder;">${sessionScope.user.username}</h5>
+                                    <h5 style="margin: 20px; font-weight: bolder;">${sessionScope.user.full_name}</h5>
                                 </div>
                                 <div class="account-profile">
                                     <p style="margin-bottom: 0;">ID: ${sessionScope.user.user_id}</p>
-                                    <p>Loại tài khoản: ${sessionScope.account.classify_account}</p>
+                                    <p>Loại tài khoản: <b>${sessionScope.account.classify_account}</b></p>
                                 </div>
                             </div>
                         </div>
