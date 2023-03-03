@@ -24,7 +24,7 @@ public class verifyCodeController extends BaseAuthenticationController{
         AccountDBContext aDB = new AccountDBContext();
         
         String verifyCode = req.getParameter("verifyCode");
-        
+        AccountDBContext aDB = new AccountDBContext();
         HttpSession verifyPremium = req.getSession();
         String Code = String.valueOf(verifyPremium.getAttribute("verifyCode"));            
         if(verifyCode.equals(Code)){
