@@ -101,8 +101,7 @@ public class enterMailController extends BaseAuthenticationController {
                 req.getRequestDispatcher("./encodeEmail.html").forward(req, resp);
             } catch (MessagingException e) {
                 // Redirect to error page
-//                resp.getWriter().print("error");
-                e.printStackTrace();
+                resp.getWriter().print("chúng tôi không thể gửi mã code đến email của bạn");
             }
         } else {
             String noti = "Wrong format email";
