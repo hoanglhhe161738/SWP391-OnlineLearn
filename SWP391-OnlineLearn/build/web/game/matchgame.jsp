@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MatchGame</title>
-
+<link rel="icon" href="../Assets/icon/favicon.png"/>
     <link rel="stylesheet" href="../Assets/css/Style.css">
     <link rel="stylesheet" href="../game/css/matchgame.css"/>
     <!-- link bootstrap -->

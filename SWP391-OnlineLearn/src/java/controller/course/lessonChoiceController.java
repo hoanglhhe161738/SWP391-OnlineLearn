@@ -5,10 +5,12 @@
 package controller.course;
 
 import controller.auth.BaseAuthenticationController;
+import dal.LessonDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import model.Lesson;
 
 /**
  *
@@ -24,7 +26,9 @@ public class lessonChoiceController extends BaseAuthenticationController{
 
     protected void doGetProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int lesson_id = Integer.parseInt(req.getParameter("lesson_id"));
-        req.setAttribute("lesson_id", lesson_id);
+        LessonDBContext lDB = new LessonDBContext();
+        Lesson lesson = lDB.get(lesson_id);
+        req.setAttribute("lesson", lesson);
         req.getRequestDispatcher("./lessonChoice.jsp").forward(req, resp);
     }
 

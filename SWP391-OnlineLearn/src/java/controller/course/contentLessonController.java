@@ -28,8 +28,9 @@ public class contentLessonController extends BaseAuthenticationController{
 
     protected void doGetProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ContentDBContext coDB = new ContentDBContext();
-        ArrayList<Content> contents = coDB.list();
-        req.setAttribute("contents", contents);
+        int lesson_id = Integer.parseInt(req.getParameter("lesson_id"));
+        Content content = coDB.getContentByLessonId(lesson_id);
+        req.setAttribute("content", content);
         req.getRequestDispatcher("./contentLesson.jsp").forward(req, resp);
     }
 

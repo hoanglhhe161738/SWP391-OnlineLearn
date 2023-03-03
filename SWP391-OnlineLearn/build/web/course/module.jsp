@@ -8,6 +8,7 @@
     <title>Module</title>
     <link rel="stylesheet" href="../Assets/css/Style.css">
     <link rel="stylesheet" href="../Assets/css/course.css">
+    <link rel="icon" href="../Assets/icon/favicon.png"/>
     <!-- link bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
@@ -45,7 +46,7 @@
                                     <c:if test="${l.status ne true}">
                                         <img src="../Assets/icon/icon (75).png" height="30px" width="30px">
                                     </c:if>
-                                    <a href="./videoLesson?lesson_id=${l.lesson_id}" style="padding: 1em;">${l.lesson_name}</a>
+                                    <a href="./lessonChoice?lesson_id=${l.lesson_id}" style="padding: 1em;">${l.lesson_name}</a>
                                 </div>
                             </c:forEach>
                         </div>

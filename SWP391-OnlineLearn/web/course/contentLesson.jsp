@@ -8,6 +8,7 @@
     <title>Các lựa chọn</title>
     <link rel="stylesheet" href="../Assets/css/Style.css">
     <link rel="stylesheet" href="../Assets/css/course.css">
+    <link rel="icon" href="../Assets/icon/favicon.png"/>
     <!-- link bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
@@ -16,6 +17,13 @@
     <style>
         .content{
             background-image: none;
+        }
+        .reading_content{
+            max-width: 60%;
+            text-align: justify;
+            font-size: 18px;
+            margin: 3em auto;
+            /*justify-content: center;*/
         }
     </style>
 </head>
@@ -28,11 +36,19 @@
             <div class="content">                
                 <div>
                     <h2>${requestScope.contentTitle}</h2>
-                </div>
-                <div>
-                ${requestScope.content}
-                </div>
             </div>
+            <c:if test="${requestScope.content.reading_content eq null}">
+                <div class="reading_content">
+                    <h2 style="text-align: center; margin-bottom: 1em;">Học phần này không có lý thuyết</h2>
+                </div>
+            </c:if>
+            <c:if test="${requestScope.content.reading_content ne null}">                
+                <div class="reading_content">
+                    <h2 style="text-align: center; margin-bottom: 1em;">Tiêu đề lý thuyết</h2>
+                    ${requestScope.content.reading_content}
+                </div>
+            </c:if>
+        </div>
     </div>
 </body>
 

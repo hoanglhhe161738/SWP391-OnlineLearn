@@ -15,6 +15,7 @@
         <title>Home</title>
         <link rel="stylesheet" href="../Assets/css/Style.css">
         <link rel="stylesheet" href="../Assets/css/popup.css">
+        <link rel="icon" href="../Assets/icon/favicon.png"/>
         <!-- link bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
