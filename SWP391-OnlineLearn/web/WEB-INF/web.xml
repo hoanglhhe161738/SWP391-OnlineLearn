@@ -37,6 +37,10 @@
         <servlet-class>controller.auth.LoginController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>SignupController</servlet-name>
+        <servlet-class>controller.auth.SignupController</servlet-class>
+        </servlet>
+    <servlet>
         <servlet-name>completePaymentController</servlet-name>
         <servlet-class>controller.payment.completePaymentController</servlet-class>
     </servlet>
