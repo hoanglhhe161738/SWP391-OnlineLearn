@@ -53,23 +53,67 @@
             font-size: 1em;
         }
 
-        .login-submit {
-            padding: 0.8em;
-            color: white;
-            font-size: 18px;
-            text-align: center;
-            border: 0;
-            outline: none;
-            display: inline-block;
-            width: 100%;
-            border-radius: 14px;
-            background-color: #00de7a;
-            font-family: "Poppins", sans-serif;
-            cursor: pointer;
-            font-weight: 600;
-            box-shadow: 0 5px 10px 0 rgba(30, 201, 64, 0.5);
-            margin:1em auto;
-        }
+            .login-submit {
+                padding: 0.8em;
+                color: white;
+                font-size: 18px;
+                text-align: center;
+                border: 0;
+                outline: none;
+                display: inline-block;
+                width: 105%;
+                border-radius: 14px;
+                background-color: #00de7a;
+                font-family: "Poppins", sans-serif;
+                cursor: pointer;
+                font-weight: 600;
+                box-shadow: 0 5px 10px 0 rgba(30, 201, 64, 0.5);
+                margin:1em auto;
+            }
+
+            .cancel{
+                padding: 0.8em;
+                color: white;
+                font-size: 18px;
+                text-align: center;
+                border: 0;
+                outline: none;
+                display: inline-block;
+                width: 100%;
+                border-radius: 14px;
+                background-color: red;
+                font-family: "Poppins", sans-serif;
+                cursor: pointer;
+                font-weight: 600;
+                box-shadow: 0 5px 10px 0 red;
+                margin:1em auto;
+                text-decoration: none;
+            }
+
+            img{
+                display: block;
+                margin: 0 auto;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <img src="../Assets/images/email.png" alt="">
+            <h1>Xác nhận đăng kí tài khoản</h1>
+            <p class="mess">Chúng tôi vừa gửi 1 mã xác nhận bao gồm 6 chữ số vào email của bạn. Vui lòng kiểm tra email rồi nhập mã xác nhận đó vào phần bên dưới để hoàn tất đăng ký!</p>
+
+            <div class="input">
+                <form action="">
+                    <input type="text" name="confirm" class="signup-input" placeholder="XXX-XXX">
+                    <p style="font-size: 0.75em;">(*)Lưu ý: Mã xác nhận chỉ có hiệu lực trong 2 phút</p>
+                    <input class="login-submit" type="submit" value="Hoàn tất">
+
+
+                    <a  href="./signup.jsp" class="cancel">Hủy bỏ</a>
+
+                </form>
+            </div>
 
         img{
             display: block;

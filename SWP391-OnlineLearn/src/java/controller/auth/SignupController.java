@@ -11,6 +11,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import dal.AccountDBContext;
+import model.Account;
 
 /**
  *
@@ -34,6 +36,24 @@ public class SignupController extends HttpServlet {
         if(!password.equals(cfpassword)){
             request.setAttribute("mess", "Mật khẩu không khớp, vui lòng nhập lai!");
             request.getRequestDispatcher("./signup.jsp").forward(request, response);
+        } else {
+            if (password.matches(passwordRegex)) {
+                AccountDBContext accdb = new AccountDBContext();
+                Account a = accdb.checkAccountExisted(username);
+                if (a == null) {
+                    //can signup
+                    accdb.signup(username, password);
+                    response.sendRedirect("./signup.jsp");
+
+                } else {
+                    request.setAttribute("mess1", "Tên tài khoản đã tồn tại. Vui lòng nhập lại");
+                    request.getRequestDispatcher("./signup.jsp").forward(request, response);
+                }
+            } else {
+                request.setAttribute("mess1", "Mật khẩu phải bao gồm 8 ký tự trở lên và phải bao gồm chữ hoa, chữ thường, số từ 0 đến 9 và bao gồm ký tự đặc biệt");
+                request.getRequestDispatcher("./signup.jsp").forward(request, response);
+            }
+
         }
         
         
