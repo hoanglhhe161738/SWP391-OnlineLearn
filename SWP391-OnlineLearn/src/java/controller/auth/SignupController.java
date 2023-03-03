@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import dal.AccountDBContext;
+import jakarta.servlet.http.HttpSession;
 import model.Account;
 
 /**
@@ -44,8 +45,11 @@ public class SignupController extends HttpServlet {
                 Account a = accdb.checkAccountExisted(username);
                 if (a == null) {
                     //can signup
-                    accdb.signup(username, password);
-                    response.sendRedirect("./signup.jsp");
+//                    accdb.fillin4(username, password);
+                    Account acc = new Account(username, password, "normal");
+                    HttpSession session = request.getSession();
+                    session.setAttribute("newAccount", acc);
+                    response.sendRedirect("./fillin4");
 
                 } else {
                     request.setAttribute("mess1", "Tên tài khoản đã tồn tại. Vui lòng nhập lại");
