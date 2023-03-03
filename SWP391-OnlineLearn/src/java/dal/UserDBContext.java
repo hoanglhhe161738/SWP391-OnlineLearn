@@ -71,7 +71,7 @@ public class UserDBContext extends DBContext<User> {
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, username);
             ResultSet rs = stm.executeQuery();
-            if (rs.next()) {
+            if(rs.next()){
                 user.setUser_id(rs.getInt("user_id"));
                 user.setFull_name(rs.getString("full_name"));
                 user.setGender(rs.getBoolean("gender"));
