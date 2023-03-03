@@ -37,6 +37,10 @@
         <servlet-class>controller.auth.LoginController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>SignupController</servlet-name>
+        <servlet-class>controller.auth.SignupController</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>completePaymentController</servlet-name>
         <servlet-class>controller.payment.completePaymentController</servlet-class>
     </servlet>
@@ -69,6 +73,16 @@
         <servlet-class>controller.profile.changeUserProfileController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>Fillin4Controller</servlet-name>
+        <servlet-class>controller.auth.Fillin4Controller</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>sendMailController</servlet-name>
+        <servlet-class>controller.auth.enterMailController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>verifyCodeSignUpController</servlet-name>
+        <servlet-class>controller.auth.verifyCodeController</servlet-class>
         <servlet-name>quizController</servlet-name>
         <servlet-class>controller.quiz.quizController</servlet-class>
     </servlet>
@@ -113,28 +127,32 @@
         <url-pattern>/login/loginUser</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>SignupController</servlet-name>
+        <url-pattern>/login/signup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>completePaymentController</servlet-name>
-        <url-pattern>/payment/completePayment</url-pattern>
+        <url-pattern>/completePayment</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>enterMailController</servlet-name>
-        <url-pattern>/payment/sendEmail</url-pattern>
+        <url-pattern>/sendEmail</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>verifyCodeController</servlet-name>
-        <url-pattern>/payment/verifyCode</url-pattern>
+        <url-pattern>/verifyCode</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>contentLessonController</servlet-name>
-        <url-pattern>/course/contentLesson</url-pattern>
+        <url-pattern>/contentLesson</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>lessonChoiceController</servlet-name>
-        <url-pattern>/course/lessonChoice</url-pattern>
+        <url-pattern>/lessonChoice</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LogoutController</servlet-name>
-        <url-pattern>/login/logout</url-pattern>
+        <url-pattern>/logout</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>viewUserProfileController</servlet-name>
@@ -145,6 +163,16 @@
         <url-pattern>/userprofile/changeUserProfile</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>Fillin4Controller</servlet-name>
+        <url-pattern>/login/fillin4</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sendMailController</servlet-name>
+        <url-pattern>/login/sendMail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>verifyCodeSignUpController</servlet-name>
+        <url-pattern>/login/verifyCode</url-pattern>
         <servlet-name>quizController</servlet-name>
         <url-pattern>/course/quiz</url-pattern>
     </servlet-mapping>

@@ -22,8 +22,8 @@ public class completePaymentController extends BaseAuthenticationController {
         String creditCardNumRegex = "^4[0-9]{12}(?:[0-9]{3})?$";
         String mmyyRegex = "^(0[1-9]|1[0-2])\\/([0-9]{2})$";
         String ccvRegex = "^[0-9]{3,4}$";
-
-        String creditCardNum = req.getParameter("creditCardNum").replaceAll("\\s", "");
+        
+        String creditCardNum = req.getParameter("creditCardNum");
         String mmyyNum = req.getParameter("mmyyNum");
         String ccvNum = req.getParameter("ccvNum");
         String noti1, noti2, noti3;

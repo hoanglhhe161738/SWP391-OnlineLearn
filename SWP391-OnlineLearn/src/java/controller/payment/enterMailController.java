@@ -19,7 +19,6 @@ import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
-import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
@@ -69,7 +68,7 @@ public class enterMailController extends BaseAuthenticationController {
             // Set up mail server and authentication
             String host = "smtp.gmail.com";
             String user = "contact.khalgfk@gmail.com";
-            String password = "oiowajaidxxqqubl";
+            String password = "mixquuqtbcjhrpar";
 
             // Create properties object for the mail session
             Properties props = new Properties();
@@ -95,10 +94,10 @@ public class enterMailController extends BaseAuthenticationController {
                 msg.setText(message);
 
                 // Send message
-                Transport.send(msg);
+                javax.mail.Transport.send(msg);
 
                 // Redirect to success page
-                req.getRequestDispatcher("./encodeEmail.html").forward(req, resp);
+                req.getRequestDispatcher("./confirm.jsp").forward(req, resp);
             } catch (MessagingException e) {
                 // Redirect to error page
 //                resp.getWriter().print("error");
@@ -107,9 +106,8 @@ public class enterMailController extends BaseAuthenticationController {
         } else {
             String noti = "Wrong format email";
             req.setAttribute("noti", noti);
-            req.getRequestDispatcher("./emailAcception.html").forward(req, resp);
+            req.getRequestDispatcher("./enterEmail.jsp").forward(req, resp);
         }
-    }
 
     @Override
     protected void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
