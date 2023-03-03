@@ -19,20 +19,6 @@ import model.User;
  */
 public class homeController extends BaseAuthenticationController {
 
-//    @Override
-//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        super.doPost(req, resp); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
-//    }
-//
-//    @Override
-//    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        UserDBContext uDB = new UserDBContext();
-//        Account acc = (Account) req.getSession().getAttribute("account");
-//        User user = uDB.getUserByUsername(acc.getUsername());
-//        req.setAttribute("user", user);
-//        req.getRequestDispatcher("./home.jsp").forward(req, resp);
-////        resp.sendRedirect("./home.jsp");
-//    }
 
     @Override
     protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
