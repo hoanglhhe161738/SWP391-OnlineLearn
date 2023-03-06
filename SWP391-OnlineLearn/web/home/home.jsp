@@ -75,6 +75,11 @@
                 justify-content: center;
                 align-items: center;
             }
+            .image-decor img{
+                width: 80%;
+                margin: 1em;
+                border-radius: 9px;
+            }
             .signup-login:hover{
                 transform: scale(1.15);
                 transition: all ease 0.5s;
@@ -182,28 +187,28 @@
                                 <div class="col-md-6">
                                     <div class="image-decor">
                                         <div>
-                                            <img style="width: 80%; margin: 1em" src="../Assets/images/img-decor-2.png" alt="alt"/>
+                                            <img src="../Assets/images/img-decor-2.png" alt="alt"/>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="image-decor">
                                         <div>
-                                            <img style="width: 80%; margin: 1em" src="../Assets/images/img-decor-3.png" alt="alt"/>
+                                            <img src="../Assets/images/img-decor-3.png" alt="alt"/>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="image-decor">
                                         <div>
-                                            <img style="width: 80%; margin: 1em" src="../Assets/images/img-decor-4.png" alt="alt"/>
+                                            <img src="../Assets/images/img-decor-4.png" alt="alt"/>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="image-decor">
                                         <div>
-                                            <img style="width: 80%; margin: 1em" src="../Assets/images/img-decor-5.png" alt="alt"/>
+                                            <img src="../Assets/images/img-decor-5.png" alt="alt"/>
                                         </div>
                                     </div>
                                 </div>
