@@ -29,8 +29,7 @@ public class lessonController extends BaseAuthenticationController {
         // test backend processing (retrieving percentage of lessons learned)
         // using sample data
         // (status: OK)
-        double percent = getPercentLesson(createSampleDataForLesson());
-        resp.getWriter().print("Percentage of lessons learned: "+percent+"%");
+        
     }
 
     protected double getPercentLesson(ArrayList<Lesson> lessons) {
@@ -69,6 +68,7 @@ public class lessonController extends BaseAuthenticationController {
 
     @Override
     protected void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doPostProcess(req, resp);
+        double percent = getPercentLesson(createSampleDataForLesson());
+        resp.getWriter().print("Percentage of lessons learned: "+percent+"%");
     }
 }
