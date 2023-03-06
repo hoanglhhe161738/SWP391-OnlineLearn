@@ -176,7 +176,7 @@
                         </div>
                     </div>
                     <div class="part">
-                        <h2 class="intro-title">Một số hình ảnh minh họa</h2>
+                        <h2 class="intro-title">Một số hình ảnh chụp màn hình</h2>
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6">
@@ -207,6 +207,34 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part">
+                        <h2 class="intro-title">Về chúng tôi</h2>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11739.607889410667!2d105.53223593938294!3d21.011071602123394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1678124934353!5m2!1sen!2s" 
+                                            width="600" height="450" style="border:0;" allowfullscreen="" 
+                                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                                <div class="col-md-6">
+                                    <p style="text-align: justify; padding: 0 1em; font-size: 1.25em">
+                                        - Nguyễn Lương Khang<br>
+                                        - Lý Hải Hoàng<br>
+                                        - Phan Mạnh Thắng<br>
+                                        - Phan Trung Kiên<br>
+                                        - Nguyễn Quốc Khánh<br><br>
+                                        Chúng mình là một nhóm sinh viên năm 3 Chuyên ngành Kỹ Thuật Phần Mềm
+                                        thuộc trường Đại Học FPT Hà Nội. Với cùng chung một niềm đam mê trong việc học
+                                        cách phát triển và xây dựng website. Vì thế thông qua dự án này,
+                                        chúng mình muốn biến những đam mê đó cùng với kinh nghiệm trong suốt quá trình
+                                        học tập và nhiệt huyết của tuổi trẻ thành thứ có thể mang lại những giá trị thực
+                                        có ích cho xã hội.
+                                    </p>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -266,8 +294,8 @@
                                                     class="mb-4 mt-0 d-inline-block mx-auto"
                                                     style="width: 60px; background-color: #7c4dff; height: 2px"
                                                     />
-                                                <p>
-                                                    trang web này xây dựng ra để giúp các em học sinh tiểu học
+                                                <p style="text-align: justify">
+                                                    Trang web này xây dựng ra để giúp các em học sinh tiểu học
                                                     tự học để trau dồi thêm kiến thức ngoài những giờ học truyền
                                                     thống như trên trường học
                                                 </p>
@@ -283,16 +311,16 @@
                                                     style="width: 60px; background-color: #7c4dff; height: 2px"
                                                     />
                                                 <p>
-                                                    <a href="#!" class="text-dark">Your Account</a>
+                                                    <a href="#!" class="text-dark">Link here</a>
                                                 </p>
                                                 <p>
-                                                    <a href="#!" class="text-dark">Become an Affiliate</a>
+                                                    <a href="#!" class="text-dark">Link here</a>
                                                 </p>
                                                 <p>
-                                                    <a href="#!" class="text-dark">Shipping Rates</a>
+                                                    <a href="#!" class="text-dark">Link here</a>
                                                 </p>
                                                 <p>
-                                                    <a href="#!" class="text-dark">Help</a>
+                                                    <a href="#!" class="text-dark">Link here</a>
                                                 </p>
                                             </div>
                                             <!-- Grid column -->
