@@ -29,30 +29,7 @@ public class moduleController extends BaseAuthenticationController {
 
 
     protected void doGetProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int module_id = Integer.parseInt(req.getParameter("module_id"));
 
-        ModuleDBContext mDB = new ModuleDBContext();
-        LessonDBContext lDB = new LessonDBContext();
-        ArrayList<Lesson> lessons = lDB.listLessonByModuleID(module_id);
-        Module module = mDB.get(module_id);
-        req.setAttribute("module", module);
-        req.setAttribute("lessons", lessons);
-
-        // load percent using db
-        lessonController lCtr = new lessonController();
-        double percent = lCtr.getPercentLesson(lessons);
-        req.setAttribute("percent", percent);
-        //
-
-        // Test: load percent using sample data
-//        lessonController lCtr = new lessonController();
-//        ArrayList<Lesson> lessonsUsingForTest = lCtr.createSampleDataForLesson();
-//        req.setAttribute("lessons", lessonsUsingForTest);        
-//        double percent = lCtr.getPercentLesson(lessonsUsingForTest);
-//        req.setAttribute("percent", percent);
-        //
-//        resp.getWriter().print("Done: " + processModuleStatus(lessons));
-        req.getRequestDispatcher("./module.jsp").forward(req, resp);
     }
 
     protected boolean processModuleStatus(ArrayList<Lesson> lessons) {
@@ -84,11 +61,25 @@ public class moduleController extends BaseAuthenticationController {
 
     @Override
     protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doPostProcess(req, resp);
+        
     }
 
     @Override
     protected void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGetProcess(req, resp);
+                int module_id = Integer.parseInt(req.getParameter("module_id"));
+
+        ModuleDBContext mDB = new ModuleDBContext();
+        LessonDBContext lDB = new LessonDBContext();
+        ArrayList<Lesson> lessons = lDB.listLessonByModuleID(module_id);
+        Module module = mDB.get(module_id);
+        req.setAttribute("module", module);
+        req.setAttribute("lessons", lessons);
+
+        // load percent using db
+        lessonController lCtr = new lessonController();
+        double percent = lCtr.getPercentLesson(lessons);
+        req.setAttribute("percent", percent);
+        
+        req.getRequestDispatcher("./module.jsp").forward(req, resp);
     }
 }

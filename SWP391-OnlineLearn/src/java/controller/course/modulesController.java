@@ -4,6 +4,7 @@
  */
 package controller.course;
 
+import controller.auth.BaseAuthenticationController;
 import dal.CourseDBContext;
 import dal.LessonDBContext;
 import dal.ModuleDBContext;
@@ -21,15 +22,25 @@ import model.Module;
  *
  * @author Khangnekk
  */
-public class modulesController extends HttpServlet {
+public class modulesController extends BaseAuthenticationController {
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    
+    protected void setModuleStatus(ArrayList<Module> modules) {
+        LessonDBContext lDB = new LessonDBContext();
+        moduleController mCtr = new moduleController();
+        for (Module m : modules) {
+            ArrayList<Lesson> lessons = lDB.listLessonByModuleID(m.getModule_id());
+            m.setStatus(mCtr.processModuleStatus(lessons));
+        }
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    protected void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int course_id = Integer.parseInt(req.getParameter("course_id"));
         int class_id = Integer.parseInt(req.getParameter("class_id"));
         
@@ -47,16 +58,6 @@ public class modulesController extends HttpServlet {
         req.setAttribute("modules", modules);
         req.setAttribute("percent", percent);
         req.getRequestDispatcher("./modules.jsp").forward(req, resp);
-    }
-
-    
-    protected void setModuleStatus(ArrayList<Module> modules) {
-        LessonDBContext lDB = new LessonDBContext();
-        moduleController mCtr = new moduleController();
-        for (Module m : modules) {
-            ArrayList<Lesson> lessons = lDB.listLessonByModuleID(m.getModule_id());
-            m.setStatus(mCtr.processModuleStatus(lessons));
-        }
     }
 
 }
