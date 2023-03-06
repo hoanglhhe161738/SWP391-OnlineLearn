@@ -65,6 +65,7 @@
                 padding: 1em;
                 border: 1px solid #ccc;
                 border-radius: 10px;
+                color: white;
             }
             .element-title{
                 margin: 1em;
@@ -74,12 +75,23 @@
                 justify-content: center;
                 align-items: center;
             }
-            .signup:hover{
+            .signup-login:hover{
                 transform: scale(1.15);
                 transition: all ease 0.5s;
             }
-            .signup{
+            .signup-login{
                 transition: all ease 0.5s;
+                margin: 1em;
+                font-weight: bold;
+            }
+            .signup-login a{
+                text-decoration: none;
+                border-radius: 40px;
+                font-size: 1.25em;
+                border: 2px solid white;
+                background: #00de7a;
+                padding: 0.25em 1em;
+                color: #ECEFF1;
             }
         </style>
     </head>
@@ -97,15 +109,14 @@
                                 <h2 style="top: 30%; font-size: 50px;">SWP391 ONLINE LEARN</h2>
                                 <h3 style="top:35%">Học mà chơi, chơi mà học</h3>
                             <c:if test="${sessionScope.account eq null}">
-                                <h3 class="signup" style="margin-top: 1em">
-                                    <a style="text-decoration: none;
-                                       border-radius: 40px;
-                                       border: 2px solid white;
-                                       background: #00de7a;
-                                       padding: 0.25em 1em;
-                                       color: black;
-                                       " href="../login/signupUser">Đăng ký ngay</a>
-                                </h3>
+                                <div style="margin-top: 1em">
+                                    <span class="signup-login" style="margin-top: 1em">
+                                        <a href="../login/loginUser">Đăng nhập   </a>
+                                    </span>
+                                    <span class="signup-login" style="margin-top: 1em">
+                                        <a href="../login/signupUser">Đăng ký ngay</a>
+                                    </span>
+                                </div>
                             </c:if>
                         </div>
                         <img style="width: 90%; border-radius: 10px" src="../Assets/images/bg.jpg" alt="alt"/>
@@ -115,19 +126,19 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <div class="element-part">
+                                    <div class="element-part" style="background: red">
                                         <i class="custom-icon fa-solid fa-circle-question"></i><br>
                                         <h3 class="element-title">Học với quiz</h3>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="element-part">
+                                    <div class="element-part" style="background: #0081e2">
                                         <i class="custom-icon fa-solid fa-gamepad"></i>
                                         <h3 class="element-title">Học với game</h3>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="element-part">
+                                    <div class="element-part" style="background: #00ed7a">
                                         <i class="custom-icon fa-sharp fa-solid fa-circle-play"></i>
                                         <h3 class="element-title">Học với video</h3>
                                     </div>
