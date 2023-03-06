@@ -7,6 +7,7 @@ package controller.home;
 import controller.auth.BaseAuthenticationController;
 import dal.UserDBContext;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;

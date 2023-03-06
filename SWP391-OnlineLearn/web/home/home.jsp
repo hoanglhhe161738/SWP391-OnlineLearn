@@ -30,7 +30,7 @@
             }
 
             .content {
-                background-image: url('../Assets/images/bgNoBlur.png');
+                background-image: none;
             }
             .account{
                 height: auto;
