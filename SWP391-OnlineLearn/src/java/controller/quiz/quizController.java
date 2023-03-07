@@ -4,6 +4,7 @@
  */
 package controller.quiz;
 
+import controller.auth.BaseAuthenticationController;
 import dal.QuestionDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -17,15 +18,26 @@ import model.Question;
  *
  * @author Acer
  */
-public class quizController extends HttpServlet {
+public class quizController extends BaseAuthenticationController {
+
+//    @Override
+//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        super.doPost(req, resp); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+//    }
+//
+//    @Override
+//    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        
+//        
+//    }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int lession_id = Integer.parseInt(req.getParameter("lession_id"));
         String lession_name = req.getParameter("lession_name");
         QuestionDBContext quDB = new QuestionDBContext();
@@ -34,7 +46,6 @@ public class quizController extends HttpServlet {
         req.setAttribute("questionBank", questionBank);
         req.setAttribute("lession_name", lession_name);
         req.getRequestDispatcher("../quiz/quiz.jsp").forward(req, resp);
-        
     }
     
 }
