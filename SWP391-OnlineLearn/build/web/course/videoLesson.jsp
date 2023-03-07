@@ -8,6 +8,7 @@
     <title>Bài học</title>
     <link rel="stylesheet" href="../Assets/css/Style.css">
     <link rel="stylesheet" href="../Assets/css/course.css">
+    <link rel="icon" href="../Assets/icon/favicon.png"/>
     <!-- link bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -121,7 +122,7 @@
             </div>
             <div style="text-align: right; margin: 0.8em  2em">
                 <button class="glow-on-hover"><a href="../game/matchgame?lession_id=49&lession_name=${requestScope.lesson.lesson_name}">Game</a></button>
-                <button class="glow-on-hover"><a href="#">Làm bài tập</a></button>
+                <button class="glow-on-hover"><a href="./quiz?lession_id=${requestScope.lesson.lesson_id}">Làm bài tập</a></button>
                 <button class="glow-on-hover""><a href="#">Đánh dấu là đã học xong</a></button>
             </div>
         </div>

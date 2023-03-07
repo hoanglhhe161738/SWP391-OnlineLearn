@@ -4,6 +4,7 @@
  */
 package controller.course;
 
+import controller.auth.BaseAuthenticationController;
 import dal.LessonDBContext;
 import dal.ModuleDBContext;
 import jakarta.servlet.ServletException;
@@ -19,39 +20,16 @@ import model.Module;
  *
  * @author Khangnekk
  */
-public class moduleController extends HttpServlet {
+public class moduleController extends BaseAuthenticationController {
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    protected void doPostProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPost(req, resp); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int module_id = Integer.parseInt(req.getParameter("module_id"));
 
-        ModuleDBContext mDB = new ModuleDBContext();
-        LessonDBContext lDB = new LessonDBContext();
-        ArrayList<Lesson> lessons = lDB.listLessonByModuleID(module_id);
-        Module module = mDB.get(module_id);
-        req.setAttribute("module", module);
-        req.setAttribute("lessons", lessons);
+    protected void doGetProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        // load percent using db
-        lessonController lCtr = new lessonController();
-        double percent = lCtr.getPercentLesson(lessons);
-        req.setAttribute("percent", percent);
-        //
-
-        // Test: load percent using sample data
-//        lessonController lCtr = new lessonController();
-//        ArrayList<Lesson> lessonsUsingForTest = lCtr.createSampleDataForLesson();
-//        req.setAttribute("lessons", lessonsUsingForTest);        
-//        double percent = lCtr.getPercentLesson(lessonsUsingForTest);
-//        req.setAttribute("percent", percent);
-        //
-//        resp.getWriter().print("Done: " + processModuleStatus(lessons));
-        req.getRequestDispatcher("./module.jsp").forward(req, resp);
     }
 
     protected boolean processModuleStatus(ArrayList<Lesson> lessons) {
@@ -79,5 +57,29 @@ public class moduleController extends HttpServlet {
         }
         percent = (learnStatusTrue * 100) / numberOfLessons;
         return Math.round(percent * 100.0) / 100.0;
+    }
+
+    @Override
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        
+    }
+
+    @Override
+    protected void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+                int module_id = Integer.parseInt(req.getParameter("module_id"));
+
+        ModuleDBContext mDB = new ModuleDBContext();
+        LessonDBContext lDB = new LessonDBContext();
+        ArrayList<Lesson> lessons = lDB.listLessonByModuleID(module_id);
+        Module module = mDB.get(module_id);
+        req.setAttribute("module", module);
+        req.setAttribute("lessons", lessons);
+
+        // load percent using db
+        lessonController lCtr = new lessonController();
+        double percent = lCtr.getPercentLesson(lessons);
+        req.setAttribute("percent", percent);
+        
+        req.getRequestDispatcher("./module.jsp").forward(req, resp);
     }
 }

@@ -4,6 +4,8 @@
  */
 package controller.home;
 
+import controller.auth.BaseAuthenticationController;
+import dal.UserDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -14,7 +16,7 @@ import java.io.IOException;
  *
  * @author Khangnekk
  */
-public class homeController extends HttpServlet{
+public class homeController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -23,7 +25,7 @@ public class homeController extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("./home.html");
+        req.getRequestDispatcher("./home.jsp").forward(req, resp);
     }
-    
+
 }

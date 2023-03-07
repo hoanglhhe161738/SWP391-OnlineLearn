@@ -12,6 +12,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../Assets/css/styleSignup.css" />
+        <link rel="icon" href="../Assets/icon/favicon.png"/>
         <title>Sign up</title>
 
     </head>
@@ -21,14 +22,11 @@
         </div>
         <div class="signup">
             <h1 class="signup-heading">Đăng ký</h1>
-            <div class="alert alert-danger" role="alert" style="color: red; margin-bottom: 1em; text-align: center"">
-                ${mess}
-            </div>
             <!-- <button class="signup-social">
                   <img class="fa fa-google signup-social-icon" src="/img/logoGG.png">
                   <span class="signup-social-text">Đăng kí bằng tài khoản Google</span>
                 </button> -->
-            <form action="signupUser" method="POST" class="signup-form" autocomplete="off">
+            <form action="signup" method="POST" class="signup-form" autocomplete="off">
 
                 <!-- username -->
                 <label for="username" class="signup-label">Nickname</label>
@@ -39,6 +37,12 @@
 
                 <label for="cfpassword" class="signup-label">Nhập lại mật khẩu</label>
                 <input type="password" name="cfpassword" class="signup-input">
+            <div class="alert alert-danger" role="alert" style="color: red; margin-bottom: 1em; text-align: center"">
+                ${mess1}
+            </div>
+            <div class="alert alert-danger" role="alert" style="color: red; margin-bottom: 1em; text-align: center"">
+                ${mess2}
+            </div>
 
                 <input class="signup-submit" type="submit" value="Đăng kí">
             </form>
