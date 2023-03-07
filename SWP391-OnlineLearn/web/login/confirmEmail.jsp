@@ -25,33 +25,33 @@
             justify-content: center;
         }
 
-       .container {
-            border: 1px solid black;
-            border-radius: 30px;
-            background-color: rgb(238, 238, 231);
-            max-width: 35%;
-            padding: 1em 5em;
-            position: relative;
-        }
+            .container {
+                border: 1px solid black;
+                border-radius: 30px;
+                background-color: rgb(238, 238, 231);
+                max-width: 35%;
+                padding: 1em 5em;
+                position: relative;
+            }
 
-        h1 {
-            color: rgb(45, 197, 45);
-            text-align: center;
-        }
+            h1 {
+                color: rgb(45, 197, 45);
+                text-align: center;
+            }
 
-        .mess {
-            text-align: center;
-        }
+            .mess {
+                text-align: center;
+            }
 
-        .signup-input {
-            display: block;
-            width: 100%;
-            margin-bottom: 1em;
-            padding: 0.5em;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 1em;
-        }
+            .signup-input {
+                display: block;
+                width: 100%;
+                margin-bottom: 1em;
+                padding: 0.5em;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                font-size: 1em;
+            }
 
             .login-submit {
                 padding: 0.8em;
@@ -104,8 +104,8 @@
             <p class="mess">Chúng tôi vừa gửi 1 mã xác nhận bao gồm 6 chữ số vào email của bạn. Vui lòng kiểm tra email rồi nhập mã xác nhận đó vào phần bên dưới để hoàn tất đăng ký!</p>
 
             <div class="input">
-                <form action="">
-                    <input type="text" name="confirm" class="signup-input" placeholder="XXX-XXX">
+                <form action="./verifyCode">
+                    <input type="text" id="verify-code-input" name="confirm" class="signup-input" maxlength="7" placeholder="XXX-XXX">
                     <p style="font-size: 0.75em;">(*)Lưu ý: Mã xác nhận chỉ có hiệu lực trong 2 phút</p>
                     <input class="login-submit" type="submit" value="Hoàn tất">
 
@@ -115,29 +115,17 @@
                 </form>
             </div>
 
-        img{
-            display: block;
-            margin: 0 auto;
-        }
-        
-    </style>
-</head>
-<body>
-    <div class="container">
-        <img src="../Assets/images/email.png" alt="">
-        <h1>Xác nhận đăng kí tài khoản</h1>
-        <p class="mess">Chúng tôi vừa gửi 1 mã xác nhận bao gồm 6 chữ số vào email của bạn. Vui lòng kiểm tra email rồi nhập mã xác nhận đó vào phần bên dưới để hoàn tất đăng ký!</p>
 
-        <div class="input">
-            <form action="">
-                <input type="text" name="confirm" class="signup-input" placeholder="XXX-XXX">
-                <p style="font-size: 0.75em;">(*)Lưu ý: Mã xác nhận chỉ có hiệu lực trong 2 phút</p>
-                <input class="login-submit" type="submit" value="Hoàn tất">
-            </form>
         </div>
-        
-        
-    </div>
-    
-</body>
+        <script>
+//            const input = document.getElementById("verify-code-input");
+//            input.addEventListener("input", () => input.value = formatNumber(input.value.replaceAll("-", "")));
+//
+//            const formatNumber = (number) => number.split("").reduce((seed, next, index) => {
+//                    if (index !== 0 && !(index % 3))
+//                        seed += "-";
+//                    return seed + next;
+//                }, "");
+        </script>
+    </body>
 </html>

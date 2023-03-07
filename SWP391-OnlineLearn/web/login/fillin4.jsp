@@ -26,9 +26,9 @@
                   <img class="fa fa-google signup-social-icon" src="/img/logoGG.png">
                   <span class="signup-social-text">Đăng kí bằng tài khoản Google</span>
                 </button> -->
-            <form action="#" class="signup-form" autocomplete="off">
+            <form action="./fillin4" class="signup-form" method="POST">
 
-                <!-- fullName -->
+                
                 <label for="fullName" class="signup-label">Họ và tên</label>
                 <input type="text" name="fullName" class="signup-input" placeholder="VD: Hứa Như Không">
 
@@ -37,8 +37,8 @@
                 <input type="date" name="dob" class="signup-input">
 
                 <!-- gender -->
-                <label for="gender" class="signup-label">Giới tính: Nam <input type="radio" name="gender" checked> | Nữ <input
-                        type="radio" name="gender"> <br></label> <br>
+                <label for="gender" class="signup-label">Giới tính: Nam <input type="radio" value="true" name="gender" checked> | Nữ <input
+                        type="radio" value="false" name="gender"> <br></label> <br>
                 <br>
 
                 <!-- parentName -->
@@ -57,7 +57,7 @@
             </form>
             <p class="signup-already">
 
-                <a  href="./signup.html" class="cancel signup-submit">Hủy bỏ</a>
+                <a  href="./signup.jsp" class="cancel signup-submit">Hủy bỏ</a>
             </p>
         </div>
     </body>
