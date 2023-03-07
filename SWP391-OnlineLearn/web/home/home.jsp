@@ -27,6 +27,8 @@
         crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
               integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script><!-- comment -->
+        <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
         <style>
             .close:hover {
                 color: white;
@@ -126,7 +128,7 @@
                         </div>
                         <img style="width: 90%; border-radius: 10px" src="../Assets/images/bg.jpg" alt="alt"/>
                     </div>
-                    <div class="part">
+                    <div data-aos="zoom-in" data-aos-duration="1000" class="part">
                         <h2 class="intro-title">CÁC TÍNH NĂNG NỔI BẬT</h2>
                         <div class="container">
                             <div class="row">
@@ -155,7 +157,7 @@
                         <h2 class="intro-title">Tại sao học online lại cần thiết</h2>
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div data-aos="fade-right" data-aos-duration="1000" class="col-md-6">
                                     <p style="text-align: justify; padding: 0 1em; font-size: 1.5em">Trong thời đại công nghệ số ngày nay, học online 
                                         đang trở thành xu hướng phổ biến và được nhiều 
                                         người lựa chọn. Việc học online không chỉ tiết 
@@ -169,7 +171,7 @@
                                         và đáng để các bạn học sinh, sinh viên và những người muốn 
                                         nâng cao trình độ của mình lựa chọn.</p>
                                 </div>
-                                <div class="col-md-6">
+                                <div data-aos-duration="1000" data-aos="flip-left" class="col-md-6">
                                     <div class="image-decor">
                                         <div>
                                             <img style="width: 80%" src="../Assets/images/img-decor.png" alt="alt"/>
@@ -184,28 +186,28 @@
                         <h2 class="intro-title">Một số hình ảnh chụp màn hình</h2>
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div data-aos="flip-left" data-aos-duration="1000" class="col-md-6">
                                     <div class="image-decor">
                                         <div>
                                             <img src="../Assets/images/img-decor-2.png" alt="alt"/>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div data-aos="flip-left" data-aos-duration="1000" class="col-md-6">
                                     <div class="image-decor">
                                         <div>
                                             <img src="../Assets/images/img-decor-3.png" alt="alt"/>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div data-aos="flip-left" data-aos-duration="1000" class="col-md-6">
                                     <div class="image-decor">
                                         <div>
                                             <img src="../Assets/images/img-decor-4.png" alt="alt"/>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div data-aos="flip-left" data-aos-duration="1000" class="col-md-6">
                                     <div class="image-decor">
                                         <div>
                                             <img src="../Assets/images/img-decor-5.png" alt="alt"/>
@@ -221,7 +223,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11739.607889410667!2d105.53223593938294!3d21.011071602123394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1678124934353!5m2!1sen!2s" 
-                                            width="600" height="450" style="border:0;" allowfullscreen="" 
+                                            width="100%" height="100%" style="border:0;" allowfullscreen="" 
                                             loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 </div>
                                 <div class="col-md-6">
@@ -400,5 +402,7 @@
             </div>
         </div>
     </body>
-
+    <script>
+        AOS.init();
+    </script>
 </html>
