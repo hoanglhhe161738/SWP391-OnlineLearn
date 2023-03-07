@@ -64,6 +64,9 @@
         .class-item button:hover{
             background: red;
         }
+        .content{
+            position: fixed;
+        }
     </style>
 </head>
 
@@ -72,7 +75,8 @@
         <!--nav bar-->
         <jsp:include page="../custom/nav.jsp"></jsp:include>
             <!--content-->
-            <div class="content">
+            <div>
+                <div class="content"></div>
                 <div class="container-fluid">
                 <div class="class-items row" data-mdb-toggle="animation" data-mdb-animation-reset="true" data-mdb-animation="slide-out-right">
                     <c:forEach items="${requestScope.classes}" var="cl">

@@ -70,6 +70,9 @@
                 color: black;
                 margin-top: 5px;
             }
+            .content{
+                position: fixed;
+            }
         </style>
     </head>
     <body>
@@ -77,7 +80,7 @@
             <!--nav bar-->
             <jsp:include page="../custom/nav.jsp"></jsp:include>
                 <!--content-->
-                <div class="content">
+                <div class="content"></div>
                     <div class="container-fluid">
                         <div class="course-items row">
                         <c:forEach items="${requestScope.courses}" var="co">
