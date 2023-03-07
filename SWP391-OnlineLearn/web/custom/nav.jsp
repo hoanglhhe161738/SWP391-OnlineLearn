@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<div class="nav">
+<div class="nav" style="z-index: 100">
     <div class="nav-bar">
         <ul class="items">
             <li class="item">
