@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MatchGame</title>
-<link rel="icon" href="../Assets/icon/favicon.png"/>
+    <link rel="icon" href="../Assets/icon/favicon.png"/>
     <link rel="stylesheet" href="../Assets/css/Style.css">
     <link rel="stylesheet" href="../game/css/matchgame.css"/>
     <!-- link bootstrap -->
@@ -33,10 +33,10 @@
     </div>
     <!--nav bar-->
     <jsp:include page="../custom/nav.jsp"></jsp:include>
-        <!--content-->
-        <div class="flex-container">
-            <div id="game-container flex-items">
-                <h1 style="margin: 1em 2em; padding: 0 4em; color: white; background-image: linear-gradient(to right, #00de7a, #195de2)">${requestScope.lession_name}</h1>
+    <!--content-->
+    <div class="flex-container">
+        <div id="game-container flex-items">
+            <h1 style="margin: 1em 2em; padding: 0 4em; color: white; background-image: linear-gradient(to right, #00de7a, #195de2)">${requestScope.lession_name}</h1>
             <section class ="match-game">
 
                 <c:forEach items="${requestScope.mg}" var="m">

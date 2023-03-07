@@ -11,13 +11,14 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import model.Lesson;
+import model.Lesson_learn;
+import model.User;
 
 /**
  *
  * @author Khangnekk
  */
-public class lessonChoiceController extends BaseAuthenticationController{
-
+public class lessonChoiceController extends BaseAuthenticationController {
 
     @Override
     protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -29,8 +30,23 @@ public class lessonChoiceController extends BaseAuthenticationController{
         int lesson_id = Integer.parseInt(req.getParameter("lesson_id"));
         LessonDBContext lDB = new LessonDBContext();
         Lesson lesson = lDB.get(lesson_id);
+        User user = (User) req.getSession().getAttribute("user");
+        Lesson_learn lessonLearn = lDB.getLessonLearn(user.getUser_id(), lesson_id);
+        if (lessonLearn == null) {
+            lessonLearn = lDB.setLessonLearn(user.getUser_id(), lesson_id, false);
+            lesson.setStatus(false);
+        } else {
+            if (lessonLearn.isLlearn()) {
+                lesson.setStatus(true);
+                lDB.update(lesson);
+            } else {
+                lesson.setStatus(false);
+                lDB.update(lesson);
+            }
+        }
+        req.setAttribute("lessonLearn", lessonLearn);
         req.setAttribute("lesson", lesson);
         req.getRequestDispatcher("./lessonChoice.jsp").forward(req, resp);
     }
-    
+
 }
