@@ -21,6 +21,9 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+              integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+              crossorigin="anonymous" referrerpolicy="no-referrer" />
         <style>
             table thead td {
                 border: 2px solid white;
@@ -94,6 +97,11 @@
                 flex: 1;
                 border: 2px solid #e1b7c5;
             }
+            .custom-icon{
+                font-size: 1.25em;
+                padding: 0.25em;
+                color: #4472c4;
+            }
         </style>
         <title>Quiz</title>
         <title>Add quiz</title>
@@ -129,46 +137,31 @@
                     <input type="text" value="${sessionScope.lesson.lesson_name}">
                 </div>
                 <div class="statis-quiz-text">
-                    <p>Số câu hỏi hiện có: 5</p>
+                    <p>Số câu hỏi hiện có: ${sessionScope.questionSize}</p>
                 </div>
                 <div class="table-quiz">
-                    <table style="width: 15em;">
+                    <table style="width: 28em;">
                         <thead>
                         <td style="background-color: #4472c4;width: 4em;">Số câu</td>
                         <td colspan="2" style="background-color: #4472c4; width: 5em;">Hành động</td>
 
                         </thead>
-                        <tbody>
+                        <tbody style="height: 11em;">
+                            <c:forEach items="${sessionScope.questions}" var="q">
                             <tr style="background-color: #cfd5ea;">
-                                <td>1</td>
-                                <td>Sửa</td>
-                                <td>Xóa</td>
+                                <td>${q.index}</td>
+                                <td>
+                                    <a href="#">
+                                        <i class="fa-solid fa-pen-to-square custom-icon"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <i class="fa-solid fa-trash custom-icon"></i>
+                                    </a>
+                                </td>
                             </tr>
-                            <tr style="background-color: #e9ebf5;">
-                                <td>2</td>
-                                <td>Sửa</td>
-                                <td>Xóa</td>
-                            </tr>
-                            <tr style="background-color: #cfd5ea;">
-                                <td>3</td>
-                                <td>Sửa</td>
-                                <td>Xóa</td>
-                            </tr>
-                            <tr style="background-color: #e9ebf5;">
-                                <td>4</td>
-                                <td>Sửa</td>
-                                <td>Xóa</td>
-                            </tr>
-                            <tr style="background-color: #cfd5ea;">
-                                <td>5</td>
-                                <td>Sửa</td>
-                                <td>Xóa</td>
-                            </tr>
-                            <tr style="background-color: #e9ebf5;">
-                                <td>6</td>
-                                <td>Sửa</td>
-                                <td>Xóa</td>
-                            </tr>
+                            </c:forEach>
                         </tbody>
                     </table>
                 </div>

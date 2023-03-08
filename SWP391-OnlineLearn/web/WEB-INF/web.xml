@@ -100,6 +100,10 @@
         <servlet-name>AddQuizController</servlet-name>
         <servlet-class>controller.admin.AddQuizController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ActionController</servlet-name>
+        <servlet-class>controller.admin.ActionController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
         <url-pattern>/course/classes</url-pattern>
@@ -203,6 +207,10 @@
     <servlet-mapping>
         <servlet-name>AddQuizController</servlet-name>
         <url-pattern>/admin/addQuiz</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ActionController</servlet-name>
+        <url-pattern>/admin/action</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
