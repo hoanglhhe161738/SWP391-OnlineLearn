@@ -1,0 +1,43 @@
+.nav-information{
+    width: 100%;
+    height: 3.2em;
+    background-color: #f2f2f2;
+}
+
+.choiceAction{
+    padding-top: 10%;   
+}
+.choiceAction p{
+    font-size: larger;
+    color: white;   
+}
+.choiceAction-colum-item{
+    background-color: aliceblue;
+    height: 10em;
+    border-radius: 10px;
+}
+.nav-information{
+    justify-content: end;
+    display: flex;
+}
+.nav-information-item{
+    display: flex;
+    padding-right: 5em;
+    background-color: #e7e6e6;
+    width: auto;
+    padding-left: 2em;
+}
+.nav-information-item img{
+    width: 2.8em;
+}
+.nav-information-image{
+    background-image: url(/web/Assets/images/bag.png);
+    width: 3em;
+    height: 3em;
+    border: 2px solid #fefcfb;
+    border-radius: 50%;
+}
+.nav-information-text-content{
+    list-style: none;
+    font-weight: bolder;
+}

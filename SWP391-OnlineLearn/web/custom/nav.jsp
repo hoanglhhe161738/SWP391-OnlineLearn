@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<div class="nav">
+<div class="nav" style="z-index: 100">
     <div class="nav-bar">
         <ul class="items">
             <li class="item">
@@ -33,9 +33,10 @@
                         <img src="../Assets/icon/icon (4).png">
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="../userprofile/viewUserProfile">User profile</a>
+                        <li><a class="dropdown-item" href="../userprofile/viewUserProfile">Hồ sơ thông tin</a>
                         </li>
-                        <li><a class="dropdown-item" href="../logout">Logout</a></li>
+                        <li><a class="dropdown-item" href="../logout">Đổi mật khẩu</a></li>
+                        <li><a class="dropdown-item" href="../logout">Đăng xuất</a></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </div>

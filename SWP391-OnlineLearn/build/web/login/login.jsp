@@ -14,7 +14,15 @@
         <link rel="stylesheet" href="../Assets/css/styleLogin.css"/>
         <link rel="icon" href="../Assets/icon/favicon.png"/>
         <title>Login</title>
-
+        <style>
+            .login{
+                border-radius: 12px;
+                background: white;
+            }
+            .login-label{
+                color: black;
+            }
+        </style>
     </head>
     <body>
         <div class="login">

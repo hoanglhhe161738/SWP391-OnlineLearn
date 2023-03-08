@@ -14,7 +14,15 @@
         <link rel="stylesheet" href="../Assets/css/styleSignup.css" />
         <link rel="icon" href="../Assets/icon/favicon.png"/>
         <title>Sign up</title>
-
+        <style>
+        .signup{
+                border-radius: 12px;
+                background: white;
+            }
+            .signup-label{
+                color: black;
+            }
+            </style>
     </head>
 
     <body>
