@@ -151,12 +151,12 @@
                                 <tr style="background-color: #cfd5ea;">
                                     <td>${q.index}</td>
                                     <td>
-                                        <a href="#">
+                                        <a href="./actionQuiz?action=edit&index=${q.index}&question_id=${q.question_id}">
                                             <i class="fa-solid fa-pen-to-square custom-icon"></i>
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="#">
+                                        <a href="./actionQuiz?action=delete">
                                             <i class="fa-solid fa-trash custom-icon"></i>
                                         </a>
                                     </td>
@@ -166,7 +166,7 @@
                     </table>
                 </div>
                 <div style="margin-top: 2em;">
-                    <a href="#">
+                    <a href="./actionQuiz?action=add&index=-1&question_id=-1">
                         <button
                             style="width: 100%; color: #f2f2f2; font-size: large; background-color: #00de7a; padding: 0.5em 0 0.5em 0;border: white;">Thêm
                             câu hỏi</button>
@@ -174,51 +174,132 @@
                 </div>
             </div>
 
-            <div class="static-quiz-right">
-                <div style="padding-left: 1em;">
-                    <h3>Câu 7</h3>
+            <c:if test="${(requestScope.action ne requestScope.add) or (requestScope.action ne requestScope.edit)}">
+
+            </c:if>
+            <c:if test="${requestScope.action eq requestScope.add}">
+                <div class="static-quiz-right">
+                    <form action="" id="form1">
+                        <div style="padding-left: 1em;">
+                            <h3>Câu ${sessionScope.questionSize+1}</h3>
+                            <input hidden name="index" value="${sessionScope.questionSize+1}">
+                        </div>
+                        <div style="padding-left: 1em;">
+                            <p>Tiêu đề câu hỏi</p>
+                        </div>
+                        <div>
+                            <textarea name="question" style="height: 8em; width: 100%; border: 2px solid #e1b7c5;"></textarea>
+                        </div>
+                        <div class="list-answer" style="width: 100%;">
+                            <ul style="padding-left: 20px;">
+                                <li class="list-item">
+                                    <label for="answer1">Đáp án thứ nhất:</label>
+                                    <input type="text" name="option1" id="option1Input">
+                                </li>
+                                <li class="list-item">
+                                    <label for="answer1">Đáp án thứ hai:</label>
+                                    <input type="text" name="option2" id="option1Input">
+                                </li>
+                                <li class="list-item">
+                                    <label for="answer1">Đáp án thứ ba:</label>
+                                    <input type="text" name="option3" id="option1Input">
+                                </li>
+                                <li class="list-item">
+                                    <label for="answer1">Đáp án thứ tư:</label>
+                                    <input type="text" name="option4" id="option1Input">
+                                </li>
+                                <li class="list-item">
+                                    <label for="answer1">Đáp án đúng:</label>
+                                    <select name="trueAnswer" style="border: 2px solid #e1b7c5;">
+                                        <option value="" id="option1Add">Đáp án thứ nhất</option>
+                                        <option value="" id="option2Add">Đáp án thứ hai</option>
+                                        <option value="" id="option3Add">Đáp án thứ ba</option>
+                                        <option value="" id="option4Add">Đáp án thứ tư</option>
+                                    </select>
+                                    <script>
+                                        var option1Add = document.getElementById("option1Add");
+                                        var option1Input = document.getElementById("option1Input");
+                                        var option2Add = document.getElementById("option2Add");
+                                        var option2Input = document.getElementById("option2Input");
+                                        var option3Add = document.getElementById("option3Add");
+                                        var option3Input = document.getElementById("option3Input");
+                                        var option4Add = document.getElementById("option4Add");
+                                        var option4Input = document.getElementById("option4Input");
+
+                                        option1Input.addEventListener("input", function () {
+                                            option1Add.value = option1Input.value;
+                                        });
+                                        option2Input.addEventListener("input", function () {
+                                            option2Add.value = option2Input.value;
+                                        });
+                                        option3Input.addEventListener("input", function () {
+                                            option3Add.value = option3Input.value;
+                                        });
+                                        option4Input.addEventListener("input", function () {
+                                            option4Add.value = option4Input.value;
+                                        });
+                                    </script>
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="padding: 2em 0 0 70%;">
+                            <input style="width: 10em; height: 2em; background-color: #00de7a; color: #fff;border: none; font-size: large; font-weight: bold; border-radius: 10px;" type="submit" value="Hoàn tất">
+                        </div>
+                    </form>
                 </div>
-                <div style="padding-left: 1em;">
-                    <p>Tiêu đề câu hỏi</p>
+            </c:if> 
+            <c:if test="${requestScope.action eq requestScope.edit}">
+                <div class="static-quiz-right">
+                    <form action="" id="form1">
+                        <div style="padding-left: 1em;">
+                            <h3>Câu ${requestScope.index}</h3>
+                        </div>
+                        <div style="padding-left: 1em;">
+                            <p>Tiêu đề câu hỏi</p>
+                        </div>
+                        <div>
+                            <textarea name="name" id="textareaEdit" style="height: 8em; width: 100%; border: 2px solid #e1b7c5;"></textarea>
+                            <script>
+                                var textarea = document.getElementById("textareaEdit");
+                                textarea.value = "${requestScope.question.question}";
+
+                            </script>
+                        </div>
+                        <div class="list-answer" style="width: 100%;">
+                            <ul style="padding-left: 20px;">
+                                <li class="list-item">
+                                    <label for="answer1">Đáp án thứ nhất:</label>
+                                    <input type="text" name="option1" value="${requestScope.question.option1}">
+                                </li>
+                                <li class="list-item">
+                                    <label for="answer1">Đáp án thứ hai:</label>
+                                    <input type="text" name="option2" value="${requestScope.question.option2}">
+                                </li>
+                                <li class="list-item">
+                                    <label for="answer1">Đáp án thứ ba:</label>
+                                    <input type="text" name="option3" value="${requestScope.question.option3}">
+                                </li>
+                                <li class="list-item">
+                                    <label for="answer1">Đáp án thứ tư:</label>
+                                    <input type="text" name="option4" value="${requestScope.question.option4}">
+                                </li>
+                                <li class="list-item">
+                                    <label for="answer1">Đáp án đúng:</label>
+                                    <select style="border: 2px solid #e1b7c5;" name="trueAnswer">
+                                        <option value="${requestScope.question.option1}">Đáp án 1</option>
+                                        <option value="${requestScope.question.option2}">Đáp án 2</option>
+                                        <option value="${requestScope.question.option3}">Đáp án 3</option>
+                                        <option value="${requestScope.question.option4}">Đáp án 4</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="padding: 2em 0 0 70%;">
+                            <input style="width: 10em; height: 2em; background-color: #00de7a; color: #fff;border: none; font-size: large; font-weight: bold; border-radius: 10px;" type="submit" value="Hoàn tất">
+                        </div>
+                    </form>
                 </div>
-                <div>
-                    <textarea name="name" style="height: 8em; width: 100%; border: 2px solid #e1b7c5;"></textarea>
-                </div>
-                <div class="list-answer" style="width: 100%;">
-                    <ul style="padding-left: 20px;">
-                        <li class="list-item">
-                            <label for="answer1">Đáp án thứ nhất:</label>
-                            <input type="text">
-                        </li>
-                        <li class="list-item">
-                            <label for="answer1">Đáp án thứ hai:</label>
-                            <input type="text">
-                        </li>
-                        <li class="list-item">
-                            <label for="answer1">Đáp án thứ ba:</label>
-                            <input type="text">
-                        </li>
-                        <li class="list-item">
-                            <label for="answer1">Đáp án thứ tư:</label>
-                            <input type="text">
-                        </li>
-                        <li class="list-item">
-                            <label for="answer1">Đáp án đúng:</label>
-                            <select style="border: 2px solid #e1b7c5;">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
-                        </li>
-                    </ul>
-                </div>
-                <div style="padding: 2em 0 0 70%;">
-                    <button style="width: 10em; height: 2em; background-color: #00de7a; color: #fff;border: none; font-size: large; font-weight: bold; border-radius: 10px;">
-                        Hoàn tất
-                    </button>
-                </div>
-            </div>
+            </c:if> 
         </div>
     </body>
 
