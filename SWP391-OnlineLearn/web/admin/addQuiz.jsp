@@ -171,6 +171,11 @@
                             style="width: 100%; color: #f2f2f2; font-size: large; background-color: #00de7a; padding: 0.5em 0 0.5em 0;border: white;">Thêm
                             câu hỏi</button>
                     </a>
+                    <a href="./choiceClassToAddQuiz">
+                        <button
+                            style="width: 100%; color: #f2f2f2; margin-top: 1em; font-size: large; background-color: red; padding: 0.5em 0 0.5em 0;border: white;">
+                            Trở lại trang chọn bài học</button>
+                    </a>
                     <c:if test="${requestScope.alert ne null}">
                         <div style=" margin-top: 1em">
                         <a style="font-size: 20px; font-weight: bold; margin-right: 1em">

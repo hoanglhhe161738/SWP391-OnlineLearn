@@ -27,12 +27,12 @@ public class actionQuizController extends HttpServlet {
         switch (action) {
             case "add":
 
-                String questionAdd = req.getParameter("question");
-                String option1Add = req.getParameter("option1");
-                String option2Add = req.getParameter("option2");
-                String option3Add = req.getParameter("option3");
-                String option4Add = req.getParameter("option4");
-                String true_AnsAdd = req.getParameter("trueAnswer");
+                String questionAdd = req.getParameter("question").trim();
+                String option1Add = req.getParameter("option1").trim();
+                String option2Add = req.getParameter("option2").trim();
+                String option3Add = req.getParameter("option3").trim();
+                String option4Add = req.getParameter("option4").trim();
+                String true_AnsAdd = req.getParameter("trueAnswer").trim();
                 int pointAdd = 1;
                 int indexAdd = Integer.parseInt(req.getParameter("indexAdd"));
 
@@ -57,12 +57,12 @@ public class actionQuizController extends HttpServlet {
                 break;
             case "edit":
                 int question_id = Integer.parseInt(req.getParameter("question_id"));
-                String question = req.getParameter("question");
-                String option1 = req.getParameter("option1");
-                String option2 = req.getParameter("option2");
-                String option3 = req.getParameter("option3");
-                String option4 = req.getParameter("option4");
-                String true_Ans = req.getParameter("trueAnswer");
+                String question = req.getParameter("question").trim();
+                String option1 = req.getParameter("option1").trim();
+                String option2 = req.getParameter("option2").trim();
+                String option3 = req.getParameter("option3").trim();
+                String option4 = req.getParameter("option4").trim();
+                String true_Ans = req.getParameter("trueAnswer").trim();
                 int point = 1;
                 int index = Integer.parseInt(req.getParameter("index"));
 
