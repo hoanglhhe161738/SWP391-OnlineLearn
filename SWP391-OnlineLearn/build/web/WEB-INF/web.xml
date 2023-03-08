@@ -83,10 +83,22 @@
     <servlet>
         <servlet-name>verifyCodeSignUpController</servlet-name>
         <servlet-class>controller.auth.verifyCodeController</servlet-class>
-        </servlet>
+    </servlet>
     <servlet>
         <servlet-name>quizController</servlet-name>
         <servlet-class>controller.quiz.quizController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChoiceClassToAddQuiz</servlet-name>
+        <servlet-class>controller.admin.ChoiceClassToAddQuiz</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChoiceCourseToAddQuiz</servlet-name>
+        <servlet-class>controller.admin.ChoiceCourseToAddQuiz</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddQuizController</servlet-name>
+        <servlet-class>controller.admin.AddQuizController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
@@ -175,10 +187,22 @@
     <servlet-mapping>
         <servlet-name>verifyCodeSignUpController</servlet-name>
         <url-pattern>/login/verifyCode</url-pattern>
-        </servlet-mapping>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>quizController</servlet-name>
         <url-pattern>/course/quiz</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChoiceClassToAddQuiz</servlet-name>
+        <url-pattern>/admin/choiceClassToAddQuiz</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChoiceCourseToAddQuiz</servlet-name>
+        <url-pattern>/admin/choiceCourseToAddQuiz</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddQuizController</servlet-name>
+        <url-pattern>/admin/addQuiz</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
