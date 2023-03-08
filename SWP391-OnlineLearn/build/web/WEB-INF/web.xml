@@ -104,6 +104,10 @@
         <servlet-name>ActionController</servlet-name>
         <servlet-class>controller.admin.ActionController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>actionQuizController</servlet-name>
+        <servlet-class>controller.admin.quiz.actionQuizController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
         <url-pattern>/course/classes</url-pattern>
@@ -211,6 +215,10 @@
     <servlet-mapping>
         <servlet-name>ActionController</servlet-name>
         <url-pattern>/admin/action</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actionQuizController</servlet-name>
+        <url-pattern>/admin/actionQuiz</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
