@@ -5,12 +5,15 @@
 package controller.admin;
 
 import dal.LessonDBContext;
+import dal.QuestionDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import model.Lesson;
+import model.Question;
 
 /**
  *
@@ -29,6 +32,12 @@ public class AddQuizController extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        QuestionDBContext qDB = new QuestionDBContext();
+        Lesson lesson = (Lesson) req.getSession().getAttribute("lesson");
+        ArrayList<Question> questions = qDB.getQuestionByLessionID(lesson.getLesson_id());
+        int questionSize = questions.size();
+        req.getSession().setAttribute("questions", questions);
+        req.getSession().setAttribute("questionSize", questionSize);
         req.getRequestDispatcher("./addQuiz.jsp").forward(req, resp);
     }
     
