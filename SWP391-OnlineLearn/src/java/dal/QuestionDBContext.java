@@ -17,8 +17,8 @@ import model.Question;
  * @author Acer
  */
 public class QuestionDBContext extends DBContext<Question> {
-    
-    public ArrayList<Question> getQuestionByLessionID(int lession_id){
+
+    public ArrayList<Question> getQuestionByLessionID(int lession_id) {
         ArrayList<Question> questionBanks = new ArrayList<>();
         try {
             String sql = "SELECT qu.[index], qu.question_id, qu.question, qu.option1, qu.option2,\n"
@@ -30,7 +30,7 @@ public class QuestionDBContext extends DBContext<Question> {
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, lession_id);
             ResultSet rs = stm.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 Question question = new Question();
                 question.setIndex(rs.getInt("index"));
                 question.setQuestion_id(rs.getInt("question_id"));
@@ -41,9 +41,9 @@ public class QuestionDBContext extends DBContext<Question> {
                 question.setOption4(rs.getString("option4"));
                 question.setTrue_answer(rs.getString("true_answer"));
                 question.setPoints(rs.getInt("points"));
-                
+
                 questionBanks.add(question);
-                
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(QuestionDBContext.class.getName()).log(Level.SEVERE, null, ex);
@@ -51,14 +51,121 @@ public class QuestionDBContext extends DBContext<Question> {
         return questionBanks;
     }
 
-    @Override
-    public void insert(Question model) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
+    
+    public void insert(Question model, int lesson_id) {
+        String sql = "INSERT INTO [dbo].[Question]\n"
+                + "           ([question]\n"
+                + "           ,[option1]\n"
+                + "           ,[option2]\n"
+                + "           ,[option3]\n"
+                + "           ,[option4]\n"
+                + "           ,[true_answer]\n"
+                + "           ,[points]\n"
+                + "           ,[index])\n"
+                + "     VALUES\n"
+                + "           (?\n"
+                + "           ,?\n"
+                + "           ,?\n"
+                + "           ,?\n"
+                + "           ,?\n"
+                + "           ,?\n"
+                + "           ,?\n"
+                + "           ,?)";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, model.getQuestion());
+            stm.setString(2, model.getOption1());
+            stm.setString(3, model.getOption2());
+            stm.setString(4, model.getOption3());
+            stm.setString(5, model.getOption4());
+            stm.setString(6, model.getTrue_answer());
+            stm.setInt(7, model.getPoints());
+            stm.setInt(8, model.getIndex());
+            stm.executeUpdate();
+            int question_id = getIdByQuestion(model);
+            if(question_id!=-1){
+                insertLessonQuestion(question_id,lesson_id);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(QuestionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public int getIdByQuestion(Question model) {
+        int question_id = -1;
+        String sql = "SELECT q.question_id FROM Question q WHERE\n"
+                + "q.option1 = ?\n"
+                + "AND q.option2 = ?\n"
+                + "AND q.option3 = ?\n"
+                + "AND q.option4 = ?\n"
+                + "AND q.true_answer = ?\n"
+                + "AND q.points = ?\n"
+                + "AND q.[index] = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, model.getOption1());
+            stm.setString(2, model.getOption2());
+            stm.setString(3, model.getOption3());
+            stm.setString(4, model.getOption4());
+            stm.setString(5, model.getTrue_answer());
+            stm.setInt(6, model.getPoints());
+            stm.setInt(7, model.getIndex());
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                question_id = rs.getInt("question_id");
+                return question_id;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(QuestionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return question_id;
+    }
+
+    public void insertLessonQuestion(int question_id, int lesson_id) {
+        String sql = "INSERT INTO [dbo].[Lession_Question]\n"
+                + "           ([lession_id]\n"
+                + "           ,[question_id])\n"
+                + "     VALUES\n"
+                + "           (?\n"
+                + "           ,?)";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, lesson_id);
+            stm.setInt(2, question_id);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(QuestionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
     public void update(Question model) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "UPDATE [dbo].[Question]\n"
+                + "   SET [question] = ?\n"
+                + "      ,[option1] = ?\n"
+                + "      ,[option2] = ?\n"
+                + "      ,[option3] = ?\n"
+                + "      ,[option4] = ?\n"
+                + "      ,[true_answer] = ?\n"
+                + "      ,[points] = ?\n"
+                + "      ,[index] = ?\n"
+                + " WHERE question_id = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, model.getQuestion());
+            stm.setString(2, model.getOption1());
+            stm.setString(3, model.getOption2());
+            stm.setString(4, model.getOption3());
+            stm.setString(5, model.getOption4());
+            stm.setString(6, model.getTrue_answer());
+            stm.setInt(7, model.getPoints());
+            stm.setInt(8, model.getIndex());
+            stm.setInt(9, model.getQuestion_id());
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(QuestionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
@@ -74,7 +181,7 @@ public class QuestionDBContext extends DBContext<Question> {
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, id);
             ResultSet rs = stm.executeQuery();
-            if(rs.next()){
+            if (rs.next()) {
                 question.setQuestion_id(rs.getInt("question_id"));
                 question.setQuestion(rs.getString("question"));
                 question.setOption1(rs.getString("option1"));
@@ -89,7 +196,7 @@ public class QuestionDBContext extends DBContext<Question> {
         } catch (SQLException ex) {
             Logger.getLogger(QuestionDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return question;
     }
 
@@ -97,5 +204,10 @@ public class QuestionDBContext extends DBContext<Question> {
     public ArrayList<Question> list() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
+    @Override
+    public void insert(Question model) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

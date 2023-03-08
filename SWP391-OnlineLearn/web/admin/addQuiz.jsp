@@ -171,18 +171,29 @@
                             style="width: 100%; color: #f2f2f2; font-size: large; background-color: #00de7a; padding: 0.5em 0 0.5em 0;border: white;">Thêm
                             câu hỏi</button>
                     </a>
+                    <c:if test="${requestScope.alert ne null}">
+                        <div style=" margin-top: 1em">
+                        <a style="font-size: 20px; font-weight: bold; margin-right: 1em">
+                            <i class="fa-solid fa-bell"></i>
+                        </a> 
+                        <a style="color: #00de7a; font-size: 20px; font-weight: bold;">
+                            ${requestScope.alert}
+                        </a>
+                        </div>
+                    </c:if>
                 </div>
             </div>
 
-            <c:if test="${(requestScope.action ne requestScope.add) or (requestScope.action ne requestScope.edit)}">
+                    <c:if test="${(requestScope.action ne sessionScope.add) or (requestScope.action ne sessionScope.edit)}">
 
             </c:if>
-            <c:if test="${requestScope.action eq requestScope.add}">
+            <c:if test="${requestScope.action eq sessionScope.add}">
                 <div class="static-quiz-right">
-                    <form action="" id="form1">
+                    <form action="" id="form1" method="POST">
+                        <input hidden name="action" value="add">
                         <div style="padding-left: 1em;">
                             <h3>Câu ${sessionScope.questionSize+1}</h3>
-                            <input hidden name="index" value="${sessionScope.questionSize+1}">
+                            <input hidden name="indexAdd" value="${sessionScope.questionSize+1}">
                         </div>
                         <div style="padding-left: 1em;">
                             <p>Tiêu đề câu hỏi</p>
@@ -198,15 +209,15 @@
                                 </li>
                                 <li class="list-item">
                                     <label for="answer1">Đáp án thứ hai:</label>
-                                    <input type="text" name="option2" id="option1Input">
+                                    <input type="text" name="option2" id="option2Input">
                                 </li>
                                 <li class="list-item">
                                     <label for="answer1">Đáp án thứ ba:</label>
-                                    <input type="text" name="option3" id="option1Input">
+                                    <input type="text" name="option3" id="option3Input">
                                 </li>
                                 <li class="list-item">
                                     <label for="answer1">Đáp án thứ tư:</label>
-                                    <input type="text" name="option4" id="option1Input">
+                                    <input type="text" name="option4" id="option4Input">
                                 </li>
                                 <li class="list-item">
                                     <label for="answer1">Đáp án đúng:</label>
@@ -248,19 +259,23 @@
                     </form>
                 </div>
             </c:if> 
-            <c:if test="${requestScope.action eq requestScope.edit}">
+            <c:if test="${requestScope.action eq sessionScope.edit}">
                 <div class="static-quiz-right">
-                    <form action="" id="form1">
+                    <form action="actionQuiz" id="form1" method="POST">
+                        <input hidden name="action" value="edit">
                         <div style="padding-left: 1em;">
                             <h3>Câu ${requestScope.index}</h3>
+                            <input hidden name="index" value="${requestScope.index}">
                         </div>
                         <div style="padding-left: 1em;">
                             <p>Tiêu đề câu hỏi</p>
                         </div>
                         <div>
-                            <textarea name="name" id="textareaEdit" style="height: 8em; width: 100%; border: 2px solid #e1b7c5;"></textarea>
+                            <input hidden name="question_id" value="${requestScope.question.question_id}">
+                            <textarea name="question" id="textareaEdit" style="height: 8em; width: 100%; border: 2px solid #e1b7c5;">${requestScope.question.question}
+                            </textarea>
                             <script>
-                                var textarea = document.getElementById("textareaEdit");
+                                var textare0a = document.getElementById("textareaEdit");
                                 textarea.value = "${requestScope.question.question}";
 
                             </script>
