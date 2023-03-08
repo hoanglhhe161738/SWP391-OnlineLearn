@@ -148,26 +148,30 @@
                         </thead>
                         <tbody style="height: 11em;">
                             <c:forEach items="${sessionScope.questions}" var="q">
-                            <tr style="background-color: #cfd5ea;">
-                                <td>${q.index}</td>
-                                <td>
-                                    <a href="#">
-                                        <i class="fa-solid fa-pen-to-square custom-icon"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#">
-                                        <i class="fa-solid fa-trash custom-icon"></i>
-                                    </a>
-                                </td>
-                            </tr>
+                                <tr style="background-color: #cfd5ea;">
+                                    <td>${q.index}</td>
+                                    <td>
+                                        <a href="#">
+                                            <i class="fa-solid fa-pen-to-square custom-icon"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="#">
+                                            <i class="fa-solid fa-trash custom-icon"></i>
+                                        </a>
+                                    </td>
+                                </tr>
                             </c:forEach>
                         </tbody>
                     </table>
                 </div>
-                <div style="margin-top: 2em;"><button
-                        style="width: 100%; color: #f2f2f2; font-size: large; background-color: #00de7a; padding: 0.5em 0 0.5em 0;border: white;">Thêm
-                        câu hỏi</button></div>
+                <div style="margin-top: 2em;">
+                    <a href="#">
+                        <button
+                            style="width: 100%; color: #f2f2f2; font-size: large; background-color: #00de7a; padding: 0.5em 0 0.5em 0;border: white;">Thêm
+                            câu hỏi</button>
+                    </a>
+                </div>
             </div>
 
             <div class="static-quiz-right">
@@ -177,7 +181,9 @@
                 <div style="padding-left: 1em;">
                     <p>Tiêu đề câu hỏi</p>
                 </div>
-                <div><input type="text" style="height: 8em; width: 100%; border: 2px solid #e1b7c5;"></div>
+                <div>
+                    <textarea name="name" style="height: 8em; width: 100%; border: 2px solid #e1b7c5;"></textarea>
+                </div>
                 <div class="list-answer" style="width: 100%;">
                     <ul style="padding-left: 20px;">
                         <li class="list-item">
@@ -207,8 +213,11 @@
                         </li>
                     </ul>
                 </div>
-                <div style="padding: 2em 0 0 70%;"><button style="width: 10em; height: 2em; background-color: #00de7a; color: #fff;
-                                                           border: none; font-size: large; font-weight: bold; border-radius: 10px;">Hoàn tất</button></div>
+                <div style="padding: 2em 0 0 70%;">
+                    <button style="width: 10em; height: 2em; background-color: #00de7a; color: #fff;border: none; font-size: large; font-weight: bold; border-radius: 10px;">
+                        Hoàn tất
+                    </button>
+                </div>
             </div>
         </div>
     </body>

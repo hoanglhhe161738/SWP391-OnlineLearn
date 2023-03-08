@@ -90,15 +90,15 @@
     </servlet>
     <servlet>
         <servlet-name>ChoiceClassToAddQuiz</servlet-name>
-        <servlet-class>controller.admin.ChoiceClassToAddQuiz</servlet-class>
+        <servlet-class>controller.admin.quiz.ChoiceClassToAddQuiz</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ChoiceCourseToAddQuiz</servlet-name>
-        <servlet-class>controller.admin.ChoiceCourseToAddQuiz</servlet-class>
+        <servlet-class>controller.admin.quiz.ChoiceCourseToAddQuiz</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AddQuizController</servlet-name>
-        <servlet-class>controller.admin.AddQuizController</servlet-class>
+        <servlet-class>controller.admin.quiz.AddQuizController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ActionController</servlet-name>
