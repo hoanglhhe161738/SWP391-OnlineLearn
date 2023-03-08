@@ -1,3 +1,10 @@
+<%-- 
+    Document   : verifyFail
+    Created on : Mar 8, 2023, 2:32:15 PM
+    Author     : T490
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,7 +47,7 @@
             <div class="payment-item"><img src="../Assets/icon/icon (79).png" alt=""></div>
             <div class="payment-item" style="font-weight: bolder; font-size: 2rem; padding-top: 10px;">Đăng kí tài khoản thất bại!</div>
             <div class="payment-item" style="font-size: large; padding-top: 30px;">
-                Mã xác nhận không đúng, ấn "Thử lại" để nhạn mã xác nhận mới!
+                Mã xác nhận không đúng, ấn "Thử lại" để nhận mã xác nhận mới!
             </div>
             <div class="payment-item-one" style="padding-top: 40px;">
                 <ul class="payment-item-one-list">

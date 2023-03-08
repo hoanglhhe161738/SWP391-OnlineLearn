@@ -34,7 +34,7 @@
                   <img class="fa fa-google signup-social-icon" src="/img/logoGG.png">
                   <span class="signup-social-text">Đăng kí bằng tài khoản Google</span>
                 </button> -->
-            <form action="signup" method="POST" class="signup-form" autocomplete="off">
+            <form action="signupUser" method="POST" class="signup-form" autocomplete="off">
 
                 <!-- username -->
                 <label for="username" class="signup-label">Nickname</label>
@@ -56,7 +56,7 @@
             </form>
             <p class="signup-already">
                 <span>Bạn đã có tài khoản?</span>
-                <a href="./login.jsp" class="signup-login-link">Đăng nhập</a>
+                <a href="../login/login.jsp" class="signup-login-link">Đăng nhập</a>
             </p>
         </div>
     </body>
