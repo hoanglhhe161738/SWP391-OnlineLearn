@@ -51,8 +51,36 @@ public class QuestionDBContext extends DBContext<Question> {
         return questionBanks;
     }
 
+    public void updateIndexQuestion(int lession_id) {
+        String sqlSelect = "SELECT qu.[index], qu.question_id, qu.question, qu.option1, qu.option2,\n"
+                + "		qu.option3,qu.option4,qu.true_answer, qu.points\n"
+                + "FROM Question qu \n"
+                + "inner join Lession_Question lq on lq.question_id = qu.question_id\n"
+                + "inner join Lession l on l.lession_id = lq.lession_id\n"
+                + "WHERE l.lession_id = ?";
+        try {
+            PreparedStatement stmSelect = connection.prepareStatement(sqlSelect);
+            stmSelect.setInt(1, lession_id);
+            ResultSet rs = stmSelect.executeQuery();
+            int newIndex = 1;
+            while (rs.next()) {
+                int currentIndex = rs.getInt("index");
+                if (newIndex != currentIndex) {
+                    String sqlUpdate = "UPDATE [dbo].[Question]\n"
+                            + "   SET [index] = ?\n"
+                            + " WHERE [index] = ?";
+                    PreparedStatement stmUPdate = connection.prepareStatement(sqlUpdate);
+                    stmUPdate.setInt(1, newIndex);
+                    stmUPdate.setInt(2, currentIndex);
+                    stmUPdate.executeUpdate();
+                }
+                newIndex++;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(QuestionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
-    
     public void insert(Question model, int lesson_id) {
         String sql = "INSERT INTO [dbo].[Question]\n"
                 + "           ([question]\n"
@@ -84,8 +112,8 @@ public class QuestionDBContext extends DBContext<Question> {
             stm.setInt(8, model.getIndex());
             stm.executeUpdate();
             int question_id = getIdByQuestion(model);
-            if(question_id!=-1){
-                insertLessonQuestion(question_id,lesson_id);
+            if (question_id != -1) {
+                insertLessonQuestion(question_id, lesson_id);
             }
         } catch (SQLException ex) {
             Logger.getLogger(QuestionDBContext.class.getName()).log(Level.SEVERE, null, ex);
@@ -170,7 +198,31 @@ public class QuestionDBContext extends DBContext<Question> {
 
     @Override
     public void delete(Question model) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
+    }
+
+    public void delete(int question_id) {
+        String sql = "DELETE FROM [dbo].[Question]\n"
+                + "      WHERE question_id = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, question_id);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(QuestionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void deleteLessonQuestion(int question_id) {
+        String sql = "DELETE FROM [dbo].[Lession_Question]\n"
+                + "      WHERE question_id = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, question_id);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(QuestionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override

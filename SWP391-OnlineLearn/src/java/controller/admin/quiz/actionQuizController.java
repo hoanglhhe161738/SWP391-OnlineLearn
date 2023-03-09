@@ -81,6 +81,19 @@ public class actionQuizController extends HttpServlet {
                 req.setAttribute("alert", "Đã sửa câu hỏi thành công");
                 req.getRequestDispatcher("./addQuiz.jsp").forward(req, resp);
                 break;
+            case "delete":
+                int question_idForDelete = Integer.parseInt(req.getParameter("question_id"));
+                Lesson lessonForDelete = (Lesson) req.getSession().getAttribute("lesson");
+                qDB.deleteLessonQuestion(question_idForDelete);
+                qDB.delete(question_idForDelete);
+                qDB.updateIndexQuestion(lessonForDelete.getLesson_id());
+                ArrayList<Question> questionsAfterDelete = qDB.getQuestionByLessionID(lessonForDelete.getLesson_id());
+                int questionSizeAfterDelete = questionsAfterDelete.size();
+                req.getSession().setAttribute("questions", questionsAfterDelete);
+                req.getSession().setAttribute("questionSize", questionSizeAfterDelete);
+                req.setAttribute("alert", "Đã xóa câu hỏi thành công");
+                req.getRequestDispatcher("./addQuiz.jsp").forward(req, resp);
+                break;
             default:
                 req.getRequestDispatcher("./addQuiz.jsp").forward(req, resp);
                 break;

@@ -95,7 +95,8 @@
 
             .list-item input {
                 flex: 1;
-                border: 2px solid #e1b7c5;
+                padding: 0 0.5em;
+                border: 1px solid #000000;
             }
             .custom-icon{
                 font-size: 1.25em;
@@ -156,7 +157,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="./actionQuiz?action=delete">
+                                        <a href="./actionQuiz?action=delete&index=${q.index}&question_id=${q.question_id}">
                                             <i class="fa-solid fa-trash custom-icon"></i>
                                         </a>
                                     </td>
@@ -178,23 +179,108 @@
                     </a>
                     <c:if test="${requestScope.alert ne null}">
                         <div style=" margin-top: 1em">
-                        <a style="font-size: 20px; font-weight: bold; margin-right: 1em">
-                            <i class="fa-solid fa-bell"></i>
-                        </a> 
-                        <a style="color: #00de7a; font-size: 20px; font-weight: bold;">
-                            ${requestScope.alert}
-                        </a>
+                            <a style="font-size: 20px; font-weight: bold; margin-right: 1em">
+                                <i class="fa-solid fa-bell"></i>
+                            </a> 
+                            <a style="color: #00de7a; font-size: 20px; font-weight: bold;">
+                                ${requestScope.alert}
+                            </a>
                         </div>
                     </c:if>
                 </div>
             </div>
 
-                    <c:if test="${(requestScope.action ne sessionScope.add) or (requestScope.action ne sessionScope.edit)}">
+            <c:if test="${(requestScope.action ne sessionScope.add) 
+                          or (requestScope.action ne sessionScope.edit)
+                          or (requestScope.action ne sessionScope.delete)}">
 
+            </c:if>
+            <c:if test="${requestScope.action eq sessionScope.delete}">
+                <div class="static-quiz-right">
+                    <input hidden name="action" value="edit">
+                    <div style="padding-left: 1em;">
+                        <h3>Câu ${requestScope.index}</h3>
+                        <input hidden name="index" value="${requestScope.index}">
+                    </div>
+                    <div style="padding-left: 1em;">
+                        <p>Tiêu đề câu hỏi</p>
+                    </div>
+                    <div>
+                        <input hidden name="question_id" value="${requestScope.question.question_id}">
+                        <textarea disabled name="question" id="textareaEdit" style="height: 8em; width: 100%; border: 1px solid #000000;">${requestScope.question.question}
+                        </textarea>
+                        <script>
+                            var textare0a = document.getElementById("textareaEdit");
+                            textarea.value = "${requestScope.question.question}";
+
+                        </script>
+                    </div>
+                    <div class="list-answer" style="width: 100%;">
+                        <ul style="padding-left: 20px;">
+                            <li class="list-item">
+                                <label for="answer1">Đáp án thứ nhất:</label>
+                                <input type="text" name="option1" disabled value="${requestScope.question.option1}">
+                            </li>
+                            <li class="list-item">
+                                <label for="answer1">Đáp án thứ hai:</label>
+                                <input type="text" name="option2" disabled value="${requestScope.question.option2}">
+                            </li>
+                            <li class="list-item">
+                                <label for="answer1">Đáp án thứ ba:</label>
+                                <input type="text" name="option3" disabled value="${requestScope.question.option3}">
+                            </li>
+                            <li class="list-item">
+                                <label for="answer1">Đáp án thứ tư:</label>
+                                <input type="text" name="option4" disabled value="${requestScope.question.option4}">
+                            </li>
+                            <li class="list-item">
+                                <label for="answer1">Đáp án đúng:</label>
+                                <select style="border: 1px solid #000000;" name="trueAnswer" disabled>
+                                    <option value="${requestScope.question.option1}">Đáp án 1</option>
+                                    <option value="${requestScope.question.option2}">Đáp án 2</option>
+                                    <option value="${requestScope.question.option3}">Đáp án 3</option>
+                                    <option value="${requestScope.question.option4}">Đáp án 4</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="padding: 2em 0 0 70%;">        
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Xác nhận và xóa
+                        </button>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel" style="align-items: center">
+                                        <i class="fa-solid fa-triangle-exclamation custom-icon" style="color: orange"></i>
+                                        Cảnh báo từ hệ thống
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div style="font-size: 20px;">Sau khi bạn bấm nút xóa, câu hỏi này sẽ không thể khôi phục lại</div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <form action="actionQuiz" method="POST">
+                                        <input hidden name="action" value="delete">
+                                        <input hidden name="question_id" value="${requestScope.question.question_id}">
+                                        <input type="submit" class="btn btn-primary" value="Xác nhận">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </c:if>
             <c:if test="${requestScope.action eq sessionScope.add}">
                 <div class="static-quiz-right">
-                    <form action="" id="form1" method="POST">
+                    <form action="actionQuiz" id="form1" method="POST">
                         <input hidden name="action" value="add">
                         <div style="padding-left: 1em;">
                             <h3>Câu ${sessionScope.questionSize+1}</h3>
@@ -204,7 +290,7 @@
                             <p>Tiêu đề câu hỏi</p>
                         </div>
                         <div>
-                            <textarea name="question" style="height: 8em; width: 100%; border: 2px solid #e1b7c5;"></textarea>
+                            <textarea name="question" style="height: 8em; width: 100%; border: 2px solid #000000;"></textarea>
                         </div>
                         <div class="list-answer" style="width: 100%;">
                             <ul style="padding-left: 20px;">
@@ -226,7 +312,7 @@
                                 </li>
                                 <li class="list-item">
                                     <label for="answer1">Đáp án đúng:</label>
-                                    <select name="trueAnswer" style="border: 2px solid #e1b7c5;">
+                                    <select name="trueAnswer" style="border: 1px solid #000000;">
                                         <option value="" id="option1Add">Đáp án thứ nhất</option>
                                         <option value="" id="option2Add">Đáp án thứ hai</option>
                                         <option value="" id="option3Add">Đáp án thứ ba</option>
@@ -277,7 +363,7 @@
                         </div>
                         <div>
                             <input hidden name="question_id" value="${requestScope.question.question_id}">
-                            <textarea name="question" id="textareaEdit" style="height: 8em; width: 100%; border: 2px solid #e1b7c5;">${requestScope.question.question}
+                            <textarea name="question" id="textareaEdit" style="height: 8em; width: 100%; border: 1px solid #000000;">${requestScope.question.question}
                             </textarea>
                             <script>
                                 var textare0a = document.getElementById("textareaEdit");
@@ -305,7 +391,7 @@
                                 </li>
                                 <li class="list-item">
                                     <label for="answer1">Đáp án đúng:</label>
-                                    <select style="border: 2px solid #e1b7c5;" name="trueAnswer">
+                                    <select style="border: 1px solid #000000;" name="trueAnswer">
                                         <option value="${requestScope.question.option1}">Đáp án 1</option>
                                         <option value="${requestScope.question.option2}">Đáp án 2</option>
                                         <option value="${requestScope.question.option3}">Đáp án 3</option>
