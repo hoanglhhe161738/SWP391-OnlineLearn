@@ -68,7 +68,29 @@ public class QuestionDBContext extends DBContext<Question> {
 
     @Override
     public Question get(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Question question = new Question();
+        String sql = "SELECT * FROM Question WHERE question_id = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, id);
+            ResultSet rs = stm.executeQuery();
+            if(rs.next()){
+                question.setQuestion_id(rs.getInt("question_id"));
+                question.setQuestion(rs.getString("question"));
+                question.setOption1(rs.getString("option1"));
+                question.setOption2(rs.getString("option2"));
+                question.setOption3(rs.getString("option3"));
+                question.setOption4(rs.getString("option4"));
+                question.setTrue_answer(rs.getString("true_answer"));
+                question.setPoints(rs.getInt("points"));
+                question.setIndex(rs.getInt("index"));
+                return question;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(QuestionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return question;
     }
 
     @Override

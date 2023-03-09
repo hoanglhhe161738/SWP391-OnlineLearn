@@ -1,3 +1,10 @@
+<%-- 
+    Document   : action.jsp
+    Created on : Mar 8, 2023, 8:22:29 PM
+    Author     : Khangnekk
+--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,34 +29,18 @@
             margin-bottom: 0.3em;
             color: white;
         }
+        .choiceAction-colum{
+            cursor: pointer;
+        }
+        .choiceAction-colum a{
+            text-decoration: none;
+            font-weight: bold;
+        }
     </style>
     <title>Admin</title>
 </head>
 
 <body>
-    <!-- <div class="choiceAction container overflow-hidden text-center">
-        <div class="choiceAction-content row gx-5">
-            <div class="choiceAction-colum col">
-                <div class="choiceAction-colum-item p-3">Custom column padding</div>
-            </div>
-            <div class="choiceAction-colum col">
-                <div class="choiceAction-colum-item p-3">Custom column padding</div>
-            </div>
-            <div class="choiceAction-colum col">
-                <div class="choiceAction-colum-item p-3">Custom column padding</div>
-            </div>
-        </div>
-        <div class="container overflow-hidden text-center">
-            <div class="row gx-5">
-                <div class="col-4">
-                    <div class="p-3">Custom column padding</div>
-                </div>
-                <div class="col-4">
-                    <div class="p-3">Custom column padding</div>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <div class="nav-information">
         <div class="nav-information-item" style="padding-top: 0.1em;">
             <div class="nav-information-image">
@@ -69,10 +60,12 @@
     <div class="choiceAction container text-center">
         <div class="choiceAction-content row row-cols-2 row-cols-lg-3 g-2 g-lg-3">
             <div class="choiceAction-colum col">
+                <a href="./choiceClassToAddQuiz">
                 <div class="choiceAction-colum-item p-3" style="background-color: #ff0000;">
                     <div><i class="custom-icon fa-solid fa-circle-question"></i></div>
                     <p>Quản lý câu hỏi</p>
                 </div>
+                </a>
             </div>
             <div class="choiceAction-colum col">
                 <div class="choiceAction-colum-item p-3" style="background-color: #0081e2;">

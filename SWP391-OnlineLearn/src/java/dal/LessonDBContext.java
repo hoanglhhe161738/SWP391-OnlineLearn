@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Course;
 import model.Lesson;
+import model.Lesson_learn;
 import model.Module;
 
 /**
@@ -27,7 +28,20 @@ public class LessonDBContext extends DBContext<Lesson> {
 
     @Override
     public void update(Lesson model) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "UPDATE [dbo].[Lession]\n"
+                + "   SET [lession_name] = ?\n"
+                + "      ,[module_id] = ?\n"
+                + "      ,[status] = ?\n"
+                + " WHERE lession_id = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, model.getLesson_name());
+            stm.setInt(2, model.getModule().getModule_id());
+            stm.setBoolean(3, model.isStatus());
+            stm.setInt(4, model.getLesson_id());
+        } catch (SQLException ex) {
+            Logger.getLogger(LessonDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
@@ -85,6 +99,49 @@ public class LessonDBContext extends DBContext<Lesson> {
         }
 
         return lessons;
+    }
+
+    public Lesson_learn getLessonLearn(int user_id, int lesson_id) {
+        Lesson_learn lessonLearn = new Lesson_learn();
+        String sql = "SELECT ll.[user_id], ll.lession_id,ll.llearn  \n"
+                + "FROM Lession_Learn ll WHERE ll.[user_id] = ? AND ll.lession_id = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, user_id);
+            stm.setInt(2, lesson_id);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                lessonLearn.setUser_id(user_id);
+                lessonLearn.setLesson_id(lesson_id);
+                lessonLearn.setLlearn(rs.getBoolean("llearn"));
+                return lessonLearn;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(LessonDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lessonLearn;
+    }
+
+    public Lesson_learn setLessonLearn(int user_id, int lesson_id, boolean llearn) {
+        Lesson_learn lessonLearn = new Lesson_learn();
+        String sql = "INSERT INTO [dbo].[Lession_Learn]\n"
+                + "           ([user_id]\n"
+                + "           ,[lession_id]\n"
+                + "           ,[llearn])\n"
+                + "     VALUES\n"
+                + "           (?\n"
+                + "           ,?\n"
+                + "           ,?)";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, user_id);
+            stm.setInt(2, lesson_id);
+            stm.setBoolean(3, llearn);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(LessonDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lessonLearn;
     }
 
 }

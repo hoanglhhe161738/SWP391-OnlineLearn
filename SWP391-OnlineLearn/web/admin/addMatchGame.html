@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Assets/css/action.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <style>
+        table thead td {
+            border: 2px solid white;
+            color: white;
+        }
+
+        td {
+            border: 2px solid white;
+        }
+
+        table {
+            text-align: center;
+        }
+
+        .table-quiz {
+            height: 11em;
+            overflow: auto;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .input-quiz {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .statis-quiz {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 3em 0;
+            
+        }
+
+        .static-quiz-right {
+
+            flex: 1;
+            margin-left: 2em;
+            padding-left: 20em;
+            /* flex: 2; */
+        }
+
+        .static-quiz-left {
+            background-color: #f2f2f2;
+            padding: 0 2em 2em 2em;
+            position: fixed;
+        }
+
+        .input-quiz input {
+            margin-top: 0.5em;
+            width: 11em;
+            border: white;
+        }
+
+        .text {
+            padding: 1em 0 0 0;
+            font-weight: bold;
+        }
+
+        .statis-quiz-text {
+            padding: 1em 0 0 0;
+            font-weight: bold;
+        }
+
+        .list-item label {
+            min-width: 150px;
+        }
+
+        .list-item {
+            list-style: none;
+            display: flex;
+            margin-top: 1em;
+        }
+
+        .list-item input {
+            flex: 1;
+            border: 2px solid #e1b7c5;
+        }
+    </style>
+
+    <title>Add Match Game</title>
+</head>
+
+<body>
+    <div class="nav-information" style="position: fixed; margin-bottom: 10em; top: 0;">
+        <div class="nav-information-item" style="padding-top: 0.2em;">
+            <div class="nav-information-image">
+                <div
+                    style="height: 0.8em; width: 0.8em; border: 3px solid #fff; margin-left: 2em;margin-top: 2em; border-radius: 50%; background-color: #00b050;">
+                </div>
+
+            </div>
+            <div class="nav-information-text">
+                <ul class="nav-information-text-content">
+                    <li class="nav-information-text-content-item">Khang chi be</li>
+                    <li class="nav-information-text-content-item">Admin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="statis-quiz container-fluid" style="height: 100%; margin-top: 5em;">
+        <div class="static-quiz-left">
+            <div class="text">
+                <p>Đang thêm video cho</p>
+            </div>
+            <div class="input-quiz">
+                <input type="text" value="Lớp 1">
+                <input type="text" value="Toán lớp 1">
+                <input type="text" value="Chương 1">
+                <input type="text" value="Bài 1">
+            </div>
+            <div style="margin-top: 2em;"><button
+                    style="width: 100%; color: #f2f2f2; font-size: large; background-color: #7f7f7f; padding: 0.5em 0 0.5em 0;border: white;">Thêm
+                    dữ liệu</button></div>
+            <div style="margin-top: 1em;"><button
+                    style="width: 100%; color: #f2f2f2; font-size: large; background-color: #7f7f7f; padding: 0.5em 0 0.5em 0;border: white;">Xóa
+                    dữ liệu</button></div>
+        </div>
+
+        <div class="static-quiz-right">
+            <div style="padding-left: 1em;">
+                <h3></h3>
+            </div>
+            <div style="padding-left: 1.3em; font-weight: bold;">
+                <p>Cặp thứ 1</p>
+            </div>
+            <div class=" list-answer" style="width: 100%;">
+                <ul style="padding-left: 20px;">
+                    <li class="list-item">
+                        <label for="answer1">URL ảnh 1:</label>
+                        <input type="text">
+                    </li>
+                    <li class="list-item">
+                        <label for="answer1">URL ảnh 2:</label>
+                        <input type="text">
+                    </li>
+
+                </ul>
+            </div>
+            <div style="padding-left: 1.3em; font-weight: bold;">
+                <p>Cặp thứ 2</p>
+            </div>
+            <div class=" list-answer" style="width: 100%;">
+                <ul style="padding-left: 20px;">
+                    <li class="list-item">
+                        <label for="answer1">URL ảnh 1:</label>
+                        <input type="text">
+                    </li>
+                    <li class="list-item">
+                        <label for="answer1">URL ảnh 2:</label>
+                        <input type="text">
+                    </li>
+
+                </ul>
+            </div>
+            <div style="padding-left: 1.3em; font-weight: bold;">
+                <p>Cặp thứ 3</p>
+            </div>
+            <div class=" list-answer" style="width: 100%;">
+                <ul style="padding-left: 20px;">
+                    <li class="list-item">
+                        <label for="answer1">URL ảnh 1:</label>
+                        <input type="text">
+                    </li>
+                    <li class="list-item">
+                        <label for="answer1">URL ảnh 2:</label>
+                        <input type="text">
+                    </li>
+
+                </ul>
+            </div>
+            <div style="padding-left: 1.3em; font-weight: bold;">
+                <p>Cặp thứ 4</p>
+            </div>
+            <div class=" list-answer" style="width: 100%;">
+                <ul style="padding-left: 20px;">
+                    <li class="list-item">
+                        <label for="answer1">URL ảnh 1:</label>
+                        <input type="text">
+                    </li>
+                    <li class="list-item">
+                        <label for="answer1">URL ảnh 2:</label>
+                        <input type="text">
+                    </li>
+
+                </ul>
+            </div>
+            <div style="padding-left: 1.3em; font-weight: bold;">
+                <p>Cặp thứ 5</p>
+            </div>
+            <div class=" list-answer" style="width: 100%;">
+                <ul style="padding-left: 20px;">
+                    <li class="list-item">
+                        <label for="answer1">URL ảnh 1:</label>
+                        <input type="text">
+                    </li>
+                    <li class="list-item">
+                        <label for="answer1">URL ảnh 2:</label>
+                        <input type="text">
+                    </li>
+
+                </ul>
+            </div>
+            <div style="padding-left: 1.3em; font-weight: bold;">
+                <p>Cặp thứ 6</p>
+            </div>
+            <div class=" list-answer" style="width: 100%;">
+                <ul style="padding-left: 20px;">
+                    <li class="list-item">
+                        <label for="answer1">URL ảnh 1:</label>
+                        <input type="text">
+                    </li>
+                    <li class="list-item">
+                        <label for="answer1">URL ảnh 2:</label>
+                        <input type="text">
+                    </li>
+
+                </ul>
+            </div>
+            <div style="padding: 2em 0 0 70%;"><button style="width: 10em; height: 2em; background-color: #00de7a; color: #fff;
+            border: none; font-size: large; font-weight: bold; border-radius: 10px; margin-bottom: 2em;">Hoàn tất</button></div>
+        </div>
+    </div>
+</body>
+
+</html>

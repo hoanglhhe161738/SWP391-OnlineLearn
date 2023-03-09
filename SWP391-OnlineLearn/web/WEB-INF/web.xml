@@ -89,8 +89,24 @@
         <servlet-class>controller.quiz.quizController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ForgetPasswordController</servlet-name>
-        <servlet-class>controller.auth.ForgetPasswordController</servlet-class>
+        <servlet-name>ChoiceClassToAddQuiz</servlet-name>
+        <servlet-class>controller.admin.quiz.ChoiceClassToAddQuiz</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChoiceCourseToAddQuiz</servlet-name>
+        <servlet-class>controller.admin.quiz.ChoiceCourseToAddQuiz</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddQuizController</servlet-name>
+        <servlet-class>controller.admin.quiz.AddQuizController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ActionController</servlet-name>
+        <servlet-class>controller.admin.ActionController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>actionQuizController</servlet-name>
+        <servlet-class>controller.admin.quiz.actionQuizController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
@@ -178,7 +194,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>verifyCodeSignUpController</servlet-name>
-        <url-pattern>/signup/verifyCode</url-pattern>
+        <url-pattern>/login/verifyCode</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>quizController</servlet-name>
@@ -187,6 +203,26 @@
     <servlet-mapping>
         <servlet-name>ForgetPasswordController</servlet-name>
         <url-pattern>/forgetPassword</url-pattern>
+            </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChoiceClassToAddQuiz</servlet-name>
+        <url-pattern>/admin/choiceClassToAddQuiz</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChoiceCourseToAddQuiz</servlet-name>
+        <url-pattern>/admin/choiceCourseToAddQuiz</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddQuizController</servlet-name>
+        <url-pattern>/admin/addQuiz</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ActionController</servlet-name>
+        <url-pattern>/admin/action</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actionQuizController</servlet-name>
+        <url-pattern>/admin/actionQuiz</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
