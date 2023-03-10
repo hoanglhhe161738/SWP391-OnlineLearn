@@ -28,9 +28,9 @@ public class LogoutController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        request.getSession().setAttribute("account", null);
+        request.getSession().setAttribute("accLogin", null);
         request.getSession().setAttribute("user", null);
-        response.sendRedirect("./home/homePage");
+        response.sendRedirect("./login/loginUser");
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
