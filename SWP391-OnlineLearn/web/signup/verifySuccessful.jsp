@@ -1,3 +1,10 @@
+<%-- 
+    Document   : verifySuccessful
+    Created on : Mar 8, 2023, 2:25:16 PM
+    Author     : T490
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,8 +34,8 @@
   <div class="payment-successful">
     <div class="payment-successful-content">
       <div class="payment-item"><img src="../Assets/icon/icon (74).png" alt=""></div>
-      <div class="payment-item" style="font-weight: bolder; font-size: 2rem; padding-top: 10px;">Thanh toán thành công</div>
-      <div class="payment-item" style="font-size: large; padding-top: 30px;">Bạn đã nâng cấp thành công tài khoản premium, chúc bạn có một trải nghiệm học tập hiệu quả
+      <div class="payment-item" style="font-weight: bolder; font-size: 2rem; padding-top: 10px;">Đăng kí tài khoản thành công</div>
+      <div class="payment-item" style="font-size: large; padding-top: 30px;">Bạn đã đăng kí tài khoản thành công, chúc bạn có một trải nghiệm học tập hiệu quả
       </div>
       <div class="payment-item" style="padding-top: 40px;"><button style="height: 2em; width: 10em; font-size: larger; font-weight: bolder; color: #fff; background-color: #32c671;
       border-radius: 10px; border: white;" type="button">Về trang chủ</button></div>

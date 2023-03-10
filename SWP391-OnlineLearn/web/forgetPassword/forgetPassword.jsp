@@ -32,7 +32,7 @@
               <span class="signup-social-text">Sign up with Google</span>
             </button>
             -->
-            <form action="#" class="login-form" autocomplete="off">
+            <form action="ForgetPasswordController" method="POST" class="login-form" autocomplete="off">
                 <!-- <label for="username" class="login-label">Nhập tên đăng nhập và địa chỉ Email (địa chỉ email này phải đúng với địa chỉ email đã đăng kí trong trang cá nhân). Sau đó chúng tôi sẽ gửi mật khẩu mới vào Email của bạn!</label> -->
 
                 <!-- username -->
@@ -46,11 +46,11 @@
             </form>
             <p class="login-already">
                 <span>Bạn chưa có tài khoản?</span>
-                <a href="./signup.jsp" class="login-signup-link">Tạo tài khoản mới</a>
+                <a href=".././signup/signup.jsp" class="login-signup-link">Tạo tài khoản mới</a>
             </p>
             <p class="login-already">
 
-                <a href="./login.jsp" class="login-signup-link">Về đăng nhập</a>
+                <a href=".././login/login.jsp" class="login-signup-link">Về đăng nhập</a>
             </p>
         </div>
     </body>
