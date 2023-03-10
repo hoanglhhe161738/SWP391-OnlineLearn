@@ -1,6 +1,6 @@
 <%-- 
-    Document   : login
-    Created on : Feb 15, 2023, 2:35:43 PM
+    Document   : forgetPassword
+    Created on : Feb 15, 2023, 2:38:40 PM
     Author     : T490
 --%>
 
@@ -13,7 +13,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../Assets/css/styleLogin.css"/>
         <link rel="icon" href="../Assets/icon/favicon.png"/>
-        <title>Login</title>
+        <title>Forget Password</title>
         <style>
             .login{
                 border-radius: 12px;
@@ -26,21 +26,23 @@
     </head>
     <body>
         <div class="login">
-            <h1 class="login-heading">Đăng nhập</h1>
-            <div class="alert alert-danger" role="alert" style="color: red; margin-bottom: 1em; text-align: center"">
-                ${mess}
-            </div>
+            <h1 class="login-heading">Quên mật khẩu</h1>
             <!-- <button class="signup-social">
               <i class="fa fa-google signup-social-icon"></i>
               <span class="signup-social-text">Sign up with Google</span>
             </button>
             -->
-            <form action="loginUser" method="POST" class="login-form" autocomplete="off">
-                <label for="username" class="login-label">Tên tài khoản</label>
+            <form action="ForgetPasswordController" method="POST" class="login-form" autocomplete="off">
+                <!-- <label for="username" class="login-label">Nhập tên đăng nhập và địa chỉ Email (địa chỉ email này phải đúng với địa chỉ email đã đăng kí trong trang cá nhân). Sau đó chúng tôi sẽ gửi mật khẩu mới vào Email của bạn!</label> -->
+
+                <!-- username -->
+                <label for="username" class="login-label">Nickname</label>
                 <input type="text" name="username" class="login-input" placeholder="VD: HoangPongPayVoCungLuon">
-                <label for="password" class="login-label">Mật khẩu</label>
-                <input type="password" name="password" class="login-input" >
-                <input class="login-submit" type="submit" value="Đăng nhập">
+
+                <!-- parentEmail -->
+                <label for="parentEmail" class="login-label">Email của phụ huynh</label>
+                <input type="email" name="parentEmail" class="login-input" placeholder="VD: KhanhCute@gmail.com">
+                <input class="login-submit" type="submit" value="Lấy lại mật khẩu">
             </form>
             <p class="login-already">
                 <span>Bạn chưa có tài khoản?</span>
@@ -48,7 +50,7 @@
             </p>
             <p class="login-already">
 
-                <a href=".././forgetPassword/forgetPassword.jsp" class="login-signup-link">Quên mật khẩu</a>
+                <a href=".././login/login.jsp" class="login-signup-link">Về đăng nhập</a>
             </p>
         </div>
     </body>
