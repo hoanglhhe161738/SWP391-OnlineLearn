@@ -44,11 +44,11 @@
             </form>
             <p class="login-already">
                 <span>Bạn chưa có tài khoản?</span>
-                <a href="./signup.jsp" class="login-signup-link">Tạo tài khoản mới</a>
+                <a href=".././signup/signup.jsp" class="login-signup-link">Tạo tài khoản mới</a>
             </p>
             <p class="login-already">
 
-                <a href="./forgetPassword.jsp" class="login-signup-link">Quên mật khẩu</a>
+                <a href=".././forgetPassword/forgetPassword.jsp" class="login-signup-link">Quên mật khẩu</a>
             </p>
         </div>
     </body>

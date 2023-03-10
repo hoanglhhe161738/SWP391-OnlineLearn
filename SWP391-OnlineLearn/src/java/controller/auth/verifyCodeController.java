@@ -5,12 +5,14 @@
 package controller.auth;
 
 import controller.payment.*;
+import dal.AccountDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
+import model.Account;
 
 /**
  *
@@ -38,6 +40,10 @@ public class verifyCodeController extends HttpServlet{
         
         if(verifyCode.equals(Code)){
             req.setAttribute("alertTitle", "Thank you!");
+            AccountDBContext accdb = new AccountDBContext();
+            Account acc = (Account) req.getSession().getAttribute("newAccount");
+            accdb.signup(acc.getUsername(), acc.getPassword());
+            
             req.getRequestDispatcher("./verifySuccessful.jsp").forward(req, resp);
         }else{
             req.setAttribute("alertTitle", "Sorry!");
