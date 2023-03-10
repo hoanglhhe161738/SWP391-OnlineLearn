@@ -104,7 +104,7 @@
             <p class="mess">Chúng tôi vừa gửi 1 mã xác nhận bao gồm 6 chữ số vào email của bạn. Vui lòng kiểm tra email rồi nhập mã xác nhận đó vào phần bên dưới để hoàn tất đăng ký!</p>
 
             <div class="input">
-                <form action="./verifyCode">
+                <form action="./verifyCode" method="POST">
                     <input type="text" id="verify-code-input" name="confirm" class="signup-input" maxlength="7" placeholder="XXX-XXX">
                     <p style="font-size: 0.75em;">(*)Lưu ý: Mã xác nhận chỉ có hiệu lực trong 2 phút</p>
                     <input class="login-submit" type="submit" value="Hoàn tất">
