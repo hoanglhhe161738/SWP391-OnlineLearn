@@ -201,6 +201,10 @@
         <url-pattern>/course/quiz</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>ForgetPasswordController</servlet-name>
+        <url-pattern>/forgetPassword</url-pattern>
+            </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>ChoiceClassToAddQuiz</servlet-name>
         <url-pattern>/admin/choiceClassToAddQuiz</url-pattern>
     </servlet-mapping>
