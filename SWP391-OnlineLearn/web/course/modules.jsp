@@ -28,13 +28,14 @@
                                 <h1>${requestScope.course.course_name} lớp ${requestScope.class_id}</h1>
                             <p style="font-size: 18px; font-weight: bold">Khổ luyện thành tài, miệt mài mới giỏi. 
                                 Hãy kiên trì và nỗ lực các bạn nhé, thành quả sẽ đến ngay thôi</p>                      
-                        </div>
-                        <div class="col-m-12">
-                            <div class="process-module">
-                                <div class="progress-bar-bg">
-                                    <div class="progress-bar-custom" style="width:${requestScope.percent}%;">
-                                        <p>${requestScope.percent}%</p>
-                                    </div>	
+
+                            <div class="col-m-12">
+                                <div class="process-module" style="margin: 2rem 0">
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar-custom" style="width:${requestScope.percent}%;">
+                                            <p>${requestScope.percent}%</p>
+                                        </div>	
+                                    </div>
                                 </div>
                             </div>
                         </div>

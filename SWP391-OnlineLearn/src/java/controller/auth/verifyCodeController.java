@@ -5,12 +5,16 @@
 package controller.auth;
 
 import controller.payment.*;
+import dal.AccountDBContext;
+import dal.UserDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
+import model.Account;
+import model.User;
 
 /**
  *
@@ -38,6 +42,13 @@ public class verifyCodeController extends HttpServlet{
         
         if(verifyCode.equals(Code)){
             req.setAttribute("alertTitle", "Thank you!");
+            AccountDBContext accdb = new AccountDBContext();
+            Account acc = (Account) req.getSession().getAttribute("newAccount");
+            accdb.signup(acc.getUsername(), acc.getPassword());
+            UserDBContext udb = new UserDBContext();
+            User u = (User) req.getSession().getAttribute("newUser");
+            udb.insert(u);
+            
             req.getRequestDispatcher("./verifySuccessful.jsp").forward(req, resp);
         }else{
             req.setAttribute("alertTitle", "Sorry!");
