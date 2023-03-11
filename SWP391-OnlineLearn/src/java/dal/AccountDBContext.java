@@ -9,6 +9,7 @@ package dal;
  * @author T490
  */
 import controller.auth.securityProcessorCore;
+import java.security.NoSuchAlgorithmException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,21 +24,52 @@ public class AccountDBContext extends DBContext<Account> {
 
     public Account login(String username, String password) {
         securityProcessorCore spc = new securityProcessorCore();
-        String sql = "SELECT * FROM Account \n"
-                + "WHERE username = ? \n"
-                + "and password = ?";
         try {
+            String sql = "SELECT a.username\n"
+                    + ",r.role_id, r.role_name,\n"
+                    + "f.fe_id,f.fe_name,f.[url]\n"
+                    + "FROM Account a\n"
+                    + "LEFT JOIN Role_Account ra ON a.username = ra.username\n"
+                    + "LEFT JOIN [Role] r ON r.role_id= ra.role_id\n"
+                    + "LEFT JOIN Role_Feature rf ON rf.role_id = r.role_id\n"
+                    + "LEFT JOIN Feature f ON f.fe_id = rf.fe_id\n"
+                    + "WHERE a.username = ? AND a.password = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, username);
             stm.setString(2, spc.md5EncodePassword(password));
             ResultSet rs = stm.executeQuery();
+            Account account = null;
+            Role currentRole = new Role();
+            currentRole.setRole_id(-1);
             while (rs.next()) {
-                return new Account(rs.getString(1),
-                        rs.getString(2),
-                        rs.getString(3));
+                if (account == null) {
+                    account = new Account();
+                    account.setUsername(rs.getString("username"));
+                }
+                int rid = rs.getInt("role_id");
+                if (rid != 0) {
+                    if (rid != currentRole.getRole_id()) {
+                        currentRole = new Role();
+                        currentRole.setRole_id(rs.getInt("role_id"));
+                        currentRole.setRole_name(rs.getString("role_name"));
+                        account.getRoles().add(currentRole);
+                    }
+                }
+
+                int fid = rs.getInt("fe_id");
+                if (fid != 0) {
+                    Feature f = new Feature();
+                    f.setFe_id(rs.getInt("fe_id"));
+                    f.setFe_name(rs.getString("fe_name"));
+                    f.setFe_url(rs.getString("url"));
+                    currentRole.getFeatures().add(f);
+                }
             }
-        } catch (Exception e) {
-            System.out.println(e);
+            return account;
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
