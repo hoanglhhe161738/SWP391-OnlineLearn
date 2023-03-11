@@ -108,6 +108,22 @@
         <servlet-name>actionQuizController</servlet-name>
         <servlet-class>controller.admin.quiz.actionQuizController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ChoiceClassToAddGame</servlet-name>
+        <servlet-class>controller.admin.matchgame.ChoiceClassToAddGame</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>choiceCourseToAddGame</servlet-name>
+        <servlet-class>controller.admin.matchgame.ChoiceCourseToAddGame</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddImageOfMatchGame</servlet-name>
+        <servlet-class>controller.admin.matchgame.AddPairOfImageController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>actionMatchGameController</servlet-name>
+        <servlet-class>controller.admin.matchgame.actionMatchGameController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
         <url-pattern>/course/classes</url-pattern>
@@ -219,6 +235,22 @@
     <servlet-mapping>
         <servlet-name>actionQuizController</servlet-name>
         <url-pattern>/admin/actionQuiz</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChoiceClassToAddGame</servlet-name>
+        <url-pattern>/admin/ChoiceClassToAddGameImage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>choiceCourseToAddGame</servlet-name>
+        <url-pattern>/admin/ChoiceCourseToAddGameImage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddImageOfMatchGame</servlet-name>
+        <url-pattern>/admin/AddImageOfMatchGame</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actionMatchGameController</servlet-name>
+        <url-pattern>/admin/actionMatchGame</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
