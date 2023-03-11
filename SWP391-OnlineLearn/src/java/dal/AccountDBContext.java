@@ -23,13 +23,14 @@ public class AccountDBContext extends DBContext<Account> {
 
     
     public Account login(String username, String password){
+        securityProcessorCore spc = new securityProcessorCore();
         String sql = "SELECT * FROM Account \n" +
                        "WHERE username = ? \n" +
                        "and password = ?";
         try {
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, username);
-            stm.setString(2, password);
+            stm.setString(2, spc.md5EncodePassword(password));
             ResultSet rs = stm.executeQuery();
             while(rs.next()){
                 return new Account(rs.getString(1),
