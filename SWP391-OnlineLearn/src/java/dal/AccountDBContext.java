@@ -85,7 +85,7 @@ public class AccountDBContext extends DBContext<Account> {
                 + "     VALUES\n"
                 + "           (?,\n"
                 + "           ?,\n"
-                + "           'nomal')";
+                + "           'normal')";
 
         try {
             PreparedStatement stm = connection.prepareStatement(sql);
