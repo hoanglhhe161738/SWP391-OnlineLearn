@@ -21,7 +21,34 @@ public class UserDBContext extends DBContext<User> {
 
     @Override
     public void insert(User model) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "INSERT INTO [dbo].[User]\n"
+                + "           ([full_name]\n"
+                + "           ,[dob]\n"
+                + "           ,[gender]\n"
+                + "           ,[parent_name]\n"
+                + "           ,[parent_email]\n"
+                + "           ,[parent_phone_number]\n"
+                + "           ,[username])\n"
+                + "     VALUES\n"
+                + "           (?\n"
+                + "           ,?\n"
+                + "           ,?\n"
+                + "           ,?\n"
+                + "           ,?\n"
+                + "           ,?\n"
+                + "           ,?)";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, model.getFull_name());
+            stm.setDate(2, DateTimeHelper.toDateSql(model.getDob()));
+            stm.setBoolean(3, model.isGender());
+            stm.setString(4, model.getParent_name());
+            stm.setString(5, model.getParent_email());
+            stm.setString(6, model.getParent_phone_number());
+            stm.setString(7, model.getUsername());
+            stm.executeUpdate();
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -71,7 +98,7 @@ public class UserDBContext extends DBContext<User> {
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, username);
             ResultSet rs = stm.executeQuery();
-            if(rs.next()){
+            if (rs.next()) {
                 user.setUser_id(rs.getInt("user_id"));
                 user.setFull_name(rs.getString("full_name"));
                 user.setGender(rs.getBoolean("gender"));

@@ -23,8 +23,7 @@ public class verifyCodeController extends BaseAuthenticationController{
     void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         AccountDBContext aDB = new AccountDBContext();
         
-        String verifyCodeRaw = req.getParameter("verifyCode");
-        String verifyCode = verifyCodeRaw.replace("-", "");
+        String verifyCode = req.getParameter("verifyCode");
         HttpSession verifyPremium = req.getSession();
         String Code = String.valueOf(verifyPremium.getAttribute("verifyCode"));            
         if(verifyCode.equals(Code)){
