@@ -26,19 +26,21 @@
                 <div class="container main-content">
                     <div class="row">
                         <div>
-                            <div class="col-md-12 module-item-type1 module-title">
-                                <a style="cursor: pointer">${requestScope.module.module_name}</a>
-                            <div class="process-module" style="float: left">
-                                <div class="progress-bar-bg" style="margin-left: -2em;">
-                                    <div class="progress-bar-custom" style="width:${requestScope.percent}%;">
-                                        <p>${requestScope.percent}%</p>
-                                    </div>	
+                            <div class="col-m-12 item-course">                       
+                                <h1>${requestScope.module.module_name}</h1>                  
+                            <div class="col-m-12">
+                                <div class="process-module" style="margin: 2rem">
+                                    <div class="progress-bar-bg" style="margin-left: -2em;">
+                                        <div class="progress-bar-custom" style="width:${requestScope.percent}%;">
+                                            <p>${requestScope.percent}%</p>
+                                        </div>	
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <div class="lesson-items ">
+                        <div class="lesson-items " style="margin-left: 0">
                             <c:forEach items="${requestScope.lessons}" var="l">
                                 <div class="lesson-item" style="line-height: 1.6em;">
                                     <c:if test="${l.status eq true}">

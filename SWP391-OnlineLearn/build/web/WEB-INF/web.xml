@@ -150,7 +150,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SignupController</servlet-name>
-        <url-pattern>/login/signup</url-pattern>
+        <url-pattern>/signup/signupUser</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>completePaymentController</servlet-name>
@@ -186,15 +186,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Fillin4Controller</servlet-name>
-        <url-pattern>/login/fillin4</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>sendMailController</servlet-name>
-        <url-pattern>/login/sendMail</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>verifyCodeSignUpController</servlet-name>
-        <url-pattern>/login/verifyCode</url-pattern>
+        <url-pattern>/signup/fillin4</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>quizController</servlet-name>
@@ -219,6 +211,14 @@
     <servlet-mapping>
         <servlet-name>actionQuizController</servlet-name>
         <url-pattern>/admin/actionQuiz</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sendMailController</servlet-name>
+        <url-pattern>/signup/sendMail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>verifyCodeSignUpController</servlet-name>
+        <url-pattern>/signup/verifyCode</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

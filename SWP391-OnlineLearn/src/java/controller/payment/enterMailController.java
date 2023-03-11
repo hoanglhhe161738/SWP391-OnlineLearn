@@ -68,8 +68,8 @@ public class enterMailController extends BaseAuthenticationController {
 
             // Set up mail server and authentication
             String host = "smtp.gmail.com";
-            String user = "contact.khalgfk@gmail.com";
-            String password = "oiowajaidxxqqubl";
+            String user = "swponlinelearn@gmail.com";
+            String password = "ykcxdnwxmxcnkcnt";
 
             // Create properties object for the mail session
             Properties props = new Properties();
