@@ -27,12 +27,15 @@
     <body>
         <div class="login">
             <h1 class="login-heading">Quên mật khẩu</h1>
+            <div class="alert alert-danger" role="alert" style="color: red; margin-bottom: 1em; text-align: center"">
+                ${mess}
+            </div>
             <!-- <button class="signup-social">
               <i class="fa fa-google signup-social-icon"></i>
               <span class="signup-social-text">Sign up with Google</span>
             </button>
             -->
-            <form action="ForgetPasswordController" method="POST" class="login-form" autocomplete="off">
+            <form action="./forget" method="POST" class="login-form" autocomplete="off">
                 <!-- <label for="username" class="login-label">Nhập tên đăng nhập và địa chỉ Email (địa chỉ email này phải đúng với địa chỉ email đã đăng kí trong trang cá nhân). Sau đó chúng tôi sẽ gửi mật khẩu mới vào Email của bạn!</label> -->
 
                 <!-- username -->

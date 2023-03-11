@@ -45,19 +45,19 @@
     <div class="payment-successful">
         <div class="payment-successful-content">
             <div class="payment-item"><img src="../Assets/icon/icon (79).png" alt=""></div>
-            <div class="payment-item" style="font-weight: bolder; font-size: 2rem; padding-top: 10px;">Đăng kí tài khoản thất bại!</div>
+            <div class="payment-item" style="font-weight: bolder; font-size: 2rem; padding-top: 10px;">Xác nhận tài khoản thất bại!</div>
             <div class="payment-item" style="font-size: large; padding-top: 30px;">
                 Mã xác nhận không đúng, ấn "Thử lại" để nhận mã xác nhận mới!
             </div>
             <div class="payment-item-one" style="padding-top: 40px;">
                 <ul class="payment-item-one-list">
-                    <li class="payment-item-one-list-item"><a href="./signupUser">
+                    <li class="payment-item-one-list-item"><a href="./forget">
                                 <button style="height: 2em; width: 8em; font-size: larger; font-weight: bolder; color: #fff; background-color: #32c671;
                                         border-radius: 10px; border: white; margin-left: -50px; cursor: pointer" type="button">
                                     Thử lại
                                 </button>
                             </a></li>
-                    <li class="payment-item-one-list-item"><a href="../home/homePage">
+                    <li class="payment-item-one-list-item"><a href="../login/loginUser">
                                 <button style="height: 2em; width: 8em; font-size: larger; font-weight: bolder; color: #fff; background-color: #da4453;
                                         border-radius: 10px; border: white; cursor: pointer" type="button">
                                     Hủy bỏ

@@ -9,6 +9,7 @@ package dal;
  * @author T490
  */
 import controller.auth.securityProcessorCore;
+import java.security.NoSuchAlgorithmException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,6 +21,24 @@ import model.Feature;
 import model.Role;
 
 public class AccountDBContext extends DBContext<Account> {
+
+    public void updatePassword(String username, String newpassword) {
+        String sql = "UPDATE [dbo].[Account]\n"
+                + "   SET [password] = ?\n"
+                + " WHERE username = ?";
+        securityProcessorCore spc = new securityProcessorCore();
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, spc.md5EncodePassword(newpassword));
+            stm.setString(2, username);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
 
     public void insertRoll(int role_id, String username) {
         String sql = "INSERT INTO [dbo].[Role_Account]\n"

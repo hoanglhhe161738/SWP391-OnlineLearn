@@ -108,6 +108,22 @@
         <servlet-name>actionQuizController</servlet-name>
         <servlet-class>controller.admin.quiz.actionQuizController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ForgetPassword</servlet-name>
+        <servlet-class>controller.forgetPassword.ForgetPassword</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SendMail</servlet-name>
+        <servlet-class>controller.forgetPassword.SendMail</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VerifyCode</servlet-name>
+        <servlet-class>controller.forgetPassword.VerifyCode</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChangePassword</servlet-name>
+        <servlet-class>controller.forgetPassword.ChangePassword</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
         <url-pattern>/course/classes</url-pattern>
@@ -219,6 +235,22 @@
     <servlet-mapping>
         <servlet-name>verifyCodeSignUpController</servlet-name>
         <url-pattern>/signup/verifyCode</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ForgetPassword</servlet-name>
+        <url-pattern>/forgetPassword/forget</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SendMail</servlet-name>
+        <url-pattern>/forgetPassword/sendMail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerifyCode</servlet-name>
+        <url-pattern>/forgetPassword/verifyCode</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChangePassword</servlet-name>
+        <url-pattern>/forgetPassword/changePassword</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

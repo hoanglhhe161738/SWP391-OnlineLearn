@@ -3,20 +3,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-package controller.auth;
+package controller.forgetPassword;
 
+import dal.AccountDBContext;
+import dal.UserDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Account;
+import model.User;
 
 /**
  *
  * @author T490
  */
-public class ForgetPasswordController extends HttpServlet {
+public class ForgetPassword extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -27,18 +31,27 @@ public class ForgetPasswordController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ForgetPasswordController</title>");  
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ForgetPasswordController at " + request.getContextPath () + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String username = request.getParameter("username");
+        String parentEmail = request.getParameter("parentEmail");
+        AccountDBContext abd = new AccountDBContext();
+        Account a = abd.checkAccountExisted(username);
+        // username ko ton tai
+        if(a == null){
+            request.setAttribute("mess", "Tên tài khoản hoặc email không đúng, vui lòng nhập lại!");
+            request.getRequestDispatcher("./forgetPassword.jsp").forward(request, response);
+        }else{  //username ton tai
+            User u = new User();
+            UserDBContext udb = new UserDBContext();
+            u = udb.getUserByUsername(username);
+            request.getSession().setAttribute("accountForgetPass", a);
+            //parentEmail dungerDBContext udb = new UserD
+            if(parentEmail.equals(u.getParent_email())){
+                request.setAttribute("userForgetPass", u);
+                request.getRequestDispatcher("./sendMail").forward(request, response);
+            }else{  //parentEmail sai
+                request.setAttribute("mess", "Tên tài khoản hoặc email không đúng, vui lòng nhập lại!");
+            request.getRequestDispatcher("./forgetPassword.jsp").forward(request, response);
+            }
         }
     } 
 
@@ -53,7 +66,7 @@ public class ForgetPasswordController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+        request.getRequestDispatcher("./forgetPassword.jsp").forward(request, response);
     } 
 
     /** 
