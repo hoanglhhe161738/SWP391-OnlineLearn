@@ -29,7 +29,7 @@ public class verifyCodeController extends HttpServlet{
     }
     
     void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String verifyCode = req.getParameter("confirm");
+        String verifyCode = req.getParameter("confirm").trim();
         
         HttpSession verifyPremium = req.getSession();
         String Code = String.valueOf(verifyPremium.getAttribute("verifyCode"));
@@ -38,10 +38,10 @@ public class verifyCodeController extends HttpServlet{
         
         if(verifyCode.equals(Code)){
             req.setAttribute("alertTitle", "Thank you!");
-            req.getRequestDispatcher("./paymentfail.html").forward(req, resp);
+            req.getRequestDispatcher("./verifySuccessful.jsp").forward(req, resp);
         }else{
             req.setAttribute("alertTitle", "Sorry!");
-            req.getRequestDispatcher("./PaymentSuccesful.html").forward(req, resp);
+            req.getRequestDispatcher("./verifyFail.jsp").forward(req, resp);
 //            req.getRequestDispatcher("afterVerifyCode.jsp").forward(req, resp);
         }
     }

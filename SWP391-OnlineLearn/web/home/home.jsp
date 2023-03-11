@@ -121,7 +121,7 @@
                                         <a href="../login/loginUser">Đăng nhập   </a>
                                     </span>
                                     <span class="signup-login" style="margin-top: 1em">
-                                        <a href="../login/signupUser">Đăng ký ngay</a>
+                                        <a href="../signup/signupUser">Đăng ký ngay</a>
                                     </span>
                                 </div>
                             </c:if>
