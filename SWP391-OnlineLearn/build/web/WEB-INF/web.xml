@@ -124,6 +124,10 @@
         <servlet-name>ChangePassword</servlet-name>
         <servlet-class>controller.forgetPassword.ChangePassword</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>changePasswordController</servlet-name>
+        <servlet-class>controller.auth.changePasswordController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
         <url-pattern>/course/classes</url-pattern>
@@ -251,6 +255,10 @@
     <servlet-mapping>
         <servlet-name>ChangePassword</servlet-name>
         <url-pattern>/forgetPassword/changePassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>changePasswordController</servlet-name>
+        <url-pattern>/userprofile/changePassword</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
