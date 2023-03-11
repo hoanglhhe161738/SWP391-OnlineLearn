@@ -37,8 +37,12 @@
       <div class="payment-item" style="font-weight: bolder; font-size: 2rem; padding-top: 10px;">Đăng kí tài khoản thành công</div>
       <div class="payment-item" style="font-size: large; padding-top: 30px;">Bạn đã đăng kí tài khoản thành công, chúc bạn có một trải nghiệm học tập hiệu quả
       </div>
-      <div class="payment-item" style="padding-top: 40px;"><button style="height: 2em; width: 10em; font-size: larger; font-weight: bolder; color: #fff; background-color: #32c671;
-      border-radius: 10px; border: white;" type="button">Về trang chủ</button></div>
+      <div class="payment-item" style="padding-top: 40px;"><a href="../home/homePage">
+                        <button style="height: 2em; width: 10em; font-size: larger; font-weight: bolder; color: #fff; background-color: #32c671;
+                                border-radius: 10px; border: white; cursor: pointer" type="button">
+                            Về trang chủ
+                        </button>
+                    </a></div>
     </div>
   </div>
 </body>

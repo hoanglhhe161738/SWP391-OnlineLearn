@@ -20,15 +20,15 @@
             <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/DBContext.java</file>
         </group>
         <group>
-            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/payment/enterMailController.java</file>
-            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/course/modules.jsp</file>
-            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/Assets/css/course.css</file>
-            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/payment/verifyCodeController.java</file>
-            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/LoginController.java</file>
-            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/DBContext.java</file>
-            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/payment/CompletePayment.jsp</file>
-            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/course/module.jsp</file>
-            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/AccountDBContext.java</file>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/verifyCodeController.java</file>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/home/homeController.java</file>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/SignupController.java</file>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/AccountDBContext.java</file>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/Fillin4Controller.java</file>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/enterMailController.java</file>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/LogoutController.java</file>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/UserDBContext.java</file>
+            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/LoginController.java</file>
         </group>
     </open-files>
 </project-private>

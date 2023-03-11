@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Fail</title>
+    <title>Signup Fail</title>
     <style>
         .payment-successful-content {
             text-align: center;
@@ -51,10 +51,18 @@
             </div>
             <div class="payment-item-one" style="padding-top: 40px;">
                 <ul class="payment-item-one-list">
-                    <li class="payment-item-one-list-item"><button style="height: 2em; width: 8em; font-size: larger; font-weight: bolder; color: #fff; background-color: #32c671;
-            border-radius: 10px; border: white; margin-left: -50px;" type="button">Thử lại</button></li>
-                    <li class="payment-item-one-list-item"><button style="height: 2em; width: 8em; font-size: larger; font-weight: bolder; color: #fff; background-color: #da4453;
-            border-radius: 10px; border: white;" type="button">Hủy bỏ</button></li>
+                    <li class="payment-item-one-list-item"><a href="./sendMail">
+                                <button style="height: 2em; width: 8em; font-size: larger; font-weight: bolder; color: #fff; background-color: #32c671;
+                                        border-radius: 10px; border: white; margin-left: -50px; cursor: pointer" type="button">
+                                    Thử lại
+                                </button>
+                            </a></li>
+                    <li class="payment-item-one-list-item"><a href="./signupUser">
+                                <button style="height: 2em; width: 8em; font-size: larger; font-weight: bolder; color: #fff; background-color: #da4453;
+                                        border-radius: 10px; border: white; cursor: pointer" type="button">
+                                    Hủy bỏ
+                                </button>
+                            </a></li>
                 </ul>
             </div>
         </div>

@@ -45,6 +45,7 @@ public class verifyCodeController extends HttpServlet{
             AccountDBContext accdb = new AccountDBContext();
             Account acc = (Account) req.getSession().getAttribute("newAccount");
             accdb.signup(acc.getUsername(), acc.getPassword());
+            accdb.insertRoll(2, acc.getUsername());
             UserDBContext udb = new UserDBContext();
             User u = (User) req.getSession().getAttribute("newUser");
             udb.insert(u);

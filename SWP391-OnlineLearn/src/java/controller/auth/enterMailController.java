@@ -86,7 +86,7 @@ public class enterMailController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String regexEmail = "\\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\\b";
         User newUser = (User) req.getSession().getAttribute("newUser");
-        System.out.println(newUser.getParent_email());
+//        System.out.println(newUser.getParent_email());
         String recipient = newUser.getParent_email();
         if (recipient.matches(regexEmail)) {
             // Get recipient email address and message from form data
@@ -99,8 +99,8 @@ public class enterMailController extends HttpServlet {
 
             // Set up mail server and authentication
             String host = "smtp.gmail.com";
-            String user = "contact.khalgfk@gmail.com";
-            String password = "mixquuqtbcjhrpar";
+            String user = "swponlinelearn@gmail.com";
+            String password = "ykcxdnwxmxcnkcnt";
 
             // Create properties object for the mail session
             Properties props = new Properties();
