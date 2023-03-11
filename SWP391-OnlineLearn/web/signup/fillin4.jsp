@@ -13,12 +13,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../Assets/css/styleSignup.css" />
         <link rel="icon" href="../Assets/icon/favicon.png"/>
-        <title>fillin4</title>
-
+        <title>Thông tin tài khoản</title>
+        <style>
+            .signup-label{
+                color: black;
+            }
+            .fillin4{
+                background-color: white;
+                max-width: 60%;
+                border-radius: 15px;
+            }
+            .signup-input{
+                border-radius: 8px;
+                font-size: 15px;
+            }
+        </style>
     </head>
 
     <body>
-        <div class="bg">
+        <div class="bg" style="margin-bottom: 200px">
         </div>
         <div class="fillin4">
             <h1 class="signup-heading">Thông tin tài khoản</h1>
@@ -28,7 +41,7 @@
                 </button> -->
             <form action="./fillin4" class="signup-form" method="POST">
 
-                
+
                 <label for="fullName" class="signup-label">Họ và tên</label>
                 <input type="text" name="fullName" class="signup-input" placeholder="VD: Hứa Như Không">
 
@@ -53,11 +66,10 @@
                 <label for="parentPhoneNumber" class="signup-label">Sđt của phụ huynh</label>
                 <input type="text" name="parentPhoneNumber" class="signup-input" placeholder="VD: 0941142465">
 
-                <input class="signup-submit" type="submit" value="Hoàn tất">
+                <input class="signup-submit" style="margin-top:2em" type="submit" value="Hoàn tất">
             </form>
-            <p class="signup-already">
-
-                <a  href="./signup.jsp" class="cancel signup-submit">Hủy bỏ</a>
+            <p class="signup-already" style="margin: 0">
+                <a  href="./signupUser" class="cancel signup-submit">Hủy bỏ</a>
             </p>
         </div>
     </body>

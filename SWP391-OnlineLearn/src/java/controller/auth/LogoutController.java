@@ -28,7 +28,7 @@ public class LogoutController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        request.getSession().setAttribute("accLogin", null);
+        request.getSession().setAttribute("account", null);
         request.getSession().setAttribute("user", null);
         response.sendRedirect("./home/homePage");
     } 

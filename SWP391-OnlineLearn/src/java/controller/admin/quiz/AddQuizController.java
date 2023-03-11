@@ -4,6 +4,7 @@
  */
 package controller.admin.quiz;
 
+import controller.auth.BaseAuthorizationController;
 import dal.LessonDBContext;
 import dal.QuestionDBContext;
 import jakarta.servlet.ServletException;
@@ -12,6 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import model.Account;
 import model.Lesson;
 import model.Question;
 
@@ -19,10 +21,10 @@ import model.Question;
  *
  * @author Khangnekk
  */
-public class AddQuizController extends HttpServlet{
+public class AddQuizController extends BaseAuthorizationController{
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         LessonDBContext lDB = new LessonDBContext();
         int lesson_id = Integer.parseInt(req.getParameter("lession"));
         Lesson lesson = lDB.get(lesson_id);
@@ -31,7 +33,7 @@ public class AddQuizController extends HttpServlet{
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void processGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         QuestionDBContext qDB = new QuestionDBContext();
         Lesson lesson = (Lesson) req.getSession().getAttribute("lesson");
         ArrayList<Question> questions = qDB.getQuestionByLessionID(lesson.getLesson_id());

@@ -42,11 +42,15 @@ public class LoginController extends HttpServlet {
             request.setAttribute("mess", "Tên tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại!");
             request.getRequestDispatcher("./login.jsp").forward(request, response);
         } else {
-            User user = uDB.getUserByUsername(username);
-            request.getSession().setAttribute("user", user);
-            HttpSession session = request.getSession();
-            session.setAttribute("accLogin", a);
-            request.getRequestDispatcher("./welcome.html").forward(request, response);
+            if (username.equals("admin")) {
+                User user = uDB.getUserByUsername(username);
+                request.getSession().setAttribute("user", user);
+                response.sendRedirect("../admin/action");
+            } else {
+                User user = uDB.getUserByUsername(username);
+                request.getSession().setAttribute("user", user);
+                request.getRequestDispatcher("./welcome.html").forward(request, response);
+            }
         }
     }
 

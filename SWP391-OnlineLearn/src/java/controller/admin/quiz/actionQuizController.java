@@ -4,6 +4,7 @@
  */
 package controller.admin.quiz;
 
+import controller.auth.BaseAuthorizationController;
 import dal.QuestionDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -11,6 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import model.Account;
 import model.Lesson;
 import model.Question;
 
@@ -18,10 +20,10 @@ import model.Question;
  *
  * @author Khangnekk
  */
-public class actionQuizController extends HttpServlet {
+public class actionQuizController extends BaseAuthorizationController {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         String action = req.getParameter("action").trim();
         QuestionDBContext qDB = new QuestionDBContext();
         switch (action) {
@@ -47,7 +49,7 @@ public class actionQuizController extends HttpServlet {
                 questionModelAdd.setIndex(indexAdd);
 
                 Lesson lesson = (Lesson) req.getSession().getAttribute("lesson");
-                qDB.insert(questionModelAdd,lesson.getLesson_id());
+                qDB.insert(questionModelAdd, lesson.getLesson_id());
                 ArrayList<Question> questions = qDB.getQuestionByLessionID(lesson.getLesson_id());
                 int questionSize = questions.size();
                 req.getSession().setAttribute("questions", questions);
@@ -101,7 +103,7 @@ public class actionQuizController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void processGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         QuestionDBContext qDB = new QuestionDBContext();
         String action = req.getParameter("action");
         int index = Integer.parseInt(req.getParameter("index"));
