@@ -58,9 +58,6 @@ public class AccountDBContext extends DBContext<Account> {
 
     public Account login(String username, String password) {
         securityProcessorCore spc = new securityProcessorCore();
-        String sql = "SELECT * FROM Account \n"
-                + "WHERE username = ? \n"
-                + "and password = ?";
         try {
             String sql = "SELECT a.username\n"
                     + ",r.role_id, r.role_name,\n"
