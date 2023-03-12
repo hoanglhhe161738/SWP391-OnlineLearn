@@ -13,8 +13,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../Assets/css/styleSignup.css" />
         <link rel="icon" href="../Assets/icon/favicon.png"/>
-<!--        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-              integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+        <!--        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+                      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -43,10 +43,68 @@
             .modal-backdrop {
                 position: unset;
             }
+
+            #loading {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 9999;
+            }
+
+            .spinner {
+                border: 16px solid #f3f3f3;
+                border-top: 16px solid #3498db;
+                border-radius: 50%;
+                width: 200px;
+                height: 200px;
+                animation: spin 2s linear infinite;
+                margin: auto;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .loading-text {
+                color: #fff;
+                font-size: 15px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
         </style>
     </head>
 
     <body>
+        <div id="loading">
+            <img src="https://img.pikbest.com/png-images/20190918/cartoon-snail-loading-loading-gif-animation_2734139.png!bw700" 
+                 style="position: fixed;
+                 z-index: 10000;
+                 top: 50%;
+                 left: 50%;
+                 width: 200px;
+                 height: 200px;
+                 background: wheat;
+                 border-radius: 15px;
+                 transform: translateX(-50%) translateY(-50%)">
+        </div>
+
         <div class="bg" style="margin-bottom: 200px">
         </div>
         <div class="fillin4">
@@ -56,14 +114,30 @@
                   <span class="signup-social-text">Đăng kí bằng tài khoản Google</span>
                 </button> -->
             <form id="myForm" action="./fillin4" class="signup-form" method="POST">
-
+                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        var elements = $("input, select");
+                        for (var i = 0; i < elements.length; i++) {
+                            elements[i].oninvalid = function (e) {
+                                e.target.setCustomValidity("");
+                                if (!e.target.validity.valid) {
+                                    e.target.setCustomValidity(e.target.getAttribute("requiredmsg"));
+                                }
+                            };
+                            elements[i].oninput = function (e) {
+                                e.target.setCustomValidity("");
+                            };
+                        }
+                    })
+                </script>
 
                 <label for="fullName" class="signup-label">Họ và tên</label>
-                <input pattern="(?=.*\S).{1,}" title="Họ và tên không được để trống." required type="text" name="fullName" class="signup-input" placeholder="VD: Hứa Như Không">
+                <input pattern="(?=.*\S).{1,}" requiredmsg="Họ và tên không được để trống."required type="text" name="fullName" class="signup-input" placeholder="VD: Hứa Như Không">
 
                 <!-- dob -->
                 <label for="dob" class="signup-label">Ngày sinh</label>
-                <input type="date" id="myDateInput" name="dob" class="signup-input" pattern="\d{4}-\d{2}-\d{2}" title="Vui lòng nhập ngày dưới dạng yyyy-mm-dd" required>
+                <input type="date" id="myDateInput" name="dob" class="signup-input" pattern="\d{4}-\d{2}-\d{2}" requiredmsg="Vui lòng nhập ngày dưới dạng yyyy-mm-dd" required>
 
                 <!-- gender -->
                 <label for="gender" class="signup-label">Giới tính: Nam <input type="radio" value="true" name="gender" checked> | Nữ <input
@@ -72,15 +146,15 @@
 
                 <!-- parentName -->
                 <label for="prentName" class="signup-label">Họ và tên phụ huynh</label>
-                <input  type="text" name="parentName" class="signup-input" placeholder="VD: Hứa Xong Quên" pattern="(?=.*\S).{1,}" title="Họ và tên không được để trống." required>
+                <input  type="text" name="parentName" class="signup-input" placeholder="VD: Hứa Xong Quên" pattern="(?=.*\S).{1,}" requiredmsg="Họ và tên không được để trống." required>
 
                 <!-- parentEmail -->
                 <label for="parentEmail" class="signup-label">Email của phụ huynh</label>
-                <input type="email" name="parentEmail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required class="signup-input" placeholder="VD: ThangSunXiTrai@gmail.com">
+                <input type="email" name="parentEmail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" requiredmsg="Email chưa đúng định dạng" required class="signup-input" placeholder="VD: ThangSunXiTrai@gmail.com">
 
                 <!-- parentPhoneNumber  -->
                 <label for="parentPhoneNumber" class="signup-label">Sđt của phụ huynh</label>
-                <input type="text" name="parentPhoneNumber" pattern="^\+?(?:84|0)(?:\d{9})$" class="signup-input" placeholder="VD: 0941142465">
+                <input type="text" name="parentPhoneNumber" requiredmsg="Số điện thoại chưa đúng định dạng" pattern="^\+?(?:84|0)(?:\d{9})$" required class="signup-input" placeholder="VD: 0941142465">
 
                 <input class="signup-submit" style="margin-top:2em" type="submit" value="Hoàn tất">
             </form>
@@ -104,31 +178,42 @@
 
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
             <script>
-                var myDateInput = document.getElementById('myDateInput');
+                    var myDateInput = document.getElementById('myDateInput');
 
-                myDateInput.addEventListener('change', function (event) {
-                    var selectedDate = new Date(event.target.value);
-                    var today = new Date();
+                    myDateInput.addEventListener('change', function (event) {
+                        var selectedDate = new Date(event.target.value);
+                        var today = new Date();
 
-                    // Kiểm tra xem ngày được chọn có lớn hơn hoặc bằng ngày hiện tại không
-                    if (selectedDate >= today) {
-                        // Hiển thị thông báo bằng modal
-                        var myModal = document.getElementById('myModal');
-                        var modalMessage = document.getElementById('modal-message');
-                        modalMessage.innerHTML = 'Ngày bạn chọn phải nhỏ hơn ngày hiện tại.';
-                        var myModalInstance = new bootstrap.Modal(myModal, {
-                            backdrop: true,
-                            keyboard: true,
-                            focus: true
-                        });
-                        myModalInstance.show();
+                        // Kiểm tra xem ngày được chọn có lớn hơn hoặc bằng ngày hiện tại không
+                        if (selectedDate >= today) {
+                            // Hiển thị thông báo bằng modal
+                            var myModal = document.getElementById('myModal');
+                            var modalMessage = document.getElementById('modal-message');
+                            modalMessage.innerHTML = 'Ngày bạn chọn phải nhỏ hơn ngày hiện tại.';
+                            var myModalInstance = new bootstrap.Modal(myModal, {
+                                backdrop: true,
+                                keyboard: true,
+                                focus: true
+                            });
+                            myModalInstance.show();
 
-                        // Thiết lập lại giá trị của thẻ input date thành ngày hiện tại
-                        myDateInput.value = today.toISOString().slice(0, 10);
-                    }
-                });
-                var myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
-                myModal.hide();
+                            // Thiết lập lại giá trị của thẻ input date thành ngày hiện tại
+                            myDateInput.value = today.toISOString().slice(0, 10);
+                        }
+                    });
+                    var myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
+                    myModal.hide();
+
+                    // Lấy đối tượng giao diện loading và form
+                    const loading = document.getElementById("loading");
+                    const form = document.getElementById("myForm");
+
+                    // Gán sự kiện cho form
+                    form.addEventListener("submit", function () {
+                        // Hiển thị giao diện loading
+                        loading.style.display = "block";
+                    });
+
             </script>
             <p class="signup-already" style="margin: 0">
                 <a  href="./signupUser" class="cancel signup-submit">Hủy bỏ</a>
