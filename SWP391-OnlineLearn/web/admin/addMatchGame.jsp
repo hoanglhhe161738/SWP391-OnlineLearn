@@ -171,7 +171,7 @@
                     <a href="./actionMatchGame?action=add&index=-1&match_game_id=-1">
                         <button
                             style="width: 100%; color: #f2f2f2; font-size: large; background-color: #00de7a; padding: 0.5em 0 0.5em 0;border: white;">Thêm
-                            câu hỏi</button>
+                            cặp ảnh</button>
                     </a>
                     <a href="./ChoiceClassToAddGameImage">
                         <button
