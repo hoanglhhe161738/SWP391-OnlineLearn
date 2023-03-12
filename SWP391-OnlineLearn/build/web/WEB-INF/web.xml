@@ -112,6 +112,10 @@
         <servlet-name>actionContent</servlet-name>
         <servlet-class>controller.admin.content.actionContentController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>changePasswordController</servlet-name>
+        <servlet-class>controller.auth.changePasswordController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
         <url-pattern>/course/classes</url-pattern>
@@ -283,6 +287,10 @@
     <servlet-mapping>
         <servlet-name>actionContent</servlet-name>
         <url-pattern>/admin/actionContent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>changePasswordController</servlet-name>
+        <url-pattern>/userprofile/changePassword</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

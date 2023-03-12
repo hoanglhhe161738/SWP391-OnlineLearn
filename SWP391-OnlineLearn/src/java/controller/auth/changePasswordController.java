@@ -47,11 +47,11 @@ public class changePasswordController extends BaseAuthenticationController {
                     req.setAttribute("alert2", "Đổi mật khẩu thành công");
                     req.getRequestDispatcher("./changePassword.jsp").forward(req, resp);
                 } else {
-                    req.setAttribute("alert", "Mật khẩu không khớp, vui lòng nhập lại");
+                    req.setAttribute("alert1", "Mật khẩu không khớp, vui lòng nhập lại");
                     req.getRequestDispatcher("./changePassword.jsp").forward(req, resp);
                 }
             } else {
-                req.setAttribute("alert", "Nhập sai mật khẩu cũ, vui lòng nhập lại");
+                req.setAttribute("alert3", "Nhập sai mật khẩu cũ, vui lòng nhập lại");
                 req.getRequestDispatcher("./changePassword.jsp").forward(req, resp);
             }
         }
