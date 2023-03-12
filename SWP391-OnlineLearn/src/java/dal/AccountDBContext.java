@@ -59,7 +59,7 @@ public class AccountDBContext extends DBContext<Account> {
     public Account login(String username, String password) {
         securityProcessorCore spc = new securityProcessorCore();
         try {
-            String sql = "SELECT a.username\n"
+            String sql = "SELECT a.username,a.classify_account\n"
                     + ",r.role_id, r.role_name,\n"
                     + "f.fe_id,f.fe_name,f.[url]\n"
                     + "FROM Account a\n"
@@ -79,6 +79,7 @@ public class AccountDBContext extends DBContext<Account> {
                 if (account == null) {
                     account = new Account();
                     account.setUsername(rs.getString("username"));
+                    account.setClassify_account(rs.getString("classify_account"));
                 }
                 int rid = rs.getInt("role_id");
                 if (rid != 0) {
