@@ -17,32 +17,22 @@
             <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/Assets/css/course.css</file>
         </group>
         <group name="KHANH">
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/content/ChoiceCourseToAddContent.java</file>
             <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/matchgame/matchGameController.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/admin/addMatchGame.html</file>
             <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/game/js/matchgame.js</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/admin/choiceCoureClass.html</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/matchgame/AddPairOfImageController.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/admin/addContent.jsp</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/quiz/ChoiceClassToAddQuiz.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/content/ChoiceClassToAddContent.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/admin/choiceContentLession.jsp</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/content/actionContentController.java</file>
             <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/model/Lesson.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/QuestionDBContext.java</file>
             <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/ImgDBContext.java</file>
             <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/course/course.jsp</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/QuestionDBContext.java</file>
             <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/WEB-INF/web.xml</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/VideoDBContext.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/quiz/actionQuizController.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/DBContext.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/model/Question.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/admin/addMatchGame.jsp</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/MatchGameDBContext.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/quiz/AddQuizController.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/game/matchgame.jsp</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/CourseDBContext.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/course/classesController.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/course/courseController.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/LessonDBContext.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/course/classes.jsp</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/LoginController.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/admin/addQuiz.jsp</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/matchgame/actionMatchGameController.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/game/css/matchgame.css</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/ContentDBContext.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/content/AddContentController.java</file>
         </group>
     </open-files>
 </project-private>
