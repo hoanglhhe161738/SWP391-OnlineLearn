@@ -15,7 +15,7 @@ public class MatchGame {
     private Img img;
     private AnsImg ans_img;
     private int points;
-    private ArrayList<Lesson> lessions = new ArrayList<>();
+    private int index;
 
     public int getMatch_game_id() {
         return match_game_id;
@@ -49,14 +49,15 @@ public class MatchGame {
         this.points = points;
     }
 
-    public ArrayList<Lesson> getLessions() {
-        return lessions;
+    public int getIndex() {
+        return index;
     }
 
-    public void setLessions(ArrayList<Lesson> lessions) {
-        this.lessions = lessions;
+    public void setIndex(int index) {
+        this.index = index;
     }
 
+   
    
     
 }
