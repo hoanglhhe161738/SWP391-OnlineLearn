@@ -108,6 +108,10 @@
         <servlet-name>actionQuizController</servlet-name>
         <servlet-class>controller.admin.quiz.actionQuizController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>actionContent</servlet-name>
+        <servlet-class>controller.admin.content.actionContentController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
         <url-pattern>/course/classes</url-pattern>
@@ -219,6 +223,66 @@
     <servlet-mapping>
         <servlet-name>verifyCodeSignUpController</servlet-name>
         <url-pattern>/signup/verifyCode</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>choiceCourseToAddContent</servlet-name>
+        <servlet-class>controller.admin.content.ChoiceCourseToAddContent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChoiceClassToAddGame</servlet-name>
+        <servlet-class>controller.admin.matchgame.ChoiceClassToAddGame</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>choiceCourseToAddGame</servlet-name>
+        <servlet-class>controller.admin.matchgame.ChoiceCourseToAddGame</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddImageOfMatchGame</servlet-name>
+        <servlet-class>controller.admin.matchgame.AddPairOfImageController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>actionMatchGameController</servlet-name>
+        <servlet-class>controller.admin.matchgame.actionMatchGameController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>choiceClassToAddContent</servlet-name>
+        <servlet-class>controller.admin.content.ChoiceClassToAddContent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addContent</servlet-name>
+        <servlet-class>controller.admin.content.AddContentController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChoiceClassToAddGame</servlet-name>
+        <url-pattern>/admin/ChoiceClassToAddGameImage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>choiceCourseToAddGame</servlet-name>
+        <url-pattern>/admin/ChoiceCourseToAddGameImage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddImageOfMatchGame</servlet-name>
+        <url-pattern>/admin/AddImageOfMatchGame</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actionMatchGameController</servlet-name>
+        <url-pattern>/admin/actionMatchGame</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>choiceCourseToAddContent</servlet-name>
+        <url-pattern>/admin/ChoiceCourseToAddContent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>choiceClassToAddContent</servlet-name>
+        <url-pattern>/admin/ChoiceClassToAddContent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addContent</servlet-name>
+        <url-pattern>/admin/addContent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actionContent</servlet-name>
+        <url-pattern>/admin/actionContent</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
