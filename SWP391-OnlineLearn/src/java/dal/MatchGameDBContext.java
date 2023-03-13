@@ -291,6 +291,7 @@ public class MatchGameDBContext extends DBContext<MatchGame>  {
             stm.setString(1, model.getAns_img_name());
             stm.setString(2, model.getAns_img_url());
             stm.setInt(3, ans_img_id);
+            stm.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(MatchGameDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
