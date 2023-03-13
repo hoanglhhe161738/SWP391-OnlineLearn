@@ -4,6 +4,7 @@
  */
 package controller.admin.content;
 
+import controller.auth.BaseAuthorizationController;
 import dal.CourseDBContext;
 import dal.LessonDBContext;
 import dal.ModuleDBContext;
@@ -13,6 +14,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import model.Account;
 import model.Course;
 import model.Lesson;
 import model.Module;
@@ -21,10 +23,10 @@ import model.Module;
  *
  * @author Acer
  */
-public class ChoiceCourseToAddContent extends HttpServlet {
+public class ChoiceCourseToAddContent extends BaseAuthorizationController {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         int module_id = Integer.parseInt(req.getParameter("module"));
         LessonDBContext lDB = new LessonDBContext();
         ModuleDBContext mDB = new ModuleDBContext();
@@ -36,7 +38,7 @@ public class ChoiceCourseToAddContent extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void processGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         int course_id = Integer.parseInt(req.getParameter("course"));
         CourseDBContext cDB = new CourseDBContext();
         Course course = cDB.get(course_id);
