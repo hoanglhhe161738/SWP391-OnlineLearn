@@ -110,22 +110,7 @@
     </head>
 
     <body>
-        <div class="nav-information">
-            <div class="nav-information-item" style="padding-top: 0.2em;">
-                <div class="nav-information-image">
-                    <div
-                        style="height: 0.8em; width: 0.8em; border: 3px solid #fff; margin-left: 2em;margin-top: 2em; border-radius: 50%; background-color: #00b050;">
-                    </div>
-
-                </div>
-                <div class="nav-information-text">
-                    <ul class="nav-information-text-content">
-                        <li class="nav-information-text-content-item">Khanh chi to</li>
-                        <li class="nav-information-text-content-item">Admin</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <jsp:include page="../custom/navForAdmin.jsp"></jsp:include>
 
         <div class="statis-quiz container-fluid" style="height: 100%; margin-top: 2em;">
             <div class="static-quiz-left">

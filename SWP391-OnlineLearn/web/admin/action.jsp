@@ -13,6 +13,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../Assets/css/action.css">
+        <link rel="icon" href="../Assets/icon/favicon.png"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -53,30 +54,38 @@
                     </a>
                 </div>
                 <div class="choiceAction-colum col">
-                    <div class="choiceAction-colum-item p-3" style="background-color: #0081e2;">
-                        <div><i class="custom-icon fa-solid fa-gamepad"></i></div>
-                        <p>Quản lý trò chơi</p>
-                    </div>
+                    <a href="./ChoiceClassToAddGameImage">
+                        <div class="choiceAction-colum-item p-3" style="background-color: #0081e2;">
+                            <div><i class="custom-icon fa-solid fa-gamepad"></i></div>
+                            <p>Quản lý trò chơi</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="choiceAction-colum col">
-                    <div class="choiceAction-colum-item p-3" style="background-color: #00ed7a;">
-                        <div><i class="custom-icon fa-solid fa-circle-play"></i></div>
-                        <p>Quản lý video</p>
-                    </div>
+                    <a href="">
+                        <div class="choiceAction-colum-item p-3" style="background-color: #00ed7a;">
+                            <div><i class="custom-icon fa-solid fa-circle-play"></i></div>
+                            <p>Quản lý video</p>
+                        </div>
+                    </a>
                 </div>
             </div>
             <div class="choiceAction-content row row-cols-5 row-cols-lg-3 g-2 g-lg-3" style="margin-top: 0.5em;">
                 <div class="choiceAction-colum col">
-                    <div class="choiceAction-colum-item p-3" style="background-color: #ffa500;">
-                        <div><i  class="custom-icon fa-solid fa-bars"></i></div>
-                        <p>Quản lý content</p>
-                    </div>
+                    <a href="./ChoiceClassToAddContent">
+                        <div class="choiceAction-colum-item p-3" style="background-color: #ffa500;">
+                            <div><i  class="custom-icon fa-solid fa-bars"></i></div>
+                            <p>Quản lý content</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="choiceAction-colum col">
-                    <div class="choiceAction-colum-item p-3" style="background-color: #800080;">
-                        <div><i class="custom-icon fa-solid fa-user"></i></div>
-                        <p>Quản lý người dùng</p>
-                    </div>
+                    <a href="">
+                        <div class="choiceAction-colum-item p-3" style="background-color: #800080;">
+                            <div><i class="custom-icon fa-solid fa-user"></i></div>
+                            <p>Quản lý người dùng</p>
+                        </div>
+                    </a>
                 </div>
 
             </div>
