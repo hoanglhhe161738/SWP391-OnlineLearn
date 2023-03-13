@@ -55,39 +55,6 @@
                 z-index: 9999;
             }
 
-            .spinner {
-                border: 16px solid #f3f3f3;
-                border-top: 16px solid #3498db;
-                border-radius: 50%;
-                width: 200px;
-                height: 200px;
-                animation: spin 2s linear infinite;
-                margin: auto;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-            }
-
-            .loading-text {
-                color: #fff;
-                font-size: 15px;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-
-            @keyframes spin {
-                0% {
-                    transform: rotate(0deg);
-                }
-                100% {
-                    transform: rotate(360deg);
-                }
-            }
-
         </style>
     </head>
 

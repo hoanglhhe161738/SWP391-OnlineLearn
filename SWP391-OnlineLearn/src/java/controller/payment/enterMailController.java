@@ -98,7 +98,7 @@ public class enterMailController extends BaseAuthenticationController {
                 Transport.send(msg);
 
                 // Redirect to success page
-                req.getRequestDispatcher("./encodeEmail.html").forward(req, resp);
+                req.getRequestDispatcher("./EncodeEmail.jsp").forward(req, resp);
             } catch (MessagingException e) {
                 // Redirect to error page
                 resp.getWriter().print("chúng tôi không thể gửi mã code đến email của bạn");
@@ -106,12 +106,12 @@ public class enterMailController extends BaseAuthenticationController {
         } else {
             String noti = "Wrong format email";
             req.setAttribute("noti", noti);
-            req.getRequestDispatcher("./emailAcception.html").forward(req, resp);
+            req.getRequestDispatcher("./EmailAcception.jsp").forward(req, resp);
         }
     }
     @Override
     protected void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("./emailAcception.html").forward(req, resp);
+        req.getRequestDispatcher("./EmailAcception.jsp").forward(req, resp);
     }
 
 }

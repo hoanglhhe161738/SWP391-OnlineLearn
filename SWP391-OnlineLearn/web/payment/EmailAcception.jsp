@@ -1,3 +1,10 @@
+<%-- 
+    Document   : EmailAcception
+    Created on : Mar 13, 2023, 5:16:15 PM
+    Author     : Khangnekk
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,42 +56,9 @@
                  transform: translateX(-50%) translateY(-50%)">
         </div>
         <div class="main">
-            <div class="nav">
-                <div class="nav-bar">
-                    <ul class="items">
-                        <li class="item">
-                            <a href="../home/home.html"><img src="../Assets/icon/icon (69).png"></a>
-                        </li>
-                        <li class="item">
-                            <a href="../course/classes"><img src="../Assets/icon/icon (71).png"></a>
-                        </li>
-                        <li class="item">
-                            <a href="../payment/CompletePayment.jsp"><img src="../Assets/icon/icon (51).png"></a>
-                        </li>
-                        <li class="item">
-                            <a href="../"><img src="../Assets/icon/icon (45).png"></a>
-                        </li>
-                        <li class="item avt-btn" style="list-style: none;">
-                            <!-- <a href="../"><img src="../Assets/icon/icon (4).png">
-                            </a> -->
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false"
-                                        style="background-color: white; width: 3.2em; height: 3.2em; padding: 0 20px 20px 0; border-radius: 50%; border: 2px solid #ccc;;">
-                                    <img src="../Assets/icon/icon (4).png">
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="../userprofile/viewUserProfile">Hồ sơ thông tin</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="../logout">Đổi mật khẩu</a></li>
-                                    <li><a class="dropdown-item" href="../logout">Đăng xuất</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <!--nav bar-->
+            <jsp:include page="../custom/nav.jsp"></jsp:include>
+            <!--content-->
             <div class="content">
                 <div class="encode">
                     <div class="encode-content">

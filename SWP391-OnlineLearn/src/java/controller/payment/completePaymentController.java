@@ -32,7 +32,7 @@ public class completePaymentController extends BaseAuthenticationController {
         if (creditCardNum.matches(creditCardNumRegex)
                 && mmyyNum.matches(mmyyRegex)
                 && ccvNum.matches(ccvRegex)) {
-            req.getRequestDispatcher("./emailAcception.html").forward(req, resp);
+            req.getRequestDispatcher("./EmailAcception.jsp").forward(req, resp);
         } else if (creditCardNum.isEmpty()
                 || mmyyNum.isEmpty()
                 || ccvNum.isEmpty()) {
