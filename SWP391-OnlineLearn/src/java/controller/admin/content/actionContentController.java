@@ -4,6 +4,7 @@
  */
 package controller.admin.content;
 
+import controller.auth.BaseAuthorizationController;
 import dal.ContentDBContext;
 import dal.QuestionDBContext;
 import jakarta.servlet.ServletException;
@@ -12,6 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import model.Account;
 import model.Content;
 import model.Lesson;
 import model.Question;
@@ -20,10 +22,10 @@ import model.Question;
  *
  * @author Acer
  */
-public class actionContentController extends HttpServlet {
+public class actionContentController extends BaseAuthorizationController {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         String action = req.getParameter("action").trim();
         ContentDBContext conDB = new ContentDBContext();
         switch(action){
@@ -74,7 +76,7 @@ public class actionContentController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void processGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         ContentDBContext conDB = new ContentDBContext();
         String action = req.getParameter("action");
         int content_id = Integer.parseInt(req.getParameter("content_id"));
