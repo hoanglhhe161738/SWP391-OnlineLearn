@@ -68,7 +68,7 @@ public class SendMail extends HttpServlet {
                 Message msg = new MimeMessage(session);
                 msg.setFrom(new InternetAddress(user));
                 msg.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
-                msg.setSubject("Xác minh tài khoản");
+                msg.setSubject("Account Verification");
                 msg.setText(message);
 
                 // Send message

@@ -97,7 +97,7 @@ public class enterMailController extends BaseAuthenticationController {
                 msg.setFrom(new InternetAddress(user));
                 msg.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
                 msg.setContent(message, "text/html; charset=utf-8");
-                msg.setSubject("Nâng cấp tài khoản premium");
+                msg.setSubject("Upgrade account");
 
                 // Send message
                 Transport.send(msg);
