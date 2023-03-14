@@ -54,7 +54,7 @@ public class moduleController extends BaseAuthenticationController {
             Lesson_learn ll = lDB.getLessonLearn(user.getUser_id(), lesson.getLesson_id());
             lls.add(ll);
         }
-        double percent = getProcessOfModule(module_id);
+        double percent = getProcessOfModule(module_id,user.getUser_id());
         req.setAttribute("percent", percent);
         req.setAttribute("lesson_idIn1st", lls.get(0));
         req.getSession().setAttribute("Lesson_learns", lls);
@@ -62,13 +62,13 @@ public class moduleController extends BaseAuthenticationController {
         req.getRequestDispatcher("./module.jsp").forward(req, resp);
     }
     
-    public double getProcessOfModule(int module_id){
+    public double getProcessOfModule(int module_id, int user_id){
         double modulePercent;
         
         ModuleDBContext mDB = new ModuleDBContext();
         
-        double learned = (double) mDB.numberOfLessonLearned(module_id);
-        double all = (double) mDB.numberOfLesson(module_id);
+        double learned = (double) mDB.numberOfLessonLearned(module_id,user_id);
+        double all = (double) mDB.numberOfLesson(module_id,user_id);
         modulePercent = (learned * 100)/all;
         return Math.round(modulePercent * 100.0) / 100.0;
     }
