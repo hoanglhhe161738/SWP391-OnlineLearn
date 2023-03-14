@@ -38,6 +38,17 @@
                                     </div>
                                 </div>
                             </div>
+                            <c:if test="${requestScope.unregistered eq 1}">
+                                <form action="modules" method="POST">
+                                        <input hidden name="user_id" value="${sessionScope.user.user_id}">
+                                        <input hidden name="class_id" value="${requestScope.class_id}">
+                                        <input hidden name="course_id" value="${requestScope.course.course_id}">
+                                        <button type="submit" style="font-weight: bold" class="btn btn-light">Đăng kí học phần</button>           
+                                </form> 
+                            </c:if>
+                            <c:if test="${requestScope.unregistered eq 0}">
+                                <button type="button" style="font-weight: bold" class="btn btn-light">Học phần đã được đăng ký</button> 
+                            </c:if>
                         </div>
                         <div class="col-md-12 module">
                             <% int i = 1;%>

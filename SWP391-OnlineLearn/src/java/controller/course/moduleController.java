@@ -14,7 +14,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import model.Lesson;
+import model.Lesson_learn;
 import model.Module;
+import model.User;
 
 /**
  *
@@ -22,11 +24,9 @@ import model.Module;
  */
 public class moduleController extends BaseAuthenticationController {
 
-
     protected void doPostProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPost(req, resp); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
-
 
     protected void doGetProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -41,13 +41,13 @@ public class moduleController extends BaseAuthenticationController {
         }
         return item == lessons.size();
     }
-    
+
     protected double getPercentLesson(ArrayList<Module> modules) {
         double percent;
         double learnStatusTrue = 0,
                 learnStatusFalse = 0,
                 numberOfLessons = modules.size();
-        
+
         for (Module l : modules) {
             if (l.isStatus()) {
                 learnStatusTrue++;
@@ -61,25 +61,31 @@ public class moduleController extends BaseAuthenticationController {
 
     @Override
     protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        
+
     }
 
     @Override
     protected void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-                int module_id = Integer.parseInt(req.getParameter("module_id"));
-
+        int module_id = Integer.parseInt(req.getParameter("module_id"));
+        User user = (User) req.getSession().getAttribute("user");
         ModuleDBContext mDB = new ModuleDBContext();
         LessonDBContext lDB = new LessonDBContext();
         ArrayList<Lesson> lessons = lDB.listLessonByModuleID(module_id);
         Module module = mDB.get(module_id);
         req.setAttribute("module", module);
         req.setAttribute("lessons", lessons);
-
+        ArrayList<Lesson_learn> lls = new ArrayList<>();
+        for (Lesson lesson : lessons) {
+            Lesson_learn ll = lDB.getLessonLearn(user.getUser_id(), lesson.getLesson_id());
+            lls.add(ll);
+        }
         // load percent using db
         lessonController lCtr = new lessonController();
         double percent = lCtr.getPercentLesson(lessons);
         req.setAttribute("percent", percent);
-        
+        req.setAttribute("lesson_idIn1st", lls.get(0));
+        req.getSession().setAttribute("Lesson_learns", lls);
+
         req.getRequestDispatcher("./module.jsp").forward(req, resp);
     }
 }
