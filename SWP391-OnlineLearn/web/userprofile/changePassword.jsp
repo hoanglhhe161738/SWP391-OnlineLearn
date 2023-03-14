@@ -55,7 +55,8 @@
                 </c:if>
                 <!--<input type="password" name="repeatNewPass" class="login-input" placeholder="">-->
                 <input type="password" name="repeatNewPass" class="login-input" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Mật khẩu phải chứa ít nhất một số, một chữ cái viết thường, một chữ cái viết hoa và tối thiểu 8 ký tự." required>
-                <p style="color: red; padding-left: 1em">${requestScope.alert}</p>
+                <p style="color: red; padding-left: 1em">${requestScope.alert1}</p>
+                <p style="color: red; padding-left: 1em">${requestScope.alert3}</p>
                 <p style="color: #00de7a; padding-left: 1em">${requestScope.alert2}</p>
                 <input class="login-submit" type="submit" value="Đổi mật khẩu">
             </form>
