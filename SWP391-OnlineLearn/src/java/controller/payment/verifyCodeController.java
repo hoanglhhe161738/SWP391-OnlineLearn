@@ -30,6 +30,7 @@ public class verifyCodeController extends BaseAuthenticationController{
         if(verifyCode.equals(Code)){
             Account acc = (Account)req.getSession().getAttribute("account");
             aDB.updateClassifyAccount(acc);
+            aDB.updateRollAccount(acc.getUsername());
             Account oldInfo = (Account) req.getSession().getAttribute("account");
             Account newInfo = aDB.get(oldInfo.getUsername());
             req.getSession().setAttribute("account", newInfo);
