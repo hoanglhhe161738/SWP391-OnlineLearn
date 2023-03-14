@@ -5,6 +5,7 @@
 package controller.course;
 
 import controller.auth.BaseAuthenticationController;
+import dal.DBContext;
 import dal.LessonDBContext;
 import dal.ModuleDBContext;
 import jakarta.servlet.ServletException;
@@ -32,32 +33,6 @@ public class moduleController extends BaseAuthenticationController {
 
     }
 
-    protected boolean processModuleStatus(ArrayList<Lesson> lessons) {
-        int item = 0;
-        for (Lesson l : lessons) {
-            if (l.isStatus()) {
-                item++;
-            }
-        }
-        return item == lessons.size();
-    }
-
-    protected double getPercentLesson(ArrayList<Module> modules) {
-        double percent;
-        double learnStatusTrue = 0,
-                learnStatusFalse = 0,
-                numberOfLessons = modules.size();
-
-        for (Module l : modules) {
-            if (l.isStatus()) {
-                learnStatusTrue++;
-            } else {
-                learnStatusFalse++;
-            }
-        }
-        percent = (learnStatusTrue * 100) / numberOfLessons;
-        return Math.round(percent * 100.0) / 100.0;
-    }
 
     @Override
     protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -79,13 +54,22 @@ public class moduleController extends BaseAuthenticationController {
             Lesson_learn ll = lDB.getLessonLearn(user.getUser_id(), lesson.getLesson_id());
             lls.add(ll);
         }
-        // load percent using db
-        lessonController lCtr = new lessonController();
-        double percent = lCtr.getPercentLesson(lessons);
+        double percent = getProcessOfModule(module_id);
         req.setAttribute("percent", percent);
         req.setAttribute("lesson_idIn1st", lls.get(0));
         req.getSession().setAttribute("Lesson_learns", lls);
-
+        
         req.getRequestDispatcher("./module.jsp").forward(req, resp);
+    }
+    
+    public double getProcessOfModule(int module_id){
+        double modulePercent;
+        
+        ModuleDBContext mDB = new ModuleDBContext();
+        
+        double learned = (double) mDB.numberOfLessonLearned(module_id);
+        double all = (double) mDB.numberOfLesson(module_id);
+        modulePercent = (learned * 100)/all;
+        return Math.round(modulePercent * 100.0) / 100.0;
     }
 }

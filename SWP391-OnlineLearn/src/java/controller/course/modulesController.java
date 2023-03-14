@@ -26,15 +26,6 @@ import model.User;
  */
 public class modulesController extends BaseAuthenticationController {
 
-    protected void setModuleStatus(ArrayList<Module> modules) {
-        LessonDBContext lDB = new LessonDBContext();
-        moduleController mCtr = new moduleController();
-        for (Module m : modules) {
-            ArrayList<Lesson> lessons = lDB.listLessonByModuleID(m.getModule_id());
-            m.setStatus(mCtr.processModuleStatus(lessons));
-        }
-    }
-
     @Override
     protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         LessonDBContext lDB = new LessonDBContext();
@@ -63,14 +54,12 @@ public class modulesController extends BaseAuthenticationController {
         ModuleDBContext mDB = new ModuleDBContext();
         CourseDBContext coDB = new CourseDBContext();
         ArrayList<Module> modules = mDB.listModuleByCourseID(course_id);
-        setModuleStatus(modules);
-        double percent = mCtr.getPercentLesson(modules);
 
         Course course = coDB.get(course_id);
         req.setAttribute("course", course);
         req.setAttribute("class_id", class_id);
         req.setAttribute("modules", modules);
-        req.setAttribute("percent", percent);
+//        req.setAttribute("percent", percent);
         req.getSession().setAttribute("lessonInCourse", lessons);
         req.getRequestDispatcher("./modules.jsp").forward(req, resp);
     }
