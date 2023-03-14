@@ -44,14 +44,6 @@ public class lessonChoiceController extends BaseAuthenticationController {
         if (lessonLearn == null) {
             lessonLearn = lDB.setLessonLearn(user.getUser_id(), lesson_id, false);
             lesson.setStatus(false);
-        } else {
-            if (lessonLearn.isLlearn()) {
-                lesson.setStatus(true);
-                lDB.update(lesson);
-            } else {
-                lesson.setStatus(false);
-                lDB.update(lesson);
-            }
         }
         req.setAttribute("lessonLearn", lessonLearn);
         req.setAttribute("lesson", lesson);

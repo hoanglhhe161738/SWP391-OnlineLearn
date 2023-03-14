@@ -50,7 +50,6 @@ public class modulesController extends BaseAuthenticationController {
         } else {
             req.setAttribute("unregistered", 0);
         }
-        moduleController mCtr = new moduleController();
         ModuleDBContext mDB = new ModuleDBContext();
         CourseDBContext coDB = new CourseDBContext();
         ArrayList<Module> modules = mDB.listModuleByCourseID(course_id);
@@ -59,9 +58,20 @@ public class modulesController extends BaseAuthenticationController {
         req.setAttribute("course", course);
         req.setAttribute("class_id", class_id);
         req.setAttribute("modules", modules);
-//        req.setAttribute("percent", percent);
+        double percent = getProcessOfCourse(course_id);
+        req.setAttribute("percent", percent);
         req.getSession().setAttribute("lessonInCourse", lessons);
         req.getRequestDispatcher("./modules.jsp").forward(req, resp);
+    }
+    
+    public double getProcessOfCourse(int course_id){
+        double coursePercent;
+        CourseDBContext coDB = new CourseDBContext();
+        
+        double learned = (double) coDB.numberOfLessonLearned(course_id);
+        double all = (double) coDB.numberOfLesson(course_id);
+        coursePercent = (learned * 100)/all;
+        return Math.round(coursePercent * 100.0) / 100.0;
     }
 
 }
