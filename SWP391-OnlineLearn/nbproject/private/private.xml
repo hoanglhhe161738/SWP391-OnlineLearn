@@ -20,6 +20,7 @@
             <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/ContentDBContext.java</file>
             <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/content/AddContentController.java</file>
         </group>
+<<<<<<< Updated upstream
         <group>
             <file>file:/D:/HE161738/Season5_he161738/SWP391_he161738/Hoangchibe/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/AccountDBContext.java</file>
             <file>file:/D:/HE161738/Season5_he161738/SWP391_he161738/Hoangchibe/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/SignupController.java</file>
@@ -84,5 +85,8 @@
             <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/quiz/AddQuizController.java</file>
             <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/payment/encodeEmail.html</file>
         </group>
+=======
+        <group/>
+>>>>>>> Stashed changes
     </open-files>
 </project-private>
