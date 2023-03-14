@@ -19,6 +19,7 @@
             <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/game/css/matchgame.css</file>
             <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/DBContext.java</file>
         </group>
+<<<<<<< Updated upstream
         <group>
             <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/course/modulesController.java</file>
             <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/course/lessonChoiceController.java</file>
@@ -35,5 +36,8 @@
             <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/course/lessonChoice.jsp</file>
             <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/LessonDBContext.java</file>
         </group>
+=======
+        <group/>
+>>>>>>> Stashed changes
     </open-files>
 </project-private>
