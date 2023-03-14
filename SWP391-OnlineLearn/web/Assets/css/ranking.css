@@ -1,40 +1,36 @@
-body{
-    box-sizing: border-box;
-    background-color: aliceblue;
-}
-
-.ranking-item{
-    margin: 2% 2% 0 2%;
-    height: 3em;
-    background-color: black;
-    margin-bottom: 1em;
-    display: flex;
+.ranking-course{
     text-align: center;
-}
-li{
-    list-style: none;
-    margin: 0 0 0 -2em;
-    font-size: 1rem;
-    font-weight: bold;
-}
-/* p{
-    padding: 0.5em 0 0 0;
-} */
-.item-single{
-    display: inline;
-    color: white;  
-    flex: 1;
+    margin-top: 2em;
+    margin-right: 2em;
 }
 
-.ranking{
-    margin: auto;
+.table-rankinh-head-cell{
+    background-color: #00de7a;
+    
+}
+.ranking-item-one{
+    background-image: linear-gradient(to right, #00de7b, #0082e1);
+    color: #ffffff;
+    height: 4em;
+    padding-top: 0.5em;
+    margin-bottom: 1em;
+}
+.ranking-item-two{
+    text-align: start;
+    margin-bottom: 1em;
 }
 
-.content-ranking {
+table{
+    border: 1;
     width: 100%;
-    margin-left: 5%;
-    background-color: aliceblue;
-    background-size: 100vw;
-    width: 100vw;
-    height: 100vh;
+}
+
+table thead td{
+    border: 2px solid white;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: large;
+}
+table tbody tr td{
+    border: 2px solid white;
 }
