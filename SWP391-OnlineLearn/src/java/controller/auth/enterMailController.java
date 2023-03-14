@@ -68,7 +68,7 @@ public class enterMailController extends HttpServlet {
                 msg.setFrom(new InternetAddress(user));
                 msg.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
                 msg.setSubject("Xác minh tài khoản");
-                msg.setText(message);
+                msg.setContent(message, "text/html; charset=utf-8");
 
                 // Send message
                 javax.mail.Transport.send(msg);
@@ -122,8 +122,8 @@ public class enterMailController extends HttpServlet {
                 Message msg = new MimeMessage(session);
                 msg.setFrom(new InternetAddress(user));
                 msg.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
-                msg.setSubject("Xác minh tài khoản");
-                msg.setText(message);
+                msg.setSubject("Xác minh Account");
+                msg.setContent(message, "text/html; charset=utf-8");
 
                 // Send message
                 javax.mail.Transport.send(msg);
