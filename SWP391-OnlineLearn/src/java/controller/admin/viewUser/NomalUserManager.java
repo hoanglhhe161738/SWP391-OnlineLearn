@@ -28,8 +28,9 @@ public class NomalUserManager extends BaseAuthorizationController {
     @Override
     protected void processPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         UserDBContext udb = new UserDBContext();
-        List<User> list = udb.getNomalUser();
-        req.setAttribute("users", list);
+        String keyRAW = req.getParameter("keyNormal");
+        List<User> list = udb.getNormalUserByKey(keyRAW);
+        req.setAttribute("normalUsers", list);
         req.getRequestDispatcher("./userManagement.jsp").forward(req, resp);
     }
 

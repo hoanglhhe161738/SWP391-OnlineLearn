@@ -25,8 +25,9 @@ public class PremiumUserManager extends BaseAuthorizationController {
     @Override
     protected void processPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         UserDBContext udb = new UserDBContext();
-        List<User> list = udb.getPremiumUser();
-        req.setAttribute("users", list);
+        String keyRAW = req.getParameter("keyPremium");
+        List<User> list = udb.getPremiumUserByKey(keyRAW);
+        req.setAttribute("premiumUsers", list);
         req.getRequestDispatcher("./userManagement.jsp").forward(req, resp);
 
     }
