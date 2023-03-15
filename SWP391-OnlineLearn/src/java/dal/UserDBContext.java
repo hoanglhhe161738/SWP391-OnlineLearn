@@ -190,8 +190,8 @@ public class UserDBContext extends DBContext<User> {
         return null;
     }
 
-    public User getUserByKey(String keyRAW) {
-        User user = new User();
+    public List<User> getNomalUserByKey(String keyRAW) {
+        List<User> list = new ArrayList<>();
         String sql = "SELECT u.full_name,u.dob,u.gender,u.parent_email,u.parent_name,u.parent_phone_number,u.username FROM [User] u \n"
                 + "WHERE u.full_name LIKE ?";
         try {
@@ -199,21 +199,21 @@ public class UserDBContext extends DBContext<User> {
             String key = "%"+keyRAW+"%";
             stm.setString(1, key);
             ResultSet rs = stm.executeQuery();
-            if (rs.next()) {
-                user.setUser_id(rs.getInt("user_id"));
-                user.setFull_name(rs.getString("full_name"));
-                user.setGender(rs.getBoolean("gender"));
-                user.setDob(rs.getDate("dob"));
-                user.setParent_name(rs.getString("parent_name"));
-                user.setParent_email(rs.getString("parent_email"));
-                user.setParent_phone_number(rs.getString("parent_phone_number"));
-                user.setUsername(rs.getString("username"));
-                return user;
+            while (rs.next()) {
+                User u = new User();
+                u.setFull_name(rs.getString("full_name"));
+                u.setDob(DateTimeHelper.toDateSql(rs.getDate("dob")));
+                u.setGender(rs.getBoolean("gender"));
+                u.setParent_email(rs.getString("parent_email"));
+                u.setParent_name(rs.getString("parent_name"));
+                u.setParent_phone_number(rs.getString("parent_phone_number"));
+                u.setUsername(rs.getString("username"));
+                list.add(u);
             }
         } catch (SQLException ex) {
             Logger.getLogger(UserDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return null;
+        return list;
     }
 
 }
