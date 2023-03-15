@@ -140,6 +140,22 @@
         <servlet-name>actionLession</servlet-name>
         <servlet-class>controller.admin.lession.actionLessionController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UserManagement</servlet-name>
+        <servlet-class>controller.admin.viewUser.UserManagement</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TotalUserManager</servlet-name>
+        <servlet-class>controller.admin.viewUser.TotalUserManager</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PremiumUserManager</servlet-name>
+        <servlet-class>controller.admin.viewUser.PremiumUserManager</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NomalUserManager</servlet-name>
+        <servlet-class>controller.admin.viewUser.NomalUserManager</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
         <url-pattern>/course/classes</url-pattern>
@@ -339,6 +355,22 @@
     <servlet-mapping>
         <servlet-name>actionLession</servlet-name>
         <url-pattern>/admin/actionLession</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserManagement</servlet-name>
+        <url-pattern>/admin/userManagement</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PremiumUserManager</servlet-name>
+        <url-pattern>/admin/managePremiumUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NomalUserManager</servlet-name>
+        <url-pattern>/admin/manageNomalUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TotalUserManager</servlet-name>
+        <url-pattern>/admin/manageTotalUser</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
