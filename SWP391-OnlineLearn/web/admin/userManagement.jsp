@@ -4,6 +4,7 @@
     Author     : Khangnekk
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +27,7 @@
               crossorigin="anonymous" referrerpolicy="no-referrer" />
         <style>
             .custom-icon{
-                font-size: 5em;
+                font-size: 3em;
             }
             .element-part{
                 padding: 0.5em;
@@ -65,43 +66,84 @@
 
     <body>
         <jsp:include page="../custom/navForAdmin.jsp"></jsp:include>
-        <div>
-            <div class="container part">
-                <div class="row">
-                    <div class="col-md-4">
-                        <a href="">
-                            <div class="element-part" style="background: red">
-                                <i class="custom-icon fa-solid fa-database"></i><br>
-                                <h3 class="element-title">Tổng số người dùng</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="">
-                            <div class="element-part" style="background: #0081e2">
-                                <i class="custom-icon fa-solid fa-circle"></i>
-                                <h3 class="element-title">Người dùng thường</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="">
-                            <div class="element-part" style="background: #00ed7a">
-                                <i class="custom-icon fa-sharp fa-solid fa-gem"></i>
-                                <h3 class="element-title">Người dùng premium</h3>
-                            </div>
-                        </a>
+            <div>
+                <div class="container part">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="./manageTotalUser">
+                                <div class="element-part" style="background: red">
+                                    <i class="custom-icon fa-solid fa-database"></i><span style="font-size: 3em; margin-left: 1em">${sessionScope.total}</span><br>
+                                    <h3 class="element-title">Tổng số người dùng</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="./manageNomalUser">
+                                <div class="element-part" style="background: #0081e2">
+                                    <i class="custom-icon fa-solid fa-circle"></i><span style="font-size: 3em; margin-left: 1em">${sessionScope.normal}</span>
+                                    <h3 class="element-title">Người dùng thường</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="./managePremiumUser">
+                                <div class="element-part" style="background: #00ed7a">
+                                    <i class="custom-icon fa-sharp fa-solid fa-gem"></i><span style="font-size: 3em; margin-left: 1em">${sessionScope.premium}</span>
+                                    <h3 class="element-title">Người dùng premium</h3>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="container" style="display: flex; justify-content: start; margin-top: 1em;">
-                <div class="row">
-                    <div class="input-group rounded" style="width: 30em">
-                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                        <span class="input-group-text border-0" id="search-addon">
-                            <i class="fas fa-search"></i>
-                        </span>
-                    </div>
+                <div class="container" style="display: flex; justify-content: start; margin-top: 1em;">
+                    <div class="row">
+                    <c:if test="${requestScope.totalUsers ne null}">
+                        <form id="formTotal" action="./manageTotalUser" method="POST">
+                            <div class="input-group rounded" style="width: 30em">
+                                <input id="inputTotal" name="keyTotal" type="search" class="form-control rounded" placeholder="Tìm kiếm theo tên" aria-label="Search" aria-describedby="search-addon" />
+                                <input style="border: none; border-radius: 0 8px 8px 0; margin-left: 0.25em" type="submit" value="Tìm kiếm">
+                            </div>
+                        </form>
+                    </c:if>
+                    <c:if test="${requestScope.normalUsers ne null}">
+                        <form id="formNormal" action="./manageNomalUser" method="POST">
+                            <div class="input-group rounded" style="width: 30em">
+                                <input id="inputNormal" name="keyNormal" type="search" class="form-control rounded" placeholder="Tìm kiếm theo tên" aria-label="Search" aria-describedby="search-addon" />
+                                <input style="border: none; border-radius: 0 8px 8px 0; margin-left: 0.25em" type="submit" value="Tìm kiếm">
+                            </div>
+                        </form>
+                    </c:if>
+                    <c:if test="${requestScope.premiumUsers ne null}">
+                        <form id="formPremium" action="./managePremiumUser" method="POST">
+                            <div class="input-group rounded" style="width: 30em">
+                                <input id="inputPremium" name="keyPremium" type="search" class="form-control rounded" placeholder="Tìm kiếm theo tên" aria-label="Search" aria-describedby="search-addon" />
+                                <input style="border: none; border-radius: 0 8px 8px 0; margin-left: 0.25em" type="submit" value="Tìm kiếm">
+                            </div>
+                        </form>
+                    </c:if>
+<!--                    <script>
+                        const inputTotal = document.getElementById('inputTotal');
+                        const formTotal = document.getElementById('formTotal');
+
+                        inputTotal.addEventListener('input', () => {
+                            formTotal.submit();
+                        });
+                        
+                        const inputNormal = document.getElementById('inputNormal');
+                        const formNormal = document.getElementById('formNormal');
+
+                        inputNormal.addEventListener('input', () => {
+                            formNormal.submit();
+                        });
+                        
+                        const inputPremium = document.getElementById('inputPremium');
+                        const formPremium = document.getElementById('formPremium');
+
+                        inputPremium.addEventListener('input', () => {
+                            formPremium.submit();
+                        });
+
+                    </script>-->
                 </div>
             </div>
             <div class="container" style="margin-top: 1em;">
@@ -120,16 +162,69 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Nguyễn Văn A</td>
-                                <td>1990</td>
-                                <td>nguyenvana@gmail.com</td>
-                                <td>0987654321</td>
-                                <td>0987654321</td>
-                                <td>0987654321</td>
-                                <td>0987654321</td>
-                            </tr>
+                            <c:if test="${requestScope.totalUsers ne null}">
+                                <% int stt = 0;%>
+                                <c:forEach items="${requestScope.totalUsers}" var="tu">
+                                    <%stt++;%>
+                                    <tr>
+                                        <td><%=stt%></td>
+                                        <td>${tu.full_name}</td>
+                                        <td>${tu.dob}</td>
+                                        <c:if test="${tu.gender eq true}">
+                                            <td>Nam</td>
+                                        </c:if>
+                                        <c:if test="${tu.gender eq false}">
+                                            <td>Nữ</td>
+                                        </c:if>
+                                        <td>${tu.parent_name}</td>
+                                        <td>${tu.parent_email}</td>
+                                        <td>${tu.parent_phone_number}</td>
+                                        <td>${tu.username}</td>
+                                    </tr>
+                                </c:forEach>   
+                            </c:if>
+                            <c:if test="${requestScope.premiumUsers ne null}">
+                                <% int stt1 = 0;%>
+                                <c:forEach items="${requestScope.premiumUsers}" var="pu">
+                                    <%stt1++;%>
+                                    <tr>
+                                        <td><%=stt1%></td>
+                                        <td>${pu.full_name}</td>
+                                        <td>${pu.dob}</td>
+                                        <c:if test="${pu.gender eq true}">
+                                            <td>Nam</td>
+                                        </c:if>
+                                        <c:if test="${pu.gender eq false}">
+                                            <td>Nữ</td>
+                                        </c:if>
+                                        <td>${pu.parent_name}</td>
+                                        <td>${pu.parent_email}</td>
+                                        <td>${pu.parent_phone_number}</td>
+                                        <td>${pu.username}</td>
+                                    </tr>
+                                </c:forEach>   
+                            </c:if>
+                            <c:if test="${requestScope.normalUsers ne null}">
+                                <% int stt2 = 0;%>
+                                <c:forEach items="${requestScope.normalUsers}" var="nu">
+                                    <%stt2++;%>
+                                    <tr>
+                                        <td><%=stt2%></td>
+                                        <td>${nu.full_name}</td>
+                                        <td>${nu.dob}</td>
+                                        <c:if test="${nu.gender eq true}">
+                                            <td>Nam</td>
+                                        </c:if>
+                                        <c:if test="${nu.gender eq false}">
+                                            <td>Nữ</td>
+                                        </c:if>
+                                        <td>${nu.parent_name}</td>
+                                        <td>${nu.parent_email}</td>
+                                        <td>${nu.parent_phone_number}</td>
+                                        <td>${nu.username}</td>
+                                    </tr>
+                                </c:forEach>   
+                            </c:if>
                         </tbody>
                     </table>
                 </div>

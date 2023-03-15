@@ -24,11 +24,11 @@ public class UserDBContext extends DBContext<User> {
         List<User> list = new ArrayList<>();
         String sql = "SELECT u.full_name,u.dob,u.gender,u.parent_email,u.parent_name,u.parent_phone_number,u.username FROM [User] u\n"
                 + "JOIN Account a ON a.username = u.username\n"
-                + "WHERE a.classify_account = 'normal";
+                + "WHERE a.classify_account = 'normal'";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 User u = new User();
                 u.setFull_name(rs.getString("full_name"));
                 u.setDob(DateTimeHelper.toDateSql(rs.getDate("dob")));
@@ -40,8 +40,58 @@ public class UserDBContext extends DBContext<User> {
                 list.add(u);
             }
         } catch (Exception e) {
+            System.out.println(e);
         }
-        return null;
+        return list;
+    }
+
+    public List<User> getPremiumUser() {
+        List<User> list = new ArrayList<>();
+        String sql = "SELECT u.full_name,u.dob,u.gender,u.parent_email,u.parent_name,u.parent_phone_number,u.username FROM [User] u\n"
+                + "JOIN Account a ON a.username = u.username\n"
+                + "WHERE a.classify_account = 'premium'";
+        try {
+            PreparedStatement st = connection.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                User u = new User();
+                u.setFull_name(rs.getString("full_name"));
+                u.setDob(DateTimeHelper.toDateSql(rs.getDate("dob")));
+                u.setGender(rs.getBoolean("gender"));
+                u.setParent_email(rs.getString("parent_email"));
+                u.setParent_name(rs.getString("parent_name"));
+                u.setParent_phone_number(rs.getString("parent_phone_number"));
+                u.setUsername(rs.getString("username"));
+                list.add(u);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return list;
+    }
+
+    public List<User> getTotalUser() {
+        List<User> list = new ArrayList<>();
+        String sql = "SELECT u.full_name,u.dob,u.gender,u.parent_email,u.parent_name,u.parent_phone_number,u.username FROM [User] u\n"
+                + "JOIN Account a ON a.username = u.username\n";
+        try {
+            PreparedStatement st = connection.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                User u = new User();
+                u.setFull_name(rs.getString("full_name"));
+                u.setDob(DateTimeHelper.toDateSql(rs.getDate("dob")));
+                u.setGender(rs.getBoolean("gender"));
+                u.setParent_email(rs.getString("parent_email"));
+                u.setParent_name(rs.getString("parent_name"));
+                u.setParent_phone_number(rs.getString("parent_phone_number"));
+                u.setUsername(rs.getString("username"));
+                list.add(u);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return list;
     }
 
     @Override
@@ -138,6 +188,85 @@ public class UserDBContext extends DBContext<User> {
             Logger.getLogger(UserDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
+    }
+
+    public List<User> getTotalUserByKey(String keyRAW) {
+        List<User> list = new ArrayList<>();
+        String sql = "SELECT u.full_name,u.dob,u.gender,u.parent_email,u.parent_name,u.parent_phone_number,u.username FROM [User] u \n"
+                + "JOIN Account a ON a.username = u.username\n"
+                + "WHERE u.full_name LIKE ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            String key = "%" + keyRAW + "%";
+            stm.setString(1, key);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                User u = new User();
+                u.setFull_name(rs.getString("full_name"));
+                u.setDob(DateTimeHelper.toDateSql(rs.getDate("dob")));
+                u.setGender(rs.getBoolean("gender"));
+                u.setParent_email(rs.getString("parent_email"));
+                u.setParent_name(rs.getString("parent_name"));
+                u.setParent_phone_number(rs.getString("parent_phone_number"));
+                u.setUsername(rs.getString("username"));
+                list.add(u);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
+    public List<User> getPremiumUserByKey(String keyRAW) {
+        List<User> list = new ArrayList<>();
+        String sql = "SELECT u.full_name,u.dob,u.gender,u.parent_email,u.parent_name,u.parent_phone_number,u.username FROM [User] u \n"
+                + "JOIN Account a ON a.username = u.username\n"
+                + "WHERE u.full_name LIKE ? AND a.classify_account = 'premium'";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            String key = "%" + keyRAW + "%";
+            stm.setString(1, key);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                User u = new User();
+                u.setFull_name(rs.getString("full_name"));
+                u.setDob(DateTimeHelper.toDateSql(rs.getDate("dob")));
+                u.setGender(rs.getBoolean("gender"));
+                u.setParent_email(rs.getString("parent_email"));
+                u.setParent_name(rs.getString("parent_name"));
+                u.setParent_phone_number(rs.getString("parent_phone_number"));
+                u.setUsername(rs.getString("username"));
+                list.add(u);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
+    public List<User> getNormalUserByKey(String keyRAW) {
+        List<User> list = new ArrayList<>();
+        String sql = "SELECT u.full_name,u.dob,u.gender,u.parent_email,u.parent_name,u.parent_phone_number,u.username FROM [User] u \n"
+                + "JOIN Account a ON a.username = u.username\n"
+                + "WHERE u.full_name LIKE ? AND a.classify_account = 'normal'";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            String key = "%" + keyRAW + "%";
+            stm.setString(1, key);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                User u = new User();
+                u.setFull_name(rs.getString("full_name"));
+                u.setDob(DateTimeHelper.toDateSql(rs.getDate("dob")));
+                u.setGender(rs.getBoolean("gender"));
+                u.setParent_email(rs.getString("parent_email"));
+                u.setParent_name(rs.getString("parent_name"));
+                u.setParent_phone_number(rs.getString("parent_phone_number"));
+                u.setUsername(rs.getString("username"));
+                list.add(u);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
     }
 
 }
