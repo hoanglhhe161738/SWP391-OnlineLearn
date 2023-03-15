@@ -98,29 +98,52 @@
                 <div class="container" style="display: flex; justify-content: start; margin-top: 1em;">
                     <div class="row">
                     <c:if test="${requestScope.totalUsers ne null}">
-                        <form action="./manageTotalUser" method="POST">
+                        <form id="formTotal" action="./manageTotalUser" method="POST">
                             <div class="input-group rounded" style="width: 30em">
-                                <input type="search" class="form-control rounded" placeholder="Tìm kiếm theo tên" aria-label="Search" aria-describedby="search-addon" />
+                                <input id="inputTotal" onchange="this.form.submit()" type="search" class="form-control rounded" placeholder="Tìm kiếm theo tên" aria-label="Search" aria-describedby="search-addon" />
                                 <input style="border: none; border-radius: 0 8px 8px 0; margin-left: 0.25em" type="submit" value="Tìm kiếm">
                             </div>
                         </form>
                     </c:if>
                     <c:if test="${requestScope.normalUsers ne null}">
-                        <form action="./manageNomalUser" method="POST">
+                        <form id="formNormal" action="./manageNomalUser" method="POST">
                             <div class="input-group rounded" style="width: 30em">
-                                <input onchange="this.form.submit()" type="search" class="form-control rounded" placeholder="Tìm kiếm theo tên" aria-label="Search" aria-describedby="search-addon" />
+                                <input id="inputNormal" onchange="this.form.submit()" type="search" class="form-control rounded" placeholder="Tìm kiếm theo tên" aria-label="Search" aria-describedby="search-addon" />
                                 <input style="border: none; border-radius: 0 8px 8px 0; margin-left: 0.25em" type="submit" value="Tìm kiếm">
                             </div>
                         </form>
                     </c:if>
                     <c:if test="${requestScope.premiumUsers ne null}">
-                        <form action="./managePremiumUser" method="POST">
+                        <form id="formPremium" action="./managePremiumUser" method="POST">
                             <div class="input-group rounded" style="width: 30em">
-                                <input type="search" class="form-control rounded" placeholder="Tìm kiếm theo tên" aria-label="Search" aria-describedby="search-addon" />
+                                <input id="inputPremium" onchange="this.form.submit()" type="search" class="form-control rounded" placeholder="Tìm kiếm theo tên" aria-label="Search" aria-describedby="search-addon" />
                                 <input style="border: none; border-radius: 0 8px 8px 0; margin-left: 0.25em" type="submit" value="Tìm kiếm">
                             </div>
                         </form>
                     </c:if>
+                    <script>
+                        const inputTotal = document.getElementById('inputTotal');
+                        const formTotal = document.getElementById('formTotal');
+
+                        inputTotal.addEventListener('input', () => {
+                            formTotal.submit();
+                        });
+                        
+                        const inputNormal = document.getElementById('inputNormal');
+                        const formNormal = document.getElementById('formNormal');
+
+                        inputNormal.addEventListener('input', () => {
+                            formNormal.submit();
+                        });
+                        
+                        const inputPremium = document.getElementById('inputPremium');
+                        const formPremium = document.getElementById('formPremium');
+
+                        inputPremium.addEventListener('input', () => {
+                            formPremium.submit();
+                        });
+
+                    </script>
                 </div>
             </div>
             <div class="container" style="margin-top: 1em;">
