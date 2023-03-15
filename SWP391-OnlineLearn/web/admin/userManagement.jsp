@@ -27,7 +27,7 @@
               crossorigin="anonymous" referrerpolicy="no-referrer" />
         <style>
             .custom-icon{
-                font-size: 5em;
+                font-size: 3em;
             }
             .element-part{
                 padding: 0.5em;
@@ -72,7 +72,7 @@
                         <div class="col-md-4">
                             <a href="./manageTotalUser">
                                 <div class="element-part" style="background: red">
-                                    <i class="custom-icon fa-solid fa-database"></i><br>
+                                    <i class="custom-icon fa-solid fa-database"></i><span style="font-size: 3em; margin-left: 1em">9999</span><br>
                                     <h3 class="element-title">Tổng số người dùng</h3>
                                 </div>
                             </a>
@@ -80,7 +80,7 @@
                         <div class="col-md-4">
                             <a href="./manageNomalUser">
                                 <div class="element-part" style="background: #0081e2">
-                                    <i class="custom-icon fa-solid fa-circle"></i>
+                                    <i class="custom-icon fa-solid fa-circle"></i><span style="font-size: 3em; margin-left: 1em">4444</span>
                                     <h3 class="element-title">Người dùng thường</h3>
                                 </div>
                             </a>
@@ -88,7 +88,7 @@
                         <div class="col-md-4">
                             <a href="./managePremiumUser">
                                 <div class="element-part" style="background: #00ed7a">
-                                    <i class="custom-icon fa-sharp fa-solid fa-gem"></i>
+                                    <i class="custom-icon fa-sharp fa-solid fa-gem"></i><span style="font-size: 3em; margin-left: 1em">5555</span>
                                     <h3 class="element-title">Người dùng premium</h3>
                                 </div>
                             </a>
