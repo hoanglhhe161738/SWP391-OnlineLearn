@@ -100,7 +100,7 @@
                     <c:if test="${requestScope.totalUsers ne null}">
                         <form id="formTotal" action="./manageTotalUser" method="POST">
                             <div class="input-group rounded" style="width: 30em">
-                                <input id="inputTotal" onchange="this.form.submit()" type="search" class="form-control rounded" placeholder="Tìm kiếm theo tên" aria-label="Search" aria-describedby="search-addon" />
+                                <input id="inputTotal" type="search" class="form-control rounded" placeholder="Tìm kiếm theo tên" aria-label="Search" aria-describedby="search-addon" />
                                 <input style="border: none; border-radius: 0 8px 8px 0; margin-left: 0.25em" type="submit" value="Tìm kiếm">
                             </div>
                         </form>
@@ -108,7 +108,7 @@
                     <c:if test="${requestScope.normalUsers ne null}">
                         <form id="formNormal" action="./manageNomalUser" method="POST">
                             <div class="input-group rounded" style="width: 30em">
-                                <input id="inputNormal" onchange="this.form.submit()" type="search" class="form-control rounded" placeholder="Tìm kiếm theo tên" aria-label="Search" aria-describedby="search-addon" />
+                                <input id="inputNormal" type="search" class="form-control rounded" placeholder="Tìm kiếm theo tên" aria-label="Search" aria-describedby="search-addon" />
                                 <input style="border: none; border-radius: 0 8px 8px 0; margin-left: 0.25em" type="submit" value="Tìm kiếm">
                             </div>
                         </form>
@@ -116,12 +116,12 @@
                     <c:if test="${requestScope.premiumUsers ne null}">
                         <form id="formPremium" action="./managePremiumUser" method="POST">
                             <div class="input-group rounded" style="width: 30em">
-                                <input id="inputPremium" onchange="this.form.submit()" type="search" class="form-control rounded" placeholder="Tìm kiếm theo tên" aria-label="Search" aria-describedby="search-addon" />
+                                <input id="inputPremium" type="search" class="form-control rounded" placeholder="Tìm kiếm theo tên" aria-label="Search" aria-describedby="search-addon" />
                                 <input style="border: none; border-radius: 0 8px 8px 0; margin-left: 0.25em" type="submit" value="Tìm kiếm">
                             </div>
                         </form>
                     </c:if>
-                    <script>
+<!--                    <script>
                         const inputTotal = document.getElementById('inputTotal');
                         const formTotal = document.getElementById('formTotal');
 
@@ -143,7 +143,7 @@
                             formPremium.submit();
                         });
 
-                    </script>
+                    </script>-->
                 </div>
             </div>
             <div class="container" style="margin-top: 1em;">
