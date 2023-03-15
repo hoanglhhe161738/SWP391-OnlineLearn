@@ -26,8 +26,9 @@ public class TotalUserManager extends BaseAuthorizationController {
     @Override
     protected void processPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         UserDBContext udb = new UserDBContext();
-        List<User> list = udb.getTotalUser();
-        req.setAttribute("users", list);
+        String keyRAW = req.getParameter("keyTotal");
+        List<User> list = udb.getTotalUserByKey(keyRAW);
+        req.setAttribute("totalUsers", list);
         req.getRequestDispatcher("userManagement.jsp").forward(req, resp);
     }
 
