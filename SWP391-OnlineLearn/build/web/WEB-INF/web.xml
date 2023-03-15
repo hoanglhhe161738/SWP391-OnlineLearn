@@ -117,52 +117,28 @@
         <servlet-class>controller.auth.changePasswordController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AddVideoController</servlet-name>
-        <servlet-class>controller.admin.video.AddVideoController</servlet-class>
+        <servlet-name>choiceClassToAddModule</servlet-name>
+        <servlet-class>controller.admin.module.ChoiceClassToAddModule</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>actionVideoController</servlet-name>
-        <servlet-class>controller.admin.video.actionVideoController</servlet-class>
+        <servlet-name>choiceCourseToAddModule</servlet-name>
+        <servlet-class>controller.admin.module.ChoiceCourseToAddModule</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ChoiceClassToAddVideo</servlet-name>
-        <servlet-class>controller.admin.video.ChoiceClassToAddVideo</servlet-class>
+        <servlet-name>actionModule</servlet-name>
+        <servlet-class>controller.admin.module.actionModuleController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ChoiceCourseToAddVideo</servlet-name>
-        <servlet-class>controller.admin.video.ChoiceCourseToAddVideo</servlet-class>
+        <servlet-name>choiceClassToAddLession</servlet-name>
+        <servlet-class>controller.admin.lession.ChoiceClassToAddLession</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ForgetPassword</servlet-name>
-        <servlet-class>controller.forgetPassword.ForgetPassword</servlet-class>
+        <servlet-name>choiceCourseToAddLession</servlet-name>
+        <servlet-class>controller.admin.lession.ChoiceCourseToAddLession</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SendMailFP</servlet-name>
-        <servlet-class>controller.forgetPassword.SendMail</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>VerifyCodeFP</servlet-name>
-        <servlet-class>controller.forgetPassword.VerifyCode</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ChangePasswordFP</servlet-name>
-        <servlet-class>controller.forgetPassword.ChangePassword</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>NomalUserManagerController</servlet-name>
-        <servlet-class>controller.admin.viewUser.NomalUserManager</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>PremiumUserManager</servlet-name>
-        <servlet-class>controller.admin.viewUser.PremiumUserManager</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>TotalUserManager</servlet-name>
-        <servlet-class>controller.admin.viewUser.TotalUserManager</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>UserManagement</servlet-name>
-        <servlet-class>controller.admin.viewUser.UserManagement</servlet-class>
+        <servlet-name>actionLession</servlet-name>
+        <servlet-class>controller.admin.lession.actionLessionController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
@@ -321,6 +297,10 @@
         <url-pattern>/admin/actionMatchGame</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>choiceCourseToAddContent</servlet-name>
+        <url-pattern>/admin/ChoiceCourseToAddContent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>choiceClassToAddContent</servlet-name>
         <url-pattern>/admin/ChoiceClassToAddContent</url-pattern>
     </servlet-mapping>
@@ -337,56 +317,28 @@
         <url-pattern>/userprofile/changePassword</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AddVideoController</servlet-name>
-        <url-pattern>/admin/addVideo</url-pattern>
+        <servlet-name>choiceClassToAddModule</servlet-name>
+        <url-pattern>/admin/ChoiceClassToAddModule</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>actionVideoController</servlet-name>
-        <url-pattern>/admin/actionVideo</url-pattern>
+        <servlet-name>choiceCourseToAddModule</servlet-name>
+        <url-pattern>/admin/ChoiceCourseToAddModule</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>choiceCourseToAddContent</servlet-name>
-        <url-pattern>/admin/ChoiceCourseToAddContent</url-pattern>
+        <servlet-name>actionModule</servlet-name>
+        <url-pattern>/admin/actionModule</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ChoiceClassToAddVideo</servlet-name>
-        <url-pattern>/admin/choiceClassToAddVideo</url-pattern>
+        <servlet-name>choiceClassToAddLession</servlet-name>
+        <url-pattern>/admin/ChoiceClassToAddLession</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ChoiceCourseToAddVideo</servlet-name>
-        <url-pattern>/admin/choiceCourseToAddVideo</url-pattern>
+        <servlet-name>choiceCourseToAddLession</servlet-name>
+        <url-pattern>/admin/ChoiceCourseToAddLession</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ForgetPassword</servlet-name>
-        <url-pattern>/forgetPassword/forget</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SendMailFP</servlet-name>
-        <url-pattern>/forgetPassword/sendMail</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>VerifyCodeFP</servlet-name>
-        <url-pattern>/forgetPassword/verifyCode</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ChangePasswordFP</servlet-name>
-        <url-pattern>/forgetPassword/changePassword</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>NomalUserManagerController</servlet-name>
-        <url-pattern>/admin/manageNomalUser</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PremiumUserManager</servlet-name>
-        <url-pattern>/admin/managePremiumUser</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>TotalUserManager</servlet-name>
-        <url-pattern>/admin/manageTotalUser</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>UserManagement</servlet-name>
-        <url-pattern>/admin/userManagement</url-pattern>
+        <servlet-name>actionLession</servlet-name>
+        <url-pattern>/admin/actionLession</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

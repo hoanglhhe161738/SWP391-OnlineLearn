@@ -24,7 +24,23 @@ public class LessonDBContext extends DBContext<Lesson> {
 
     @Override
     public void insert(Lesson model) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "INSERT INTO [dbo].[Lession]\n"
+                + "           ([lession_name]\n"
+                + "           ,[module_id]\n"
+                + "           ,[status])\n"
+                + "     VALUES\n"
+                + "           (?\n"
+                + "           ,?\n"
+                + "           ,?)";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, model.getLesson_name());
+            stm.setInt(2, model.getModule().getModule_id());
+            stm.setBoolean(3, model.isStatus());
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(LessonDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
@@ -40,6 +56,7 @@ public class LessonDBContext extends DBContext<Lesson> {
             stm.setInt(2, model.getModule().getModule_id());
             stm.setBoolean(3, model.isStatus());
             stm.setInt(4, model.getLesson_id());
+            stm.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(LessonDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
