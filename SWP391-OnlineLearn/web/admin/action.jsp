@@ -80,7 +80,7 @@
                     </a>
                 </div>
                 <div class="choiceAction-colum col">
-                    <a href="">
+                    <a href="./userManagement">
                         <div class="choiceAction-colum-item p-3" style="background-color: #800080;">
                             <div><i class="custom-icon fa-solid fa-user"></i></div>
                             <p>Quản lý người dùng</p>
