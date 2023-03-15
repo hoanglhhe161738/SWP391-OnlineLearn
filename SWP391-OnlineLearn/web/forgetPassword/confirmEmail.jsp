@@ -23,19 +23,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: sans-serif;
         }
 
             .container {
+                border: 1px solid black;
                 border-radius: 30px;
-                background-color: white;
+                background-color: rgb(238, 238, 231);
                 max-width: 35%;
                 padding: 1em 5em;
                 position: relative;
             }
 
             h1 {
-                color: #00de7a;
+                color: rgb(45, 197, 45);
                 text-align: center;
             }
 
@@ -106,7 +106,7 @@
             <div class="input">
                 <form action="./verifyCode" method="POST">
                     <input type="text" id="verify-code-input" name="confirm" class="signup-input" maxlength="7" placeholder="XXX-XXX">
-                    <p style="font-size: 0.75em;">(*) Lưu ý: Mã xác nhận chỉ có hiệu lực trong 2 phút</p>
+                    <p style="font-size: 0.75em;">(*)Lưu ý: Mã xác nhận chỉ có hiệu lực trong 2 phút</p>
                     <input class="login-submit" type="submit" value="Hoàn tất">
 
 
