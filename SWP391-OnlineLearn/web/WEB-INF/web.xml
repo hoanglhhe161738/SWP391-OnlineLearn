@@ -116,6 +116,30 @@
         <servlet-name>changePasswordController</servlet-name>
         <servlet-class>controller.auth.changePasswordController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>choiceClassToAddModule</servlet-name>
+        <servlet-class>controller.admin.module.ChoiceClassToAddModule</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>choiceCourseToAddModule</servlet-name>
+        <servlet-class>controller.admin.module.ChoiceCourseToAddModule</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>actionModule</servlet-name>
+        <servlet-class>controller.admin.module.actionModuleController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>choiceClassToAddLession</servlet-name>
+        <servlet-class>controller.admin.lession.ChoiceClassToAddLession</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>choiceCourseToAddLession</servlet-name>
+        <servlet-class>controller.admin.lession.ChoiceCourseToAddLession</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>actionLession</servlet-name>
+        <servlet-class>controller.admin.lession.actionLessionController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
         <url-pattern>/course/classes</url-pattern>
@@ -291,6 +315,30 @@
     <servlet-mapping>
         <servlet-name>changePasswordController</servlet-name>
         <url-pattern>/userprofile/changePassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>choiceClassToAddModule</servlet-name>
+        <url-pattern>/admin/ChoiceClassToAddModule</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>choiceCourseToAddModule</servlet-name>
+        <url-pattern>/admin/ChoiceCourseToAddModule</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actionModule</servlet-name>
+        <url-pattern>/admin/actionModule</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>choiceClassToAddLession</servlet-name>
+        <url-pattern>/admin/ChoiceClassToAddLession</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>choiceCourseToAddLession</servlet-name>
+        <url-pattern>/admin/ChoiceCourseToAddLession</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actionLession</servlet-name>
+        <url-pattern>/admin/actionLession</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
