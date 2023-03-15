@@ -148,6 +148,10 @@
         <servlet-name>ChangePasswordFP</servlet-name>
         <servlet-class>controller.forgetPassword.ChangePassword</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NomalUserManagerController</servlet-name>
+        <servlet-class>controller.admin.viewUser.NomalUserManager</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
         <url-pattern>/course/classes</url-pattern>
@@ -355,6 +359,10 @@
     <servlet-mapping>
         <servlet-name>ChangePasswordFP</servlet-name>
         <url-pattern>/forgetPassword/changePassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NomalUserManagerController</servlet-name>
+        <url-pattern>/admin/manageNomalUser</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
