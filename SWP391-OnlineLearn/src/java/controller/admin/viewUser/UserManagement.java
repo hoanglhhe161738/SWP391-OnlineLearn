@@ -5,6 +5,7 @@
 package controller.admin.viewUser;
 
 import controller.auth.BaseAuthorizationController;
+import dal.AccountDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -24,6 +25,13 @@ public class UserManagement extends BaseAuthorizationController{
 
     @Override
     protected void processGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
+        AccountDBContext aDB = new AccountDBContext();
+        int total = aDB.getNumberOfTotalUser();
+        int premium = aDB.getNumberOfPremiumUser();
+        int normal = aDB.getNumberOfNormalUser();
+        req.getSession().setAttribute("total", total);
+        req.getSession().setAttribute("premium", premium);
+        req.getSession().setAttribute("normal", normal);
         req.getRequestDispatcher("./userManagement.jsp").forward(req, resp);
     }
     

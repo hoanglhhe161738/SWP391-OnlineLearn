@@ -198,7 +198,7 @@ public class AccountDBContext extends DBContext<Account> {
     public Account get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
     public Account get(String username) {
         try {
             String sql = "SELECT a.username,a.classify_account\n"
@@ -265,6 +265,56 @@ public class AccountDBContext extends DBContext<Account> {
         } catch (SQLException ex) {
             Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public int getNumberOfTotalUser() {
+        int total;
+        String sql = "SELECT COUNT(*) AS total FROM [User] u";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                total = rs.getInt("total");
+                return total;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+    }
+
+    public int getNumberOfNormalUser() {
+        int normal;
+        String sql = "SELECT COUNT(*) AS normal FROM [User] u \n"
+                + "JOIN Account a ON a.username = u.username AND a.classify_account = 'normal'";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                normal = rs.getInt("normal");
+                return normal;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+    }
+
+    public int getNumberOfPremiumUser() {
+        int premium;
+        String sql = "SELECT COUNT(*) AS premium FROM [User] u\n"
+                + "JOIN Account a ON a.username = u.username AND a.classify_account = 'premium'";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                premium = rs.getInt("premium");
+                return premium;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
     }
 
 }
