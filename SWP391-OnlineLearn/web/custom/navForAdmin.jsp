@@ -23,10 +23,6 @@
             <div class="nav-information-item" style="padding-top: 0.1em; border-radius: 2em 0 0 2em">
                 <div class="nav-information-image">
                     <img src="../Assets/icon/favicon.png">
-                    <div
-                        style="height: 0.8em; width: 0.8em; border: 3px solid #fff; margin-left: 2em;margin-top: 2em; border-radius: 50%; background-color: #00b050;">
-                    </div>
-
                 </div>
                 <div class="nav-information-text">
                     <ul class="nav-information-text-content">
