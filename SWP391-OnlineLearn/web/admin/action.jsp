@@ -43,7 +43,7 @@
 
     <body>
         <jsp:include page="../custom/navForAdmin.jsp"></jsp:include>
-        <div class="choiceAction container text-center">
+        <div class="choiceAction container text-center" style="padding: 2em">
             <div class="choiceAction-content row row-cols-2 row-cols-lg-3 g-2 g-lg-3">
                 <div class="choiceAction-colum col">
                     <a href="./choiceClassToAddQuiz">
@@ -81,9 +81,28 @@
                 </div>
                 <div class="choiceAction-colum col">
                     <a href="./userManagement">
-                        <div class="choiceAction-colum-item p-3" style="background-color: #800080;">
+                        <div class="choiceAction-colum-item p-3" style="background-color: #9400D3;">
                             <div><i class="custom-icon fa-solid fa-user"></i></div>
                             <p>Quản lý người dùng</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="choiceAction-colum col">
+                    <a href="">
+                        <div class="choiceAction-colum-item p-3" style="background-color: #FF4500;">
+                            <div><i class="custom-icon fa-solid fa-chalkboard-user"></i></div>
+                            <p>Thêm/Sửa chương</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <div class="choiceAction-content row row-cols-5 row-cols-lg-3 g-2 g-lg-3" style="margin-top: 0.5em;">
+                <div class="choiceAction-colum col">
+                    <a href="">
+                        <div class="choiceAction-colum-item p-3" style="background-color: #008080;">
+                            <div><i class="custom-icon fa-solid fa-person-chalkboard"></i></div>
+                            <p>Thêm/Sửa bài học</p>
                         </div>
                     </a>
                 </div>
