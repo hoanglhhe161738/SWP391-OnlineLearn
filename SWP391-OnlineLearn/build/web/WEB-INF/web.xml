@@ -160,6 +160,10 @@
         <servlet-name>TotalUserManager</servlet-name>
         <servlet-class>controller.admin.viewUser.TotalUserManager</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UserManagementController</servlet-name>
+        <servlet-class>controller.admin.viewUser.UserManagementController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
         <url-pattern>/course/classes</url-pattern>
@@ -379,6 +383,10 @@
     <servlet-mapping>
         <servlet-name>TotalUserManager</servlet-name>
         <url-pattern>/admin/manageTotalUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserManagementController</servlet-name>
+        <url-pattern>/admin/userManagement</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

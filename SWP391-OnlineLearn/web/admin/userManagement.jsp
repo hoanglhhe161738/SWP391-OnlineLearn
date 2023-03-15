@@ -4,6 +4,7 @@
     Author     : Khangnekk
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,16 +112,25 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <% int stt = 0;%>
+                        <c:forEach items="${requestScope.users}" var="u">
+                            <%stt++;%>
                             <tr>
-                                <td>1</td>
-                                <td>Nguyễn Văn A</td>
-                                <td>1990</td>
-                                <td>nguyenvana@gmail.com</td>
-                                <td>0987654321</td>
-                                <td>0987654321</td>
-                                <td>0987654321</td>
-                                <td>0987654321</td>
+                                <td><%=stt%></td>
+                                <td>${u.full_name}</td>
+                                <td>${u.dob}</td>
+                                <c:if test="${u.gender eq true}">
+                                    <td>Nam</td>
+                                </c:if>
+                                <c:if test="${u.gender eq false}">
+                                    <td>Nữ</td>
+                                </c:if>
+                                <td>${u.parent_name}</td>
+                                <td>${u.parent_email}</td>
+                                <td>${u.parent_phone_number}</td>
+                                <td>${u.username}</td>
                             </tr>
+                        </c:forEach>    
                         </tbody>
                     </table>
                 </div>

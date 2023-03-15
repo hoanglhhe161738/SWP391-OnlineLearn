@@ -11,12 +11,17 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import controller.auth.BaseAuthorizationController;
+import model.Account;
+import dal.UserDBContext;
+import java.util.List;
+import model.*;
 
 /**
  *
  * @author T490
  */
-public class TotalUserManager extends HttpServlet {
+public class TotalUserManager extends BaseAuthorizationController {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -77,5 +82,18 @@ public class TotalUserManager extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    @Override
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
+        UserDBContext udb = new UserDBContext();
+        List<User> list = udb.getTotalUser();
+        req.setAttribute("users", list);
+        req.getRequestDispatcher("userManagement.jsp").forward(req, resp);
+    }
+
+    @Override
+    protected void processGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
 }
