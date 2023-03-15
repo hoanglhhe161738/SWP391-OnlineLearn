@@ -96,7 +96,7 @@
                     </form>
                 </div>
                 <div class="ranking-item-three" style="overflow: auto; height: 70vh; border-radius: 10px;">
-                    <table class="table-ranking" style="font-size: 1em; font-weight: bold;"">
+                    <table class="table-ranking" style="font-size: 1em; font-weight: bold;">
                         <thead class="table-ranking-head">
                             <tr style="height: 3em; ">
                                 <td class="table-rankinh-head-cell" style="border: none">Xếp hạng</td>
