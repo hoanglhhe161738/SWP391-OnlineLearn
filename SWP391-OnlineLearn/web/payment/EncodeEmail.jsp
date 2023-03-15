@@ -41,7 +41,7 @@
             <jsp:include page="../custom/nav.jsp"></jsp:include>
             <!--content-->
             <div class="content">
-                <div class="encode">
+                <div class="encode" style="background: white; border: 1px solid #ccc; width: 60%">
                     <div class="encode-content">
                         <div encode-content item-pay>
                             <img src="../Assets/images/bag.png" alt="">
@@ -56,7 +56,7 @@
                         </div>
                         <form action="./verifyCode">
                             <div encode-ontent encode-pay style="padding: 20px;"><input maxlength="7" id="verify-code-input"
-                                                                                        style="height: 2.5em; width: 40%; border: 2px solid black;" name="verifyCode" type="text"
+                                                                                        style="height: 2.5em; padding: 1em; width: 40%; border: 2px solid black;" name="verifyCode" type="text"
                                                                                         placeholder="XXX-XXX"></div>
                             <div encode-ontent note-pay
                                  style="font-size: 15px; text-align: start; margin-top: 5%; padding-left: 20px;">

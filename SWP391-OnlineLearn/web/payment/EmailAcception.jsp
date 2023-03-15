@@ -60,7 +60,7 @@
             <jsp:include page="../custom/nav.jsp"></jsp:include>
             <!--content-->
             <div class="content">
-                <div class="encode">
+                <div class="encode" style="background: white; border: 1px solid #ccc">
                     <div class="encode-content">
                         <form action="./sendEmail" id="myForm" method="POST">
                             <div encode-ontent-para style="text-align: start;">
