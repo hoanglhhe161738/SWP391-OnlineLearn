@@ -20,8 +20,9 @@
                     </div>
                 </div>
             </nav>
-            <div class="nav-information-item" style="padding-top: 0.1em;">
+            <div class="nav-information-item" style="padding-top: 0.1em; border-radius: 2em 0 0 2em">
                 <div class="nav-information-image">
+                    <img src="../Assets/icon/favicon.png">
                     <div
                         style="height: 0.8em; width: 0.8em; border: 3px solid #fff; margin-left: 2em;margin-top: 2em; border-radius: 50%; background-color: #00b050;">
                     </div>
@@ -30,7 +31,7 @@
                 <div class="nav-information-text">
                     <ul class="nav-information-text-content">
                         <li class="nav-information-text-content-item">${sessionScope.user.full_name}</li>
-                        <li class="nav-information-text-content-item">Admin</li>
+                        <li class="nav-information-text-content-item"><i style="color:#00b050;font-size: 0.6em; vertical-align: middle;" class="fa-solid fa-circle"></i> Admin</li>
                     </ul>
                 </div>
             </div>
