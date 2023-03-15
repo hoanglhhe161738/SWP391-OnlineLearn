@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.User;
@@ -18,6 +19,30 @@ import util.DateTimeHelper;
  * @author Khangnekk
  */
 public class UserDBContext extends DBContext<User> {
+
+    public List<User> getNomalUser() {
+        List<User> list = new ArrayList<>();
+        String sql = "SELECT u.full_name,u.dob,u.gender,u.parent_email,u.parent_name,u.parent_phone_number,u.username FROM [User] u\n"
+                + "JOIN Account a ON a.username = u.username\n"
+                + "WHERE a.classify_account = 'normal";
+        try {
+            PreparedStatement st = connection.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                User u = new User();
+                u.setFull_name(rs.getString("full_name"));
+                u.setDob(DateTimeHelper.toDateSql(rs.getDate("dob")));
+                u.setGender(rs.getBoolean("gender"));
+                u.setParent_email(rs.getString("parent_email"));
+                u.setParent_name(rs.getString("parent_name"));
+                u.setParent_phone_number(rs.getString("parent_phone_number"));
+                u.setUsername(rs.getString("username"));
+                list.add(u);
+            }
+        } catch (Exception e) {
+        }
+        return null;
+    }
 
     @Override
     public void insert(User model) {
