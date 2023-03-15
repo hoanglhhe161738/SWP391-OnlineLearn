@@ -39,6 +39,9 @@
                 margin-top: 1em;
                 text-align: center;
             }
+            .part a{
+                text-decoration: none;
+            }
             table {
                 width: 100%;
                 border-collapse: collapse;
@@ -67,22 +70,28 @@
             <div class="container part">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="element-part" style="background: red">
-                            <i class="custom-icon fa-solid fa-database"></i><br>
-                            <h3 class="element-title">Tổng số người dùng</h3>
-                        </div>
+                        <a href="">
+                            <div class="element-part" style="background: red">
+                                <i class="custom-icon fa-solid fa-database"></i><br>
+                                <h3 class="element-title">Tổng số người dùng</h3>
+                            </div>
+                        </a>
                     </div>
                     <div class="col-md-4">
-                        <div class="element-part" style="background: #0081e2">
-                            <i class="custom-icon fa-solid fa-circle"></i>
-                            <h3 class="element-title">Người dùng thường</h3>
-                        </div>
+                        <a href="">
+                            <div class="element-part" style="background: #0081e2">
+                                <i class="custom-icon fa-solid fa-circle"></i>
+                                <h3 class="element-title">Người dùng thường</h3>
+                            </div>
+                        </a>
                     </div>
                     <div class="col-md-4">
-                        <div class="element-part" style="background: #00ed7a">
-                            <i class="custom-icon fa-sharp fa-solid fa-gem"></i>
-                            <h3 class="element-title">Người dùng premium</h3>
-                        </div>
+                        <a href="">
+                            <div class="element-part" style="background: #00ed7a">
+                                <i class="custom-icon fa-sharp fa-solid fa-gem"></i>
+                                <h3 class="element-title">Người dùng premium</h3>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
