@@ -190,13 +190,14 @@ public class UserDBContext extends DBContext<User> {
         return null;
     }
 
-    public List<User> getNomalUserByKey(String keyRAW) {
+    public List<User> getTotalUserByKey(String keyRAW) {
         List<User> list = new ArrayList<>();
         String sql = "SELECT u.full_name,u.dob,u.gender,u.parent_email,u.parent_name,u.parent_phone_number,u.username FROM [User] u \n"
+                + "JOIN Account a ON a.username = u.username\n"
                 + "WHERE u.full_name LIKE ?";
         try {
             PreparedStatement stm = connection.prepareStatement(sql);
-            String key = "%"+keyRAW+"%";
+            String key = "%" + keyRAW + "%";
             stm.setString(1, key);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
