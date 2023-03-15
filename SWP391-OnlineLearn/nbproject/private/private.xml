@@ -2,24 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="KHANH">
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/content/ChoiceCourseToAddContent.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/matchgame/matchGameController.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/admin/addMatchGame.html</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/game/js/matchgame.js</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/admin/addContent.jsp</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/quiz/ChoiceClassToAddQuiz.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/content/ChoiceClassToAddContent.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/admin/choiceContentLession.jsp</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/content/actionContentController.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/model/Lesson.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/QuestionDBContext.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/ImgDBContext.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/course/course.jsp</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/WEB-INF/web.xml</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/ContentDBContext.java</file>
-            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/content/AddContentController.java</file>
-        </group>
         <group>
             <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/Fillin4Controller.java</file>
             <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/custom/nav.jsp</file>
@@ -68,6 +50,17 @@
             <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/login/accessDenied.jsp</file>
             <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/quiz/AddQuizController.java</file>
             <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/payment/encodeEmail.html</file>
+        </group>
+        <group name="KHANH">
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/module/addModuleController.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/content/actionContentController.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/content/ChoiceCourseToAddContent.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/admin/choiceModule.jsp</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/admin/addModule.jsp</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/WEB-INF/web.xml</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/module/ChoiceClassToAddModule.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/test/dal/AccountDBContextTest.java</file>
+            <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/admin/choiceContentLession.jsp</file>
         </group>
     </open-files>
 </project-private>
