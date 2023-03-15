@@ -4,6 +4,7 @@
  */
 package controller.admin.matchgame;
 
+import controller.auth.BaseAuthorizationController;
 import dal.MatchGameDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -11,6 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import model.Account;
 import model.AnsImg;
 import model.Img;
 import model.Lesson;
@@ -20,10 +22,10 @@ import model.MatchGame;
  *
  * @author Acer
  */
-public class actionMatchGameController extends HttpServlet {
+public class actionMatchGameController extends BaseAuthorizationController {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         String action = req.getParameter("action").trim();
         MatchGameDBContext mgDB = new MatchGameDBContext();
         switch(action){
@@ -112,7 +114,7 @@ public class actionMatchGameController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void processGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         MatchGameDBContext mgDB = new MatchGameDBContext();
         String action = req.getParameter("action");
         int index = Integer.parseInt(req.getParameter("index"));

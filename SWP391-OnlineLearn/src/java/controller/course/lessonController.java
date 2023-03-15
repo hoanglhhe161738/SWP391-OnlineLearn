@@ -32,22 +32,22 @@ public class lessonController extends BaseAuthenticationController {
         
     }
 
-    protected double getPercentLesson(ArrayList<Lesson> lessons) {
-        double percent;
-        double learnStatusTrue = 0,
-                learnStatusFalse = 0,
-                numberOfLessons = lessons.size();
-        
-        for (Lesson l : lessons) {
-            if (l.isStatus()) {
-                learnStatusTrue++;
-            } else {
-                learnStatusFalse++;
-            }
-        }
-        percent = (learnStatusTrue * 100) / numberOfLessons;
-        return Math.round(percent * 100.0) / 100.0;
-    }
+//    protected double getPercentLesson(ArrayList<Lesson> lessons) {
+//        double percent;
+//        double learnStatusTrue = 0,
+//                learnStatusFalse = 0,
+//                numberOfLessons = lessons.size();
+//        
+//        for (Lesson l : lessons) {
+//            if (l.isStatus()) {
+//                learnStatusTrue++;
+//            } else {
+//                learnStatusFalse++;
+//            }
+//        }
+//        percent = (learnStatusTrue * 100) / numberOfLessons;
+//        return Math.round(percent * 100.0) / 100.0;
+//    }
 
     // sample data (using for test)
     public ArrayList<Lesson> createSampleDataForLesson() {
@@ -68,7 +68,7 @@ public class lessonController extends BaseAuthenticationController {
 
     @Override
     protected void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        double percent = getPercentLesson(createSampleDataForLesson());
-        resp.getWriter().print("Percentage of lessons learned: "+percent+"%");
+//        double percent = getPercentLesson(createSampleDataForLesson());
+//        resp.getWriter().print("Percentage of lessons learned: "+percent+"%");
     }
 }

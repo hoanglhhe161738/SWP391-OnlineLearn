@@ -14,6 +14,7 @@ import model.Course;
 import model.Lesson;
 import model.Lesson_learn;
 import model.Module;
+import model.Class;
 
 /**
  *
@@ -101,6 +102,51 @@ public class LessonDBContext extends DBContext<Lesson> {
         return lessons;
     }
 
+    public ArrayList<Lesson> listLessonByCourseID(int course_id) {
+        ArrayList<Lesson> lessons = new ArrayList<>();
+        String sql = "SELECT l.lession_id,l.lession_name,l.module_id,l.[status],\n"
+                + "m.module_id,m.module_name,m.course_id,m.[status],\n"
+                + "c.class_id,c.course_id,c.course_name,\n"
+                + "cl.class_id,cl.class_name\n"
+                + "FROM Lession l\n"
+                + "JOIN Module m ON m.module_id = l.module_id\n"
+                + "JOIN Course c ON c.course_id = m.course_id\n"
+                + "JOIN Class cl ON cl.class_id = c.class_id\n"
+                + "WHERE c.course_id = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, course_id);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Lesson lesson = new Lesson();
+                lesson.setLesson_id(rs.getInt("lession_id"));
+                lesson.setLesson_name(rs.getString("lession_name"));
+                lesson.setStatus(rs.getBoolean("status"));
+
+                Module m = new Module();
+                m.setModule_id(rs.getInt("module_id"));
+                m.setModule_name(rs.getString("module_name"));
+
+                Course c = new Course();
+
+                Class cl = new Class();
+                cl.setClass_id(rs.getInt("class_id"));
+                cl.setClass_name(rs.getString("class_name"));
+
+                c.setClasses(cl);
+                c.setCourse_id(rs.getInt("course_id"));
+                c.setCourse_name(rs.getString("course_name"));
+
+                m.setCourse(c);
+                lesson.setModule(m);
+                lessons.add(lesson);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(LessonDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lessons;
+    }
+
     public Lesson_learn getLessonLearn(int user_id, int lesson_id) {
         Lesson_learn lessonLearn = new Lesson_learn();
         String sql = "SELECT ll.[user_id], ll.lession_id,ll.llearn  \n"
@@ -119,7 +165,7 @@ public class LessonDBContext extends DBContext<Lesson> {
         } catch (SQLException ex) {
             Logger.getLogger(LessonDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return lessonLearn;
+        return null;
     }
 
     public Lesson_learn setLessonLearn(int user_id, int lesson_id, boolean llearn) {
@@ -142,6 +188,21 @@ public class LessonDBContext extends DBContext<Lesson> {
             Logger.getLogger(LessonDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
         return lessonLearn;
+    }
+
+    public void updateLessonLearn(int user_id, int lesson_id, boolean llearn) {
+        String sql = "UPDATE [dbo].[Lession_Learn]\n"
+                + "   SET [llearn] = ?\n"
+                + " WHERE [lession_id] = ? AND [user_id] = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setBoolean(1, llearn);
+            stm.setInt(2, lesson_id);
+            stm.setInt(3, user_id);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(LessonDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

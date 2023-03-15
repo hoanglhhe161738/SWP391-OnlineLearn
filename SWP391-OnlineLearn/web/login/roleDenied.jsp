@@ -56,8 +56,8 @@
     <body>
         <div class="content">
             
-            <h2><i class="fa-sharp fa-solid fa-key"></i> Không thể truy cập!</h2>
-            <h3> Bạn cần tài khoản <b style="color: orange">Admin</b> để truy cập trang này, nếu không phải là admin, vui lòng bấm vào nút trở lai trang chủ  </h3>
+            <h2><i class="fa-solid fa-user-lock"></i> Không thể truy cập!</h2>
+            <h3> Tài khoản của bạn không đủ quyền để truy cập trang này. Vui lòng trở lại trang chủ</h3>
             <div class="noti">
                 
                 <button onclick="home();">Trở lại trang chủ</a</button

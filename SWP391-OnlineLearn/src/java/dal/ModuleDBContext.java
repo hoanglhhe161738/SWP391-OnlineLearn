@@ -106,4 +106,42 @@ public class ModuleDBContext extends DBContext<Module> {
         return modules;
     }
 
+    public int numberOfLessonLearned(int module_id, int user_id) {
+        int lessonLearned = 0;
+        String sql = "SELECT COUNT(*)  AS numberOfLessonLearned FROM Lession_Learn ll \n"
+                + "JOIN Lession l ON ll.lession_id = l.lession_id\n"
+                + "WHERE l.module_id = ? AND ll.llearn = 'true' AND ll.[user_id] = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, module_id);
+            stm.setInt(2, user_id);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                lessonLearned = rs.getInt("numberOfLessonLearned");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ModuleDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lessonLearned;
+    }
+    
+    public int numberOfLesson(int module_id, int user_id) {
+        int sizeOfModule = 0;
+        String sql = "SELECT COUNT(*)  AS numberOfLessonLearned FROM Lession_Learn ll \n"
+                + "JOIN Lession l ON ll.lession_id = l.lession_id\n"
+                + "WHERE l.module_id = ? AND ll.[user_id] = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, module_id);
+            stm.setInt(2, user_id);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                sizeOfModule = rs.getInt("numberOfLessonLearned");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ModuleDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return sizeOfModule;
+    }
+
 }

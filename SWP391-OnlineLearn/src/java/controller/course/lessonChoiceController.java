@@ -22,7 +22,16 @@ public class lessonChoiceController extends BaseAuthenticationController {
 
     @Override
     protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        LessonDBContext lDB = new LessonDBContext();
+        int lesson_id = Integer.parseInt(req.getParameter("lesson_id"));
+        User user = (User) req.getSession().getAttribute("user");
+        lDB.updateLessonLearn(user.getUser_id(), lesson_id, true);
+        Lesson lesson = lDB.get(lesson_id);
+        Lesson_learn lessonLearn = lDB.getLessonLearn(user.getUser_id(), lesson_id);
+        req.setAttribute("lessonLearn", lessonLearn);
+        req.setAttribute("lesson", lesson);
+        req.setAttribute("lessonDone", lesson_id);
+        req.getRequestDispatcher("./lessonChoice.jsp").forward(req, resp);
     }
 
     @Override
@@ -35,17 +44,10 @@ public class lessonChoiceController extends BaseAuthenticationController {
         if (lessonLearn == null) {
             lessonLearn = lDB.setLessonLearn(user.getUser_id(), lesson_id, false);
             lesson.setStatus(false);
-        } else {
-            if (lessonLearn.isLlearn()) {
-                lesson.setStatus(true);
-                lDB.update(lesson);
-            } else {
-                lesson.setStatus(false);
-                lDB.update(lesson);
-            }
         }
         req.setAttribute("lessonLearn", lessonLearn);
         req.setAttribute("lesson", lesson);
+        req.setAttribute("lessonDone", lesson_id);
         req.getRequestDispatcher("./lessonChoice.jsp").forward(req, resp);
     }
 

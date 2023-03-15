@@ -22,6 +22,7 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import model.User;
 
 /**
  *
@@ -43,12 +44,16 @@ public class enterMailController extends BaseAuthenticationController {
     /**
      *
      * @param verifyCode
+     * @param req
      * @return
      */
-    public static String messageProcess(String verifyCode) {
-        String message = "Hello,\n"
-                + "Thank you for upgrading your account to a premium account\n"
-                + "Your verification code is: " + verifyCode;
+    public static String messageProcess(String verifyCode, HttpServletRequest req) {
+        User user = (User) req.getSession().getAttribute("user");
+        String message = "Xin chào, " + user.getFull_name()
+                + " Cảm ơn bạn đã nâng cấp tài khoản premium. \n"
+                + "Chúng tôi sẽ cung cấp cho bạn 1 mã xác nhận để nâng cấp, "
+                + "vui lòng không chia sẻ mã xác nhận cho bất kỳ ai. \n"
+                + "Mã xác nhận của bạn là: " + verifyCode;
 
         return message;
     }
@@ -60,7 +65,7 @@ public class enterMailController extends BaseAuthenticationController {
         if (recipient.matches(regexEmail)) {
             // Get recipient email address and message from form data
             String verifyCode = getRandomNumberString();
-            String message = messageProcess(verifyCode);
+            String message = messageProcess(verifyCode,req);
 
             HttpSession verifyPremium = req.getSession();
             verifyPremium.setAttribute("verifyCode", verifyCode);
@@ -91,8 +96,8 @@ public class enterMailController extends BaseAuthenticationController {
                 Message msg = new MimeMessage(session);
                 msg.setFrom(new InternetAddress(user));
                 msg.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
-                msg.setSubject("Upgrade to a premium account");
-                msg.setText(message);
+                msg.setContent(message, "text/html; charset=utf-8");
+                msg.setSubject("Upgrade account");
 
                 // Send message
                 Transport.send(msg);

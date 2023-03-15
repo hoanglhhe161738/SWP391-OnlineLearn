@@ -37,7 +37,7 @@ public class AccountDBContext extends DBContext<Account> {
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 
     public void insertRoll(int role_id, String username) {
@@ -53,6 +53,19 @@ public class AccountDBContext extends DBContext<Account> {
             stm.setString(2, username);
             stm.executeUpdate();
         } catch (Exception e) {
+        }
+    }
+
+    public void updateRollAccount(String username) {
+        String sql = "UPDATE [dbo].[Role_Account]\n"
+                + "   SET [role_id] = 1\n"
+                + " WHERE username = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, username);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -185,23 +198,54 @@ public class AccountDBContext extends DBContext<Account> {
     public Account get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
+    
     public Account get(String username) {
-        Account account = new Account();
-        String sql = "SELECT * FROM [Account] WHERE username = ?";
         try {
+            String sql = "SELECT a.username,a.classify_account\n"
+                    + ",r.role_id, r.role_name,\n"
+                    + "f.fe_id,f.fe_name,f.[url]\n"
+                    + "FROM Account a\n"
+                    + "LEFT JOIN Role_Account ra ON a.username = ra.username\n"
+                    + "LEFT JOIN [Role] r ON r.role_id= ra.role_id\n"
+                    + "LEFT JOIN Role_Feature rf ON rf.role_id = r.role_id\n"
+                    + "LEFT JOIN Feature f ON f.fe_id = rf.fe_id\n"
+                    + "WHERE a.username = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, username);
             ResultSet rs = stm.executeQuery();
-            if (rs.next()) {
-                account.setClassify_account(rs.getString("classify_account"));
-                account.setUsername(rs.getString("username"));
-                return account;
+            Account account = null;
+            Role currentRole = new Role();
+            currentRole.setRole_id(-1);
+            while (rs.next()) {
+                if (account == null) {
+                    account = new Account();
+                    account.setUsername(rs.getString("username"));
+                    account.setClassify_account(rs.getString("classify_account"));
+                }
+                int rid = rs.getInt("role_id");
+                if (rid != 0) {
+                    if (rid != currentRole.getRole_id()) {
+                        currentRole = new Role();
+                        currentRole.setRole_id(rs.getInt("role_id"));
+                        currentRole.setRole_name(rs.getString("role_name"));
+                        account.getRoles().add(currentRole);
+                    }
+                }
+
+                int fid = rs.getInt("fe_id");
+                if (fid != 0) {
+                    Feature f = new Feature();
+                    f.setFe_id(rs.getInt("fe_id"));
+                    f.setFe_name(rs.getString("fe_name"));
+                    f.setFe_url(rs.getString("url"));
+                    currentRole.getFeatures().add(f);
+                }
             }
+            return account;
         } catch (SQLException ex) {
             Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return account;
+        return null;
     }
 
     @Override

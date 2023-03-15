@@ -62,7 +62,7 @@
                     </a>
                 </div>
                 <div class="choiceAction-colum col">
-                    <a href="">
+                    <a href="./choiceClassToAddVideo">
                         <div class="choiceAction-colum-item p-3" style="background-color: #00ed7a;">
                             <div><i class="custom-icon fa-solid fa-circle-play"></i></div>
                             <p>Quản lý video</p>

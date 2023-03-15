@@ -116,6 +116,38 @@
         <servlet-name>changePasswordController</servlet-name>
         <servlet-class>controller.auth.changePasswordController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddVideoController</servlet-name>
+        <servlet-class>controller.admin.video.AddVideoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>actionVideoController</servlet-name>
+        <servlet-class>controller.admin.video.actionVideoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChoiceClassToAddVideo</servlet-name>
+        <servlet-class>controller.admin.video.ChoiceClassToAddVideo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChoiceCourseToAddVideo</servlet-name>
+        <servlet-class>controller.admin.video.ChoiceCourseToAddVideo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ForgetPassword</servlet-name>
+        <servlet-class>controller.forgetPassword.ForgetPassword</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SendMailFP</servlet-name>
+        <servlet-class>controller.forgetPassword.SendMail</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VerifyCodeFP</servlet-name>
+        <servlet-class>controller.forgetPassword.VerifyCode</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChangePasswordFP</servlet-name>
+        <servlet-class>controller.forgetPassword.ChangePassword</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
         <url-pattern>/course/classes</url-pattern>
@@ -273,10 +305,6 @@
         <url-pattern>/admin/actionMatchGame</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>choiceCourseToAddContent</servlet-name>
-        <url-pattern>/admin/ChoiceCourseToAddContent</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>choiceClassToAddContent</servlet-name>
         <url-pattern>/admin/ChoiceClassToAddContent</url-pattern>
     </servlet-mapping>
@@ -291,6 +319,42 @@
     <servlet-mapping>
         <servlet-name>changePasswordController</servlet-name>
         <url-pattern>/userprofile/changePassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddVideoController</servlet-name>
+        <url-pattern>/admin/addVideo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actionVideoController</servlet-name>
+        <url-pattern>/admin/actionVideo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>choiceCourseToAddContent</servlet-name>
+        <url-pattern>/admin/ChoiceCourseToAddContent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChoiceClassToAddVideo</servlet-name>
+        <url-pattern>/admin/choiceClassToAddVideo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChoiceCourseToAddVideo</servlet-name>
+        <url-pattern>/admin/choiceCourseToAddVideo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ForgetPassword</servlet-name>
+        <url-pattern>/forgetPassword/forget</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SendMailFP</servlet-name>
+        <url-pattern>/forgetPassword/sendMail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerifyCodeFP</servlet-name>
+        <url-pattern>/forgetPassword/verifyCode</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChangePasswordFP</servlet-name>
+        <url-pattern>/forgetPassword/changePassword</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

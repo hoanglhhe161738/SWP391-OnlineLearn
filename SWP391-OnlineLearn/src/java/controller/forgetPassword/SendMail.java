@@ -68,7 +68,7 @@ public class SendMail extends HttpServlet {
                 Message msg = new MimeMessage(session);
                 msg.setFrom(new InternetAddress(user));
                 msg.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
-                msg.setSubject("Xác minh tài khoản");
+                msg.setSubject("Account Verification");
                 msg.setText(message);
 
                 // Send message
@@ -124,7 +124,7 @@ public class SendMail extends HttpServlet {
                 msg.setFrom(new InternetAddress(user));
                 msg.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
                 msg.setSubject("Xác minh tài khoản");
-                msg.setText(message);
+                msg.setContent(message, "text/html; charset=utf-8");
 
                 // Send message
                 javax.mail.Transport.send(msg);
@@ -155,7 +155,9 @@ public class SendMail extends HttpServlet {
      */
     public static String messageProcess(String verifyCode) {
         String message = "Xin chào,\n"
-                + "Đây là mã xác nhận để đăng ký tài khoản, vui lòng không chia sẻ cho bất kì ai\n"
+                + "Đây là mã xác nhận quên mật khẩu, không chia"
+                + " sẻ mã code cho bất kỳ ai, Nếu bạn không thực "
+                + "hiện hành động này vui lòng bỏ qua email. "
                 + "Mã xác nhận của bạn là: " + verifyCode;
 
         return message;
