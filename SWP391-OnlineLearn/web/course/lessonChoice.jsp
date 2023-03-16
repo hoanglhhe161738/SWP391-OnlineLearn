@@ -29,7 +29,33 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
               integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
               crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+        <style>
+            .p-3{
+                height: 20em;
+                width: 12em;
+                border-radius: 15px;
+                border: 5px solid white;
+                transition: all ease 0.3s;
+            }
+            .p-3:hover{
+                transform: scale(1.1);
+            }
+            .custom-icon{
+                font-size: 2.8em;
+            }
+            .box-content{
+                height: 5em;
+                width: 5em;
+                border: 0.5rem solid white;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .box-border{
+                padding: 8em 2.5em;
+            }
+        </style>
     </head>
 
     <body>
@@ -41,14 +67,16 @@
                 <div class="content">
                     <!--Ae code o day nha-->
                     <div class="container text-center choicelession">
-                        <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 choicelession-content" style="margin-top: 10%; border-bottom: 1em solid white; padding-bottom: 1em;">
+                        <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 choicelession-content" style="display: flex;justify-content: center;align-items: center; margin-top: 5em">
                             <div class="col">
                                 <a href="./quiz?lession_id=${requestScope.lesson.lesson_id}" style="text-decoration: none; color: white; ">
-                                <div class="p-3" style="background-color: #7030a0; height: 20em; width: 12em; border-radius: 15px;">
+                                <div class="p-3" style="background-color: #7030a0;">
                                     <p style="
                                        font-weight: bolder; font-size: 2rem;"> Bài tập</p>
                                     <div class="box-border">
-                                        <div class="box-content"></div>
+                                        <div class="box-content">
+                                            <i class="custom-icon fa-solid fa-circle-question"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -56,60 +84,55 @@
                         </div>
                         <div class="col">
                             <a href="../game/matchgame?lession_id=${requestScope.lesson.lesson_id}" style="text-decoration: none; color: white; ">
-                                <div class="p-3" style="background-color: #ff7f27; height: 20em; width: 12em; border-radius: 15px;">
+                                <div class="p-3" style="background-color: #ff7f27;">
                                     <p style="
                                        font-weight: bolder; font-size: 2rem;"> Game</p>
                                     <div class="box-border">
-                                        <div class="box-content"></div>
+                                        <div class="box-content">
+                                            <i class="custom-icon fa-solid fa-gamepad"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div class="col">
                             <a href="./videoLesson?lesson_id=${requestScope.lesson.lesson_id}" style="text-decoration: none; color: white; ">
-                                <div class="p-3" style="background-color: #00b050; height: 20em; width: 12em; border-radius: 15px;">
+                                <div class="p-3" style="background-color: #00b050;">
                                     <p style="
                                        font-weight: bolder; font-size: 2rem;"> Video</p>
                                     <div class="box-border">
-                                        <div class="box-content"></div>
+                                        <div class="box-content">
+                                            <i class="custom-icon fa-solid fa-circle-play"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div class="col">
                             <a href="./contentLesson?lesson_id=${requestScope.lesson.lesson_id}" style="text-decoration: none; color: white; ">
-                                <div class="p-3" style="background-color: #0081e2; height: 20em; width: 12em;border-radius: 15px;">
+                                <div class="p-3" style="background-color: #0081e2;">
                                     <p style="
                                        font-weight: bolder; font-size: 2rem;"> Lý thuyết</p>
                                     <div class="box-border">
-                                        <div class="box-content"></div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a href="" style="text-decoration: none; color: white; ">
-                                <div class="p-3" style="background-color: #ec31ef; height: 20em; width: 12em;border-radius: 15px;">
-                                    <p style="
-                                       font-weight: bolder; font-size: 2rem;"> Xếp Hạng</p>
-                                    <div class="box-border">
-                                        <div class="box-content"></div>
+                                        <div class="box-content">
+                                            <i  class="custom-icon fa-solid fa-bars"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
                         </div>
                     </div>
-                    <div style="margin-top: 1em">
-                        <%--<c:if test="${requestScope.lessonLearn.llearn eq false}">--%>
-                            <!--<form action="lessonChoice" method="POST">-->
-                                <!--<input hidden name="lesson_id" value="${requestScope.lessonDone}">-->
-                                <!--<button type="submit" style="font-weight: bold" class="btn btn-light">Đánh dấu là học xong</button>-->
-                            <!--</form>-->
-                        <%--</c:if>--%>
-                        <c:if test="${requestScope.lessonLearn.llearn eq true}">
-                            <button type="button" style="font-weight: bold" class="btn btn-light">Phần này đã học xong</button>
-                        </c:if>
-                    </div>
+                    <!--<div style="margin-top: 1em">-->
+                    <%--<c:if test="${requestScope.lessonLearn.llearn eq false}">--%>
+                    <!--<form action="lessonChoice" method="POST">-->
+                        <!--<input hidden name="lesson_id" value="${requestScope.lessonDone}">-->
+                    <!--<button type="submit" style="font-weight: bold" class="btn btn-light">Đánh dấu là học xong</button>-->
+                    <!--</form>-->
+                    <%--</c:if>--%>
+                    <%--<c:if test="${requestScope.lessonLearn.llearn eq true}">--%>
+                    <!--<button type="button" style="font-weight: bold" class="btn btn-light">Phần này đã học xong</button>-->
+                    <%--</c:if>--%>
+                    <!--</div>-->
                 </div>
             </div>
         </div>
