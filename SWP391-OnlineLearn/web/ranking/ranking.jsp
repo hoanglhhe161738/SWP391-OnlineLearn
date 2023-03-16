@@ -90,10 +90,12 @@
                     <h1>BẢNG XẾP HẠNG</h1>
                 </div>
                 <div class="ranking-item-two">
-                    <form action="" method="">
-                        <input size="50rem" type="text" style="border: #d6d2d2 2px solid; padding: 0.2em 0.5em"  placeholder="Nguyễn Văn A">
-                        <input type="submit" value="Search" style=" border: white; border-radius: 3px; padding: 0.2em 1.5em">
-                    </form>
+                    <form action="" method="POST">
+                            <div class="input-group rounded" style="width: 30em">
+                                <input id="inputTotal" name="keyTotal" type="search" class="form-control rounded" placeholder="Tìm kiếm theo tên" aria-label="Search" aria-describedby="search-addon" />
+                                <input style="border: none; border-radius: 0 8px 8px 0; margin-left: 0.25em" type="submit" value="Tìm kiếm">
+                            </div>
+                        </form>
                 </div>
                 <div class="ranking-item-three" style="overflow: auto; height: 70vh; border-radius: 10px;">
                     <table class="table-ranking" style="font-size: 1em; font-weight: bold;">

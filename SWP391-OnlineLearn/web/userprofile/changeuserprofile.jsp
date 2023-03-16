@@ -51,10 +51,16 @@
                 background-image: url(../Assets/images/bg.png);
             }
             .passInput{
-                 text-decoration: none; color: #00de7a; font-size: 18px; font-weight: bold;
+                text-decoration: none;
+                color: #00de7a;
+                font-size: 18px;
+                font-weight: bold;
             }
             .failInput{
-                text-decoration:line-through; color: red; font-size: 18px; font-weight: bold;
+                text-decoration:line-through;
+                color: red;
+                font-size: 18px;
+                font-weight: bold;
             }
         </style>
     </head>
@@ -110,6 +116,7 @@
                             <div class="profile-item-unit p-3" style="height: auto;">
                                 <form action="./changeUserProfile" method="POST">
                                     <div class="change-panel">
+                                        <label class="" style="text-align: left">Họ và tên</label>
                                         <input class="text-box-input" name="fullName" type="text" value="${sessionScope.user.full_name}" placeholder="Họ và tên"><br>
                                         <span class="text-box-input" style="margin-right: 0.5em; border: 1px solid #f2f2f2">
                                             <label class="label-custom">Giới tính: </label>
@@ -120,8 +127,8 @@
                                             <label style="margin-right: 1em">Nam</label>
                                             <input  type="radio" name="gender" value="false"
                                                     <c:if test="${!sessionScope.user.gender}">
-                                                       checked
-                                                   </c:if>>
+                                                        checked
+                                                    </c:if>>
                                             <label>Nữ</label>
                                         </span>
                                         <span class="text-box-input" style=" border: 1px solid #f2f2f2">
