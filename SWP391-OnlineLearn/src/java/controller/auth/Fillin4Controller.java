@@ -90,9 +90,6 @@ public class Fillin4Controller extends HttpServlet {
      *
      * @return a String containing servlet description
      */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+    
 
 }
