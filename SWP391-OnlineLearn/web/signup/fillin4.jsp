@@ -99,29 +99,39 @@
                     })
                 </script>
 
-                <label for="fullName" class="signup-label">Họ và tên</label>
-                <input pattern="(?=.*\S).{1,}" requiredmsg="Họ và tên không được để trống."required type="text" name="fullName" class="signup-input" placeholder="VD: Hứa Như Không">
+                <label for="fullName" class="signup-label">Họ và tên</label> <a style="color: red">${requestScope.alert1}</a>
+                <input requiredmsg="Họ và tên không được để trống." type="text" name="fullName" class="signup-input" placeholder="VD: Hứa Như Không">
+
 
                 <!-- dob -->
-                <label for="dob" class="signup-label">Ngày sinh</label>
-                <input type="date" id="myDateInput" name="dob" class="signup-input" pattern="\d{4}-\d{2}-\d{2}" requiredmsg="Vui lòng nhập ngày dưới dạng yyyy-mm-dd" required>
+                <label for="dob" class="signup-label">Ngày sinh</label> <a style="color: red">${requestScope.alert2}</a>
+                <input type="date" value="formattedDate" id="myDateInput" name="dob" class="signup-input" requiredmsg="Vui lòng nhập ngày dưới dạng yyyy-mm-dd" >
+                <script>
+                    var dateInput = document.getElementById("myDateInput");
 
+                    var today = new Date();
+
+                    var formattedDate = today.toISOString().substring(0, 10);
+
+                    dateInput.value = formattedDate;
+
+                </script>
                 <!-- gender -->
                 <label for="gender" class="signup-label">Giới tính: Nam <input type="radio" value="true" name="gender" checked> | Nữ <input
                         type="radio" value="false" name="gender"> <br></label> <br>
                 <br>
 
                 <!-- parentName -->
-                <label for="prentName" class="signup-label">Họ và tên phụ huynh</label>
-                <input  type="text" name="parentName" class="signup-input" placeholder="VD: Hứa Xong Quên" pattern="(?=.*\S).{1,}" requiredmsg="Họ và tên không được để trống." required>
+                <label for="prentName" class="signup-label">Họ và tên phụ huynh</label> <a style="color: red">${requestScope.alert4}</a>
+                <input  type="text" name="parentName" class="signup-input" placeholder="VD: Hứa Xong Quên"  requiredmsg="Họ và tên không được để trống." >
 
                 <!-- parentEmail -->
-                <label for="parentEmail" class="signup-label">Email của phụ huynh</label>
-                <input type="email" name="parentEmail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" requiredmsg="Email chưa đúng định dạng" required class="signup-input" placeholder="VD: ThangSunXiTrai@gmail.com">
+                <label for="parentEmail" class="signup-label">Email của phụ huynh</label> <a style="color: red">${requestScope.alert3}</a>
+                <input type="email" name="parentEmail"  requiredmsg="Email chưa đúng định dạng"  class="signup-input" placeholder="VD: ThangSunXiTrai@gmail.com">
 
                 <!-- parentPhoneNumber  -->
-                <label for="parentPhoneNumber" class="signup-label">Sđt của phụ huynh</label>
-                <input type="text" name="parentPhoneNumber" requiredmsg="Số điện thoại chưa đúng định dạng" pattern="^\+?(?:84|0)(?:\d{9})$" required class="signup-input" placeholder="VD: 0941142465">
+                <label for="parentPhoneNumber" class="signup-label">Sđt của phụ huynh</label> <a style="color: red">${requestScope.alert5}</a>
+                <input type="text" name="parentPhoneNumber" requiredmsg="Số điện thoại chưa đúng định dạng" class="signup-input" placeholder="VD: 0941142465">
 
                 <input class="signup-submit" style="margin-top:2em" type="submit" value="Hoàn tất">
             </form>
@@ -144,44 +154,44 @@
 
 
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-            <script>
-                    var myDateInput = document.getElementById('myDateInput');
-
-                    myDateInput.addEventListener('change', function (event) {
-                        var selectedDate = new Date(event.target.value);
-                        var today = new Date();
-
-                        // Kiểm tra xem ngày được chọn có lớn hơn hoặc bằng ngày hiện tại không
-                        if (selectedDate >= today) {
-                            // Hiển thị thông báo bằng modal
-                            var myModal = document.getElementById('myModal');
-                            var modalMessage = document.getElementById('modal-message');
-                            modalMessage.innerHTML = 'Ngày bạn chọn phải nhỏ hơn ngày hiện tại.';
-                            var myModalInstance = new bootstrap.Modal(myModal, {
-                                backdrop: true,
-                                keyboard: true,
-                                focus: true
-                            });
-                            myModalInstance.show();
-
-                            // Thiết lập lại giá trị của thẻ input date thành ngày hiện tại
-                            myDateInput.value = today.toISOString().slice(0, 10);
-                        }
-                    });
-                    var myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
-                    myModal.hide();
-
-                    // Lấy đối tượng giao diện loading và form
-                    const loading = document.getElementById("loading");
-                    const form = document.getElementById("myForm");
-
-                    // Gán sự kiện cho form
-                    form.addEventListener("submit", function () {
-                        // Hiển thị giao diện loading
-                        loading.style.display = "block";
-                    });
-
-            </script>
+            <!--            <script>
+                                var myDateInput = document.getElementById('myDateInput');
+            
+                                myDateInput.addEventListener('change', function (event) {
+                                    var selectedDate = new Date(event.target.value);
+                                    var today = new Date();
+            
+                                    // Kiểm tra xem ngày được chọn có lớn hơn hoặc bằng ngày hiện tại không
+                                    if (selectedDate >= today) {
+                                        // Hiển thị thông báo bằng modal
+                                        var myModal = document.getElementById('myModal');
+                                        var modalMessage = document.getElementById('modal-message');
+                                        modalMessage.innerHTML = 'Ngày bạn chọn phải nhỏ hơn ngày hiện tại.';
+                                        var myModalInstance = new bootstrap.Modal(myModal, {
+                                            backdrop: true,
+                                            keyboard: true,
+                                            focus: true
+                                        });
+                                        myModalInstance.show();
+            
+                                        // Thiết lập lại giá trị của thẻ input date thành ngày hiện tại
+                                        myDateInput.value = today.toISOString().slice(0, 10);
+                                    }
+                                });
+                                var myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
+                                myModal.hide();
+            
+                                // Lấy đối tượng giao diện loading và form
+                                const loading = document.getElementById("loading");
+                                const form = document.getElementById("myForm");
+            
+                                // Gán sự kiện cho form
+                                form.addEventListener("submit", function () {
+                                    // Hiển thị giao diện loading
+                                    loading.style.display = "block";
+                                });
+            
+                        </script>-->
             <p class="signup-already" style="margin: 0">
                 <a  href="./signupUser" class="cancel signup-submit">Hủy bỏ</a>
             </p>

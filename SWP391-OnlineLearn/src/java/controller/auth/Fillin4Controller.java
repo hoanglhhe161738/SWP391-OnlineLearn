@@ -15,6 +15,9 @@ import jakarta.servlet.http.HttpSession;
 import model.*;
 import java.util.*;
 import java.sql.Date;
+import java.time.LocalDate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -43,17 +46,47 @@ public class Fillin4Controller extends HttpServlet {
         String parentPhoneNumber = request.getParameter("parentPhoneNumber");
         Account newAccount = (Account) request.getSession().getAttribute("newAccount");
         String username = newAccount.getUsername();
-        User user = new User();
-        user.setDob(dob);
-        user.setFull_name(fullName);
-        user.setGender(gender);
-        user.setParent_email(parentEmail);
-        user.setParent_name(parentName);
-        user.setParent_phone_number(parentPhoneNumber);
-        user.setUsername(username);
-        request.getSession().setAttribute("newUser", user);
-        System.out.println(user.getParent_email());
-        request.getRequestDispatcher("./sendMail").forward(request, response);
+
+//        System.out.println(user.getParent_email());
+        boolean fullNameCheck = checkInputString(fullName);
+        boolean parentNameCheck = checkInputString(parentName);
+        boolean dobCheck = isDateValid(dob);
+        boolean parentEmailCheck = isValidEmail(parentEmail);
+        boolean parentPhoneNumCheck = isVietnamesePhoneNumber(parentPhoneNumber);
+        if (!dobCheck
+                || !fullNameCheck
+                || !parentEmailCheck
+                || !parentNameCheck
+                || !parentPhoneNumCheck) {
+            if (!fullNameCheck) {
+                request.setAttribute("alert1", "Họ và tên không hợp lệ");
+            }
+            if (!dobCheck) {
+                request.setAttribute("alert2", "Ngay sinh không hợp lệ");
+            }
+            if (!parentEmailCheck) {
+                request.setAttribute("alert3", "Email Phu Huynh không hợp lệ");
+            }
+            if (!parentNameCheck) {
+                request.setAttribute("alert4", "Ten phu huynh không hợp lệ");
+            }
+            if (!parentPhoneNumCheck) {
+                request.setAttribute("alert5", "SDT không hợp lệ");
+            }
+            request.getRequestDispatcher("./fillin4.jsp").forward(request, response);
+        } else {
+            User user = new User();
+            user.setDob(dob);
+            user.setFull_name(fullName);
+            user.setGender(gender);
+            user.setParent_email(parentEmail);
+            user.setParent_name(parentName);
+            user.setParent_phone_number(parentPhoneNumber);
+            user.setUsername(username);
+            request.getSession().setAttribute("newUser", user);
+            request.getRequestDispatcher("./sendMail").forward(request, response);
+        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -95,4 +128,34 @@ public class Fillin4Controller extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    public boolean checkInputString(String inputString) {
+        return !inputString.isEmpty();
+    }
+
+    public boolean isDateValid(Date date) {
+        LocalDate currentDate = LocalDate.now();
+        LocalDate inputDate = date.toLocalDate();
+        return inputDate.isBefore(currentDate) || inputDate.isEqual(currentDate);
+    }
+
+    public boolean isValidEmail(String email) {
+        // Regular expression để kiểm tra định dạng email
+        String regexEmail = "\\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\\b";
+
+        // Tạo một pattern để so khớp chuỗi đầu vào với regular expression
+        Pattern pattern = Pattern.compile(regexEmail);
+
+        // Sử dụng Matcher để kiểm tra chuỗi đầu vào có khớp với pattern hay không
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    public boolean isVietnamesePhoneNumber(String phoneNumber) {
+        String phoneNumberRegex = "^(\\+?84|0)\\d{9,10}$";
+        Pattern pattern = Pattern.compile(phoneNumberRegex);
+
+        // Sử dụng Matcher để kiểm tra chuỗi đầu vào có khớp với pattern hay không
+        Matcher matcher = pattern.matcher(phoneNumber);
+        return matcher.matches();
+    }
 }
