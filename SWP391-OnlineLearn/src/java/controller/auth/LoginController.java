@@ -44,11 +44,13 @@ public class LoginController extends HttpServlet {
         } else {
             if (username.equals("admin")) {
                 User user = uDB.getUserByUsername(username);
+                request.getSession().setAttribute("admin", "admin");
                 request.getSession().setAttribute("user", user);
                 response.sendRedirect("../admin/action");
             } else {
                 User user = uDB.getUserByUsername(username);
                 request.getSession().setAttribute("user", user);
+                request.getSession().setAttribute("admin", "admin");
                 request.getRequestDispatcher("./welcome.html").forward(request, response);
             }
         }

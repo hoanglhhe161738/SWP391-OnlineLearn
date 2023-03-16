@@ -14,6 +14,9 @@
                                 <a class="nav-link active" aria-current="page" href="../admin/action">Trang chủ</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="../home/homePage#xmas-popup">Xem với tư cách user</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="../logout">Đăng xuất</a>
                             </li>
                         </ul>

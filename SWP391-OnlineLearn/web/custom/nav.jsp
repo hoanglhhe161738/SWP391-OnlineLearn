@@ -4,6 +4,7 @@
     Author     : Khangnekk
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div class="nav" style="z-index: 100">
     <div class="nav-bar">
@@ -37,7 +38,9 @@
                         </li>
                         <li><a class="dropdown-item" href="../userprofile/changePassword">Đổi mật khẩu</a></li>
                         <li><a class="dropdown-item" href="../logout">Đăng xuất</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <c:if test="${sessionScope.user.username eq sessionScope.admin}">
+                        <li><a class="dropdown-item" href="../admin/action">Xem với tư cách admin</a></li>
+                        </c:if>
                     </ul>
                 </div>
             </li>

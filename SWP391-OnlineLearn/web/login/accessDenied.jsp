@@ -56,7 +56,7 @@
     <body>
         <div class="content">
             
-            <h2><i class="fa-solid fa-triangle-exclamation"></i> Không thể truy cập!</h2>
+            <h2><i class="fa-solid fa-triangle-exclamation"></i> Bạn chưa đăng nhập!</h2>
             <h3> Bạn cần phải đăng nhập để sử dụng trang web! </h3>
             <div class="noti">
                 
