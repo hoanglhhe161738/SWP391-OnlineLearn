@@ -8,10 +8,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Điểm bài học</title>
+        <style>
+            .center {
+                border-radius: 10px;
+                padding: 5em 20em;
+                text-align: center;
+                background-color: #f2f2f2;
+                font-family: sans-serif;
+            }
+            h1 {
+                font-size: 36px;
+                margin-bottom: 0.5em;
+            }
+
+            h2 {
+                font-size: 24px;
+                margin-top: 0;
+            }
+        </style>
     </head>
     <body>
-        <h1>${requestScope.point}</h1>
+        <div style="display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             height: 100vh;">
+            <div class="center">
+                <img src="../Assets/images/email.png">
+                <h1>Tên bài học</h1>
+                <h2>Điểm: 20</h2>
+            </div>
+        </div>
     </body>
 </html>

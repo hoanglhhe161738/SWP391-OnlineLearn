@@ -21,7 +21,7 @@
                 <a href="../payment/completePayment"><img src="../Assets/icon/icon (51).png"></a>
             </li>
             <li class="item">
-                <a href="../"><img src="../Assets/icon/icon (45).png"></a>
+                <a href="../ranking/rankingPage"><img src="../Assets/icon/icon (43).png"></a>
             </li>
             <li class="item avt-btn" style="list-style: none;">
                 <!-- <a href="../"><img src="../Assets/icon/icon (4).png">
