@@ -200,8 +200,7 @@
                         </div>
                         <div>
                             <input hidden name="lession_id" value="${requestScope.lession.lesson_id}">
-                            <textarea name="lession" id="textareaEdit" style="height: 28em; width: 100%; border: 1px solid #000000;">${requestScope.lession.lesson_name}
-                            </textarea>
+                            <input name="lession" id="textareaEdit" style="padding: 0.5em; width: 100%;border-radius: 9px; border: 1px solid #000000;" value="${requestScope.lession.lesson_name}">
                             <script>
                                 var textare0a = document.getElementById("textareaEdit");
                                 textarea.value = "${requestScope.lession.lesson_name}";

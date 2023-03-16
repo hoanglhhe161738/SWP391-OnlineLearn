@@ -197,8 +197,7 @@
                                 </div>
                                 <div>
                                     <input hidden name="module_id" value="${requestScope.module.module_id}">
-                                    <textarea name="module" id="textareaEdit" style="height: 28em; width: 100%; border: 1px solid #000000;">${requestScope.module.module_name}
-                                    </textarea>
+                                    <input name="module" id="textareaEdit" style="padding: 0.5em; width: 100%;border-radius: 9px; border: 1px solid #000000;" value="${requestScope.module.module_name}">
                                     <script>
                                         var textare0a = document.getElementById("textareaEdit");
                                         textarea.value = "${requestScope.module.module_name}";
