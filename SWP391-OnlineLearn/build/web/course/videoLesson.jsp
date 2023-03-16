@@ -17,92 +17,66 @@
         .content{
 
         }
-        .title-lesson{
-            display: flex;
-            justify-content: center;
-            padding-left: 3em;
-            background-image: linear-gradient(to right, #00de7a,#195de2);
-            color: #fff;
-            font-weight: bold
-        }
-        .title-lesson h1{
-            font-size: 30px;
-            padding: 5px;
-        }
         .embed-style{
             display: flex;
-            justify-content: center;
-            margin: 2em auto 0em auto;
+            justify-content: right;
+            margin: 1em 2em 0em 0em;
         }
-        .glow-on-hover a{
-            text-decoration: none;
-            color: white;
-            font-size: 20px;
-            padding: 2em 1em 1em 1em;
+        .info{
+            background: white;
+            margin: 1em 0em auto 1em;
+            height: 568px;
+            padding: 1em;
+            border-radius: 10px;
+        }
+        .info h1{
             font-weight: bold;
+            font-size: large;
+            margin-top: 1em;
         }
-        .glow-on-hover {
-            border: none;
-            outline: none;
-            color: #fff;
-            background: #111;
-            cursor: pointer;
-            position: relative;
-            z-index: 0;
-            border-radius: 10px;
+        .info h2{
+            /*font-weight: bold;*/
+            font-size: large;
         }
 
-        .glow-on-hover:before {
-            content: '';
-            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-            position: absolute;
-            top: -2px;
-            right:-2px;
-            background-size: 400%;
-            z-index: -1;
-            filter: blur(5px);
-            width: calc(100% + 4px);
-            height: calc(100% + 4px);
-            animation: glowing 20s linear infinite;
-            opacity: 0;
-            transition: opacity .3s ease-in-out;
-            border-radius: 10px;
-        }
-
-        .glow-on-hover:active {
-            color: #000
-        }
-
-        .glow-on-hover:active:after {
-            background: transparent;
-        }
-
-        .glow-on-hover:before {
-            opacity: 1;
-        }
-
-        .glow-on-hover:after {
-            z-index: -1;
-            content: '';
-            position: absolute;
+        input[type="text"] {
             width: 100%;
-            height: 100%;
-            background: #111;
-            left: 0;
-            top: 0;
-            border-radius: 10px;
+            height: 30px;
+            margin-bottom: 10px;
         }
 
-        @keyframes glowing {
-            0% {
-                background-position: 0 0;
-            }
-            50% {
-                background-position: 400% 0;
-            }
-            100% {
-                background-position: 0 0;
-            }
+        button {
+            padding: 1px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+        .info ul {
+            list-style: none;
+            margin-top: 20px;
+            padding: 0;
+        }
+
+        .info li {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            white-space: pre-wrap;
+        }
+
+        .info li button {
+        }
+
+        .completed {
+            text-decoration: line-through;
         }
     </style>
 </head>
@@ -114,20 +88,83 @@
             <!--content-->
             <div class="content">     
                 <div class="title-lesson">  
-                    <h1>${requestScope.video.video_title}</h1>
-            </div>
-            <div class="embed-style">
-                <iframe style="border-radius: 15px" width="1000" height="568" src="${requestScope.result}"                        
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
-                        picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <div style="text-align: right; margin: 0.8em  2em">
-                <button class="glow-on-hover"><a href="../game/matchgame?lession_id=49&lession_name=${requestScope.lesson.lesson_name}">Game</a></button>
-                <button class="glow-on-hover"><a href="./quiz?lession_id=${requestScope.lesson.lesson_id}">Làm bài tập</a></button>
-                <button class="glow-on-hover""><a href="#">Đánh dấu là đã học xong</a></button>
+                    <h1></h1>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="info">
+                                <h1>Tiêu đề bài học:</h1>
+                                <h2>${requestScope.video.video_title}</h2>
+                            <h1 style="text-align: center; margin-top: 2em">Công cụ hỗ trợ học tập</h1>
+                            <p style="font-size: 12px; color: red">(*) Lưu ý: Ghi chú sẽ không còn khi thoát trang này</p>
+                            <!--<form>-->
+                            <label for="task">Tạo ghi chú:</label><br>
+                            <input type="text" id="task" name="task"><br>
+                            <button type="button" onclick="addNote()">Thêm</button>
+                            <!--</form>-->
+                            <ul id="task-list" style="overflow: auto; height: 222px;"></ul>
+
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="embed-style">
+                            <iframe style="border-radius: 15px" width="1000" height="568" src="${requestScope.result}"                        
+                                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+                                    picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
+<script>
+    var taskList = [];
 
+    function addNote() {
+        var taskInput = document.getElementById("task");
+        var task = taskInput.value.trim();
+        if (task !== "") {
+            taskList.push(task);
+            taskInput.value = "";
+            renderTaskList();
+        }
+    }
+
+    function completeTask(index) {
+        taskList[index] = "<s>" + taskList[index] + "</s>";
+        renderTaskList();
+    }
+
+    function deleteTask(index) {
+        taskList.splice(index, 1);
+        renderTaskList();
+    }
+
+    function renderTaskList() {
+        var taskListElement = document.getElementById("task-list");
+        taskListElement.innerHTML = "";
+        for (var i = 0; i < taskList.length; i++) {
+            var taskListItem = document.createElement("li");
+            taskListItem.innerHTML = taskList[i] + " " +
+                    "<br>" +
+                    "<div style='text-align: center; margin-top:2px;'><button type='button'style='background: #33a1ff;' onclick='completeTask(" + i + ")'>Complete</button>"
+                    + "<button type='button' style='background:red; margin-left:10px;' onclick='deleteTask(" + i + ")'>Delete</button></div>";
+            if (taskList[i].startsWith("<s>")) {
+                taskListItem.classList.add("completed");
+            }
+            taskListElement.appendChild(taskListItem);
+        }
+    }
+    var taskInput = document.getElementById("task");
+
+    taskInput.addEventListener("keypress", function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            addNote();
+        }
+    });
+
+</script>
 </html>
