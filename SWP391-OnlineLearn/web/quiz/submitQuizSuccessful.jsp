@@ -46,12 +46,13 @@
             <div class="center">
                 <img src="../Assets/images/cup.png" style="width: 30%">
                 <h1>CHÚC MỪNG BẠN HOÀN THÀNH BÀI HỌC</h1>
-                <h2>Điểm số</h2>
-                <h3 style="font-size: 3em; font-weight: bold;color: #745bde">30</h3>
-                <form action="">
-                    <input hidden name="point" value="">
-                    <input type="submit" class="btn btn-success" value="Tiếp tục">
-                </form>
+                <h2>Điểm số </h2>
+                <p>${requestScope.userRank.points}</p>
+                <h3 style="font-size: 3em; font-weight: bold;color: #745bde">${requestScope.points}</h3>
+                
+                <a class="btn btn-success" href="./classes">
+                    Tiếp tục
+                </a>
             </div>
         </div>
     </body>
