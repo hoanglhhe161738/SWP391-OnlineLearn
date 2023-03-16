@@ -38,19 +38,17 @@ public class quizController extends BaseAuthenticationController {
 //    }
     @Override
     protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        LessonDBContext lDB = new LessonDBContext();
-//        int lesson_id = Integer.parseInt(req.getParameter("lesson_id"));
-//        User user = (User) req.getSession().getAttribute("user");
-//        lDB.updateLessonLearn(user.getUser_id(), lesson_id, true);
-//        Lesson lesson = lDB.get(lesson_id);
-//        Lesson_learn lessonLearn = lDB.getLessonLearn(user.getUser_id(), lesson_id);
-//        req.setAttribute("lessonLearn", lessonLearn);
-//        req.setAttribute("lesson", lesson);
-//        req.setAttribute("lessonDone", lesson_id);
+        LessonDBContext lDB = new LessonDBContext();
+        int lesson_id = Integer.parseInt(req.getParameter("lession_id"));
+        User user = (User) req.getSession().getAttribute("user");
+        lDB.updateLessonLearn(user.getUser_id(), lesson_id, true);
+        Lesson lesson = lDB.get(lesson_id);
+        Lesson_learn lessonLearn = lDB.getLessonLearn(user.getUser_id(), lesson_id);
+        req.setAttribute("lessonLearn", lessonLearn);
+        req.setAttribute("lesson", lesson);
+        req.setAttribute("lessonDone", lesson_id);
         RankingDBContext rDB = new RankingDBContext();
         int points = Integer.parseInt(req.getParameter("point"))*10;
-        
-        User user = (User) req.getSession().getAttribute("user");
         int current = rDB.getCurrentPointsOfUser(user.getUser_id());
         
         Ranking rankingModelToUpdate = new Ranking();
@@ -77,6 +75,7 @@ public class quizController extends BaseAuthenticationController {
         req.setAttribute("total_points", total_points);
         req.setAttribute("questionBank", questionBank);
         req.setAttribute("lession_name", lession_name);
+        req.setAttribute("lession_id", lession_id);
         req.getRequestDispatcher("../quiz/quiz.jsp").forward(req, resp);
     }
 
