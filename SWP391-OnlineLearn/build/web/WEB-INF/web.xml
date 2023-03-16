@@ -172,6 +172,10 @@
         <servlet-name>actionVideoController</servlet-name>
         <servlet-class>controller.admin.video.actionVideoController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>rankingController</servlet-name>
+        <servlet-class>controller.ranking.rankingController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>classesController</servlet-name>
         <url-pattern>/course/classes</url-pattern>
@@ -403,6 +407,10 @@
     <servlet-mapping>
         <servlet-name>actionVideoController</servlet-name>
         <url-pattern>/admin/actionVideo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>rankingController</servlet-name>
+        <url-pattern>/ranking/rankingPage</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

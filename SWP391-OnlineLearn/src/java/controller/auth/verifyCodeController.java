@@ -6,6 +6,7 @@ package controller.auth;
 
 import controller.payment.*;
 import dal.AccountDBContext;
+import dal.RankingDBContext;
 import dal.UserDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -14,6 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import model.Account;
+import model.Ranking;
 import model.User;
 
 /**
@@ -49,7 +51,13 @@ public class verifyCodeController extends HttpServlet{
             UserDBContext udb = new UserDBContext();
             User u = (User) req.getSession().getAttribute("newUser");
             udb.insert(u);
-            
+            // Initialize ranking for account
+            User getUserJustAdd = udb.getUserByUsername(u.getUsername());
+            RankingDBContext rDB = new RankingDBContext();
+            Ranking ranking = new Ranking();
+            ranking.setUser_id(getUserJustAdd.getUser_id());
+            ranking.setFull_name(getUserJustAdd.getFull_name());
+            rDB.insert(ranking);
             req.getRequestDispatcher("./verifySuccessful.jsp").forward(req, resp);
         }else{
             req.setAttribute("alertTitle", "Sorry!");
