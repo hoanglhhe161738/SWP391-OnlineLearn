@@ -57,6 +57,9 @@ public class quizController extends BaseAuthenticationController {
         QuestionDBContext quDB = new QuestionDBContext();
 
         ArrayList<Question> questionBank = quDB.getQuestionByLessionID(lession_id);
+        int total_points = questionBank.size()*10;
+        
+        req.setAttribute("total_points", total_points);
         req.setAttribute("questionBank", questionBank);
         req.setAttribute("lession_name", lession_name);
         req.getRequestDispatcher("../quiz/quiz.jsp").forward(req, resp);
