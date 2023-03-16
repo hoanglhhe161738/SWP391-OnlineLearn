@@ -148,9 +148,7 @@
                 </div>
                 
             </div>
-             <div class="change-quiz-bottom">
-                <button><a href="./actionLession" style="text-decoration: none; font-size: 1em; color: white">Tiếp tục</a></button>
-            </div>
+             
            
         </div>
 
