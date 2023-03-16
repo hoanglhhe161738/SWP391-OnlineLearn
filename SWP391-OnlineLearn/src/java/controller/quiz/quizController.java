@@ -7,6 +7,7 @@ package controller.quiz;
 import controller.auth.BaseAuthenticationController;
 import dal.LessonDBContext;
 import dal.QuestionDBContext;
+import dal.RankingDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import model.Lesson;
 import model.Lesson_learn;
 import model.Question;
+import model.Ranking;
 import model.User;
 
 /**
@@ -45,8 +47,21 @@ public class quizController extends BaseAuthenticationController {
 //        req.setAttribute("lessonLearn", lessonLearn);
 //        req.setAttribute("lesson", lesson);
 //        req.setAttribute("lessonDone", lesson_id);
-        String point = req.getParameter("point");
-        req.setAttribute("point", point);
+        RankingDBContext rDB = new RankingDBContext();
+        int points = Integer.parseInt(req.getParameter("point"))*10;
+        
+        User user = (User) req.getSession().getAttribute("user");
+        int current = rDB.getCurrentPointsOfUser(user.getUser_id());
+        
+        Ranking rankingModelToUpdate = new Ranking();
+        rankingModelToUpdate.setUser_id(user.getUser_id());
+        rankingModelToUpdate.setFull_name(user.getFull_name());
+        rankingModelToUpdate.setPoints(points);
+        
+        rDB.updatePoints(rankingModelToUpdate, user.getUser_id());
+        
+        req.setAttribute("current", current);
+        req.setAttribute("points", points);
         req.getRequestDispatcher("../quiz/submitQuizSuccessful.jsp").forward(req, resp);
     }
 
