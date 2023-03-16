@@ -88,7 +88,7 @@
                     </a>
                 </div>
                 <div class="choiceAction-colum col">
-                    <a href="">
+                    <a href="./ChoiceClassToAddModule">
                         <div class="choiceAction-colum-item p-3" style="background-color: #FF4500;">
                             <div><i class="custom-icon fa-solid fa-chalkboard-user"></i></div>
                             <p>Thêm/Sửa chương</p>
@@ -99,7 +99,7 @@
             </div>
             <div class="choiceAction-content row row-cols-5 row-cols-lg-3 g-2 g-lg-3" style="margin-top: 0.5em;">
                 <div class="choiceAction-colum col">
-                    <a href="">
+                    <a href="./ChoiceClassToAddLession">
                         <div class="choiceAction-colum-item p-3" style="background-color: #008080;">
                             <div><i class="custom-icon fa-solid fa-person-chalkboard"></i></div>
                             <p>Thêm/Sửa bài học</p>

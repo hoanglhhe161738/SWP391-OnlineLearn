@@ -19,8 +19,8 @@ import model.Course;
  *
  * @author Acer
  */
-public class ChoiceClassToAddLession extends BaseAuthorizationController{
-    
+public class ChoiceClassToAddLession extends BaseAuthorizationController {
+
     @Override
     protected void processPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         int class_id = Integer.parseInt(req.getParameter("grade"));
@@ -33,13 +33,12 @@ public class ChoiceClassToAddLession extends BaseAuthorizationController{
 
     @Override
     protected void processGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
+        req.getSession().setAttribute("class_id", null);
+        req.getSession().setAttribute("coursesToAddLession", null);
         ClassDBContext clDB = new ClassDBContext();
         ArrayList<model.Class> classes = clDB.list();
         req.getSession().setAttribute("classesToAddLession", classes);
         req.getRequestDispatcher("./choiceLession.jsp").forward(req, resp);
     }
 
-    
-    
-    
 }

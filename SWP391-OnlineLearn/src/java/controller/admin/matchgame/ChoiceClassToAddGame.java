@@ -23,8 +23,8 @@ import model.Class;
  */
 public class ChoiceClassToAddGame extends BaseAuthorizationController {
 
-   @Override
-   protected void processPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
+    @Override
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         int class_id = Integer.parseInt(req.getParameter("grade"));
         CourseDBContext cDB = new CourseDBContext();
         ArrayList<Course> courses = cDB.listCoursebyClassId(class_id);
@@ -35,11 +35,12 @@ public class ChoiceClassToAddGame extends BaseAuthorizationController {
 
     @Override
     protected void processGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
+        req.getSession().setAttribute("class_id", null);
+        req.getSession().setAttribute("coursesToAddLession", null);
         ClassDBContext clDB = new ClassDBContext();
         ArrayList<model.Class> classes = clDB.list();
         req.getSession().setAttribute("classesToAddGame", classes);
         req.getRequestDispatcher("./choiceGameLession.jsp").forward(req, resp);
     }
-    
-    
+
 }
