@@ -21,7 +21,7 @@
                 </div>
             </nav>
             <div class="nav-information-item" style="padding-top: 0.1em; border-radius: 2em 0 0 2em">
-                <div class="nav-information-image">
+                <div class="nav-information-image" style="border: none">
                     <img src="../Assets/icon/favicon.png">
                 </div>
                 <div class="nav-information-text">
