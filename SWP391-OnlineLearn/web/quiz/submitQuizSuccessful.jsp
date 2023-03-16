@@ -48,8 +48,7 @@
                 <h1>CHÚC MỪNG BẠN HOÀN THÀNH BÀI HỌC</h1>
                 <h2>Điểm số</h2>
                 <h3 style="font-size: 3em; font-weight: bold;color: #745bde">30</h3>
-                <form action="">
-                    <input hidden name="point" value="">
+                <form action="../course/classes">
                     <input type="submit" class="btn btn-success" value="Tiếp tục">
                 </form>
             </div>
