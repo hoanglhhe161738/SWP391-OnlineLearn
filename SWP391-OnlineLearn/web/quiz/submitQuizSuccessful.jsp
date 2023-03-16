@@ -9,10 +9,19 @@
 <html>
     <head>
         <title>Điểm bài học</title>
+        <link rel="icon" href="../Assets/icon/favicon.png">
+        <!-- link bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
         <style>
             .center {
                 border-radius: 10px;
-                padding: 5em 20em;
+                padding: 3em 10em;
                 text-align: center;
                 background-color: #f2f2f2;
                 font-family: sans-serif;
@@ -35,9 +44,14 @@
              align-items: center;
              height: 100vh;">
             <div class="center">
-                <img src="../Assets/images/email.png">
-                <h1>Tên bài học</h1>
-                <h2>Điểm: 20</h2>
+                <img src="../Assets/images/cup.png" style="width: 30%">
+                <h1>CHÚC MỪNG BẠN HOÀN THÀNH BÀI HỌC</h1>
+                <h2>Điểm số</h2>
+                <h3 style="font-size: 3em; font-weight: bold;color: #745bde">30</h3>
+                <form action="">
+                    <input hidden name="point" value="">
+                    <input type="submit" class="btn btn-success" value="Tiếp tục">
+                </form>
             </div>
         </div>
     </body>
