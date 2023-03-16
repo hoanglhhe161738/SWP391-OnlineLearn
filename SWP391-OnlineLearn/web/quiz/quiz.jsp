@@ -24,14 +24,25 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
             <style>
                 .nav-bar{
-margin: 1em auto;
-}
+                    margin: 1em auto;
+                }
+                
+                .total_points{
+                    text-align: center;
+                    font-size: 40px;
+                    color: black;
+                    background-color: #6c757d;
+                    font-family: Times New Roman;
+                }
             </style>
         </head>
 
         <body style="background-image: url(../Assets/images/bg.png)">
             <!-- start Quiz button -->
-            <div class="start_btn"><button>Nhấn để bắt đầu</button></div>
+            <div class="start_btn">
+                <button>Nhấn để bắt đầu</button>
+            </div>
+            <div class="total_points" ><p>Bài học có tổng điểm là : ${requestScope.total_points}</p></div> 
 
             <!-- Info Box -->
             <div class="info_box">

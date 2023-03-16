@@ -38,9 +38,38 @@ public class RankingDBContext extends DBContext<Ranking> {
         }
     }
 
-    @Override
-    public void update(Ranking model) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+    public void updatePoints(Ranking model, int user_id) {
+        String sql = "UPDATE [dbo].[Ranking]\n"
+                + "   SET [points] = ?"
+                + " WHERE [user_id] = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            int current_points = getCurrentPointsOfUser(user_id);
+            stm.setInt(1, current_points+model.getPoints());
+            stm.setInt(2, model.getUser_id());
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(RankingDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public int getCurrentPointsOfUser(int user_id){
+        int currentPoint = 0;
+        String sql = "SELECT points FROM Ranking "
+                + "WHERE [user_id] = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, user_id);
+            ResultSet rs = stm.executeQuery();
+            if(rs.next()){
+                currentPoint = rs.getInt("points");
+                return currentPoint;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(RankingDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return currentPoint;
     }
 
     @Override
@@ -50,7 +79,24 @@ public class RankingDBContext extends DBContext<Ranking> {
 
     @Override
     public Ranking get(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Ranking ranking = new Ranking();
+        String sql = "SELECT * FROM Ranking"
+                + "WHERE [user_id] = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, id);
+            ResultSet rs = stm.executeQuery();
+            if(rs.next()){
+                ranking.setRanking_id(rs.getInt("ranking_id"));
+                ranking.setUser_id(rs.getInt("user_id"));
+                ranking.setFull_name(rs.getString("full_name"));
+                ranking.setPoints(rs.getInt("points"));
+                return ranking;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(RankingDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return ranking;
     }
 
     @Override
@@ -85,6 +131,11 @@ public class RankingDBContext extends DBContext<Ranking> {
             }
         }
         return rankingsByKey;
+    }
+
+    @Override
+    public void update(Ranking model) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
