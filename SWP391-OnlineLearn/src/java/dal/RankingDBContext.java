@@ -5,6 +5,7 @@
 package dal;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -54,7 +55,36 @@ public class RankingDBContext extends DBContext<Ranking> {
 
     @Override
     public ArrayList<Ranking> list() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Ranking> rankings = new ArrayList<>();
+        String sql = "SELECT ROW_NUMBER() OVER(ORDER BY r.points DESC) AS [rank], r.ranking_id,r.[user_id],r.full_name,r.points\n"
+                + "FROM Ranking r";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Ranking r = new Ranking();
+                r.setRank(rs.getInt("rank"));
+                r.setRanking_id(rs.getInt("ranking_id"));
+                r.setUser_id(rs.getInt("user_id"));
+                r.setFull_name(rs.getString("full_name"));
+                r.setPoints(rs.getInt("points"));
+                rankings.add(r);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(RankingDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rankings;
+    }
+
+    public ArrayList<Ranking> getRankingByName(String keyName) {
+        ArrayList<Ranking> rankingsByKey = new ArrayList<>();
+        ArrayList<Ranking> rankings = list();
+        for (Ranking r : rankings) {
+            if (r.getFull_name().contains(keyName)) {
+                rankingsByKey.add(r);
+            }
+        }
+        return rankingsByKey;
     }
 
 }
