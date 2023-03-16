@@ -100,12 +100,12 @@
                         </div>
                     </div>
                     <div style="margin-top: 1em">
-                        <c:if test="${requestScope.lessonLearn.llearn eq false}">
-                            <form action="lessonChoice" method="POST">
-                                <input hidden name="lesson_id" value="${requestScope.lessonDone}">
-                                <button type="submit" style="font-weight: bold" class="btn btn-light">Đánh dấu là học xong</button>
-                            </form>
-                        </c:if>
+                        <%--<c:if test="${requestScope.lessonLearn.llearn eq false}">--%>
+                            <!--<form action="lessonChoice" method="POST">-->
+                                <!--<input hidden name="lesson_id" value="${requestScope.lessonDone}">-->
+                                <!--<button type="submit" style="font-weight: bold" class="btn btn-light">Đánh dấu là học xong</button>-->
+                            <!--</form>-->
+                        <%--</c:if>--%>
                         <c:if test="${requestScope.lessonLearn.llearn eq true}">
                             <button type="button" style="font-weight: bold" class="btn btn-light">Phần này đã học xong</button>
                         </c:if>

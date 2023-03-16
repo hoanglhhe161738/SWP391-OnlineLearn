@@ -45,7 +45,7 @@ public class enterMailController extends HttpServlet {
             // Set up mail server and authentication
             String host = "smtp.gmail.com";
             String user = "onlinelearnse1643@gmail.com";
-            String password = "upwmvulixujraiwc";
+            String password = "kjktblusdwuacejm";
 
             // Create properties object for the mail session
             Properties props = new Properties();
@@ -71,7 +71,7 @@ public class enterMailController extends HttpServlet {
                 msg.setContent(message, "text/html; charset=utf-8");
 
                 // Send message
-               // javax.mail.Transport.send(msg);
+                javax.mail.Transport.send(msg);
 
                 // Redirect to success page
                 req.getRequestDispatcher("./confirmEmail.jsp").forward(req, resp);
@@ -129,10 +129,10 @@ public class enterMailController extends HttpServlet {
                 javax.mail.Transport.send(msg);
 
                 // Redirect to success page
-//                req.getRequestDispatcher("./confirmEmail.jsp").forward(req, resp);
+                req.getRequestDispatcher("./confirmEmail.jsp").forward(req, resp);
             } catch (MessagingException e) {
                 // Redirect to error page
-//                resp.getWriter().print("chúng tôi không thể gửi mã code đến email của bạn");
+                resp.getWriter().print("chúng tôi không thể gửi mã code đến email của bạn");
             }
         }
     }

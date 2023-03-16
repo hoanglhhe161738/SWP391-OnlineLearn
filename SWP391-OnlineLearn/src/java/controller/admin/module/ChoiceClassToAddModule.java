@@ -33,10 +33,12 @@ public class ChoiceClassToAddModule extends BaseAuthorizationController {
 
     @Override
     protected void processGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
+        req.getSession().setAttribute("class_id", null);
+        req.getSession().setAttribute("coursesToAddModule", null);
         ClassDBContext clDB = new ClassDBContext();
         ArrayList<model.Class> classes = clDB.list();
         req.getSession().setAttribute("classesToAddModule", classes);
         req.getRequestDispatcher("./choiceModule.jsp").forward(req, resp);
     }
-    
+
 }
