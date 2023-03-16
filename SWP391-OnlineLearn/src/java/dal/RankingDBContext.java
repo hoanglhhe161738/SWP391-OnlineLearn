@@ -126,7 +126,7 @@ public class RankingDBContext extends DBContext<Ranking> {
         ArrayList<Ranking> rankingsByKey = new ArrayList<>();
         ArrayList<Ranking> rankings = list();
         for (Ranking r : rankings) {
-            if (r.getFull_name().contains(keyName)) {
+            if (r.getFull_name().toLowerCase().contains(keyName.toLowerCase())) {
                 rankingsByKey.add(r);
             }
         }
