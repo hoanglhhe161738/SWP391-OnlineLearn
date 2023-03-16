@@ -30,7 +30,7 @@ public class LogoutController extends HttpServlet {
     throws ServletException, IOException {
         request.getSession().setAttribute("account", null);
         request.getSession().setAttribute("user", null);
-        response.sendRedirect("./home/homePage");
+        response.sendRedirect("./home/homePage#xmas-popup");
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

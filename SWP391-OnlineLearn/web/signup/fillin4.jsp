@@ -96,7 +96,7 @@
                                 e.target.setCustomValidity("");
                             };
                         }
-                    })
+                    });
                 </script>
 
                 <label for="fullName" class="signup-label">Họ và tên</label>

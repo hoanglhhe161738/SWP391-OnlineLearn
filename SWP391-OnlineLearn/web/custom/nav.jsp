@@ -9,7 +9,7 @@
     <div class="nav-bar">
         <ul class="items">
             <li class="item">
-                <a href="../home/homePage"><img src="../Assets/icon/icon (69).png"></a>
+                <a href="../home/homePage#xmas-popup"><img src="../Assets/icon/icon (69).png"></a>
             </li>
             <!--                    <li class="item">
                 <a href="../ranking/ranking.html"><img src="../Assets/icon/icon (44).png"></a>

@@ -25,7 +25,7 @@
         <title>Sửa thông tin</title>
         <style>
             .text-box-input{
-                width: 90%;
+                width: 100%;
                 margin: 1em 0;
                 padding: 0.25em 0.5em;
                 border-radius: 8px;
@@ -57,7 +57,7 @@
                 font-weight: bold;
             }
             .failInput{
-                text-decoration:line-through;
+                text-decoration:none;
                 color: red;
                 font-size: 18px;
                 font-weight: bold;
@@ -115,9 +115,27 @@
                         <div class="profile-item col-7">
                             <div class="profile-item-unit p-3" style="height: auto;">
                                 <form action="./changeUserProfile" method="POST">
+                                    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+                                    <script type="text/javascript">
+                                        $(document).ready(function () {
+                                            var elements = $("input, select");
+                                            for (var i = 0; i < elements.length; i++) {
+                                                elements[i].oninvalid = function (e) {
+                                                    e.target.setCustomValidity("");
+                                                    if (!e.target.validity.valid) {
+                                                        e.target.setCustomValidity(e.target.getAttribute("requiredmsg"));
+                                                    }
+                                                };
+                                                elements[i].oninput = function (e) {
+                                                    e.target.setCustomValidity("");
+                                                };
+                                            }
+                                        });
+                                    </script>
                                     <div class="change-panel">
-                                        <label class="" style="text-align: left">Họ và tên</label>
-                                        <input class="text-box-input" name="fullName" type="text" value="${sessionScope.user.full_name}" placeholder="Họ và tên"><br>
+                                        <label class="" style="display: flex;text-align: left">Họ và tên</label>
+                                        <input class="text-box-input" pattern="(?=.*\S).{1,}" requiredmsg="Họ và tên không được để trống."required type="text" value="${sessionScope.user.full_name}" name="fullName" class="signup-input" placeholder="VD: Hứa Như Không">
+                                        <!--<input class="text-box-input" name="fullName" type="text"  placeholder="Họ và tên"><br>-->
                                         <span class="text-box-input" style="margin-right: 0.5em; border: 1px solid #f2f2f2">
                                             <label class="label-custom">Giới tính: </label>
                                             <input type="radio" name="gender" value="true"
@@ -137,8 +155,12 @@
                                                    style="border-radius: 8px; padding: 0.15em 0.5em;border: 1px solid black">
                                         </span>
                                         <br>
-                                        <input class="text-box-input" value="${sessionScope.user.parent_name}" name="parentName" type="text" placeholder="Họ và tên phụ huynh"><br>
+                                        <label class="" style="display: flex;text-align: left">Họ và tên phụ huynh</label>
+                                        <input  class="text-box-input" value="${sessionScope.user.parent_name}" type="text" name="parentName" class="signup-input" placeholder="VD: Hứa Xong Quên" pattern="(?=.*\S).{1,}" requiredmsg="Họ và tên không được để trống." required>
+                                        <!--<input class="text-box-input" value="${sessionScope.user.parent_name}" name="parentName" type="text" placeholder="Họ và tên phụ huynh"><br>-->
+                                        <label class="" style="display: flex;text-align: left">Email phụ huynh</label>
                                         <input class="text-box-input" value="${sessionScope.user.parent_email}" name="parentEmail" type="text" placeholder="Email phụ huynh"><br>
+                                        <label class="" style="display: flex;text-align: left">Số điện thoại phụ huynh</label>
                                         <input class="text-box-input" value="${sessionScope.user.parent_phone_number}" maxlength="10" name="phoneNumber" type="text" placeholder="Số điện thoại phụ huynh"><br>
                                     </div>
                                     <div style="display: flex; justify-content: space-between;">
@@ -154,7 +176,7 @@
                                             </c:if>
                                         </div>
                                         <div style="margin: 1em;">
-                                            <input data-toggle="modal" data-target="#myModal"  class="save-btn" type="submit" value="Lưu thông tin">
+                                            <input class="save-btn" type="submit" value="Lưu thông tin">
                                         </div>
                                     </div>
                                 </form>
