@@ -14,15 +14,17 @@ public class Ranking {
     private int user_id;
     private String full_name;
     private int points;
+    private int rank;
 
     public Ranking() {
     }
 
-    public Ranking(int ranking_id, int user_id, String full_name, int points) {
+    public Ranking(int ranking_id, int user_id, String full_name, int points, int rank) {
         this.ranking_id = ranking_id;
         this.user_id = user_id;
         this.full_name = full_name;
         this.points = points;
+        this.rank = rank;
     }
 
     public int getRanking_id() {
@@ -55,6 +57,14 @@ public class Ranking {
 
     public void setPoints(int points) {
         this.points = points;
+    }
+
+    public int getRank() {
+        return rank;
+    }
+
+    public void setRank(int rank) {
+        this.rank = rank;
     }
 
 }
