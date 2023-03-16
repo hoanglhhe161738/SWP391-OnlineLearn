@@ -71,7 +71,7 @@ public class enterMailController extends HttpServlet {
                 msg.setContent(message, "text/html; charset=utf-8");
 
                 // Send message
-                javax.mail.Transport.send(msg);
+               // javax.mail.Transport.send(msg);
 
                 // Redirect to success page
                 req.getRequestDispatcher("./confirmEmail.jsp").forward(req, resp);
