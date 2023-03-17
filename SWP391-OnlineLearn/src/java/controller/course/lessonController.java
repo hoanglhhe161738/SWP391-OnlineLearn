@@ -4,6 +4,7 @@
  */
 package controller.course;
 
+import controller.auth.BaseAuthenticationController;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,38 +17,37 @@ import model.Lesson;
  *
  * @author Khangnekk
  */
-public class lessonController extends HttpServlet {
+public class lessonController extends BaseAuthenticationController {
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    protected void doPostProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // doPost
     }
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    protected void doGetProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // test backend processing (retrieving percentage of lessons learned)
         // using sample data
         // (status: OK)
-        double percent = getPercentLesson(createSampleDataForLesson());
-        resp.getWriter().print("Percentage of lessons learned: "+percent+"%");
+        
     }
 
-    protected double getPercentLesson(ArrayList<Lesson> lessons) {
-        double percent;
-        double learnStatusTrue = 0,
-                learnStatusFalse = 0,
-                numberOfLessons = lessons.size();
-        
-        for (Lesson l : lessons) {
-            if (l.isStatus()) {
-                learnStatusTrue++;
-            } else {
-                learnStatusFalse++;
-            }
-        }
-        percent = (learnStatusTrue * 100) / numberOfLessons;
-        return Math.round(percent * 100.0) / 100.0;
-    }
+//    protected double getPercentLesson(ArrayList<Lesson> lessons) {
+//        double percent;
+//        double learnStatusTrue = 0,
+//                learnStatusFalse = 0,
+//                numberOfLessons = lessons.size();
+//        
+//        for (Lesson l : lessons) {
+//            if (l.isStatus()) {
+//                learnStatusTrue++;
+//            } else {
+//                learnStatusFalse++;
+//            }
+//        }
+//        percent = (learnStatusTrue * 100) / numberOfLessons;
+//        return Math.round(percent * 100.0) / 100.0;
+//    }
 
     // sample data (using for test)
     public ArrayList<Lesson> createSampleDataForLesson() {
@@ -59,5 +59,16 @@ public class lessonController extends HttpServlet {
         lessons.add(new Lesson("Lesson05: data sample", true));
         lessons.add(new Lesson("Lesson06: data sample", false));
         return  lessons;
+    }
+
+    @Override
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGetProcess(req, resp);
+    }
+
+    @Override
+    protected void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        double percent = getPercentLesson(createSampleDataForLesson());
+//        resp.getWriter().print("Percentage of lessons learned: "+percent+"%");
     }
 }

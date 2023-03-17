@@ -103,4 +103,50 @@ public class CourseDBContext extends DBContext<Course> {
         return courses;
     }
 
+    public int numberOfLessonLearned(int course_id, int user_id) {
+        int lessonLearned = 0;
+        String sql = "SELECT COUNT(*) AS numberOfLessonLearned\n"
+                + "FROM Lession l\n"
+                + "JOIN Module m ON m.module_id = l.module_id\n"
+                + "JOIN Course c ON c.course_id = m.course_id\n"
+                + "JOIN Class cl ON cl.class_id = c.class_id\n"
+                + "JOIN Lession_Learn ll ON ll.lession_id = l.lession_id\n"
+                + "WHERE c.course_id = ? AND ll.llearn = 'true' AND ll.[user_id] =?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, course_id);
+            stm.setInt(2, user_id);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                lessonLearned = rs.getInt("numberOfLessonLearned");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ModuleDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lessonLearned;
+    }
+
+    public int numberOfLesson(int course_id, int user_id) {
+        int sizeOfCourse = 0;
+        String sql = "SELECT COUNT(*) AS numberOfLessonLearned\n"
+                + "FROM Lession l\n"
+                + "JOIN Module m ON m.module_id = l.module_id\n"
+                + "JOIN Course c ON c.course_id = m.course_id\n"
+                + "JOIN Class cl ON cl.class_id = c.class_id\n"
+                + "JOIN Lession_Learn ll ON ll.lession_id = l.lession_id\n"
+                + "WHERE c.course_id = ? AND ll.[user_id] =?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, course_id);
+            stm.setInt(2, user_id);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                sizeOfCourse = rs.getInt("numberOfLessonLearned");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ModuleDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return sizeOfCourse;
+    }
+
 }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Payment Fail</title>
+        <link rel="icon" href="../Assets/icon/favicon.png"/>
+        <style>
+            .payment-successful-content {
+                text-align: center;
+                margin: 10% auto;
+                width: 30%;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .payment-item img {
+                width: 15%;
+            }
+
+            .payment-item-one-list {
+                display: flex;
+
+            }
+
+            .payment-item-one-list-item {
+                list-style: none;
+                display: inline;
+                padding-left: 2.5em;
+            }
+        </style>
+    </head>
+
+    <body style="background-color: #f1f1f1;">
+        <div class="payment-successful">
+            <div class="payment-successful-content">
+                <div class="payment-item"><img src="../Assets/icon/icon (79).png" alt=""></div>
+                <div class="payment-item" style="font-weight: bolder; font-size: 2rem; padding-top: 10px;">Thanh toán thất
+                    bại</div>
+                <div class="payment-item" style="font-size: large; padding-top: 30px;">Mã xác nhận vừa nhập không
+                    đúng, vui lòng bấm thử lại để chúng tôi gửi lại mã xác nhận hoặc bấm hủy bỏ quay lại
+                    trang chủ
+                </div>
+                <div class="payment-item-one" style="padding-top: 40px;">
+                    <ul class="payment-item-one-list">
+                        <li class="payment-item-one-list-item">
+                            <a href="./sendEmail">
+                                <button style="height: 2em; width: 8em; font-size: larger; font-weight: bolder; color: #fff; background-color: #32c671;
+                                        border-radius: 10px; border: white; margin-left: -50px; cursor: pointer" type="button">
+                                    Thử lại
+                                </button>
+                            </a>
+                        </li>
+                        <li class="payment-item-one-list-item">
+                            <a href="../home/homePage">
+                                <button style="height: 2em; width: 8em; font-size: larger; font-weight: bolder; color: #fff; background-color: #da4453;
+                                        border-radius: 10px; border: white; cursor: pointer" type="button">
+                                    Hủy bỏ
+                                </button>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

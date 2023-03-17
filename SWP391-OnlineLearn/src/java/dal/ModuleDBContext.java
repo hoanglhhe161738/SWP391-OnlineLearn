@@ -21,12 +21,43 @@ public class ModuleDBContext extends DBContext<Module> {
 
     @Override
     public void insert(Module model) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "INSERT INTO [dbo].[Module]\n"
+                + "           ([module_name]\n"
+                + "           ,[course_id]\n"
+                + "           ,[status])\n"
+                + "     VALUES\n"
+                + "           (?\n"
+                + "           ,?\n"
+                + "           ,?)";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, model.getModule_name());
+            stm.setInt(2, model.getCourse().getCourse_id());
+            stm.setBoolean(3, model.isStatus());
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ModuleDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
     public void update(Module model) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "UPDATE [dbo].[Module]\n"
+                + "   SET [module_name] = ?\n"
+                + "      ,[course_id] = ?\n"
+                + "      ,[status] = ?\n"
+                + " WHERE module_id = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, model.getModule_name());
+            stm.setInt(2, model.getCourse().getCourse_id());
+            stm.setBoolean(3, model.isStatus());
+            stm.setInt(4, model.getModule_id());
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ModuleDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     @Override
@@ -104,6 +135,44 @@ public class ModuleDBContext extends DBContext<Module> {
         }
 
         return modules;
+    }
+
+    public int numberOfLessonLearned(int module_id, int user_id) {
+        int lessonLearned = 0;
+        String sql = "SELECT COUNT(*)  AS numberOfLessonLearned FROM Lession_Learn ll \n"
+                + "JOIN Lession l ON ll.lession_id = l.lession_id\n"
+                + "WHERE l.module_id = ? AND ll.llearn = 'true' AND ll.[user_id] = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, module_id);
+            stm.setInt(2, user_id);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                lessonLearned = rs.getInt("numberOfLessonLearned");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ModuleDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lessonLearned;
+    }
+    
+    public int numberOfLesson(int module_id, int user_id) {
+        int sizeOfModule = 0;
+        String sql = "SELECT COUNT(*)  AS numberOfLessonLearned FROM Lession_Learn ll \n"
+                + "JOIN Lession l ON ll.lession_id = l.lession_id\n"
+                + "WHERE l.module_id = ? AND ll.[user_id] = ?";
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, module_id);
+            stm.setInt(2, user_id);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                sizeOfModule = rs.getInt("numberOfLessonLearned");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ModuleDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return sizeOfModule;
     }
 
 }

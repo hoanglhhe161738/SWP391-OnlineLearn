@@ -10,10 +10,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cảnh báo!</title>
-        <link rel="icon" href="assets/favicon/fu-favicon.jpg" />
+        <link rel="icon" href="../Assets/icon/favicon.png" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+              integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <style>
             body{
                 background-color: black;
+                font-family: monospace;
             }
             .content{
                 margin: 10em auto;
@@ -23,16 +26,18 @@
             }
             .content h2{
                 font-size: 50px;
-                font-family: cursive;
+                /*font-family: cursive;*/
                 color: red;
             }
             button{
+                padding: 0.25em 1em;
                 border: 1px solid #ccc;
                 border-radius: 9px;
-                font-family: cursive;
+                /*font-family: cursive;*/
                 color: red;
                 font-weight: bold;
-                font-size: 16px;
+                font-size: 20px;
+                cursor: pointer;
             }
             .noti{
                 width: 70%;
@@ -41,8 +46,8 @@
                 
             }
             .content h3{
-                font-size: 18px;
-                font-family: cursive;
+                font-size: 20px;
+                /*font-family: cursive;*/
                 color: white;
             }
         </style>
@@ -51,7 +56,7 @@
     <body>
         <div class="content">
             
-            <h2>Không thể truy cập!</h2>
+            <h2><i class="fa-solid fa-triangle-exclamation"></i> Bạn chưa đăng nhập!</h2>
             <h3> Bạn cần phải đăng nhập để sử dụng trang web! </h3>
             <div class="noti">
                 

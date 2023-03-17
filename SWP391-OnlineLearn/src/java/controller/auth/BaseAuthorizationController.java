@@ -39,7 +39,7 @@ public abstract class BaseAuthorizationController extends BaseAuthenticationCont
         }
         else
         {
-           req.getRequestDispatcher("../login/accessDenied.jsp").forward(req, resp);
+           req.getRequestDispatcher("../login/roleDenied.jsp").forward(req, resp);
         }
     }
     
@@ -51,7 +51,7 @@ public abstract class BaseAuthorizationController extends BaseAuthenticationCont
         }
         else
         {
-            req.getRequestDispatcher("../login/accessDenied.jsp").forward(req, resp);
+            req.getRequestDispatcher("../login/roleDenied.jsp").forward(req, resp);
         }
     }
     

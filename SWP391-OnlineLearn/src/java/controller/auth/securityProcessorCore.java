@@ -7,6 +7,7 @@ package controller.auth;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Scanner;
 
 /**
  *
@@ -14,7 +15,7 @@ import java.security.NoSuchAlgorithmException;
  */
 public class securityProcessorCore {
 
-    protected static String SHA1EncodePassword(String inputPassword) throws NoSuchAlgorithmException {
+    public String SHA1EncodePassword(String inputPassword) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("SHA1");
         byte[] result = md.digest(inputPassword.getBytes());
         StringBuilder sb = new StringBuilder();
@@ -25,7 +26,7 @@ public class securityProcessorCore {
         return sb.toString();
     }
 
-    protected static String md5EncodePassword(String inputPassword) throws NoSuchAlgorithmException {
+    public String md5EncodePassword(String inputPassword) throws NoSuchAlgorithmException {
         String password = inputPassword.trim();
         MessageDigest md = MessageDigest.getInstance("MD5");
         byte[] messageDigest = md.digest(password.getBytes());

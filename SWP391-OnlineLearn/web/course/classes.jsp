@@ -8,6 +8,7 @@
     <title>Các lớp học</title>
     <link rel="stylesheet" href="../Assets/css/Style.css">
     <link rel="stylesheet" href="../Assets/css/course.css">
+    <link rel="icon" href="../Assets/icon/favicon.png"/>
     <!-- link bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -63,6 +64,9 @@
         .class-item button:hover{
             background: red;
         }
+        .content{
+            position: fixed;
+        }
     </style>
 </head>
 
@@ -71,7 +75,8 @@
         <!--nav bar-->
         <jsp:include page="../custom/nav.jsp"></jsp:include>
             <!--content-->
-            <div class="content">
+            <div>
+                <div class="content"></div>
                 <div class="container-fluid">
                 <div class="class-items row" data-mdb-toggle="animation" data-mdb-animation-reset="true" data-mdb-animation="slide-out-right">
                     <c:forEach items="${requestScope.classes}" var="cl">

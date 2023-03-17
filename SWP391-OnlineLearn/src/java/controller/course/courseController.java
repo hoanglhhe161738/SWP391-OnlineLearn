@@ -4,6 +4,7 @@
  */
 package controller.course;
 
+import controller.auth.BaseAuthenticationController;
 import dal.CourseDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -17,15 +18,16 @@ import model.Course;
  *
  * @author Khangnekk
  */
-public class courseController extends HttpServlet{
+public class courseController extends BaseAuthenticationController{
+
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int class_id = Integer.parseInt(req.getParameter("class_id"));
         CourseDBContext coDB = new CourseDBContext();
         ArrayList<Course> courses = coDB.listCoursebyClassId(class_id);
