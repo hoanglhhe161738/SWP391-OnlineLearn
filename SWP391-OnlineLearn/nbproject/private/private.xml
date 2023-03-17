@@ -15,7 +15,27 @@
         </group>
         <group>
             <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/userprofile/userprofile.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/admin/action.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/LoginController.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/custom/nav.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/DBContext.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/signup/fillin4.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/LogoutController.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/login/accessDenied.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/userprofile/changeuserprofile.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/RankingDBContext.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/userprofile/changeuserprofile.html</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/ranking/rankingController.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/model/User.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/custom/navForAdmin.jsp</file>
             <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/course/videoLesson.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/admin/addQuiz.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/home/homeController.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/home/home.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/admin/addVideo.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/quiz/quiz.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/quiz/css/quiz.css</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/game/matchgame.jsp</file>
             <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/quiz/quizController.java</file>
         </group>
     </open-files>

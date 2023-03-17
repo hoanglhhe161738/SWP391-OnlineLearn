@@ -46,7 +46,7 @@ public class SendMail extends HttpServlet {
             // Set up mail server and authentication
             String host = "smtp.gmail.com";
             String user = "onlinelearnse1643@gmail.com";
-            String password = "upwmvulixujraiwc";
+            String password = "vhtwmekvpeeaoeil";
 
             // Create properties object for the mail session
             Properties props = new Properties();
@@ -156,7 +156,7 @@ public class SendMail extends HttpServlet {
     public static String messageProcess(String verifyCode) {
         String message = "Xin chào,\n"
                 + "Đây là mã xác nhận quên mật khẩu, không chia"
-                + " sẻ mã code cho bất kỳ ai, Nếu bạn không thực "
+                + "sẻ mã code cho bất kỳ ai, Nếu bạn không thực"
                 + "hiện hành động này vui lòng bỏ qua email. "
                 + "Mã xác nhận của bạn là: " + verifyCode;
 
