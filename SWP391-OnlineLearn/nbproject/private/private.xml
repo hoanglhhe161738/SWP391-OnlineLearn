@@ -14,18 +14,19 @@
             <file>file:/D:/official/SWP391-OnlineLearn/SWP391-OnlineLearn/web/admin/choiceContentLession.jsp</file>
         </group>
         <group>
-            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/LoginController.java</file>
-            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/web/admin/userManagement.jsp</file>
-            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/UserDBContext.java</file>
-            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/enterMailController.java</file>
-            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/SignupController.java</file>
-            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/DBContext.java</file>
-            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/profile/viewUserProfileController.java</file>
-            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/dal/AccountDBContext.java</file>
-            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/web/userprofile/userprofile.html</file>
-            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/viewUser/TotalUserManager.java</file>
-            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/admin/viewUser/NomalUserManager.java</file>
-            <file>file:/E:/Septemple_5/SWP391/homeSangTroKhang/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/Fillin4Controller.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/Fillin4Controller.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/profile/viewUserProfileController.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/forgetPassword/changePassword.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/auth/enterMailController.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/forgetPassword/confirmEmail.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/forgetPassword/ChangePassword.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/forgetPassword/ForgetPassword.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/WEB-INF/web.xml</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/forgetPassword/forgetPassword.jsp</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/profile/changeUserProfileController.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/payment/enterMailController.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/src/java/controller/forgetPassword/SendMail.java</file>
+            <file>file:/E:/HE161660/Ky5_HE161660/SWP391_HE161660/SWP391/SWP391-OnlineLearn/SWP391-OnlineLearn/web/forgetPassword/verifySuccessful.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -149,4 +149,30 @@ public class CourseDBContext extends DBContext<Course> {
         return sizeOfCourse;
     }
 
+    public ArrayList<Course> registeredCourse(int user_id) {
+        ArrayList<Course> registeredCourses = new ArrayList<>();
+        String sql = "SELECT DISTINCT c.course_id, c.course_name,c.class_id, cl.class_name FROM Course c\n"
+                + "JOIN Class cl ON cl.class_id = c.class_id\n"
+                + "JOIN Module m ON m.course_id = c.course_id\n"
+                + "JOIN Lession l ON l.module_id = m.module_id\n"
+                + "JOIN Lession_Learn ll ON l.lession_id = ll.lession_id\n"
+                + "WHERE ll.[user_id] = ?";
+
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, user_id);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Course c = new Course();
+                c.setCourse_id(rs.getInt("course_id"));
+                c.setCourse_name(rs.getString("course_name"));
+                c.setClasses( new Class(rs.getInt("class_id"), rs.getString("class_name")));
+                registeredCourses.add(c);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CourseDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return registeredCourses;
+    }
 }

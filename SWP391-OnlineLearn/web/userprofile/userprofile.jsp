@@ -22,7 +22,7 @@
             <!--nav bar-->
             <jsp:include page="../custom/nav.jsp"></jsp:include>
                 <!--content-->
-                <div class="content">
+                <div class="content" style="background-image: url('../Assets/images/bg.png')">
                     <!--Ae code o day nha-->
                     <!--            <div class="account" style="border:5px white solid;">
                             <div ><img src="../Assets/icon/icon (4).png" alt=""></div>
@@ -96,25 +96,20 @@
                                 </div>
                             </div>
                         </div>
+                        <!--<h2>Các khóa học đã đăng ký</h2>-->
                         <div class="course-com" style="overflow: auto; height: 270px">
-                            <div class="profile-item col-12">
-                                <div class="profile-item-unit-two p-3">
-                                    <h3>Khóa học dục deadline các thành viên trong nhóm hiệu quả</h3>
-                                    <p>Khóa học này sẽ cho các bạn kỹ năng để có thể bảo thành viên trong nhóm chạy dl mà k bị ghét</p>
+                            <c:forEach items="${requestScope.registeredCourses}" var="rc">
+                                <div class="profile-item col-12">
+                                    <div class="profile-item-unit-two p-3">
+                                        <h3>${rc.course_name} ${rc.classes.class_id}</h3>
+                                        <p style="font-size: 1.2em">Hãy luôn tin tưởng vào khả năng của mình và đặt 
+                                            mục tiêu cho bản thân. Dù cho có những thử thách 
+                                            trong học tập, hãy kiên trì và cố gắng vượt qua chúng.
+                                            Với sự nỗ lực và tinh thần chăm chỉ, bạn sẽ tiến bộ và 
+                                            đạt được thành công trong học tập.</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="profile-item col-12">
-                                <div class="profile-item-unit-two p-3">
-                                    <h3>Khóa học giữ bình tĩnh với những thằng muộn deadline</h3>
-                                    <p>Khóa học này sẽ cho các bạn kỹ năng để có thể kiềm chế không giê*t thành viên trong nhóm</p>
-                                </div>
-                            </div>
-                            <div class="profile-item col-12">
-                                <div class="profile-item-unit-two p-3">
-                                    <h3>Khóa học giữ bình tĩnh với những thằng muộn deadline</h3>
-                                    <p>Khóa học này sẽ cho các bạn kỹ năng để có thể kiềm chế không giê*t thành viên trong nhóm</p>
-                                </div>
-                            </div>
+                            </c:forEach>
                         </div>
                     </div>
                 </div>
