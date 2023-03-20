@@ -31,7 +31,7 @@ public class modulesController extends BaseAuthenticationController {
         LessonDBContext lDB = new LessonDBContext();
         int user_id = Integer.parseInt(req.getParameter("user_id"));
         ArrayList<Lesson> lessonInCourse = (ArrayList<Lesson>) req.getSession().getAttribute("lessonInCourse");
-        for(Lesson l : lessonInCourse){
+        for (Lesson l : lessonInCourse) {
             lDB.setLessonLearn(user_id, l.getLesson_id(), false);
         }
         processGet(req, resp);
@@ -44,11 +44,13 @@ public class modulesController extends BaseAuthenticationController {
         LessonDBContext lDB = new LessonDBContext();
         ArrayList<Lesson> lessons = lDB.listLessonByCourseID(course_id);
         User user = (User) req.getSession().getAttribute("user");
-        Lesson_learn ll = lDB.getLessonLearn(user.getUser_id(), lessons.get(0).getLesson_id());
-        if (ll == null) {
-            req.setAttribute("unregistered", 1);
-        } else {
-            req.setAttribute("unregistered", 0);
+        for (int i = 0; i < lessons.size(); i++) {
+            Lesson_learn ll = lDB.getLessonLearn(user.getUser_id(), lessons.get(i).getLesson_id());
+            if (ll == null) {
+                req.setAttribute("unregistered", 1);
+            } else {
+                req.setAttribute("unregistered", 0);
+            }
         }
         ModuleDBContext mDB = new ModuleDBContext();
         CourseDBContext coDB = new CourseDBContext();
@@ -58,19 +60,19 @@ public class modulesController extends BaseAuthenticationController {
         req.setAttribute("course", course);
         req.setAttribute("class_id", class_id);
         req.setAttribute("modules", modules);
-        double percent = getProcessOfCourse(course_id,user.getUser_id());
+        double percent = getProcessOfCourse(course_id, user.getUser_id());
         req.setAttribute("percent", percent);
         req.getSession().setAttribute("lessonInCourse", lessons);
         req.getRequestDispatcher("./modules.jsp").forward(req, resp);
     }
-    
-    public double getProcessOfCourse(int course_id, int user_id){
+
+    public double getProcessOfCourse(int course_id, int user_id) {
         double coursePercent;
         CourseDBContext coDB = new CourseDBContext();
-        
-        double learned = (double) coDB.numberOfLessonLearned(course_id,user_id);
-        double all = (double) coDB.numberOfLesson(course_id,user_id);
-        coursePercent = (learned * 100)/all;
+
+        double learned = (double) coDB.numberOfLessonLearned(course_id, user_id);
+        double all = (double) coDB.numberOfLesson(course_id, user_id);
+        coursePercent = (learned * 100) / all;
         return Math.round(coursePercent * 100.0) / 100.0;
     }
 
