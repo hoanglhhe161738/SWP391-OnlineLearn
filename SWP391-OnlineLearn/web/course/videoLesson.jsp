@@ -149,8 +149,8 @@
             var taskListItem = document.createElement("li");
             taskListItem.innerHTML = taskList[i] + " " +
                     "<br>" +
-                    "<div style='text-align: center; margin-top:2px;'><button type='button'style='background: #33a1ff;' onclick='completeTask(" + i + ")'>Complete</button>"
-                    + "<button type='button' style='background:red; margin-left:10px;' onclick='deleteTask(" + i + ")'>Delete</button></div>";
+                    "<div style='text-align: center; margin-top:2px;'><button type='button'style='background: #33a1ff;' onclick='completeTask(" + i + ")'>Gạch bỏ</button>"
+                    + "<button type='button' style='background:red; margin-left:10px;' onclick='deleteTask(" + i + ")'>Xóa ghi chú</button></div>";
             if (taskList[i].startsWith("<s>")) {
                 taskListItem.classList.add("completed");
             }
