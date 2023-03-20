@@ -18,8 +18,14 @@ public class Fillin4ControllerTest {
     }
 
     @Test
-    public void testCheckInputString() {
+    public void testCheckInputStringFullName() {
         String input = "Nguyen";
+        String expectation = "Nguyen";
+        assertEquals(expectation, input);
+    }
+    @Test
+    public void testCheckInputStringFullNameNull() {
+        String input = "";
         String expectation = "Nguyen";
         assertEquals(expectation, input);
     }
@@ -42,18 +48,32 @@ public class Fillin4ControllerTest {
     }
 
     @Test
-    public void testIsValidEmail() {
+    public void testIsValidEmailFalse() {
         String email = "abc";
         boolean isValid = f.isValidEmail(email);
         boolean expectation = false;
         assertEquals(expectation, isValid);  
     }
+    @Test
+    public void testIsValidEmailTrue() {
+        String email = "abc@gmail.com";
+        boolean isValid = f.isValidEmail(email);
+        boolean expectation = true;
+        assertEquals(expectation, isValid);  
+    }
 
     @Test
-    public void testIsVietnamesePhoneNumber() {
+    public void testIsVietnamesePhoneNumberFalse() {
         String phone = "085856744374";
         boolean isValid = f.isVietnamesePhoneNumber(phone);
         boolean expectation = false;
+        assertEquals(expectation, isValid);
+    }
+    @Test
+    public void testIsVietnamesePhoneNumberTrue() {
+        String phone = "0345345467";
+        boolean isValid = f.isVietnamesePhoneNumber(phone);
+        boolean expectation = true;
         assertEquals(expectation, isValid);
     }
     
