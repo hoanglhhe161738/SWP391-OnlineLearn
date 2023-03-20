@@ -12,6 +12,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
+import java.time.LocalDate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import model.Account;
 import model.User;
 
@@ -73,4 +76,35 @@ public class changeUserProfileController extends BaseAuthenticationController {
         doGetProcess(req, resp);
     }
 
+    public boolean checkInputString(String inputString) {
+        return !inputString.isEmpty();
+    }
+
+    public boolean isDateValid(Date date) {
+        LocalDate currentDate = LocalDate.now();
+        LocalDate inputDate = date.toLocalDate();
+        return inputDate.isBefore(currentDate) || inputDate.isEqual(currentDate);
+    }
+
+    public boolean isValidEmail(String email) {
+        // Regular expression để kiểm tra định dạng email
+        String regexEmail = "\\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\\b";
+
+        // Tạo một pattern để so khớp chuỗi đầu vào với regular expression
+        Pattern pattern = Pattern.compile(regexEmail);
+
+        // Sử dụng Matcher để kiểm tra chuỗi đầu vào có khớp với pattern hay không
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    public boolean isVietnamesePhoneNumber(String phoneNumber) {
+        String phoneNumberRegex = "^(\\+?84|0)\\d{9,10}$";
+        Pattern pattern = Pattern.compile(phoneNumberRegex);
+
+        // Sử dụng Matcher để kiểm tra chuỗi đầu vào có khớp với pattern hay không
+        Matcher matcher = pattern.matcher(phoneNumber);
+        return matcher.matches();
+    }
+    
 }

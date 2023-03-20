@@ -19,14 +19,18 @@ public class Fillin4ControllerTest {
 
     @Test
     public void testCheckInputStringFullName() {
-        String input = "Nguyen";
-        String expectation = "Nguyen";
+        String inputString  = "Nguyen Luong Khang";
+        boolean input = f.checkInputString(inputString);
+        String expectationString = "Nguyen Luong Khang";
+        boolean expectation = f.checkInputString(expectationString);
         assertEquals(expectation, input);
     }
     @Test
     public void testCheckInputStringFullNameNull() {
-        String input = "";
-        String expectation = "Nguyen";
+        String inputString  = "";
+        boolean input = f.checkInputString(inputString);
+        String expectationString = "Nguyen Luong Khang";
+        boolean expectation = f.checkInputString(expectationString);
         assertEquals(expectation, input);
     }
 
@@ -35,15 +39,28 @@ public class Fillin4ControllerTest {
         Date input = Date.valueOf("2023-10-25");
         boolean isValid = f.isDateValid(input);
         boolean expectation = false;
-        assertEquals(expectation, isValid);
-        
+        assertEquals(expectation, isValid);        
     }
     
     @Test
-    public void testIsDateValidFalse() {
+    public void testIsDateValidFalseNull() {
         Date input = Date.valueOf("");
         boolean isValid = f.isDateValid(input);
-        boolean expectation = true;
+        boolean expectation = false;
+        assertEquals(expectation, isValid);       
+    }
+    @Test
+    public void testIsDateValidFalse1() {
+        Date input = Date.valueOf("30/2/2022");
+        boolean isValid = f.isDateValid(input);
+        boolean expectation = false;
+        assertEquals(expectation, isValid);       
+    }
+    @Test
+    public void testIsDateValidFalse2() {
+        Date input = Date.valueOf("-21/3/2022");
+        boolean isValid = f.isDateValid(input);
+        boolean expectation = false;
         assertEquals(expectation, isValid);       
     }
 
@@ -54,6 +71,42 @@ public class Fillin4ControllerTest {
         boolean expectation = false;
         assertEquals(expectation, isValid);  
     }
+    @Test
+    public void testIsValidEmailNull() {
+        String email = "";
+        boolean isValid = f.isValidEmail(email);
+        boolean expectation = false;
+        assertEquals(expectation, isValid);  
+    }
+    @Test
+    public void testIsValidEmailFalse1() {
+        String email = ".vn";
+        boolean isValid = f.isValidEmail(email);
+        boolean expectation = false;
+        assertEquals(expectation, isValid);  
+    }
+    @Test
+    public void testIsValidEmailFalse2() {
+        String email = "Khang@";
+        boolean isValid = f.isValidEmail(email);
+        boolean expectation = false;
+        assertEquals(expectation, isValid);  
+    }
+    @Test
+    public void testIsValidEmailFalse3() {
+        String email = "Khang @gmail.com";
+        boolean isValid = f.isValidEmail(email);
+        boolean expectation = false;
+        assertEquals(expectation, isValid);  
+    }
+    @Test
+    public void testIsValidEmailFalse4() {
+        String email = "Khang@-gmail.com";
+        boolean isValid = f.isValidEmail(email);
+        boolean expectation = false;
+        assertEquals(expectation, isValid);  
+    }
+    
     @Test
     public void testIsValidEmailTrue() {
         String email = "abc@gmail.com";
@@ -70,8 +123,29 @@ public class Fillin4ControllerTest {
         assertEquals(expectation, isValid);
     }
     @Test
+    public void testIsVietnamesePhoneNumberNull() {
+        String phone = "";
+        boolean isValid = f.isVietnamesePhoneNumber(phone);
+        boolean expectation = false;
+        assertEquals(expectation, isValid);
+    }
+    @Test
     public void testIsVietnamesePhoneNumberTrue() {
         String phone = "0345345467";
+        boolean isValid = f.isVietnamesePhoneNumber(phone);
+        boolean expectation = true;
+        assertEquals(expectation, isValid);
+    }
+    @Test
+    public void testIsVietnamesePhoneNumberFalse2() {
+        String phone = "9438bsdh12";
+        boolean isValid = f.isVietnamesePhoneNumber(phone);
+        boolean expectation = true;
+        assertEquals(expectation, isValid);
+    }
+    @Test
+    public void testIsVietnamesePhoneNumberFalse3() {
+        String phone = "1265476325432567";
         boolean isValid = f.isVietnamesePhoneNumber(phone);
         boolean expectation = true;
         assertEquals(expectation, isValid);
