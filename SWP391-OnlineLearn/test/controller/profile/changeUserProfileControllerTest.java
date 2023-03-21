@@ -39,7 +39,7 @@ public class changeUserProfileControllerTest {
         String inputString  = "Phan Manh Thang";
         boolean input = cup.checkInputString(inputString);
         String expectationString = "Phan Manh Thang";
-        boolean expectation = cup.checkInputString(expectationString);
+        boolean expectation = true;
         assertEquals(expectation, input);
     }
     @Test
@@ -47,7 +47,7 @@ public class changeUserProfileControllerTest {
         String inputString  = "";
         boolean input = cup.checkInputString(inputString);
         String expectationString = "Phan Manh Thang";
-        boolean expectation = cup.checkInputString(expectationString);
+        boolean expectation = false;
         assertEquals(expectation, input);
     }
 

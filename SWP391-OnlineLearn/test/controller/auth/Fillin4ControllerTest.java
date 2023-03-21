@@ -29,8 +29,7 @@ public class Fillin4ControllerTest {
     public void testCheckInputStringFullNameNull() {
         String inputString  = "";
         boolean input = f.checkInputString(inputString);
-        String expectationString = "Nguyen Luong Khang";
-        boolean expectation = f.checkInputString(expectationString);
+        boolean expectation = false;
         assertEquals(expectation, input);
     }
 
@@ -140,14 +139,14 @@ public class Fillin4ControllerTest {
     public void testIsVietnamesePhoneNumberFalse2() {
         String phone = "9438bsdh12";
         boolean isValid = f.isVietnamesePhoneNumber(phone);
-        boolean expectation = true;
+        boolean expectation = false;
         assertEquals(expectation, isValid);
     }
     @Test
     public void testIsVietnamesePhoneNumberFalse3() {
         String phone = "1265476325432567";
         boolean isValid = f.isVietnamesePhoneNumber(phone);
-        boolean expectation = true;
+        boolean expectation = false;
         assertEquals(expectation, isValid);
     }
     
