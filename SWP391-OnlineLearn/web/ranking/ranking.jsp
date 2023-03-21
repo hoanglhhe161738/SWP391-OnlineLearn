@@ -143,7 +143,7 @@
                                                     <c:if test="${rKey.rank eq 3}">
                                                         <img src="../Assets/images/3.png">
                                                     </c:if>
-                                                    <c:if test="${rKey.rank ne 1}">
+                                                    <c:if test="${rKey.rank > 3}">
                                                         ${rKey.rank}
                                                     </c:if>
                                                 </td>
