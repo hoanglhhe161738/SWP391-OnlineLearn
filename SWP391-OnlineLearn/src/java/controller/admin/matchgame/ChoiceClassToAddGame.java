@@ -35,8 +35,6 @@ public class ChoiceClassToAddGame extends BaseAuthorizationController {
 
     @Override
     protected void processGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
-        req.getSession().setAttribute("class_id", null);
-        req.getSession().setAttribute("coursesToAddLession", null);
         ClassDBContext clDB = new ClassDBContext();
         ArrayList<model.Class> classes = clDB.list();
         req.getSession().setAttribute("classesToAddGame", classes);

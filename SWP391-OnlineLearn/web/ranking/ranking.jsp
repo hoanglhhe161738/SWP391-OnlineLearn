@@ -135,7 +135,13 @@
                                             <tr class="table-ranking-row">
                                                 <td class="table-ranking-body-cell">
                                                     <c:if test="${rKey.rank eq 1}">
-                                                        <img src="../Assets/icon/number1.png">
+                                                        <img src="../Assets/images/1.png">
+                                                    </c:if>
+                                                    <c:if test="${rKey.rank eq 2}">
+                                                        <img src="../Assets/images/2.png">
+                                                    </c:if>
+                                                    <c:if test="${rKey.rank eq 3}">
+                                                        <img src="../Assets/images/3.png">
                                                     </c:if>
                                                     <c:if test="${rKey.rank ne 1}">
                                                         ${rKey.rank}
