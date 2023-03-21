@@ -115,7 +115,7 @@
         <div class="statis-quiz container-fluid" style="height: 100%; margin-top: 2em;">
             <div class="static-quiz-left">
                 <div class="text">
-                    <p>Đang thêm cặp ảnh cho game trong</p>
+                    <p>Thêm/Sửa cặp ảnh cho game</p><span style="color: red">Tối đa 8 cặp ảnh</span>
                 </div>
                 <div class="input-quiz">
                     <input type="text" value="Lớp ${sessionScope.class_id_game}">
@@ -142,22 +142,21 @@
                                             <i class="fa-solid fa-pen-to-square custom-icon"></i>
                                         </a>
                                     </td>
-                                    <td>
-                                        <a href="./actionMatchGame?action=delete&index=${i.index}&match_game_id=${i.match_game_id}">
-                                            <i class="fa-solid fa-trash custom-icon"></i>
-                                        </a>
-                                    </td>
+                                    
                                 </tr>
                             </c:forEach>
                         </tbody>
                     </table>
                 </div>
                 <div style="margin-top: 2em;">
+                    <c:if test="${sessionScope.numberofpairs < 8}">
                     <a href="./actionMatchGame?action=add&index=-1&match_game_id=-1">
                         <button
                             style="width: 100%; color: #f2f2f2; font-size: large; background-color: #00de7a; padding: 0.5em 0 0.5em 0;border: white;">Thêm
                             cặp ảnh</button>
                     </a>
+                    </c:if>
+                    
                     <a href="./ChoiceClassToAddGameImage">
                         <button
                             style="width: 100%; color: #f2f2f2; margin-top: 1em; font-size: large; background-color: red; padding: 0.5em 0 0.5em 0;border: white;">
@@ -178,7 +177,7 @@
 
             <c:if test="${(requestScope.action ne sessionScope.add) 
                           or (requestScope.action ne sessionScope.edit)
-                          or (requestScope.action ne sessionScope.delete)}">
+                          }">
             </c:if>
            
             <c:if test="${requestScope.action eq sessionScope.add}">
@@ -264,72 +263,7 @@
                 </div>
             </c:if> 
                 
-            <c:if test="${requestScope.action eq sessionScope.delete}">
-                <div class="static-quiz-right">
-                    <input hidden name="action" value="edit">
-                    <div style="padding-left: 1em;">
-                        <h3>Cặp ${requestScope.index}</h3>
-                        <input hidden name="index" value="${requestScope.index}">
-                    </div>
-                    
-                   
-                    <div class="list-answer" style="width: 100%;">
-                            <ul style="padding-left: 20px;">
-                                <li class="list-item">
-                                    <label for="answer1">Tên ảnh 1:</label>
-                                    <input type="text" name="img_name" disabled value="${requestScope.img.img_name}">
-                                </li>
-                                <li class="list-item">
-                                    <label for="answer1">Link ảnh 1</label>
-                                    <input type="text" name="img_url"  disabled value="${requestScope.img.img_url}"><br>
-                                    <img src="${requestScope.img.img_url}" alt="${requestScope.img.img_name}" width="200px" height="150px">
-                                </li>
-                                <li class="list-item">
-                                    <label for="answer1">Tên ảnh 2</label>
-                                    <input type="text" name="ans_img_name" disabled value="${requestScope.ans_img.ans_img_name}">
-                                </li>
-                                <li class="list-item">
-                                    <label for="answer1">Link ảnh 2</label>
-                                    <input type="text" name="ans_img_url" disabled value="${requestScope.ans_img.ans_img_url}"><br>
-                                    <img src="${requestScope.ans_img.ans_img_url}" alt="${requestScope.ans_img.ans_img_name}" width="200px" height="150px">
-                                </li>
-                               
-                            </ul>
-                        </div>
-                    <div style="padding: 2em 0 0 70%;">        
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Xác nhận và xóa
-                        </button>
-                    </div>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel" style="align-items: center">
-                                        <i class="fa-solid fa-triangle-exclamation custom-icon" style="color: orange"></i>
-                                        Cảnh báo từ hệ thống
-                                    </h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div style="font-size: 20px;">Sau khi bạn bấm nút xóa sẽ không thể khôi phục lại</div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <form action="actionMatchGame" method="POST">
-                                        <input hidden name="action" value="delete">
-                                        <input hidden name="match_game_id" value="${requestScope.pair.match_game_id}">
-                                        <input type="submit" class="btn btn-primary" value="Xác nhận">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </c:if>
+           
         </div>
     </body>
 
