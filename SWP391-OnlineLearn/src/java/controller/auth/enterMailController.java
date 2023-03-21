@@ -45,7 +45,7 @@ public class enterMailController extends HttpServlet {
             // Set up mail server and authentication
             String host = "smtp.gmail.com";
             String user = "onlinelearnse1643@gmail.com";
-            String password = "ejllqabsmrssfyqq";
+            String password = "rbafrsyxsuaeyfdg";
 
             // Create properties object for the mail session
             Properties props = new Properties();

@@ -106,9 +106,15 @@
                                                 <td class="table-ranking-body-cell">
 
                                                     <c:if test="${r.rank eq 1}">
-                                                        <img src="../Assets/icon/number1.png">
+                                                        <img src="../Assets/images/1.png">
                                                     </c:if>
-                                                    <c:if test="${r.rank ne 1}">
+                                                    <c:if test="${r.rank eq 2}">
+                                                        <img src="../Assets/images/2.png">
+                                                    </c:if>
+                                                    <c:if test="${r.rank eq 3}">
+                                                        <img src="../Assets/images/3.png">
+                                                    </c:if>
+                                                    <c:if test="${r.rank > 3}">
                                                         ${r.rank}
                                                     </c:if>
                                                 </td>
